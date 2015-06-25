@@ -31,15 +31,15 @@
 - [An exploration in Material Design by feedly — Medium](https://medium.com/@abrodo/an-exploration-in-material-design-by-feedly-8c1a1cbdfdcd)
 - [From concept to reality: rebranding Google Squared - Jack Morgan](http://jackwmorgan.com/rebranding-google-squared/)
 
-
 ---
 
 ###UX Resources
 
 - [UX Career Guide](http://thenextweb.com/dd/2015/06/17/the-ultimate-guide-to-launching-your-ux-career/)
- 
+- [UX Designer Tools](http://market.designmodo.com/tools/)
 
 ---
+
 ##Author
 
 - Maitrik Patel
