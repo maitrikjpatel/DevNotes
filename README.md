@@ -11,9 +11,11 @@ Following is list of notes which I use in day to day development work.
 - [Colored_Terminal Notes](Colored_Terminal.md)
 - [Famous Notes](Famous.md)
 - [User Experience Notes](UX.md)
+- [JS Notes](JS.md)
+- [JQuery Notes](Jquery.md)
  
 ---
-##Author
+## Author
 
 - Maitrik Patel
 - maitrikpatel.com
