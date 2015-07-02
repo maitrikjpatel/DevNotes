@@ -1,4 +1,4 @@
-#Famo.us note
+#Famo.us Notes
 
 Famo.us is an open source technology for building
 high-performing JavaScript Web and mobile applications without requiring native code or plug-ins. Following are my finding which I learn during private beta program at Famo.us HQ. 
@@ -287,6 +287,4 @@ in future run. 
 ---
 ##Author
 
-- Maitrik Patel
-- maitrikpatel.com
-- maitrik1419[at]gmail[dot]com
+- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com

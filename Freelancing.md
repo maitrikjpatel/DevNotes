@@ -1,4 +1,4 @@
-#Freelancing Note
+#Freelancing Notes
 ---
 
 ###Freelancing work search boards
@@ -18,6 +18,7 @@
 - [Gun.io - Meet Verified Freelance Developers](https://gun.io/?ref=producthunt)
 - [Gigster - Hire a quality developer](http://www.trygigster.com/?ref=producthunt)
 - [UpWork](https://www.upwork.com/)
+- [Design Jobs](http://weeklydesignjobs.com/)
 
 
 ###Learning and Tools
@@ -48,9 +49,7 @@
 ---
 ##Author
 
-- Maitrik Patel
-- maitrikpatel.com
-- maitrik1419[at]gmail[dot]com
+- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
 
 
 

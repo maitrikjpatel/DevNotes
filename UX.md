@@ -1,4 +1,4 @@
-#User Experience Notes
+#User Experience and Design Notes
 “You’ve got to start with the customer experience and work backwards to the technology.” —Steve Jobs
 
 ---
@@ -14,12 +14,35 @@
 
 ---
 
-###UX Read
+###Good UX Read
 
 - [It’s Only Color](https://robots.thoughtbot.com/Its-only-color)
 - [Designers & Books | Book lists and commentary from esteemed designers and a](http://www.designersandbooks.com/)
 - [Awesome Blogs Every UX Designer Should Follow in 2015 | Iva Turgut](http://www.huffingtonpost.com/iva-turgut/a_3_b_5932308.html)
 - [UI, UX: Who Does What? A Designer's Guide To The Tech Industry | Co.Design ](http://www.fastcodesign.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry?utm_source=facebook)
+
+---
+
+##Inspiring Mobile Designs
+                    
+- [Pttrns - Navigations](http://www.pttrns.com/)
+- [Inspired UI - Mobile Apps Design Patterns](http://ipad.inspired-ui.com/page/3)
+- [Mobile Patterns](http://www.mobile-patterns.com/)
+- [After iOS 7 icons](http://afterios7icon.tumblr.com/)
+- [CAPPTIVATE.co | iOS UI Animations](http://capptivate.co/)
+- [UIOHMY](http://uiohmy.com/?ref=producthunt)
+
+---
+
+##Inspiring Website Designs
+
+- [Design Licks | Amazing websites everyday !](http://www.awwwards.com/search-websites/?text=portfolio&submit=&search-section=on)
+- [CSS Gallery for Web Design Inspiration - CSS Nectar](http://cssnectar.com/)
+- [CSS Winner - Website Awards - CSS Award Gallery for Web Design Inspiration](http://www.csswinner.com/)
+- [CSS DA - Web Design Awards &amp; Inspiration For Web Designers &amp; Developers - CSS Design Awards](http://www.cssdesignawards.com/)
+- [Abduzeedo Design Inspiration | Design Inspiration &amp; Tutorials](http://abduzeedo.com/)
+- [Inspiring Email Design](http://reallygoodemails.com/)
+- [The Best Design](https://www.thebestdesigns.com)
 
 ---
 
@@ -38,10 +61,6 @@
 - [UX Career Guide](http://thenextweb.com/dd/2015/06/17/the-ultimate-guide-to-launching-your-ux-career/)
 - [UX Designer Tools](http://market.designmodo.com/tools/)
 
----
-
 ##Author
 
-- Maitrik Patel
-- maitrikpatel.com
-- maitrik1419[at]gmail[dot]com
+- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com

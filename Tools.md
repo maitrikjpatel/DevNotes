@@ -1,4 +1,4 @@
-#Tools and Apps Note
+#Tools and Apps Notes
 "The right tools make the difference between an artist and a craftsman."
 
 ## Apps & Tools I use for day to day UX/Front End Development.
@@ -9,6 +9,7 @@
 
 * [Profucthunt Best Mac Apps](http://www.producthunt.com/e/products-for-mac-loverss)
 * [Mac Setup for beginners](https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
+* [Mac Freemium](http://www.producthunt.com/e/free-mac-utilities?utm_source=Product+Hunt&utm_campaign=1a02c1cf13-Free_Mac_utilities6_23_2015&utm_medium=email&utm_term=0_2cd7d34185-1a02c1cf13-121879825)
 
 ---
 
@@ -42,6 +43,7 @@
 *   [Pocket](http://getpocket.com/a/queue/list/)
 *   [TotalTerminal](http://totalterminal.binaryage.com/)
 *   [Twitter](https://about.twitter.com/products/sign-out)
+*   [Flashlight](http://flashlight.nateparrott.com)
 
 ---
 
@@ -97,6 +99,4 @@
 ---
 ##Author
 
-- Maitrik Patel
-- maitrikpatel.com
-- maitrik1419[at]gmail[dot]com
+- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com

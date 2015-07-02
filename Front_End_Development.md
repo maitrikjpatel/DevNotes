@@ -1,4 +1,4 @@
-#Front End Development Note
+#Front End Development Notes
 
 ---
 
@@ -9,18 +9,7 @@
 - [Sapient Front End development standards](https://sapient-global.github.io/best-practices) 
 - [Iso-Bar Front End development standards](https://isobar-idev.github.io/code-standards) 
 - [Front Dev Guidelines](https://taitems.github.io/Front-End-Development-Guidelines/#cssHtmlSection) 
-
-###JS/Jquery Guideline
-
-- [Google JS Styleguide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
-- [Principles of writing consistent, idiomatic JS](https://github.com/rwaldron/idiomatic.js)
-- [JQuery Guidelines](http://contribute.jquery.org/style-guide/js/)
-
-###CSS Guideline
-
-- [CSS Guidelines](http://cssguidelin.es) 
-- [Google HTML/CSS Guideline](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
-- [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
+- [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/)
 
 ---
 ##Front End application development workflow 
@@ -50,29 +39,6 @@
 
 ---- 
 
-##Inspire Mobile Designs
-                    
-- [Pttrns - Navigations](http://www.pttrns.com/)
-- [Inspired UI - Mobile Apps Design Patterns](http://ipad.inspired-ui.com/page/3)
-- [Mobile Patterns](http://www.mobile-patterns.com/)
-- [After iOS 7 icons](http://afterios7icon.tumblr.com/)
-- [CAPPTIVATE.co | iOS UI Animations](http://capptivate.co/)
-- [UIOHMY](http://uiohmy.com/?ref=producthunt)
-
----
-
-##Inspire Website Designs
-
-- [Design Licks | Amazing websites everyday !](http://www.awwwards.com/search-websites/?text=portfolio&submit=&search-section=on)
-- [CSS Gallery for Web Design Inspiration - CSS Nectar](http://cssnectar.com/)
-- [CSS Winner - Website Awards - CSS Award Gallery for Web Design Inspiration](http://www.csswinner.com/)
-- [CSS DA - Web Design Awards &amp; Inspiration For Web Designers &amp; Developers - CSS Design Awards](http://www.cssdesignawards.com/)
-- [Abduzeedo Design Inspiration | Design Inspiration &amp; Tutorials](http://abduzeedo.com/)
-- [Inspiring Email Design](http://reallygoodemails.com/)
-- [The Best Design](https://www.thebestdesigns.com)
-
----
-
 ##Inspiring leaders in Front End and design field
 
 - [How to keep up to date on Front-End Technologies - The Recipe](http://uptodate.frontendrescue.org/)
@@ -85,6 +51,4 @@
 ---
 ##Author
 
-- Maitrik Patel
-- maitrikpatel.com
-- maitrik1419[at]gmail[dot]com
+- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com

@@ -1,4 +1,4 @@
-#Sublime Setup and recommended packages note 
+#Sublime Setup and recommended packages Notes 
 
 ---
 ##Steps to turn on Packages
@@ -70,11 +70,10 @@
 ##Good read for Sublime 
 
 - [Plugin Guide](http://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-plugins-part-1)
-- [Sublime Folding] (http://wesbos.com/sublime-text-code-folding/)
+- [Sublime Folding](http://wesbos.com/sublime-text-code-folding/)
+- [Emmet Tuts](http://docs.emmet.io/)
 
 ---
 ##Author
 
-- Maitrik Patel
-- maitrikpatel.com
-- maitrik1419[at]gmail[dot]com
+- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
