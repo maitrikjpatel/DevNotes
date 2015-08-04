@@ -23,6 +23,7 @@
 - [CSS Guidelines](http://cssguidelin.es) 
 - [Google HTML/CSS Guideline](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
+- [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
 
 ---
 

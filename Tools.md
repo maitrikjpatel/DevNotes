@@ -20,13 +20,16 @@
 *   [Dash](http://kapeli.com/dash) - An amazing browser and code snippets manager for Mac.
 *   [DiffMerge](https://sourcegear.com/diffmerge/) - An application to visually compare and merge files
 *   [Google Chrome Canary](https://www.google.com/intl/en/chrome/browser/canary.html) - A browser designed for developer.
+*   [Firefox Developer](https://www.mozilla.org/en-US/firefox/developer/) - A browser designed for developer.
 *   [ImageOptim](http://imageoptim.com/) - Best image optimizer i've seen for any system. No idea how it works so well.
 *   [LiveReload](https://itunesle.com/us/app/livereload/id482898991?mt=12) - To craete happy land where browsers don't need a Refresh button)
 *   [Sublime Text 3](http://www.sublimetext.com/) -Sublime Text is a sophisticated text editor for code, markup and prose.
 *   [Mou](http://mouapp.com/) - Markdown editor. I am writing this in it. So awesome.
 *   [Sublime Text 3](http://www.sublimetext.com/) -Sublime Text is a sophisticated text editor for code, markup and prose.
 *   [SourceTree](http://www.sourcetreeapp.com/) is free open source alternative.
+*   [GIT Tower](http://www.git-tower.com/) git GUI client.
 *   [CyberDuck](http://cyberduck.io/) is also great alternative. 
+*   [Mamp](https://www.mamp.info/en/downloads/) local server.
 *   [Tree](http://mama.indstate.edu/users/ice/) command line application for get folder structure of you application. 
 
 ---
@@ -35,21 +38,31 @@
 
 *   [Adium](http://audim.com)
 *   [Bartender](http://www.macbartender.com/)
+*   [Any Do](https://www.any.do/)
 *   [Day One](http://dayoneapp.com/)
 *   [Day-O](http://www.shauninman.com/archive/2011/10/20/day_o_mac_menu_bar_clock)
 *   [Fluid](http://fluidapp.com/)
 *   [Gmail Notifr](http://ashchan.com/projects/gmail-notifr)
 *   [MenuMeters](http://www.ragingmenace.com/software/menumeters/)
 *   [Pocket](http://getpocket.com/a/queue/list/)
-*   [TotalTerminal](http://totalterminal.binaryage.com/)
 *   [Twitter](https://about.twitter.com/products/sign-out)
-*   [Flashlight](http://flashlight.nateparrott.com)
+*   [Spotify](https://www.spotify.com/us/download/mac/)
+*   [Slack](https://itunes.apple.com/us/app/slack/id803453959?mt=12)
+* 	 [MacClean](http://www.imobie.com/macclean/)
+*   [Unarchiver](http://wakaba.c3.cx/s/apps/unarchiver.html)
+*   [Dropbox](https://www.dropbox.com/en/downloading?os=mac)
+*   [Google Drive](https://www.google.com/drive/download/)
+*   [Copy](https://www.copy.com/install/)
+*   [Chrome](http://www.google.com/chrome/)
+*   [Saver Screen Saver](http://www.saver.is/)
+*   [Clock Screen Saver](http://padbury.me/clock/)
 
 ---
 
 ### Productivity Apps
 
 *   [Alfred](http://www.alfredapp.com/)
+*   [Flashlight](http://flashlight.nateparrott.com)
 *   [Divvy](http://mizage.com/divvy/)
 *   [Jumpcut](http://jumpcut.sourceforge.net/)
 *   [Found](https://www.foundapp.com/)
@@ -57,9 +70,10 @@
 *   [nvALT](http://brettterpstra.com/projects/nvalt/)
 *   [SelfControl](http://selfcontrolapp.com/)
 *   [TotalFinder](http://totalfinder.binaryage.com/)
+*   [TotalTerminal](http://totalterminal.binaryage.com/)
 *   [GrabBox](http://grabbox.devsoft.no/download/)
 *   [SIP Color picker](https://itunes.apple.com/us/app/sip/id507257563?mt=12)
-*   [CloudClip](http://www.thinkbitz.com/cloudclip/)
+*   [Write](http://writeapp.net/mac/)
 
 ---
 

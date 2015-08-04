@@ -20,6 +20,8 @@
 - [Designers & Books | Book lists and commentary from esteemed designers and a](http://www.designersandbooks.com/)
 - [Awesome Blogs Every UX Designer Should Follow in 2015 | Iva Turgut](http://www.huffingtonpost.com/iva-turgut/a_3_b_5932308.html)
 - [UI, UX: Who Does What? A Designer's Guide To The Tech Industry | Co.Design ](http://www.fastcodesign.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry?utm_source=facebook)
+- [Designers Booklist](http://blog.invisionapp.com/reading-list-for-designers/)
+- [UX/UI 2015 Trends](https://medium.com/@oralonur/mobile-2015-263ab694e60e)
 
 ---
 
@@ -43,6 +45,7 @@
 - [Abduzeedo Design Inspiration | Design Inspiration &amp; Tutorials](http://abduzeedo.com/)
 - [Inspiring Email Design](http://reallygoodemails.com/)
 - [The Best Design](https://www.thebestdesigns.com)
+- [Quick Inspiration for Different Layouts , Calltoidea](http://www.calltoidea.com/)
 
 ---
 
