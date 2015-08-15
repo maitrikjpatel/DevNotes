@@ -26,6 +26,7 @@
 - [7 Days of free training for freelancers from The Creative Class]()
 - [Tools for Freelancers - Find work, get paid, and manage your freelance career like a boss](https://thecreativeclass.io/guide/?ref=producthunt)
 - [2011/03 Mike Monteiro | F*ck You. Pay Me. on Vimeo](https://vimeo.com/22053820)
+- [Freelancing Planner](http://cushionapp.com/)
 
 ###Contract and Invoices
 
@@ -38,6 +39,7 @@
 
 
 - [NomadWiki](http://www.nomadwiki.net/)
+- [NoDesk](http://nodesk.co/)
 - [Products for Nomads - The best products for digital nomads and remote workers by levels.io](http://www.producthunt.com/@levelsio/collections/products-for-nomads)
 - [Hacker Paradise: A Traveling Community for Developers, Designers, and Other Creative Types.](http://www.hackerparadise.org/)
 - [Coworking Space, Office Space On Rent | Ahmedabad](http://www.openxcelltechcenter.com/#lightbox[group-5]/1/)

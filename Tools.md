@@ -2,7 +2,6 @@
 "The right tools make the difference between an artist and a craftsman."
 
 ## Apps & Tools I use for day to day UX/Front End Development.
-
 ---
 
 ### Mac setup articles
@@ -10,6 +9,7 @@
 * [Profucthunt Best Mac Apps](http://www.producthunt.com/e/products-for-mac-loverss)
 * [Mac Setup for beginners](https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
 * [Mac Freemium](http://www.producthunt.com/e/free-mac-utilities?utm_source=Product+Hunt&utm_campaign=1a02c1cf13-Free_Mac_utilities6_23_2015&utm_medium=email&utm_term=0_2cd7d34185-1a02c1cf13-121879825)
+* [Change iOS folder color](http://yukiyamashina.github.io/blog/2014/10/19/how-to-change-the-color-of-default-folder-icons-in-OS-X-Yosemite/)
 
 ---
 
@@ -28,6 +28,7 @@
 *   [Sublime Text 3](http://www.sublimetext.com/) -Sublime Text is a sophisticated text editor for code, markup and prose.
 *   [SourceTree](http://www.sourcetreeapp.com/) is free open source alternative.
 *   [GIT Tower](http://www.git-tower.com/) git GUI client.
+*   [GIT](https://github.com/git/git) Git for Mac
 *   [CyberDuck](http://cyberduck.io/) is also great alternative. 
 *   [Mamp](https://www.mamp.info/en/downloads/) local server.
 *   [Tree](http://mama.indstate.edu/users/ice/) command line application for get folder structure of you application. 
@@ -70,7 +71,7 @@
 *   [nvALT](http://brettterpstra.com/projects/nvalt/)
 *   [SelfControl](http://selfcontrolapp.com/)
 *   [TotalFinder](http://totalfinder.binaryage.com/)
-*   [TotalTerminal](http://totalterminal.binaryage.com/)
+*   [iTerm](https://www.iterm2.com/) /  [TotalTerminal](http://totalterminal.binaryage.com/)
 *   [GrabBox](http://grabbox.devsoft.no/download/)
 *   [SIP Color picker](https://itunes.apple.com/us/app/sip/id507257563?mt=12)
 *   [Write](http://writeapp.net/mac/)

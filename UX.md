@@ -33,6 +33,8 @@
 - [After iOS 7 icons](http://afterios7icon.tumblr.com/)
 - [CAPPTIVATE.co | iOS UI Animations](http://capptivate.co/)
 - [UIOHMY](http://uiohmy.com/?ref=producthunt)
+- [Little Details](http://littlebigdetails.com/)
+- [Empty State](http://emptystat.es/tagged/desktop)
 
 ---
 
