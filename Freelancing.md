@@ -34,6 +34,7 @@
 - [Slimvoice](https://slimvoice.co/?ref=producthunt)
 - [Invoice Generator](https://invoice.to/)
 - [Beagle by Podio: Proposal Software](https://getbeagle.co/?ref=producthunt)
+- [Freelancing, simple & secure](https://www.hellobonsai.com)
 
 ###Nomad list
 
