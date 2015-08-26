@@ -17,7 +17,7 @@ Following is list of notes which I use in day to day development work.
 
 ---
 
-- [Colored_Terminal Notes](Colored_Terminal.md)
+- [Colored_Terminal Notes](Bash_Zsh.md)
 
 - [Sublime Notes](Sublime.md)
 
