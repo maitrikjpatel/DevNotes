@@ -21,6 +21,7 @@
 - [Alignment](https://sublime.wbond.net/packages/Alignment)
 - [Color Highlighter](https://github.com/Monnoroch/ColorHighlighter)
 - [Comment-Snippets](https://github.com/hachesilva/Comment-Snippets)
+- [Context Coloring](https://github.com/mazurov/sublime-levels)
 
 ---
 ##Packages SetUp

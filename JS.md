@@ -207,12 +207,34 @@
 		
 		showName ("Michael", "Jackson"); // Your name is Michael Jackson
 		
-		//This is bad.
-		var myName = showName("Maitrik");// At this juncture, the celebrityName outer function has returned.​
-		// The closure (lastName) is called here after the outer function has returned above​
-		​// Yet, the closure still has access to the outer function's variables and parameter​
+		//------------------------------
 		
-		mjName ("Jackson"); // This celebrity is Michael Jackson  
+		// Closure with argument 
+
+		var digit_name = (function () {
+		 	var names = ['zero', 'one', 'two','three', 'four', 'five', 'six', 'seven','eight', 'nine'];
+		 		
+		 	return function (n) {
+		 		return names[n];
+		 	};
+
+		}());
+		
+
+		alert(digit_name(3)); // 'three' 
+		------------------------------
+		(function outer() {
+		 	var x;
+			// The inner circle function cannot see y, In Diagram
+		 	
+		 	return function inner(n) {
+				// The outer circle function can see x, In Diagram
+		 		var y = x;
+		 	};
+
+		}()); 
+
+
 		------------------------------
 		
 		//---Real life example
@@ -387,6 +409,325 @@
 		var myBalanceMethod = john.askTeller();
 		var myBalance = myBalanceMethod();
 		console.log(myBalance);
+
+
+### A Module Pattern
+
+- Module pattern is easily transformed into a powerful constructor pattern. 
+		
+		var singleton = (function () {
+		 	var privateVariable;
+		 	
+		 	function privateFunction(x) {
+		 		...privateVariable...
+		 	}
+		 
+			return {
+			 	firstMethod: function (a, b) {
+			 		...privateVariable...
+			 	},
+			 	secondMethod: function (c) {
+			 		...privateFunction()...
+			 	}
+			};
+
+		}()); 
+
+### Pseudoclassical Inheritance
+
+		function Gizmo(id) {
+		 	this.id = id;
+		}
+		Gizmo.prototype.toString = function () {
+			return "gizmo " + this.id;
+		};
+		function Hoozit(id) {
+			this.id = id;
+		}
+		Hoozit.prototype = new Gizmo();
+		Hoozit.prototype.test = function (id) {
+			return this.id === id;
+		}; 		
+
+### Functional Inheritance
+
+		function gizmo(id) {
+		 	return {
+		 		id: id,
+		 		toString: function () {
+		 			return "gizmo " + this.id;
+		 		}
+		 	};
+		}
+		function hoozit(id) {
+		 	var that = gizmo(id);
+		 	that.test = function (testid) {
+		 		return testid === this.id;
+		 	};
+		 	return that;
+		} 
+
+### MONAD 
+
+- Monad is a design pattern used to describe computations as a series of steps. They are extensively used in pure functional programming languages to manage side effects but can also be used in multiparadigm languages to control complexity.
+
+		function MONAD() {
+		 	return function unit(value) {
+		 		var monad = Object.create(null);
+		 		monad.bind = function (func) {
+		 			return func(value);
+		 		};
+		 		return monad;
+		 	};
+		}
+		
+		var identity = MONAD();
+		var monad = identity("Hello world.");
+		monad.bind(alert); 
+
+## JS Good Parts 
+
+---
+
+### Best Practice
+
+- use UPPERCASE for global variable
+- x +=1 instead of x++
+- Use JSLint
+- Use " for external strings.
+- Use ' for internal strings and characters. 
+- Convert a number to a string
+	- Use number’s method (toString)
+	- Use String function
+
+			str = num.toString();
+			str = String(num); 
+
+- Convert a string to a number
+	- Use the Number function.
+	- Use the + prefix operator.
+	- Use the parseInt function.
+
+ 		num = Number(str);
+ 		num = +str;
+
+- Declare all variables at the top of the function.
+- Declare all functions before you call them. 
+- Return statement
+
+		return expression; or return;
+	
+	- If there is no expression, then the return value is undefined.
+	- Except for constructors, whose default return value is this. 
+
+- Tennent’s Principle of Correspondence
+		
+		expression
+		(function () {
+			return expression;
+		}()) 
+
+### Good Part 
+
+- Prototype 
+- Objects
+- Only one number type 
+- Array :  No need to provide a length or type when creating an array. 
+- Use array.splice(number,1) than delete arry[number] for deleting arry element.
+- Use objects when the names are arbitrary strings.
+- Use arrays when the names are sequential integers. 
+- Falsy values : false,  null,  undefined,  "" (empty string),  0,  NaN 
+- JS is loosely typed language
+- It is always better to use === and !==, which do not do type coercion.
+
+### Bad Part
+
+- NaN :  Not a Number , NaN is not equal to anything, including NaN 
+	- NaN === NaN is false
+	- NaN !== NaN is true
+-Equal and not equal : These operators can do type coercion  
+
+
+### Problem
+
+- Problem 1: Write a function that takes an argument and returns that argument.
+
+		function identity(x) {
+		 	return x;
+		}
+		var identity = function identity(x) {
+		 	return x;
+		}; 
+
+- Problem 2: Write two binary functions, add and mul, that take two numbers and return their sum and product.
+
+		function add(x, y) {
+		 	return x + y;
+		}
+		function mul(x, y) {
+		 	return x * y;
+		}
+
+- Problem 3: Write a function that takes an argument and returns a function that returns that argument.
+
+		function identityf(x) {
+		 	return function () {
+		 		return x;
+		 	};
+		} 
+
+- Problem 4: Write a function that adds from two invocations.
+
+		function addf(x) {
+			return fucntion (y) {
+				return x + y;
+			}
+		}
+
+- Problem 5: Write a function that takes a binary function, and makes it callable with two invocations.
+
+		addf = applyf(add);
+		addf(3)(4) // 7
+		applyf(mul)(5)(6) // 30 
+
+		fucntion applyf(binary) {
+			return function (x){
+				return function (y) {
+					return binary(x,y);
+				}
+			}
+		}
+
+- Problem 6: Write a function that takes a function and an argument, and returns a function that can supply a second argument.
+
+		add3 = curry(add, 3);
+		add3(4) // 7
+		curry(mul, 5)(6) // 30 
+
+		function curry(func, first) {
+		 	return function (second) {
+		 		return func(first, second);
+		 	};
+		} 		
+
+		function curry(func, first) {
+ 			return applyf(func)(first);
+		}	
+
+- Problem 7: Without writing any new functions, show three ways to create the inc function.
+
+		inc = addf(1);
+		inc = applyf(add)(1);
+		inc = curry(add,1);
+
+- Problem 8: Write methodize, a function that converts a binary function to a method.
+
+		Number.prototype.add = methodize(add);
+		(3).add(4) // 7 
+
+		function methodize(func) {
+		 	return function (y) {
+		 		return func(this, y);
+		 	};
+		} 
+
+- Problem 9: Write demethodize, a function that converts a method to a binary function.
+		
+		demethodize(Number.prototype.add)(5, 6) // 11 
+
+		function demethodize(func) {
+			return function (that, y) {
+		 		return func.call(that, y);
+		 	};
+		} 
+
+- Write a function twice that takes a binary function and returns a unary function that passes its argument to the binary function twice.
+
+		var double = twice(add);
+		double(11) // 22
+		var square = twice(mul);
+		square(11) // 121
+
+		function twice(binary) {
+		 	return function (a) {
+		 		return binary(a, a);
+		 	};
+		} 
+
+- Write a function compseu that takes two unary functions and returns a unary function that calls both of them
+
+		composeu(double, square)(3) // 36 
+		function composeu(f, g) {
+		 	return function (a) {
+		 		return g(f(a));
+		 	};
+		}
+
+- Write a function compseb that takes two binary functions and returns a function that calls both of them.
+
+		composeb(add, mul)(2, 3, 5) // 25
+		function composeb(f, g) {
+ 			return function (a, b, c) {
+ 				return g(f(a, b), c);
+ 			};
+		} 
+
+- Problem 13: Write a function that allows another function to only be called once.
+		
+		add_once = once(add);
+		add_once(3, 4) // 7
+		add_once(3, 4) // throw! 
+
+		function once(func) {
+			return function () {
+				var f = func;
+			 	func = null;
+			 	return f.apply(
+			 		this,
+			 		arguments
+			 	);
+			 };
+		}
+
+- Problem 14: Write a factory function that returns two functions that implement an up/down counter.
+
+		counter = counterf(10);
+		counter.inc() // 11
+		counter.dec() // 10 
+
+		function counterf(value) {
+		 	return {
+		 		inc: function () {
+		 			value += 1;
+		 			return value;
+		 		},
+		 		dec: function () {
+		 			value -= 1;
+		 			return value;
+		 		}
+		 	};
+		} 
+
+- Problem 15: Make a revocable function that takes a nice function, and returns a revoke 
+
+		temp = revocable(alert);
+		temp.invoke(7); // alert: 7
+		temp.revoke();
+		temp.invoke(8); // throw!
+
+		function revocable(nice) {
+		 	return {
+		 		invoke: function () {
+		 			return nice.apply(
+		 				this,
+		 				arguments
+		 			);
+		 		},
+		 		revoke: function () {
+		 			nice = null;
+		 		}
+		 	};
+		} 				
 
 ---
 
@@ -567,6 +908,7 @@ s
         });
 
 ---
+
 ##Author
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
