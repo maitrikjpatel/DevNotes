@@ -25,7 +25,7 @@ Following is list of notes which I use in day to day development work.
 
 - [JS Notes](JS.md)
 
-- [CSS Notes](JS.md)
+- [CSS Notes](css.md)
 
 
 ---
