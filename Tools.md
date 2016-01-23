@@ -57,7 +57,10 @@
 *   [Chrome](http://www.google.com/chrome/)
 *   [Saver Screen Saver](http://www.saver.is/)
 *   [Clock Screen Saver](http://padbury.me/clock/)
-
+*   [Calendar] (https://itunes.apple.com/app/sunrise-calendar/id886106985)
+*   [WALTR](https://itunes.apple.com/us/app/degrees/id430173763)
+*   [Clean my MAC](http://macpaw.com/cleanmydrive?ref=producthunt)
+ 
 ---
 
 ### Productivity Apps
@@ -65,6 +68,7 @@
 *   [Alfred](http://www.alfredapp.com/)
 *   [Flashlight](http://flashlight.nateparrott.com)
 *   [Divvy](http://mizage.com/divvy/)
+	* [spectacleapp](http://www.spectacleapp.com)
 *   [Jumpcut](http://jumpcut.sourceforge.net/)
 *   [Found](https://www.foundapp.com/)
 *   [NameChanger](http://mrrsoftware.com/namechanger/)

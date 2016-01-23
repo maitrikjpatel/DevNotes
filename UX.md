@@ -11,6 +11,7 @@
 - [7 Rules for Creating Gorgeous UI (Part 1) — Medium](https://medium.com/@erikdkennedy/7-rules-for-creating-gorgeous-ui-part-1-559d4e805cda)
 - [Researching Products Before Diving Into Design](http://thenextweb.com/dd/2014/11/02/product-research-101-research-diving-design/)
 - [A Personal Design Sprint](http://franciscortez.com/design-sprint/)
+- [So What to do for become designer](https://medium.com/@suelynyu/so-you-want-to-be-a-ux-designer-c3370d8ea14e)
 
 ---
 
@@ -35,6 +36,7 @@
 - [UIOHMY](http://uiohmy.com/?ref=producthunt)
 - [Little Details](http://littlebigdetails.com/)
 - [Empty State](http://emptystat.es/tagged/desktop)
+- [Redesign](http://redsgn.co/)
 
 ---
 
@@ -48,6 +50,8 @@
 - [Inspiring Email Design](http://reallygoodemails.com/)
 - [The Best Design](https://www.thebestdesigns.com)
 - [Quick Inspiration for Different Layouts , Calltoidea](http://www.calltoidea.com/)
+- [100 Dat UI](http://www.100daysui.com/)
+- [UI Movement] (http://uimovement.com/)
 
 ---
 
@@ -58,6 +62,7 @@
 - [What If We Could Rethink Digital Healthcare?](http://casestudies.f-i.com/healthcare/)
 - [An exploration in Material Design by feedly — Medium](https://medium.com/@abrodo/an-exploration-in-material-design-by-feedly-8c1a1cbdfdcd)
 - [From concept to reality: rebranding Google Squared - Jack Morgan](http://jackwmorgan.com/rebranding-google-squared/)
+- [Asana Rebranding](https://medium.com/swlh/circling-ourselves-the-story-behind-asana-s-rebrand-e8247516705a)
 
 ---
 
@@ -65,6 +70,11 @@
 
 - [UX Career Guide](http://thenextweb.com/dd/2015/06/17/the-ultimate-guide-to-launching-your-ux-career/)
 - [UX Designer Tools](http://market.designmodo.com/tools/)
+- [Sketch Mockups](http://sketchrepo.com/)
+- [FUSE UX Tool](https://www.fusetools.com/)
+- [UI Patterns](http://talks.ui-patterns.com)
+- [Free course](https://www.udacity.com/course/intro-to-the-design-of-everyday-things--design101)
+- [Good UI](http://www.goodui.org/)
 
 ##Author
 

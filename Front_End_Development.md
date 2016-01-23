@@ -10,6 +10,7 @@
 - [Iso-Bar Front End development standards](https://isobar-idev.github.io/code-standards) 
 - [Front Dev Guidelines](https://taitems.github.io/Front-End-Development-Guidelines/#cssHtmlSection) 
 - [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/)
+- [Front End List](https://balapastudio.co/frontendlist/)
 
 ---
 ##Front End application development workflow 

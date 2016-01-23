@@ -25,6 +25,45 @@
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
 - [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
 
+
+###SCSS
+
+-[SCSS Project for Beginner](http://inspirationalpixels.com/tutorials/sass-projects-for-beginners-1)
+-[SCSS Guide](http://sass-lang.com/guide)
+
+		//Define Variable
+		
+		$font-stack: Helvetica, sans-serif;
+		$primary-color: #333;
+
+		// Import CSS file
+		@import 'reset';
+		
+		//Mixin 
+		
+		@mixin border-radius($radius) {
+		
+		-webkit-border-radius: $radius;
+	    -moz-border-radius: $radius;
+	    -ms-border-radius: $radius;
+	    border-radius: $radius;
+      	}	
+
+		.box { @include border-radius(10px); }
+
+		//Extend / Inheritance 
+		.message {
+		  border: 1px solid #ccc;
+		  padding: 10px;
+		  color: #333;
+		}
+
+		.success {
+		  @extend .message;
+		  border-color: green;
+		}
+
+
 ---
 
 ###CSS Topics
@@ -42,10 +81,10 @@
 
 ### Relational selectors
 
-- ul li :descendant selector matches nested <li>s
-- ol > li : child selector matches <li>s in <ol> but not nested <ul>
-- li.myClass + :li adjacent sibling 
-- li.myClass ~ : li general sibling selector matches later siblings, but not nested.
+- ul li :descendant selector matches nested li
+- ol > li : child selector matches li in ol but not nested ul
+- li.myClass + li adjacent sibling 
+- li.myClass ~: li general sibling selector matches later siblings, but not nested.
 
 ### Attribute selectors
 
@@ -393,18 +432,48 @@
             animation: drawALine 5s ease-in-out 100ms 5;
         }
 
+### FlexBox
+
+- [CSS Tricks Flex-box CheatSheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [CSS Flexbox great article](http://www.chriswrightdesign.com/experiments/using-flexbox-today/# "")
+- [Flex Layouts](http://learnlayout.com/flexbox.html "")
+- [Flex in 5 min](http://flexboxin5.com/ "")
+
+- **Parent - Flex Container**
+		
+		.container {
+			display: flex; /* or inline-flex */
+			flex-direction: row | row-reverse | column | column-reverse;  
+			flex-wrap: nowrap | wrap | wrap-reverse;					
+			flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
+			justify-content: flex-start | flex-end | center | space-between | space-around;
+			align-items: flex-start | flex-end | center | baseline | stretch;
+			align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+		} 						
+
+- **Children - Flex Items**
+		
+		.item {
+			order: <integer>;
+		    flex-grow: <number>; /* default 0 */
+			flex-shrink: <number>; /* default 1 */
+			flex-basis: <length> | auto; /* default auto */ 		
+			flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]	
+			align-self: auto | flex-start | flex-end | center | baseline | stretch;
+			align- 			
+		}
+
 ### New stuff
 
 - Cursors         
 - box-sizing: content-box | border-box
 - Shaders
 - text-overflow
-- FlexBox
 - word-wrap:  normal | break-word
 - calc()
 - rem
 - pointer-events : none; // can not have click event , for animation
-- FlexBox
+
 - CSS Reset :a short, often compressed (minified) set of CSS rules that resets the styling of all HTML elements to a consistent baseline.
 	- [Good Read on CSS RESET](http://cssreset.com/)
 	- Text outline for different browser. Chrome - yellow, firefox - dotted blue

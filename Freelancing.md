@@ -20,6 +20,7 @@
 - [UpWork](https://www.upwork.com/)
 - [Design Jobs](http://weeklydesignjobs.com/)
 - [RemoteJob](http://talentboard.me/)
+- [Freelancing as student](https://freelanship.com/vip/)
 
 
 ###Learning and Tools
@@ -36,6 +37,7 @@
 - [Invoice Generator](https://invoice.to/)
 - [Beagle by Podio: Proposal Software](https://getbeagle.co/?ref=producthunt)
 - [Freelancing, simple & secure](https://www.hellobonsai.com)
+- [Bulletproof contracts, simple e-signing, integrated escrow](https://www.hellobonsai.com/)
 
 ###Nomad list
 

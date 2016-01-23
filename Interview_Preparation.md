@@ -10,6 +10,8 @@
 - [7 Lessons Learned From Interviewing 100+ App Developers](https://medium.com/@stevepyoung/7-lessons-learned-from-interviewing-100-app-developers-fee26e0dec97)
 - [How To Interview A Front End Developer](http://ilikekillnerds.com/2014/09/how-to-interview-a-front-end-developer-and-how-to-prepare-for-a-front-end-developer-interview/)
 - [CSS Questions](http://www.sitepoint.com/12-little-known-css-facts/)
+- [html 10 Questions](http://www.sitepoint.com/10-typical-html-interview-exercises/)
+
 
 ##Javascript Questions :
 
@@ -20,7 +22,12 @@
 - [JS Algo Stack,Queue, LL](http://www.thatjsdude.com/interview/linkedList.html)
 - [JS Algo Sorting](http://khan4019.github.io/front-end-Interview-Questions/sort.html)
 - [JS Algo BST](http://khan4019.github.io/front-end-Interview-Questions/bst.html)
-- [Top 85 JavaScript Interview Questions](http://career.guru99.com/top-85-javascript-interview-questions) 
+- [JS Basics](http://www.toptal.com/javascript/interview-questions)
+- [JS 5 Good Question](http://www.toptal.com/javascript#hiring-guide "")
+- [JS Ques](http://www.sitepoint.com/5-typical-javascript-interview-exercises/ "")
+- [JS Basic](http://www.sitepoint.com/5-javascript-interview-exercises/ "")
+- [JS OOP](http://blog.kevinchisholm.com/object-oriented-javascript/javascript-interview-questions-object-oriented-javascript/)
+- [JS Algo](https://github.com/duereg/js-algorithms)
 
 
 ##Online Test :

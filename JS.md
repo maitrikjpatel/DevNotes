@@ -13,6 +13,8 @@
 - [Resources for Staying on Top of JavaScript](https://code.tutsplus.com/articles/resources-for-staying-on-top-of-javascript--cms-21369)
  
 - [Human Javascript](http://read.humanjavascript.com/ch00-foreword.html)
+
+- [Getting Started JS](http://www.web-crunch.com/really-learn-javascript-series-part-1-getting-started/)
  
 ---
 
@@ -41,9 +43,18 @@
 
 - [JQuery Plugin](http://jquery-plugins.net/)
  
- - [JQuery Boilerplate](http://jqueryboilerplate.com/)
+- [JQuery Boilerplate](http://jqueryboilerplate.com/)
 
 ---
+
+###Angular 
+
+- [Share Data between controller ](http://crudbetter.com/angular-share-data-between-controllers/ "")
+- [Custom Deactives](http://www.toptal.com/angular-js/angular-js-demystifying-directives)
+- [component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives "")
+
+---
+
 
 ##Javascript Basic
 

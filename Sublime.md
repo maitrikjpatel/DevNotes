@@ -22,6 +22,7 @@
 - [Color Highlighter](https://github.com/Monnoroch/ColorHighlighter)
 - [Comment-Snippets](https://github.com/hachesilva/Comment-Snippets)
 - [Context Coloring](https://github.com/mazurov/sublime-levels)
+- [Incremental Power](https://packagecontrol.io/packages/Text%20Pastry)
 
 ---
 ##Packages SetUp
