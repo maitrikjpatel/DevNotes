@@ -1,14 +1,14 @@
-#Sublime Setup and recommended packages Notes 
+#Sublime Setup and recommended packages Notes
 
 ---
 ##Steps to turn on Packages
 
 - [Turn on Sublime Package Manager](https://sublime.wbond.net/installation)
 - View > Show Console
-- Paste code from link. 
+- Paste code from link.
 - COMMAND + SHIFT + P
-- Type install and select install packages. 
-- Search for best plugin which you want. 
+- Type install and select install packages.
+- Search for best plugin which you want.
 
 ---
 ##Installed Packages
@@ -28,7 +28,7 @@
 ##Packages SetUp
 
 - [Theme-Flatland](https://github.com/thinkpixellab/flatland)
-        
+
         {
             "auto_complete_commit_on_tab": true,
             "color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
@@ -47,7 +47,7 @@
             "translate_tabs_to_spaces": true,
             "use_tab_stops": true
         }
-        
+
 - [Theme-Piatto](https://sublime.wbond.net/packages/Theme%20-%20Piatto)     
 
         {
@@ -63,17 +63,22 @@
         }
 
 - [Bash Alias Setup](http://alittlecode.com/open-a-file-in-sublime-text-via-os-x-terminal/)
-		
+
 		sudo ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/bin/sbl
-		
+
 - [Bash Setup](http://olivierlacan.com/posts/launch-sublime-text-2-from-the-command-line/)
 
 ---
-##Good read for Sublime 
+##Good read for Sublime
 
 - [Plugin Guide](http://scotch.io/bar-talk/the-complete-visual-guide-to-sublime-text-3-plugins-part-1)
 - [Sublime Folding](http://wesbos.com/sublime-text-code-folding/)
 - [Emmet Tuts](http://docs.emmet.io/)
+
+---
+##Atom Packages
+
+- http://www.sitepoint.com/10-essential-atom-add-ons/
 
 ---
 ##Author

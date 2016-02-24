@@ -3,7 +3,7 @@
 
 ---
 
-###UX Process 
+###UX Process
 
 - [Google Sprint](http://www.gv.com/sprint/)
 - [The Ninja Skill for UX Designers — Medium](https://medium.com/@mollyinglish/the-ninja-skill-for-ux-designers-25f314f8f76c)
@@ -27,7 +27,7 @@
 ---
 
 ##Inspiring Mobile Designs
-                    
+
 - [Pttrns - Navigations](http://www.pttrns.com/)
 - [Inspired UI - Mobile Apps Design Patterns](http://ipad.inspired-ui.com/page/3)
 - [Mobile Patterns](http://www.mobile-patterns.com/)
@@ -37,6 +37,11 @@
 - [Little Details](http://littlebigdetails.com/)
 - [Empty State](http://emptystat.es/tagged/desktop)
 - [Redesign](http://redsgn.co/)
+- [UX Onboarding](http://heyuser.com/)
+- [UX designs](http://uxarchive.com/)
+- [UX->Code](http://www.materialup.com/)
+- [UX-Collective](http://collectui.com/)
+- [UX-Patterns](http://uipatterns.io/)
 
 ---
 
@@ -51,13 +56,13 @@
 - [The Best Design](https://www.thebestdesigns.com)
 - [Quick Inspiration for Different Layouts , Calltoidea](http://www.calltoidea.com/)
 - [100 Dat UI](http://www.100daysui.com/)
-- [UI Movement] (http://uimovement.com/)
+- [UI Movement](http://uimovement.com/)
 
 ---
 
-###Case Study 
+###Case Study
 
-- [NYTimes Case Study](http://nytimes.tematroinoi.com/?ref=webdesignernews.com) 
+- [NYTimes Case Study](http://nytimes.tematroinoi.com/?ref=webdesignernews.com)
 - [What If We Could Rethink Digital Healthcare?](http://casestudies.f-i.com/healthcare/)
 - [What If We Could Rethink Digital Healthcare?](http://casestudies.f-i.com/healthcare/)
 - [An exploration in Material Design by feedly — Medium](https://medium.com/@abrodo/an-exploration-in-material-design-by-feedly-8c1a1cbdfdcd)
