@@ -20,7 +20,7 @@
 ###CSS Guideline & Tuts
 
 - [Learn Layout](http://learnlayout.com)
-- [CSS Guidelines](http://cssguidelin.es) 
+- [CSS Guidelines](http://cssguidelin.es)
 - [Google HTML/CSS Guideline](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
 - [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
@@ -28,36 +28,34 @@
 
 ###SCSS
 
--[SCSS Project for Beginner](http://inspirationalpixels.com/tutorials/sass-projects-for-beginners-1)
--[SCSS Guide](http://sass-lang.com/guide)
+- [SCSS Project for Beginner](http://inspirationalpixels.com/tutorials/sass-projects-for-beginners-1)
+- [SCSS Guide](http://sass-lang.com/guide)
 
 		//Define Variable
-		
+
 		$font-stack: Helvetica, sans-serif;
 		$primary-color: #333;
 
 		// Import CSS file
 		@import 'reset';
-		
-		//Mixin 
-		
+
+		//Mixin
+
 		@mixin border-radius($radius) {
-		
-		-webkit-border-radius: $radius;
+			-webkit-border-radius: $radius;
 	    -moz-border-radius: $radius;
 	    -ms-border-radius: $radius;
 	    border-radius: $radius;
-      	}	
-
+    	}
 		.box { @include border-radius(10px); }
 
-		//Extend / Inheritance 
+		//Extend / Inheritance
+
 		.message {
 		  border: 1px solid #ccc;
 		  padding: 10px;
 		  color: #333;
 		}
-
 		.success {
 		  @extend .message;
 		  border-color: green;
@@ -66,9 +64,9 @@
 
 ---
 
-###CSS Topics
+### CSS Topics
 
-####CSS Animation & Transitions
+#### CSS Animation & Transitions
 
 - [Animation Principles for the Web - CSS Animation](https://cssanimation.rocks/)
 - [The Art of UI Animations, Lean UX SF](http://markgeyer.com/pres/the-art-of-ui-animations/#/)
@@ -91,15 +89,15 @@
 - E[attr] : Element E that has the attribute attr with any value.
 - E[attr="val"] : Element E that has the attribute attr with the exact, case-sensitive if attribute is case sensitive, value val.
 - E[attr|=val] : Element E whose attribute attr has a value val or begins with val- ("val" plus "-").
-		
-		p[lang|="en"]{/* p[lang|="en"]{/*    <p lang="en-us">  <p lang="en-uk"> */ }
+
+		p[lang|="en"]{ <-- p[lang|="en"]{ <--    <p lang="en-us">  <p lang="en-uk"> --> }
 
 - E[attr~=val] : Sibling / Element E whose attribute attr has within its value the space-separated full word val.
-		
-		a[title~=more] {/* a[title~=more] {/* <a title="want more info about this?">}
+
+		a[title~=more] { <-- a[title~=more] { <-- <a title="want more info about this?">}
 
 - E[attr^=val] : Element E whose attribute attr starts with the value val.
-		
+
 		a[href^=mailto] {background- a[href^=mailto] {background-image: url(emailicon.gif);}  
 		a[href^=http]:after {content: " (" attr(href) ")";}
 
@@ -112,10 +110,10 @@
 - Note: Multiple attributes work! a[title][href]
 
 		@media print{
-			abbr[title]:after { 
+			abbr[title]:after {
 	        content: "(" attr(title) ")";
         }
-        a[href^=http]:after { 
+        a[href^=http]:after {
           content: "(" attr(href) ")";
         }
         }
@@ -127,11 +125,11 @@
 - :enabled
 - :disabled
 - :checked
-  		
+
 		input[type=checkbox]:checked + label {
 		  color: red;
 		}
-		
+
 #### Form related UI pseudo-classes
 
 - :valid
@@ -145,48 +143,48 @@
 - :default
 
 #### Structural selectors and Nth Pseudo classes
- 
+
 - Target elements on the page based on their relationships to other elements in the DOM.
 - Updates dynamically if page updates.
 - Reduced need for extra markup, classes and IDs
 
-    - :nth-child() 
-    - :nth-last-child() 
-    - :nth-of-type() 
-    - :nth-last-of-type() 
+    - :nth-child()
+    - :nth-last-child()
+    - :nth-of-type()
+    - :nth-last-of-type()
     - :first-child*
-    - :last-child 
-    - :first-of-type 
-    - :last-of-type 
-    - :only-child 
-    - :only-of-type 
+    - :last-child
+    - :first-of-type
+    - :last-of-type
+    - :only-child
+    - :only-of-type
     - :root
     - :empty
     - :not(:empty)
 
-        tr:first-child,
-        tr:last-child {
-          font-weight: bold;
-        }
-        tr:first-of-type,
-        tr:last-of-type{
-          text-decoration:line-through;
-        }
-        tr:nth-child(even) {
-          background-color: #CCC;
-        }
-        tr:nth-child(3) {
-          color: #CCC;
-        }
-        tr:nth-of-type(odd) {
-          background-color: #FFF;
-        }
-        tr:nth-of-type(4n) {
-          color: #C61800;
-        }
-        tr:nth-of-type(3n-1) {
-          font-style: italic;
-        }
+	      tr:first-child,
+	      tr:last-child {
+	        font-weight: bold;
+	      }
+	      tr:first-of-type,
+	      tr:last-of-type{
+	        text-decoration:line-through;
+	      }
+	      tr:nth-child(even) {
+	        background-color: #CCC;
+	      }
+	      tr:nth-child(3) {
+	        color: #CCC;
+	      }
+	      tr:nth-of-type(odd) {
+	        background-color: #FFF;
+	      }
+	      tr:nth-of-type(4n) {
+	        color: #C61800;
+	      }
+	      tr:nth-of-type(3n-1) {
+	        font-style: italic;
+	      }
 
 #### Other Pseudo Classes
 
@@ -198,14 +196,14 @@
 - :active
 - :focus
 
-- Tab Nav without JS 
+- Tab Nav without JS
 
-        section:not(:target) > a { 
-          border-bottom: 0; 
+        section:not(:target) > a {
+          border-bottom: 0;
           background-color: #eee;
         }   
-        section:target > a { 
-          background-color: white; 
+        section:target > a {
+          background-color: white;
         }
         section:not(:target) > div { z-index: -2; }
         section:target > div { z-index: -1; }
@@ -221,7 +219,7 @@
 - ::before
 - ::after
 
-#### How to use selector in JS 
+#### How to use selector in JS
 
 - jQuery $(selector) == document.querySelectorAll(selector)
 
@@ -235,7 +233,7 @@
 - Inline Style : 1-0-0-0
 - ID : 1-0-0
 - Class : 0-1-0
-- Element : 0-0-1 
+- Element : 0-0-1
 - Global Selector : 0-0-0
 
 		ul > li { color : red } // 0-0-2
@@ -243,12 +241,12 @@
 
 - Example
 
-    - "*" { }  ----- 0
+    - * { }  ----- 0
     - li { }  -----  1 (one element)
     - li:first-line { }  ----- 2 (one element, one pseudo-element)
     - ul li { }  ----- 2 (two elements)
     - ul ol+li { }  -----  3 (three elements)
-    - h1 + *[rel=up] { }  -----  11 (one attribute, one element)
+    - h1 + universal[rel=up] { }  -----  11 (one attribute, one element)
     - ul ol li.red { }  -----  13 (one class, three elements)
     - li.red.level { }  -----  21 (two classes, one element)
     - style=””  ----- 1000 (one inline styling)
@@ -259,7 +257,7 @@
     - #sith ------ 100 (one id selector)
     - body #darkside .sith p { }  -----  112 (HTML selector, id selector, class selector, HTML selector; 1+100+10+1)
 
-### Generated Content 
+### Generated Content
 
 ####:before and :after
 
@@ -275,7 +273,7 @@
 
 - @media screen & @media print
 
-- In link 
+- In link
         <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/smartphone.css' />
 
 - In CSS
@@ -302,7 +300,7 @@
         media="not screen and (color)"
         media="print, screen and (min-width: 480px)"
         @media screen and (-webkit-min-device-pixel-ratio: 2) {
-         .iphone4 { /* high DPI */}
+         .iphone4 { <-- high DPI -->}
         }
         @screen and (transform-3d) {
           .transforms {}
@@ -322,7 +320,7 @@
         @font-face {
           font-family: 'blah';
           src: url('blah.eot');
-          src: url('blah.eot?#iefix') 
+          src: url('blah.eot?#iefix')
                  format('embedded-opentype'),
              url('blah.woff') format('woff'),
              url('blah.ttf') format('truetype'),
@@ -331,26 +329,26 @@
           font-style: normal;
         }
 
-- How to add/apply in CSS selectors 
+- How to add/apply in CSS selectors
 
         body {
           font-family: 'blah', arial, san-serif;
         }
 
 - Text Shadows
-    
+
         text-shadow: left top blur color;
         .trans { text-shadow: 0 5px 1px rgba(0,0,0,0.2);}
 
 - box-shadow: inset? [horiz] [vert] [blur] [spread] [color];    
 
-        .rainbow { 
-            box-shadow: 0 0 0 10px red, 
-                        0 0 0 20px orange, 
-                        0 0 0 30px yellow, 
-                        0 0 0 40px green, 
-                        0 0 0 50px blue, 
-                        0 0 0 60px purple; 
+        .rainbow {
+            box-shadow: 0 0 0 10px red,
+                        0 0 0 20px orange,
+                        0 0 0 30px yellow,
+                        0 0 0 40px green,
+                        0 0 0 50px blue,
+                        0 0 0 60px purple;
             }
 
 ### Background Image
@@ -361,42 +359,42 @@
     - background-image : none | <url> | <image-list> | <element-reference>  | <gradient>;
     - background-repeat : repeat | repeat-x | repeat-y | no-repeat | space | round;
     - background-attachment : fixed | local | scroll;
-    - background-position : top left bottom right; 
+    - background-position : top left bottom right;
     - background-clip: border-box | padding-box | content-box;
     - background-origin: border-box | padding-box | content-box;
     - background-size: auto | contain | cover | <length>;     
-    
+
 - multiple background-image
 
         background-image: url(brown.gif), url(blue.gif);
 
 - Background shorthand
 
-        background: img position / size repeat attachment origin clip, 
+        background: img position / size repeat attachment origin clip,
         background: img position / size repeat attachment box{1,2} bgcolor;  
-        background: url(topImg.jpg) 0 0 / 30px 30px repeat scroll border-box content-box, 
+        background: url(topImg.jpg) 0 0 / 30px 30px repeat scroll border-box content-box,
         background: url(botImg.jpg) 15px 15px / 30px 30px fixed border-box #609;
 
-### Border 
+### Border
 
 - border-width: (length) | thin | medium | thick | inherit {1,4};
 - border-radius: top right bottom left;
 - border-color: top right bottom left;
-- Border shorthand 
-        
+- Border shorthand
+
         border: width style color;
         border-left: width style color;
 
 - border-image: source || slice / width / outset  || repeat;        
 
-### CSS Gradient 
+### CSS Gradient
 
 - background: linear-gradient(direction, color-stop1, color-stop2, ...);
 - [Gredient Generator](http://www.cssmatic.com/gradient-generator)
 
 ### Transforms
 
-- trasform: 
+- trasform:
     - translate(<length>[, <length>])
     - translateX(<length>)
     - translateY(<length>)
@@ -426,7 +424,7 @@
     - animation-direction: normal | alternate | reverse | alternate-reverse;
     - animation-fill-mode: none | forwards | backwards | both;
 
-- Animation Shorthand 
+- Animation Shorthand
 
         .pencil{
             animation: drawALine 5s ease-in-out 100ms 5;
@@ -440,9 +438,9 @@
 - [Flex in 5 min](http://flexboxin5.com/ "")
 
 - **Parent - Flex Container**
-		
+
 		.container {
-			display: flex; /* or inline-flex */
+			display: flex;  <-- or inline-flex -->
 			flex-direction: row | row-reverse | column | column-reverse;  
 			flex-wrap: nowrap | wrap | wrap-reverse;					
 			flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
@@ -452,16 +450,20 @@
 		} 						
 
 - **Children - Flex Items**
-		
+
 		.item {
 			order: <integer>;
-		    flex-grow: <number>; /* default 0 */
-			flex-shrink: <number>; /* default 1 */
-			flex-basis: <length> | auto; /* default auto */ 		
-			flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]	
+		    flex-grow: <number>;  <-- default 0 -->
+			flex-shrink: <number>;  <-- default 1 -->
+			flex-basis: <length> | auto;  <-- default auto --> 		
+			flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
 			align-self: auto | flex-start | flex-end | center | baseline | stretch;
 			align- 			
 		}
+
+### SVG
+
+
 
 ### New stuff
 

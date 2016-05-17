@@ -21,6 +21,7 @@
 - [Design Jobs](http://weeklydesignjobs.com/)
 - [RemoteJob](http://talentboard.me/)
 - [Freelancing as student](https://freelanship.com/vip/)
+- [99Designs](http://99designs.com/how-it-works)
 
 
 ###Learning and Tools
@@ -56,34 +57,3 @@
 ##Author
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

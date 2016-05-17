@@ -78,7 +78,7 @@
 ---
 ##Atom Packages
 
-- http://www.sitepoint.com/10-essential-atom-add-ons/
+- [Atom Pulgins](http://www.sitepoint.com/10-essential-atom-add-ons/)
 
 ---
 ##Author
