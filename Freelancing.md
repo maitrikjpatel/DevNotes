@@ -23,7 +23,6 @@
 - [Freelancing as student](https://freelanship.com/vip/)
 - [99Designs](http://99designs.com/how-it-works)
 
-
 ###Learning and Tools
 
 - [7 Days of free training for freelancers from The Creative Class]()
@@ -41,7 +40,6 @@
 - [Bulletproof contracts, simple e-signing, integrated escrow](https://www.hellobonsai.com/)
 
 ###Nomad list
-
 
 - [NomadWiki](http://www.nomadwiki.net/)
 - [NoDesk](http://nodesk.co/)

@@ -1,5 +1,5 @@
 #User Experience and Design Notes
-“You’ve got to start with the customer experience and work backwards to the technology.” —Steve Jobs
+“You’ve got to start with the customer experience and work backwards to the technology.” — Steve Jobs
 
 ---
 
@@ -12,6 +12,7 @@
 - [Researching Products Before Diving Into Design](http://thenextweb.com/dd/2014/11/02/product-research-101-research-diving-design/)
 - [A Personal Design Sprint](http://franciscortez.com/design-sprint/)
 - [So What to do for become designer](https://medium.com/@suelynyu/so-you-want-to-be-a-ux-designer-c3370d8ea14e)
+- [Tollkit for designer](https://novectors.com/resource-toolkit-for-a-product-designer-228d825d7b00)
 
 ---
 

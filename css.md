@@ -2,22 +2,17 @@
 
 ---
 
-###Good Read
+### Good Read
 
 - [CSS Reference | Codrops](http://tympanus.net/codrops/css_reference/)
 - [BEM 101 | CSS-Tricks](https://css-tricks.com/bem-101/)
 - [7 CSS Units You Might Not Know About - Tuts+ Web Design Article](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
 - [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892)
-
----
-
-###CSS Tools
-
 - [CSS 3D Shape editor](http://tridiv.com/)
 
 ---
 
-###CSS Guideline & Tuts
+### CSS Guideline & Tuts
 
 - [Learn Layout](http://learnlayout.com)
 - [CSS Guidelines](http://cssguidelin.es)
@@ -25,8 +20,68 @@
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
 - [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
 
+---
 
-###SCSS
+### CSS Topics
+
+#### CSS Animation & Transitions
+
+- [Animation Principles for the Web - CSS Animation](https://cssanimation.rocks/)
+- [The Art of UI Animations, Lean UX SF](http://markgeyer.com/pres/the-art-of-ui-animations/#/)
+- [A Beginner’s Introduction to CSS Animation](https://webdesign.tutsplus.com/tutorials/a-beginners-introduction-to-css-animation--cms-21068)
+- [CSS Transitions](http://css3.bradshawenterprises.com/transitions/)
+
+#### Responsive design
+
+- [Responsive CSS Tricks](https://css-tricks.com/video-screencasts/133-figuring-responsive-images/)
+- [Responsive Image](https://www.smashingmagazine.com/2014/05/responsive-images-done-right-guide-picture-srcset/)
+- [Codepan Demo](http://codepen.io/martinwolf/pen/hFxyj/)
+
+#### SVG/Font-Icons
+
+- [SVG stack](http://simurai.com/blog/2012/04/02/svg-stacks)
+- [SVG Vs Icon](http://ianfeather.co.uk/ten-reasons-we-switched-from-an-icon-font-to-svg/)
+- [USE SVG](https://developers.google.com/web/fundamentals/design-and-ui/media/images/use-icons?hl=en)
+- [CSSTrciks SVG](https://css-tricks.com/using-svg/)
+- [SVG Sprite](https://github.com/jkphl/svg-sprite)
+- [SVG Sprite Techniques](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/)
+- [Stack Icons](http://stackicons.com/)
+- [SVG Styling](http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css)
+
+#### FlexBox
+
+- [CSS Tricks Flex-box CheatSheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [CSS Flexbox great article](http://www.chriswrightdesign.com/experiments/using-flexbox-today)
+- [Flex Layouts](http://learnlayout.com/flexbox.html)
+- [Flex in 5 min](http://flexboxin5.com/)
+- [Interactive Flex](http://progressivered.com/fla/?d=0&v=1&h=1&s=0&i=000&a=000)
+- **Parent - Flex Container**
+
+		.container {
+			display: flex;  <-- or inline-flex -->
+			flex-direction: row | row-reverse | column | column-reverse;  
+			flex-wrap: nowrap | wrap | wrap-reverse;					
+			flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
+			justify-content: flex-start | flex-end | center | space-between | space-around;
+			align-items: flex-start | flex-end | center | baseline | stretch;
+			align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+		} 						
+
+- **Children - Flex Items**
+
+		.item {
+			order: <integer>;
+		    flex-grow: <number>;  <-- default 0 -->
+			flex-shrink: <number>;  <-- default 1 -->
+			flex-basis: <length> | auto;  <-- default auto --> 		
+			flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+			align-self: auto | flex-start | flex-end | center | baseline | stretch;
+			align- 			
+		}
+
+---
+
+### SCSS
 
 - [SCSS Project for Beginner](http://inspirationalpixels.com/tutorials/sass-projects-for-beginners-1)
 - [SCSS Guide](http://sass-lang.com/guide)
@@ -64,18 +119,26 @@
 
 ---
 
-### CSS Topics
-
-#### CSS Animation & Transitions
-
-- [Animation Principles for the Web - CSS Animation](https://cssanimation.rocks/)
-- [The Art of UI Animations, Lean UX SF](http://markgeyer.com/pres/the-art-of-ui-animations/#/)
-- [A Beginner’s Introduction to CSS Animation](https://webdesign.tutsplus.com/tutorials/a-beginners-introduction-to-css-animation--cms-21068)
-- [CSS Transitions](http://css3.bradshawenterprises.com/transitions/)
-
----
-
 ## Notes
+
+### New stuff
+
+- Cursors         
+- box-sizing: content-box | border-box
+- Shaders
+- text-overflow
+- word-wrap:  normal | break-word
+- calc()
+- rem
+- pointer-events : none; // can not have click event , for animation
+
+- CSS Reset :a short, often compressed (minified) set of CSS rules that resets the styling of all HTML elements to a consistent baseline.
+	- [Good Read on CSS RESET](http://cssreset.com/)
+	- Text outline for different browser. Chrome - yellow, firefox - dotted blue
+	- [Normalize.CSS](https://necolas.github.io/normalize.css/)
+- CSS Float
+- Shadow-box
+- [Backface-visibility](https://css-tricks.com/flat-icons-icon-fonts/)
 
 ### Relational selectors
 
@@ -259,7 +322,7 @@
 
 ### Generated Content
 
-####:before and :after
+#### :before and :after
 
 - before and after must need the 'content"
 
@@ -430,58 +493,6 @@
             animation: drawALine 5s ease-in-out 100ms 5;
         }
 
-### FlexBox
-
-- [CSS Tricks Flex-box CheatSheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [CSS Flexbox great article](http://www.chriswrightdesign.com/experiments/using-flexbox-today/# "")
-- [Flex Layouts](http://learnlayout.com/flexbox.html "")
-- [Flex in 5 min](http://flexboxin5.com/ "")
-
-- **Parent - Flex Container**
-
-		.container {
-			display: flex;  <-- or inline-flex -->
-			flex-direction: row | row-reverse | column | column-reverse;  
-			flex-wrap: nowrap | wrap | wrap-reverse;					
-			flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
-			justify-content: flex-start | flex-end | center | space-between | space-around;
-			align-items: flex-start | flex-end | center | baseline | stretch;
-			align-content: flex-start | flex-end | center | space-between | space-around | stretch;
-		} 						
-
-- **Children - Flex Items**
-
-		.item {
-			order: <integer>;
-		    flex-grow: <number>;  <-- default 0 -->
-			flex-shrink: <number>;  <-- default 1 -->
-			flex-basis: <length> | auto;  <-- default auto --> 		
-			flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-			align-self: auto | flex-start | flex-end | center | baseline | stretch;
-			align- 			
-		}
-
-### SVG
-
-
-
-### New stuff
-
-- Cursors         
-- box-sizing: content-box | border-box
-- Shaders
-- text-overflow
-- word-wrap:  normal | break-word
-- calc()
-- rem
-- pointer-events : none; // can not have click event , for animation
-
-- CSS Reset :a short, often compressed (minified) set of CSS rules that resets the styling of all HTML elements to a consistent baseline.
-	- [Good Read on CSS RESET](http://cssreset.com/)
-	- Text outline for different browser. Chrome - yellow, firefox - dotted blue
-	- [Normalize.CSS](https://necolas.github.io/normalize.css/ "")
-- CSS Float
-
-##Author
+## Author
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com

@@ -7,15 +7,15 @@
 - [The Basics of Object-Oriented JavaScript](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
 
 - [JS Best Practice](https://www.thinkful.com/learn/javascript-best-practices-1/)
- 
+
 - [You don't know JS](https://github.com/getify/You-Dont-Know-JS)
- 
+
 - [Resources for Staying on Top of JavaScript](https://code.tutsplus.com/articles/resources-for-staying-on-top-of-javascript--cms-21369)
- 
+
 - [Human Javascript](http://read.humanjavascript.com/ch00-foreword.html)
 
 - [Getting Started JS](http://www.web-crunch.com/really-learn-javascript-series-part-1-getting-started/)
- 
+
 ---
 
 ###JS Guidelines and Tuts
@@ -30,9 +30,13 @@
 
 - [JS Video Tuts](https://egghead.io/)
 
+- [JavaScript Regular Expression](http://tutorialzine.com/2014/12/learn-regular-expressions-in-20-minutes/)
+
+- [JS without JQuery](http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/)
+
 ---
 
-###JS/Jquery Libraries 
+###JS/Jquery Libraries
 
 
 - [A tidy repository of jQuery plugins](http://www.unheap.com/mobile/)
@@ -42,15 +46,17 @@
 - [JS + Hardware](http://www.sitepoint.com/javascript-beyond-web-2014/)
 
 - [JQuery Plugin](http://jquery-plugins.net/)
- 
+
 - [JQuery Boilerplate](http://jqueryboilerplate.com/)
 
 ---
 
-###Angular 
+###Angular
 
 - [Share Data between controller ](http://crudbetter.com/angular-share-data-between-controllers/ "")
+
 - [Custom Deactives](http://www.toptal.com/angular-js/angular-js-demystifying-directives)
+
 - [component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives "")
 
 ---
@@ -196,58 +202,58 @@
 
 ####JS Closures
 
-- A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain. 
-- The closure has three scope chains: 
-	1. it has access to its own scope (variables defined between its curly brackets), 
-	2. it has access to the outer function’s variables, and 
+- A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
+- The closure has three scope chains:
+	1. it has access to its own scope (variables defined between its curly brackets),
+	2. it has access to the outer function’s variables, and
 	3. it has access to the variables.
-- Coding Example. 
+- Coding Example.
 
-				
+
 
 		function showName (firstName, lastName) {
 		var nameIntro = "Your name is ";
-	    
+
 	    // this inner function has access to the outer function's variables, 		including the parameter​
-	    
+
 			function makeFullName () {
 				​return nameIntro + firstName + " " + lastName;
 			}
 			​return makeFullName ();
 		}
-		
+
 		showName ("Michael", "Jackson"); // Your name is Michael Jackson
-		
+
 		//------------------------------
-		
-		// Closure with argument 
+
+		// Closure with argument
 
 		var digit_name = (function () {
 		 	var names = ['zero', 'one', 'two','three', 'four', 'five', 'six', 'seven','eight', 'nine'];
-		 		
+
 		 	return function (n) {
 		 		return names[n];
 		 	};
 
 		}());
-		
 
-		alert(digit_name(3)); // 'three' 
+
+		alert(digit_name(3)); // 'three'
 		------------------------------
 		(function outer() {
 		 	var x;
 			// The inner circle function cannot see y, In Diagram
-		 	
+
 		 	return function inner(n) {
 				// The outer circle function can see x, In Diagram
 		 		var y = x;
 		 	};
 
-		}()); 
+		}());
 
 
 		------------------------------
-		
+
 		//---Real life example
 
 		function makeSizer(size) {
@@ -268,7 +274,7 @@
 		<a href="#" id="size-12">12</a>
 		<a href="#" id="size-14">14</a>
 		<a href="#" id="size-16">16</a>
-		
+
 
 
 ####The "this" Keyword
@@ -424,15 +430,15 @@
 
 ### A Module Pattern
 
-- Module pattern is easily transformed into a powerful constructor pattern. 
-		
+- Module pattern is easily transformed into a powerful constructor pattern.
+
 		var singleton = (function () {
 		 	var privateVariable;
-		 	
+
 		 	function privateFunction(x) {
 		 		...privateVariable...
 		 	}
-		 
+
 			return {
 			 	firstMethod: function (a, b) {
 			 		...privateVariable...
@@ -442,7 +448,7 @@
 			 	}
 			};
 
-		}()); 
+		}());
 
 ### Pseudoclassical Inheritance
 
@@ -476,9 +482,9 @@
 		 		return testid === this.id;
 		 	};
 		 	return that;
-		} 
+		}
 
-### MONAD 
+### MONAD
 
 - Monad is a design pattern used to describe computations as a series of steps. They are extensively used in pure functional programming languages to manage side effects but can also be used in multiparadigm languages to control complexity.
 
@@ -491,12 +497,12 @@
 		 		return monad;
 		 	};
 		}
-		
+
 		var identity = MONAD();
 		var monad = identity("Hello world.");
-		monad.bind(alert); 
+		monad.bind(alert);
 
-## JS Good Parts 
+## JS Good Parts
 
 ---
 
@@ -506,13 +512,13 @@
 - x +=1 instead of x++
 - Use JSLint
 - Use " for external strings.
-- Use ' for internal strings and characters. 
+- Use ' for internal strings and characters.
 - Convert a number to a string
 	- Use number’s method (toString)
 	- Use String function
 
 			str = num.toString();
-			str = String(num); 
+			str = String(num);
 
 - Convert a string to a number
 	- Use the Number function.
@@ -523,37 +529,37 @@
  		num = +str;
 
 - Declare all variables at the top of the function.
-- Declare all functions before you call them. 
+- Declare all functions before you call them.
 - Return statement
 
 		return expression; or return;
-	
+
 	- If there is no expression, then the return value is undefined.
-	- Except for constructors, whose default return value is this. 
+	- Except for constructors, whose default return value is this.
 
 - Tennent’s Principle of Correspondence
-		
+
 		expression
 		(function () {
 			return expression;
-		}()) 
+		}())
 
-### Good Part 
+### Good Part
 
-- Prototype 
+- Prototype
 - Objects
-- Only one number type 
-- Array :  No need to provide a length or type when creating an array. 
+- Only one number type
+- Array :  No need to provide a length or type when creating an array.
 - Use array.splice(number,1) than delete arry[number] for deleting arry element.
 - Use objects when the names are arbitrary strings.
-- Use arrays when the names are sequential integers. 
-- Falsy values : false,  null,  undefined,  "" (empty string),  0,  NaN 
+- Use arrays when the names are sequential integers.
+- Falsy values : false,  null,  undefined,  "" (empty string),  0,  NaN
 - JS is loosely typed language
 - It is always better to use === and !==, which do not do type coercion.
 
 ### Bad Part
 
-- NaN :  Not a Number , NaN is not equal to anything, including NaN 
+- NaN :  Not a Number , NaN is not equal to anything, including NaN
 	- NaN === NaN is false
 	- NaN !== NaN is true
 -Equal and not equal : These operators can do type coercion  
@@ -568,7 +574,7 @@
 		}
 		var identity = function identity(x) {
 		 	return x;
-		}; 
+		};
 
 - Problem 2: Write two binary functions, add and mul, that take two numbers and return their sum and product.
 
@@ -585,7 +591,7 @@
 		 	return function () {
 		 		return x;
 		 	};
-		} 
+		}
 
 - Problem 4: Write a function that adds from two invocations.
 
@@ -599,7 +605,7 @@
 
 		addf = applyf(add);
 		addf(3)(4) // 7
-		applyf(mul)(5)(6) // 30 
+		applyf(mul)(5)(6) // 30
 
 		fucntion applyf(binary) {
 			return function (x){
@@ -613,7 +619,7 @@
 
 		add3 = curry(add, 3);
 		add3(4) // 7
-		curry(mul, 5)(6) // 30 
+		curry(mul, 5)(6) // 30
 
 		function curry(func, first) {
 		 	return function (second) {
@@ -623,7 +629,7 @@
 
 		function curry(func, first) {
  			return applyf(func)(first);
-		}	
+		}
 
 - Problem 7: Without writing any new functions, show three ways to create the inc function.
 
@@ -634,23 +640,23 @@
 - Problem 8: Write methodize, a function that converts a binary function to a method.
 
 		Number.prototype.add = methodize(add);
-		(3).add(4) // 7 
+		(3).add(4) // 7
 
 		function methodize(func) {
 		 	return function (y) {
 		 		return func(this, y);
 		 	};
-		} 
+		}
 
 - Problem 9: Write demethodize, a function that converts a method to a binary function.
-		
-		demethodize(Number.prototype.add)(5, 6) // 11 
+
+		demethodize(Number.prototype.add)(5, 6) // 11
 
 		function demethodize(func) {
 			return function (that, y) {
 		 		return func.call(that, y);
 		 	};
-		} 
+		}
 
 - Write a function twice that takes a binary function and returns a unary function that passes its argument to the binary function twice.
 
@@ -663,11 +669,11 @@
 		 	return function (a) {
 		 		return binary(a, a);
 		 	};
-		} 
+		}
 
 - Write a function compseu that takes two unary functions and returns a unary function that calls both of them
 
-		composeu(double, square)(3) // 36 
+		composeu(double, square)(3) // 36
 		function composeu(f, g) {
 		 	return function (a) {
 		 		return g(f(a));
@@ -681,13 +687,13 @@
  			return function (a, b, c) {
  				return g(f(a, b), c);
  			};
-		} 
+		}
 
 - Problem 13: Write a function that allows another function to only be called once.
-		
+
 		add_once = once(add);
 		add_once(3, 4) // 7
-		add_once(3, 4) // throw! 
+		add_once(3, 4) // throw!
 
 		function once(func) {
 			return function () {
@@ -704,7 +710,7 @@
 
 		counter = counterf(10);
 		counter.inc() // 11
-		counter.dec() // 10 
+		counter.dec() // 10
 
 		function counterf(value) {
 		 	return {
@@ -717,9 +723,9 @@
 		 			return value;
 		 		}
 		 	};
-		} 
+		}
 
-- Problem 15: Make a revocable function that takes a nice function, and returns a revoke 
+- Problem 15: Make a revocable function that takes a nice function, and returns a revoke
 
 		temp = revocable(alert);
 		temp.invoke(7); // alert: 7
@@ -857,7 +863,7 @@
 ####Modifying CSS + HTML
 
 - jQuery also includes a general-purpose .css() function that takes two inputs: the first is the CSS element to alter, and the second is the value to set it to.
-        
+
         $("div").css("background-color","#008800");
 
 - .html() can be used to set the contents of the first element match it finds. For instance, will get the HTML contents of the first div it finds, and will set the contents of the first div it finds to "I love jQuery!"
@@ -868,7 +874,7 @@ s
 - .val() is used to get the value of form elements. For example, would get the value of the first checked checkbox that jQuery finds.
 
         $('input:checkbox:checked').val();
-        
+
 ####The .keydown() Event
 
 - The .keydown() event is triggered whenever a key on the keyboard is pressed. It only works on whatever page element has focus, so you'll need to click on the window containing your div before pressing a key in order for you to see its effects.
