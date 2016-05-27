@@ -16,7 +16,7 @@ Following is list of notes which I use in day to day development work.
 - [Freelancing Notes](Freelancing.md)
 
 - [User Experience and Design Notes](UX.md)
-
+ 
 ---
 
 - [Interview_Preparation Notes](Interview_Preparation.md)

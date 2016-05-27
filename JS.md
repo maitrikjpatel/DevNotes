@@ -2,7 +2,7 @@
 
 ---
 
-##Good Read
+## Good Read
 
 - [The Basics of Object-Oriented JavaScript](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
 
@@ -18,7 +18,7 @@
 
 ---
 
-###JS Guidelines and Tuts
+### JS Guidelines and Tuts
 
 - [Google JS Styleguide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
 
@@ -36,7 +36,7 @@
 
 ---
 
-###JS/Jquery Libraries
+### JS/Jquery Libraries
 
 
 - [A tidy repository of jQuery plugins](http://www.unheap.com/mobile/)
@@ -51,7 +51,7 @@
 
 ---
 
-###Angular
+### Angular
 
 - [Share Data between controller ](http://crudbetter.com/angular-share-data-between-controllers/ "")
 
@@ -62,9 +62,15 @@
 ---
 
 
-##Javascript Basic
+## Javascript Basic
 
-####"While" vs "For" vs "Do/While"
+- JS is class less programming language.
+
+- Object Creation Pattern - Encapsulation
+
+- Object Reuse Pattern - Inheritance
+
+#### "While" vs "For" vs "Do/While"
 
 
 - FOR loops are great for doing the same task over and over when you know ahead of time how many times you'll have to repeat the loop.
@@ -93,7 +99,7 @@
 			}while(myCondi)
 
 
-####Array
+#### Array
 
 - Learned about heterogenous arrays
 
@@ -109,53 +115,66 @@
 		var jagged = [[1,1,1],[1],[1,1]]
 
 
-####Object
+#### Object
 
 - Let's go back to the analogy of computer languages being like regular spoken languages. In English, you have nouns (which you can think of as "things") and verbs (which you can think of as "actions"). Until now, our nouns (data, such as numbers, strings, or variables) and verbs (functions) have been separate.
 
-- JS is class less programming language.
-
-- Object Creation Pattern - Encapsulation
-
-- Object Reuse Pattern - Inheritance
-
-		var myObject = {};
-
-		myObject.name = 'Maitrik';
-		myObject["job"] = 'SapientNitro'
-		myObject.number = '(555) 555-5555';
-		myObject.phone = function() {
-		  console.log('Calling ' + this.name + ' at ' + this.number + 'who works at' + this.job);
-		};
-
-		myObject.phone();
-
 - A constructor, as its name suggests, is designed to create and set up multiple instances of an object. **An object literal** on the other hand is one-off, like string and number literals, and used more often as configuration objects or global singletons (e.g. for namespacing).
 
--	Object literal:
+-	**Object literal:**
 
 	- Literal notation creates a single object. Literal notation uses **curly brackets { }** and the object's default properties are defined within the brackets using **property:value** notation.
 
 			var objectName = {};
+
 			//---
+
 			var james = {
 		    job: "programmer",
 		    married: false,
 			};
 
--	Object constructor:
+			//---
+
+			var myObject = {
+			    iAm : 'an object',
+			    whatAmI : function(){
+			        alert('I am ' + this.iAm);
+			    }
+			}
+
+-	**Object constructor:**
 
 	- When we write **bob = new Object( );** we are using a built-in constructor called Object. This constructor is already defined by the JavaScript language and just makes an object with **no properties or methods.**
 
 	- Constructor notation involves defining an object constructor. And like defining a function, we use the function keyword. You can think of this constructor as a "template" from which you can create multiple objects. To create a new object from a constructor, we use the new keyword.
 
-			var objectName = new Object();
+			function myObject(){
+					this.iAm = 'an object';
+					this.whatAmI = function(){
+							alert('I am ' + this.iAm);
+					};
+			};
+
+			var objectName = new myObject();
+
 			//-----
+
 			function Person(job, married) {
 			    this.job = job;
 			    this.married = married;
 			}
+
 			var gabby = new Person("student",true);
+
+
+- Differences between constructor and literal
+
+	- The constructor object has its properties and methods defined with the keyword 'this' in front of it, whereas the literal version does not.
+
+	- In the constructor object the properties/methods have their 'values' defined after an equal sign '=' whereas in the literal version, they are defined after a colon ':'.
+
+	- The constructor function can have (optional) semi-colons ';' at the end of each property/method declaration whereas in the literal version if you have more than one property or method, they MUST be separated with a comma ',', and they CANNOT have semi-colons after them, otherwise JavaScript will return an error.
 
 - Bracket Notation : ObjectName["PropertyName"]
 
@@ -184,7 +203,7 @@
 		var name1 = bob.name;
 		var age1 = bob.age;
 
-####Methods
+#### Methods
 
 - Functions can only use parameters as an input, but methods can make calculations with object properties.
 
@@ -200,7 +219,7 @@
 		};
 		console.log(bob.getYearOfBirth());
 
-####JS Closures
+#### JS Closures
 
 - A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
 - The closure has three scope chains:
@@ -209,10 +228,8 @@
 	3. it has access to the variables.
 - Coding Example.
 
-
-
 		function showName (firstName, lastName) {
-		var nameIntro = "Your name is ";
+			var nameIntro = "Your name is ";
 
 	    // this inner function has access to the outer function's variables, 		including the parameter​
 
@@ -223,8 +240,6 @@
 		}
 
 		showName ("Michael", "Jackson"); // Your name is Michael Jackson
-
-		//------------------------------
 
 		// Closure with argument
 
@@ -237,9 +252,10 @@
 
 		}());
 
-
 		alert(digit_name(3)); // 'three'
+
 		------------------------------
+
 		(function outer() {
 		 	var x;
 			// The inner circle function cannot see y, In Diagram
@@ -250,7 +266,6 @@
 		 	};
 
 		}());
-
 
 		------------------------------
 
@@ -277,7 +292,7 @@
 
 
 
-####The "this" Keyword
+#### The "this" Keyword
 
 - The keyword this acts as a placeholder, and will refer to whichever object called that method when the method is actually used.
 
@@ -295,7 +310,7 @@
 		bob.setAge(50);
 
 
-####Passing Objects into Functions
+#### Passing Objects into Functions
 
 - Making arrays of Objects, we can use objects as parameters for functions as well. That way, these functions can take advantage of the methods and properties that a certain object type provides.
 
@@ -317,7 +332,7 @@
 		// get the difference in age between alice and billy using our function
 		var diff = ageDifference(alice,billy)
 
-####Type of
+#### Type of
 
  - We can call typeof thing to figure this out. Generally, the most useful types are "number," "string," "function," and of course, "object."
 
@@ -332,7 +347,7 @@
 		console.log( myObj.hasOwnProperty('name') );
 		console.log( myObj.hasOwnProperty('nickname') );
 
-####Getting IN-timate
+#### Getting IN-timate
 
 - To print out all elements and properties, we can use a for/in loop, like this:
 
@@ -345,7 +360,7 @@
 		  console.log(nyc[x]);
 		}
 
-####Prototype
+#### Prototype
 
 - What a class has or doesn't have? That is the job of the prototype.
 - JavaScript automatically defines the prototype for class with a constructor.
@@ -366,13 +381,13 @@
 		snoopy.bark();
 		buddy.bark();
 
-####DRY Penguins - Inheritance
+#### DRY Penguins - Inheritance
 
 - In object-oriented programming, inheritance allows one class to see and use the methods and properties of another class. You can think of it as a child being able to use his or her parent's money because the child inherits the money.
 
-- We will learn more about inheritance as we continue this lesson, but for now let's just refresh our memories about how classes and objects work.
+- We will learn more about inheritance as we continue this lesson, but for now let's just refresh our memories about how classes and objec
 
-- #####Prototype chain
+- **Prototype chain**
 
 	- If JavaScript encounters something it can't find in the current class's methods or properties, it looks up the prototype chain to see if it's defined in a class that it inherits from. This keeps going upwards until it stops all the way at the top: the mighty Object.prototype (more on this later).
 
@@ -401,7 +416,7 @@
 			console.log(myEmperor.numLegs); // should print 2
 			console.log(myEmperor.isAlive); // should print true
 
-####Private Number and Methods
+#### Private Number and Methods
 
 - Just as functions can have local variables which can only be accessed from within that function, objects can have private variables. Private variables are pieces of information you do not want to publicly share, and they can only be directly accessed from within the class.
 
@@ -748,11 +763,11 @@
 
 ---
 
-##Jquery
+## Jquery
 
 ---
 
-####Basic Syntax
+#### Basic Syntax
 
 - jQuery is a library, or set of helpful add-ons, to the JavaScript programming language. It may seem counterintuitive to learn how to use a library before learning the actual language, but there are a few good reasons for this.
 
@@ -765,14 +780,14 @@
           $('div').action(howfast);
         });
 
-####$p vs $('p')
+#### $p vs $('p')
 
 - $p is just a variable name. There is no magic associated with the $ in $p; it's just a convention for saying, "hey, this variable contains a jQuery object." We could call $p anything we want: $paragraph, paragraph, space_cows, whatever! It's just helpful for people reading our code to see $p, since this is a concise way of saying "hey, there's a 'p' jQuery object in here."
 
         var $div= $('div');
         $p = $("<p>I'm a new paragraph!</p>");
 
-####'this' is Important!
+#### 'this' is Important!
 
 - $('div').hide(); won't just hide the div you mouse into; it will hide all the divs on the page. How can we tell jQuery we only want to affect this particular div?
 - With this, of course! The this keyword refers to the jQuery object you're currently doing something with. Its complete rules are a little tricky, but the important thing to understand is if you use an event handler on an element—that's the fancy name for actions like .click() and .mouseenter(), since they handle jQuery events—you can call the actual event that occurs (such as fadeOut()) on $(this), and the event will only affect the element you're currently doing something with (for example, clicking on or mousing over).
@@ -783,7 +798,7 @@
           });
         });
 
-####Inserting Elements
+#### Inserting Elements
 
 - .append() inserts the specified element as the last child of the target element. .prepend() inserts the specified element as the first child of the target element.
 
@@ -795,7 +810,7 @@
         $('<p>Stuff!</p>').appendTo('.info');
         $('<p>Stuff!</p>').pretendTo('.info');
 
-####Before and After
+#### Before and After
 
 - We can specify where in the DOM we insert an element with the .before() and .after() functions.
 
@@ -806,7 +821,7 @@
         });
 
 
-####Moving Elements Around
+#### Moving Elements Around
 
 - Moving elements around in the DOM is a snap—all we need to do is use the jQuery functions we just learned on existing elements instead of creating new ones.
 
@@ -826,7 +841,7 @@
           }
         );
 
-####Removing Elements
+#### Removing Elements
 
 - we have two jQuery functions, .empty() and .remove(), that help us delete content from our pages
 
@@ -837,7 +852,7 @@
         $('selector').remove();
         $('selector').empty();
 
-####Adding and Removing Classes
+#### Adding and Removing Classes
 
 - jQuery includes two functions, .addClass() and .removeClass(), that can be used to add or remove a class from an element.
 
@@ -846,21 +861,21 @@
         $('selector').addClass('className');
         $('selector').removeClass('className');
 
-####Toggling Classes
+#### Toggling Classes
 
 - As you probably guessed, jQuery includes a .toggleClass() function that does exactly this. If the element it's called on has the class it receives as an input, .toggleClass() removes that class; if the target element doesn't have that class, .toggleClass() adds it.
 
         $('#text').toggleClass()('highlighted');
 
 
-####Changing Your Style
+#### Changing Your Style
 
 - resizing elements is so common, jQuery has specific .height() and .width() functions that can be used to change the heights and widths of HTML elements
 
         $("div").height("100px");
         $("div").width("50px");
 
-####Modifying CSS + HTML
+#### Modifying CSS + HTML
 
 - jQuery also includes a general-purpose .css() function that takes two inputs: the first is the CSS element to alter, and the second is the value to set it to.
 
@@ -875,7 +890,7 @@ s
 
         $('input:checkbox:checked').val();
 
-####The .keydown() Event
+#### The .keydown() Event
 
 - The .keydown() event is triggered whenever a key on the keyboard is pressed. It only works on whatever page element has focus, so you'll need to click on the window containing your div before pressing a key in order for you to see its effects.
 
@@ -893,11 +908,11 @@ s
            $('div').animate({left:'+=10px'},500);
         });
 
-####jQuery UI
+#### jQuery UI
 
 - jQuery UI includes a number of ultra-fancy animations you can use to make your websites do incredible things.
 
-####Example
+#### Example
 
 - Key Animate
 
@@ -926,6 +941,6 @@ s
 
 ---
 
-##Author
+## Author
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
