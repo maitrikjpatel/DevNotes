@@ -31,7 +31,7 @@
 *   [GIT](https://github.com/git/git) Git for Mac
 *   [CyberDuck](http://cyberduck.io/) is also great alternative. 
 *   [Mamp](https://www.mamp.info/en/downloads/) local server.
-*   [Tree](http://mama.indstate.edu/users/ice/) command line application for get folder structure of you application. 
+*   [Tree](http://mama.indstate.edu/users/ice/) command line application for get folder structure of you application.
 
 ---
 
@@ -60,7 +60,7 @@
 *   [Calendar] (https://itunes.apple.com/app/sunrise-calendar/id886106985)
 *   [WALTR](https://itunes.apple.com/us/app/degrees/id430173763)
 *   [Clean my MAC](http://macpaw.com/cleanmydrive?ref=producthunt)
- 
+
 ---
 
 ### Productivity Apps
@@ -76,7 +76,6 @@
 *   [SelfControl](http://selfcontrolapp.com/)
 *   [TotalFinder](http://totalfinder.binaryage.com/)
 *   [iTerm](https://www.iterm2.com/) /  [TotalTerminal](http://totalterminal.binaryage.com/)
-*   [GrabBox](http://grabbox.devsoft.no/download/)
 *   [SIP Color picker](https://itunes.apple.com/us/app/sip/id507257563?mt=12)
 *   [Write](http://writeapp.net/mac/)
 
@@ -85,10 +84,8 @@
 ### Chrome Extension
 
 *   [Adblock Plus 1.8.7](https://adblockplus.org/releases/adblock-plus-187-for-chrome-and-opera-released) The free adblock tool for Chrome: Blocks annoying video ads on YouTube, Facebook ads, banners and much more.
-*   [Auto Refresh Plus 2.0.6](https://chrome.google.com/webstore/detail/auto-refresh-plus/oilipfekkmncanaajkapbpancpelijih?hl=en) Refresh page automatically, plus page monitor feature etc.
 *   [Awesome Screenshot: Capture & Annotate 3.7.19](http://awesomescreenshot.com/) Capture the whole page or any portion, annotate screenshot, blur sensitive info, one-click upload to share.
 *   [Better History 3.7.8](https://chrome.google.com/webstore/detail/better-history/obciceimmggglbmelaidpjlmodcebijb?hl=en) A better look at your browsing history. The best searching, the sharpest interface, and the most useful filters - for your history.
-*   [Clearly 10.3.1.6](https://chrome.google.com/webstore/detail/clearly/iooicodkiihhpojmmeghjclgihfjdjhj?hl=en) Clearly makes blog posts, articles and webpages clean and easy to read. Save them to Evernote to read anywhere
 *   [Clear Cache 1.1.1](https://chrome.google.com/webstore/detail/clear-cache/cppjkneekbjaeellbfkmgnhonkkjfpdn?hl=en) Clear your cache and browsing data with a single click of a button.
 *   [ColorZilla 0.5.5](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=en) Advanced Eyedropper, Color Picker, Gradient Generator and other colorful goodies
 *   [CSS Gradient Inspector 0.2.0](https://chrome.google.com/webstore/detail/css-gradient-inspector/blklpjonlhpakchaahdnkcjkfmccmdik?hl=en) Extends the Developer Tools, adding a sidebar that displays information about the gradients applied to the inspected
@@ -103,7 +100,6 @@
 *   [Markdown Here 2.11.3](https://chrome.google.com/webstore/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa?hl=en) Write your email in Markdown, then make it pretty.
 *   [Mobile/RWD Tester 1.5](https://chrome.google.com/webstore/detail/mobileresponsive-web-desi/elmekokodcohlommfikpmojheggnbelo?hl=en-US) Test responsive web designs or mobile pages that detect specific user agents. Test muliple devices at the same time!
 *   [Page Ruler 2.0.9](https://chrome.google.com/webstore/detail/page-ruler/jlpkojjdgbllmedoapgfodplfhcbnbpn?hl=fr) Draw a ruler to get pixel dimensions and positioning, and measure elements on any web page.
-*   [PageSpeed Insights (by Google) 2.0.4.3](https://chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli?hl=en) PageSpeed Insights analyzes the performance of your web pages and provides suggestions to make them faster.
 *   [Panda | Hacker News, Dribbble, Designer News 3.21](https://chrome.google.com/webstore/detail/panda-hacker-news-dribbbl/jhiocdmmaannaccoofjfmjpbfkogmnap?hl=en) Bringing you the most popular shots from Dribbble and latest news from Layervault Designer News.
 *   [REST Console 4.0.2](https://chrome.google.com/webstore/detail/rest-console/cokgbflfommojglbmbpenpphppikmonn?hl=en) REST Console is an HTTP Request Visualizer and Constructor tool, helps developers build, debug and test RESTful APIs.
 *   [Responsive Web Design Tester 1.0.7](https://chrome.google.com/webstore/detail/responsive-web-design-tes/objclahbaimlfnbjdeobicmmlnbhamkg?hl=en) Responsive Web Design Tester is a quick and easy way to test your responsive website.
@@ -114,7 +110,7 @@
 *   [WhatFont 2.0.2](https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=en) The easiest way to identify fonts on web pages.
 *   [ZenHub for GitHub 1.0.3](https://chrome.google.com/webstore/detail/zenhub-for-github/ogcgkffhplmphkaahpmffcafajaocjbd?hl=en-US) ZenHub Supercharge Your GitHub Workflow
 *   [GistBox](http://www.gistboxapp.com/) The Beautiful Way to Organize Code Snippets
- 
+
 ---
 ##Author
 

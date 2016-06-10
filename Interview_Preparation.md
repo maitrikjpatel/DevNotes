@@ -54,11 +54,34 @@
 
 - [Frame Work Test](http://dedesigntheweb.com)
 
-- [Online JS/HTML/CSS Tests](https://sitthetest.com/tests)
-
 - [Interviewcake](https://www.interviewcake.com)
 
 - [Coderbyte](http://coderbyte.com)
+
+
+##Good Questions and Answers
+
+**- Have you already used MVC before? What you like/dislike about it?**
+
+-   As the UI gets more and more complex we need some good ways to keep it more and more maintainable and reusable, and  Some MVC frameworks for javascript have been widely adopted lately and it's a good plus if you have already used before and knows what's the benefits of them.  There are many advantages in using these frameworks, I can point out some of them:
+
+  - Organization: Forces your webapp to follow a well structured pattern;
+
+  - Maintainable: With organization comes an easy to maintain code;
+
+  - UI Binding: Some frameworks allow you to do that. So everytime your model changes, the view reflects it and vice-versa;
+
+  - Decoupled client: MVC frameworks like backbone.js incentivise you to use REST API's though their urlRoot attribute in their Models;
+
+  - Reusable components: Create reusable visual components;
+
+  - Single-page apps: Build single-page apps with Ajax requests;
+
+  - Friendly URL's: Native support for client-side url mapping;
+
+
+
+
 
 ---
 ##Author

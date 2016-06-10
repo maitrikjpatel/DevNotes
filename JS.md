@@ -20,8 +20,6 @@
 
 ### JS Guidelines and Tuts
 
-- [Google JS Styleguide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
-
 - [Principles of writing consistent, idiomatic JS](https://github.com/rwaldron/idiomatic.js)
 
 - [JQuery Guidelines](http://contribute.jquery.org/style-guide/js/)
@@ -52,8 +50,6 @@
 ---
 
 ### Angular
-
-- [Share Data between controller ](http://crudbetter.com/angular-share-data-between-controllers/ "")
 
 - [Custom Deactives](http://www.toptal.com/angular-js/angular-js-demystifying-directives)
 

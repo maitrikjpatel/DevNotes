@@ -10,7 +10,7 @@
 - [Hire Freelancers & Find Freelance Jobs Online - Freelancer.com](https://www.freelancer.com/?utm_expid=294858-224.nsZsuOljQhaYjHJeopKEEA.0)
 - [YunoJuno - The Freelancer Elite](https://www.yunojuno.com/)
 - [OpenHatch - Community tools for free and open source software](https://openhatch.org/)
-- [Find A Tutor](http://www.universitytutor.com/)
+- [Find A Tutor](www.universitytutor.com/)
 - [Fiverr: The marketplace for creative & professional services](https://www.fiverr.com/)
 - [Home - freelanship](https://freelanship.com/?ref=producthunt)
 - [Hirable](http://wearehirable.com/?ref=producthunt)
@@ -20,7 +20,6 @@
 - [UpWork](https://www.upwork.com/)
 - [Design Jobs](http://weeklydesignjobs.com/)
 - [RemoteJob](http://talentboard.me/)
-- [Freelancing as student](https://freelanship.com/vip/)
 - [99Designs](http://99designs.com/how-it-works)
 
 ###Learning and Tools

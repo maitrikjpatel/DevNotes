@@ -6,14 +6,14 @@
 
 ###Front End Development Guideline
 
-- [Sapient Front End development standards](https://sapient-global.github.io/best-practices) 
-- [Iso-Bar Front End development standards](https://isobar-idev.github.io/code-standards) 
-- [Front Dev Guidelines](https://taitems.github.io/Front-End-Development-Guidelines/#cssHtmlSection) 
+- [Sapient Front End development standards](https://sapient-global.github.io/best-practices)
+- [Iso-Bar Front End development standards](https://isobar-idev.github.io/code-standards)
+- [Front Dev Guidelines](https://taitems.github.io/Front-End-Development-Guidelines/#cssHtmlSection)
 - [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/)
 - [Front End List](https://balapastudio.co/frontendlist/)
 
 ---
-##Front End application development workflow 
+##Front End application development workflow
 
 - [Creating A JavaScript Project Checklist](http://blog.bitovi.com/creating-a-javascript-project-checklist/)
 - [Front-end Tooling Workflows](https://speakerdeck.com/addyosmani/front-end-tooling-workflows)
@@ -31,21 +31,20 @@
 
 ---
 
-##GIT Help 
+##GIT Help
 
 - [Github Page](https://help.github.com/articles/create-a-repo)
 - [Set Up Git](https://help.github.com/articles/set-up-git)
 - [Understanding Git Flow](https://guides.github.com/introduction/flow/index.html?utm_source=public-launch-day-before&utm_medium=email&utm_campaign=tomorrow-codetree-opens-for-you)
 - [GITHUB Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
 
----- 
+----
 
 ##Inspiring leaders in Front End and design field
 
 - [How to keep up to date on Front-End Technologies - The Recipe](http://uptodate.frontendrescue.org/)
 - [Judges : The Net Awards 2014 : Celebrating the best the Internet has to offer](https://thenetawards.com/judges/)
 - [Innovation by Design Awards 2015 | Co.Design | business + design](http://www.fastcodesign.com/innovation-by-design-awards-2015)
-- [New York 2015 – Generate Conference](http://www.generateconf.com/new-york-2015)
 - [Levelsio](https://levels.io/)
 - [egghead.io](https://egghead.io/)
 

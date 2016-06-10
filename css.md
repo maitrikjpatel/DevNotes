@@ -16,13 +16,19 @@
 
 - [Learn Layout](http://learnlayout.com)
 - [CSS Guidelines](http://cssguidelin.es)
-- [Google HTML/CSS Guideline](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
 - [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
 
 ---
 
 ### CSS Topics
+
+###BEM
+
+- [BEM 101](https://css-tricks.com/bem-101/)
+- [BEM Definitions](https://en.bem.info/method/definitions/)
+- [BEM Problem and how to avoid them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them)
+- [BEM vs SMACSS](http://www.sitepoint.com/bem-smacss-advice-from-developers/)
 
 #### CSS Animation & Transitions
 
@@ -47,6 +53,10 @@
 - [SVG Sprite Techniques](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/)
 - [Stack Icons](http://stackicons.com/)
 - [SVG Styling](http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css)
+
+#### Web-Components
+
+- [Web-Components using Shadow Dom / Angular](http://tech.opentable.com/2015/04/20/creating-content-scaffold-components-shadow-dom/)
 
 #### FlexBox
 
