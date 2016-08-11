@@ -4,10 +4,8 @@
 ###Freelancing work search boards
 
 - [Meeet](http://meeet.co/)
-- [Module Assembly - Billing Accounts Permission APItopcoder](http://www.topcoder.com/challenge-details/30043590/?type=develop)
-- [Online Project Management Software – Solo](http://www.thrivesolo.com/online-project-management-software)
-- [Website English to Spanish Editing in HTML - Freelance Job in Website Project Management - Part-time - 10-30 hrs/week for less than 1 week - oDesk](https://www.odesk.com/o/jobs/job/_~01156409815651aeb9/)
-- [Hire Freelancers & Find Freelance Jobs Online - Freelancer.com](https://www.freelancer.com/?utm_expid=294858-224.nsZsuOljQhaYjHJeopKEEA.0)
+- [Top Coder](http://www.topcoder.com/)
+- [Hire Freelancers & Find Freelance Jobs Online - Freelancer.com](https://www.freelancer.com/  )
 - [YunoJuno - The Freelancer Elite](https://www.yunojuno.com/)
 - [OpenHatch - Community tools for free and open source software](https://openhatch.org/)
 - [Find A Tutor](www.universitytutor.com/)
@@ -21,13 +19,16 @@
 - [Design Jobs](http://weeklydesignjobs.com/)
 - [RemoteJob](http://talentboard.me/)
 - [99Designs](http://99designs.com/how-it-works)
+- [Freelancing Union](https://www.freelancersunion.org/)
+- [Freelancing in Data](https://www.experfy.com/projects/category)
 
 ###Learning and Tools
 
-- [7 Days of free training for freelancers from The Creative Class]()
+- [7 Days of free training for freelancers from The Creative Class](https://creativeclass.io/guide/)
 - [Tools for Freelancers - Find work, get paid, and manage your freelance career like a boss](https://thecreativeclass.io/guide/?ref=producthunt)
 - [2011/03 Mike Monteiro | F*ck You. Pay Me. on Vimeo](https://vimeo.com/22053820)
 - [Freelancing Planner](http://cushionapp.com/)
+- [Online Project Management Software – Solo](http://www.thrivesolo.com/online-project-management-software)
 
 ###Contract and Invoices
 

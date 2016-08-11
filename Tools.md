@@ -1,4 +1,4 @@
-#Tools and Apps Notes
+# Tools and Apps Notes
 "The right tools make the difference between an artist and a craftsman."
 
 ## Apps & Tools I use for day to day UX/Front End Development.
@@ -25,7 +25,6 @@
 *   [LiveReload](https://itunesle.com/us/app/livereload/id482898991?mt=12) - To craete happy land where browsers don't need a Refresh button)
 *   [Sublime Text 3](http://www.sublimetext.com/) -Sublime Text is a sophisticated text editor for code, markup and prose.
 *   [Mou](http://mouapp.com/) - Markdown editor. I am writing this in it. So awesome.
-*   [Sublime Text 3](http://www.sublimetext.com/) -Sublime Text is a sophisticated text editor for code, markup and prose.
 *   [SourceTree](http://www.sourcetreeapp.com/) is free open source alternative.
 *   [GIT Tower](http://www.git-tower.com/) git GUI client.
 *   [GIT](https://github.com/git/git) Git for Mac
@@ -49,35 +48,29 @@
 *   [Twitter](https://about.twitter.com/products/sign-out)
 *   [Spotify](https://www.spotify.com/us/download/mac/)
 *   [Slack](https://itunes.apple.com/us/app/slack/id803453959?mt=12)
-* 	 [MacClean](http://www.imobie.com/macclean/)
 *   [Unarchiver](http://wakaba.c3.cx/s/apps/unarchiver.html)
 *   [Dropbox](https://www.dropbox.com/en/downloading?os=mac)
 *   [Google Drive](https://www.google.com/drive/download/)
-*   [Copy](https://www.copy.com/install/)
-*   [Chrome](http://www.google.com/chrome/)
 *   [Saver Screen Saver](http://www.saver.is/)
 *   [Clock Screen Saver](http://padbury.me/clock/)
-*   [Calendar] (https://itunes.apple.com/app/sunrise-calendar/id886106985)
-*   [WALTR](https://itunes.apple.com/us/app/degrees/id430173763)
+*   [Calendar](https://itunes.apple.com/app/sunrise-calendar/
 *   [Clean my MAC](http://macpaw.com/cleanmydrive?ref=producthunt)
+* 	[MacClean](http://www.imobie.com/macclean/)
 
 ---
 
 ### Productivity Apps
 
 *   [Alfred](http://www.alfredapp.com/)
-*   [Flashlight](http://flashlight.nateparrott.com)
 *   [Divvy](http://mizage.com/divvy/)
 	* [spectacleapp](http://www.spectacleapp.com)
 *   [Jumpcut](http://jumpcut.sourceforge.net/)
 *   [Found](https://www.foundapp.com/)
 *   [NameChanger](http://mrrsoftware.com/namechanger/)
 *   [nvALT](http://brettterpstra.com/projects/nvalt/)
-*   [SelfControl](http://selfcontrolapp.com/)
-*   [TotalFinder](http://totalfinder.binaryage.com/)
+*   [Self Control](http://selfcontrolapp.com/)
 *   [iTerm](https://www.iterm2.com/) /  [TotalTerminal](http://totalterminal.binaryage.com/)
 *   [SIP Color picker](https://itunes.apple.com/us/app/sip/id507257563?mt=12)
-*   [Write](http://writeapp.net/mac/)
 
 ---
 
@@ -87,10 +80,8 @@
 *   [Awesome Screenshot: Capture & Annotate 3.7.19](http://awesomescreenshot.com/) Capture the whole page or any portion, annotate screenshot, blur sensitive info, one-click upload to share.
 *   [Better History 3.7.8](https://chrome.google.com/webstore/detail/better-history/obciceimmggglbmelaidpjlmodcebijb?hl=en) A better look at your browsing history. The best searching, the sharpest interface, and the most useful filters - for your history.
 *   [Clear Cache 1.1.1](https://chrome.google.com/webstore/detail/clear-cache/cppjkneekbjaeellbfkmgnhonkkjfpdn?hl=en) Clear your cache and browsing data with a single click of a button.
-*   [ColorZilla 0.5.5](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp?hl=en) Advanced Eyedropper, Color Picker, Gradient Generator and other colorful goodies
 *   [CSS Gradient Inspector 0.2.0](https://chrome.google.com/webstore/detail/css-gradient-inspector/blklpjonlhpakchaahdnkcjkfmccmdik?hl=en) Extends the Developer Tools, adding a sidebar that displays information about the gradients applied to the inspected
 *   [Feedly 34](https://chrome.google.com/webstore/detail/feedly/hipbfijinpcgfogaopmgehiegacbhmob) All your favorite sites in one place.
-*   [Earth View from Google Maps 1.6.6](https://chrome.google.com/webstore/detail/earth-view-from-google-ma/bhloflhklmhfpedakmangadcdofhnnoh?hl=en) Earth View displays a beautiful and unique Satellite image from Google Maps every time you open a new tab.
 *   [Emmet Re:View 1.0.3](https://chrome.google.com/webstore/detail/emmet-review/epejoicbhllgiimigokgjdoijnpaphdp?hl=en) Shows views with all responsive media-query breakpoints for current page
 *   [Hover Zoom 5.5](https://chrome.google.com/webstore/detail/hover-zoom/nonjdcjchghhkdoolnlbekcfllmednbl?hl=en) Enlarge thumbnails on mouse over. Works on many sites (Facebook, Twitter, Flickr, Reddit, Amazon, Tumblr, etc).
 *   [HTML5 Outliner 0.5.1.72](https://chrome.google.com/webstore/detail/html5-outliner/afoibpobokebhgfnknfndkgemglggomo?hl=en) Generates a navigable page outline with heading and sectioning elements

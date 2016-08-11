@@ -2,21 +2,15 @@
 
 ---
 
-### Good Read
-
-- [CSS Reference | Codrops](http://tympanus.net/codrops/css_reference/)
-- [7 CSS Units You Might Not Know About - Tuts+ Web Design Article](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
-- [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892)
-- [CSS 3D Shape editor](http://tridiv.com/)
-
----
-
 ### CSS Guideline & Tuts
 
 - [Learn Layout](http://learnlayout.com)
 - [CSS Guidelines](http://cssguidelin.es)
+- [CSS 3D Shape editor](http://tridiv.com/)
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
 - [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
+- [7 CSS Units You Might Not Know About - Tuts+ Web Design Article](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
+- [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892)
 
 ---
 
@@ -47,7 +41,7 @@
 - [SVG stack](http://simurai.com/blog/2012/04/02/svg-stacks)
 - [SVG Vs Icon](http://ianfeather.co.uk/ten-reasons-we-switched-from-an-icon-font-to-svg/)
 - [USE SVG](https://developers.google.com/web/fundamentals/design-and-ui/media/images/use-icons?hl=en)
-- [CSSTrciks SVG](https://css-tricks.com/using-svg/)
+- [CSS Trciks SVG](https://css-tricks.com/using-svg/)
 - [SVG Sprite](https://github.com/jkphl/svg-sprite)
 - [SVG Sprite Techniques](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/)
 - [Stack Icons](http://stackicons.com/)
@@ -191,6 +185,8 @@
         }
 
 ### Pseudo classes
+
+- [CSS Reference | Codrops](http://tympanus.net/codrops/css_reference/)
 
 #### Basic UI pseudo-classes
 
@@ -346,6 +342,7 @@
 - @media screen & @media print
 
 - In link
+
         <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/smartphone.css' />
 
 - In CSS

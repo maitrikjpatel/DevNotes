@@ -1,19 +1,16 @@
-#Front End Development Notes
+# Front End Development Notes
 
 ---
 
-##Style guide or guideline
-
-###Front End Development Guideline
+### Front End Development Guideline
 
 - [Sapient Front End development standards](https://sapient-global.github.io/best-practices)
 - [Iso-Bar Front End development standards](https://isobar-idev.github.io/code-standards)
 - [Front Dev Guidelines](https://taitems.github.io/Front-End-Development-Guidelines/#cssHtmlSection)
 - [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/)
-- [Front End List](https://balapastudio.co/frontendlist/)
 
 ---
-##Front End application development workflow
+## Front End application development workflow
 
 - [Creating A JavaScript Project Checklist](http://blog.bitovi.com/creating-a-javascript-project-checklist/)
 - [Front-end Tooling Workflows](https://speakerdeck.com/addyosmani/front-end-tooling-workflows)
@@ -24,23 +21,23 @@
 
 ---
 
-##Website Optimization
+## Website Optimization
 
 - [Website Speed Optimization](https://kinsta.com/learn/page-speed/)
-- [Optimizing Web Performance](http://cdn2.hubspot.net/hub/156417/file-57811332-png/images/yottaa-how-to-optimize-your-website-checklist-infographic.png?t=1433780808239)
+- [Optimizing Web Performance](http://cdn2.hubspot.net/hub/156417/file-57811332-png/images/yottaa-how-to-optimize-your-website-checklist-infographic.png)
 
 ---
 
-##GIT Help
+## GIT Help
 
 - [Github Page](https://help.github.com/articles/create-a-repo)
 - [Set Up Git](https://help.github.com/articles/set-up-git)
-- [Understanding Git Flow](https://guides.github.com/introduction/flow/index.html?utm_source=public-launch-day-before&utm_medium=email&utm_campaign=tomorrow-codetree-opens-for-you)
+- [Understanding Git Flow](https://guides.github.com/introduction/flow/index.html)
 - [GITHUB Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
 
 ----
 
-##Inspiring leaders in Front End and design field
+## Inspiring leaders in Front End and design field
 
 - [How to keep up to date on Front-End Technologies - The Recipe](http://uptodate.frontendrescue.org/)
 - [Judges : The Net Awards 2014 : Celebrating the best the Internet has to offer](https://thenetawards.com/judges/)

@@ -53,7 +53,7 @@
 
 - [Custom Deactives](http://www.toptal.com/angular-js/angular-js-demystifying-directives)
 
-- [component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives "")
+- [Component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives "")
 
 ---
 

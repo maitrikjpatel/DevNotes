@@ -1,0 +1,41 @@
+# Learning/Tuts Notes
+
+---
+
+## Learn Anything
+
+- [Learn anything for free](http://noexcuselist.com/)
+- [Computer Science free online](http://www.learnerstv.com/Free-Computer-Science-video-lecture-courses.htm)
+
+
+## Learn Web Development
+
+- [Free Web Development Courses | The Odin Project](http://www.theodinproject.com/courses)
+- [stanford CS142 Lectures](http://web.stanford.edu/class/cs142/lectures.html)
+- [Web  |  Google Developers](https://developers.google.com/web/)
+- [Learn | Codecademy](https://www.codecademy.com/learn/)
+- [Paths | Code School](https://www.codeschool.com/learn/)
+- [Page not found | Khan Academy](https://www.khanacademy.org/c)
+- [Coursera - Free Online Courses From Top Universities | Coursera](https://www.coursera.org/)
+- [Projects | Code4Startup](https://code4startup.com/projects)
+- [McAfee Web Gateway - Notification](http://www.codeupstart.com/)
+- [Online Courses - Anytime, Anywhere | Udemy | Udemy](https://www.udemy.com/courses/)
+- [How-To Tutorials & Free Online Courses by Envato Tuts+](https://tutsplus.com/)
+- [Nanodegree Programs for Jobs in Technology | Udacity](https://www.udacity.com/nanodegree)
+- [The Lifelong Learning Platform | Degreed](https://degreed.com/)
+- [Coursebirdie — Online Classes, Talks, Projects and Workshops](https://coursebirdie.com/)
+- [iversity - MOOCs - All courses - iversity.org](https://iversity.org/en/courses)
+- [Pluralsight | Unlimited Online Developer, IT and Creative Training](https://www.pluralsight.com/)
+- [Grow your expert full-stack JavaScript skills with tagtree screencasts.](http://tagtree.tv/)
+- [SitePoint – Learn HTML, CSS, JavaScript, PHP, Ruby & Responsive Design](https://www.sitepoint.com/)
+- [Skillshare](https://www.skillshare.com)
+
+## Dev Community
+
+- [GistBox](https://app.gistboxapp.com/)
+- [CodeFights](https://codefights.com/)
+- [Stack Overflow](http://stackoverflow.com/)
+- [Koding - About](http://www.koding.com/About)
+- [Programming Tips & Tricks | Coderwall](https://coderwall.com/)
+- [Discover and discuss the best dev tools and cloud | StackShare](http://stackshare.io/)
+- [HackerRank | Technical Recruiting | Hiring the Best Engineers](https://www.hackerrank.com/)
