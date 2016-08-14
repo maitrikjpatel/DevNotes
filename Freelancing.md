@@ -21,6 +21,7 @@
 - [99Designs](http://99designs.com/how-it-works)
 - [Freelancing Union](https://www.freelancersunion.org/)
 - [Freelancing in Data](https://www.experfy.com/projects/category)
+- [SideProjectors | Marketplace to buy and sell side projects.](http://www.sideprojectors.com/project/home)
 
 ###Learning and Tools
 

@@ -34,6 +34,7 @@
 - [Set Up Git](https://help.github.com/articles/set-up-git)
 - [Understanding Git Flow](https://guides.github.com/introduction/flow/index.html)
 - [GITHUB Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
+- [Gittip](https://www.gittip.com/)
 
 ----
 
