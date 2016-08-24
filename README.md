@@ -1,36 +1,35 @@
-# List of Notes
 Following is list of notes which I use in day to day development work.
 
 ---
 
 ## Dev Notes
 
-- [JS Notes](JS.md)
-- [CSS Notes](css.md)
-- [Front_End_Development Notes](Front_End_Development.md)
+- [Front End Development](Front_End_Development.md)
+- [Javascript](JS.md)
+- [CSS](css.md)
 
 ---
 
 ## Design Notes
 
-- [User Experience and Design Notes](UX.md)
-- [Data Visualization Notes](dataviz.md)
+- [User Experience and Design](UX.md)
+- [Data Visualization](dataviz.md)
 
 ---
 
 ## Dev Environment Setup Notes
 
-- [Tools Notes](Tools.md)
-- [Sublime Notes](Sublime.md)
-- [Bash_Zsh Notes](Bash_Zsh.md)
+- [Tools and Development](Tools.md)
+- [IDE Setup](Sublime.md)
+- [Bash vs Zsh](Bash_Zsh.md)
 
 ---
 
-## Other Notes
+## General Notes
 
-- [Learn for free](Learning_Tuts.md)
-- [Freelancing Notes](Freelancing.md)
-- [Interview_Preparation Notes](Interview_Preparation.md)
+- [Free learning resources/Tuts to become programmer !](Learning_Tuts.md)
+- [How to become freelancing and earn quality life.](Freelancing.md)
+- [Crack that Interview](Interview_Preparation.md)
 
 ---
 ## Author
