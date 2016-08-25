@@ -1,7 +1,5 @@
 Following is list of notes which I use in day to day development work.
 
----
-
 ## Dev Notes
 
 - [Front End Development](Front_End_Development.md)
