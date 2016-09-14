@@ -43,6 +43,7 @@
 - [UX->Code](http://www.materialup.com/)
 - [UX-Collective](http://collectui.com/)
 - [UX-Patterns](http://uipatterns.io/)
+- [UI Temple](http://www.uitemple.com/)
 
 ---
 
@@ -62,10 +63,9 @@
 
 ---
 
-## Case Study
+## Case Study 
 
 - [NYTimes Case Study](http://nytimes.tematroinoi.com/)
-- [What If We Could Rethink Digital Healthcare?](http://casestudies.f-i.com/healthcare/)
 - [What If We Could Rethink Digital Healthcare?](http://casestudies.f-i.com/healthcare/)
 - [An exploration in Material Design by feedly — Medium](https://medium.com/@abrodo/an-exploration-in-material-design-by-feedly-8c1a1cbdfdcd)
 - [From concept to reality: rebranding Google Squared - Jack Morgan](http://jackwmorgan.com/rebranding-google-squared/)
@@ -82,6 +82,7 @@
 - [UI Patterns](http://talks.ui-patterns.com)
 - [Free course](https://www.udacity.com/course/intro-to-the-design-of-everyday-things--design101)
 - [Good UI](http://www.goodui.org/)
+- [UX Design Resources](https://uxdesign.cc/)
 
 ##Author
 

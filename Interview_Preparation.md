@@ -23,6 +23,7 @@
 - [Let's Code](https://leetcode.com/problemset/algorithms/)
 - [Geeks for Geeks](http://www.geeksforgeeks.org/)
 - [Data Structure in JS](https://github.com/duereg/js-algorithms)
+- [Visual Data Structure](http://visualgo.net/?ref=webdesignernews.com)
 
 ## Online Test/Prep :
 
