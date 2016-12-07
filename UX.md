@@ -24,6 +24,9 @@
 - [UI, UX: Who Does What? A Designer's Guide To The Tech Industry | Co.Design ](http://www.fastcodesign.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry)
 - [Designers Booklist](http://blog.invisionapp.com/reading-list-for-designers/)
 - [UX/UI 2015 Trends](https://medium.com/@oralonur/mobile-2015-263ab694e60e)
+- [UX for kids](https://medium.com/@deanvipond/explaining-graphic-design-to-four-year-olds-fe9257ffaf3d)
+- [bauhaus school lessons](https://blog.prototypr.io/learning-in-the-bauhaus-school-five-lessons-for-todays-designers-and-five-ways-the-web-still-is-64f2985ce811)
+- [Cooper UX](https://www.cooper.com/)
 
 ---
 
@@ -63,7 +66,7 @@
 
 ---
 
-## Case Study 
+## Case Study
 
 - [NYTimes Case Study](http://nytimes.tematroinoi.com/)
 - [What If We Could Rethink Digital Healthcare?](http://casestudies.f-i.com/healthcare/)
@@ -83,6 +86,7 @@
 - [Free course](https://www.udacity.com/course/intro-to-the-design-of-everyday-things--design101)
 - [Good UI](http://www.goodui.org/)
 - [UX Design Resources](https://uxdesign.cc/)
+- [UX Excercises](https://medium.com/foursquare-direct/a-list-of-creative-exercises-for-creative-teams-c43b36f9dbde)
 
 ##Author
 

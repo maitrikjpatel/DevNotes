@@ -6,6 +6,7 @@
 
 - [Learn anything for free](http://noexcuselist.com/)
 - [Computer Science free online](http://www.learnerstv.com/Free-Computer-Science-video-lecture-courses.htm)
+- [44 Website to learn anything](https://entrepreneurs.maqtoob.com/44-new-cool-websites-and-apps-to-learn-something-new-7b82beab1139)
 
 
 ## Learn Web Development
@@ -29,6 +30,8 @@
 - [Grow your expert full-stack JavaScript skills with tagtree screencasts.](http://tagtree.tv/)
 - [SitePoint – Learn HTML, CSS, JavaScript, PHP, Ruby & Responsive Design](https://www.sitepoint.com/)
 - [Skillshare](https://www.skillshare.com)
+- [Degreed](https://degreed.com/for-me)
+- [EGGHead](https://egghead.io/)
 
 ## Dev Community
 

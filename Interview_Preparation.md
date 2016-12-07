@@ -24,6 +24,8 @@
 - [Geeks for Geeks](http://www.geeksforgeeks.org/)
 - [Data Structure in JS](https://github.com/duereg/js-algorithms)
 - [Visual Data Structure](http://visualgo.net/?ref=webdesignernews.com)
+- [Hired in tech](https://www.hiredintech.com/classrooms/system-design/lesson/60)
+- [Visual Code](https://www.educative.io/collection/5642554087309312/5679846214598656)
 
 ## Online Test/Prep :
 
@@ -38,19 +40,19 @@
 - [7 Lessons Learned From Interviewing 100+ App Developers](https://medium.com/@stevepyoung/7-lessons-learned-from-interviewing-100-app-developers-fee26e0dec97)
 - [How To Interview A Front End Developer](http://ilikekillnerds.com/2014/09/how-to-interview-a-front-end-developer-and-how-to-prepare-for-a-front-end-developer-interview/)
 
-## Good Questions and Answers
+## ResumeHelp
 
-- **Have you already used MVC before? What you like/dislike about it?**
+- [Resume Ruby](https://resumeruby.com/)
+- [Novo Resume](https://novoresume.com/)
+- [Indeed Resume](http://ineedaresu.me/#/)
+- [Free Resume templates](http://www.creativebloq.com/career/free-resume-templates-111517854)
+- [Free Resume templates](http://designscrazed.org/best-free-resume-templates/)
 
-- As the UI gets more and more complex we need some good ways to keep it more and more maintainable and reusable, and  Some MVC frameworks for javascript have been widely adopted lately and it's a good plus if you have already used before and knows what's the benefits of them.  There are many advantages in using these frameworks, I can point out some of them:
+##  ApplyList
 
-  - Organization: Forces your webapp to follow a well structured pattern;
-  - Maintainable: With organization comes an easy to maintain code;
-  - UI Binding: Some frameworks allow you to do that. So everytime your model changes, the view reflects it and vice-versa;
-  - Decoupled client: MVC frameworks like backbone.js incentivise you to use REST API's though their urlRoot attribute in their Models;
-  - Reusable components: Create reusable visual components;
-  - Single-page apps: Build single-page apps with Ajax requests;
-  - Friendly URL's: Native support for client-side url mapping;
+- [Quick apply companies](https://github.com/j-delaney/easy-application)
+
+
 
 ---
 ## Author

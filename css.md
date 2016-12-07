@@ -11,6 +11,8 @@
 - [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
 - [7 CSS Units You Might Not Know About - Tuts+ Web Design Article](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
 - [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892)
+- [CSS Tools](https://medium.com/@vilcins/css-tools-that-i-use-67cb8bfa2e2d)
+- [CSS Reference](http://cssreference.io)
 
 ---
 
@@ -20,6 +22,7 @@
 
 - [BEM 101](https://css-tricks.com/bem-101/)
 - [BEM Definitions](https://en.bem.info/method/definitions/)
+- [BEMCSS architecture](https://medium.com/@mjtweaver/css-architecture-bemcss-block-element-modifier-e642bd0f4218)
 - [BEM Problem and how to avoid them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them)
 - [BEM vs SMACSS](http://www.sitepoint.com/bem-smacss-advice-from-developers/)
 
