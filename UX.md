@@ -59,10 +59,11 @@
 - [Abduzeedo Design Inspiration | Design Inspiration &amp; Tutorials](http://abduzeedo.com/)
 - [Inspiring Email Design](http://reallygoodemails.com/)
 - [The Best Design](https://www.thebestdesigns.com)
-- [Quick Inspiration for Different Layouts , Calltoidea](http://www.calltoidea.com/)
+- [Quick Inspiration for Different Layouts Calltoidea](http://www.calltoidea.com/)
 - [100 Dat UI](http://www.100daysui.com/)
 - [UI Movement](http://uimovement.com/)
 - [Mobile Design](http://pricingpages.xyz/)
+- [ECom mobile Design](https://ecomm.design/)
 
 ---
 
@@ -73,6 +74,7 @@
 - [An exploration in Material Design by feedly — Medium](https://medium.com/@abrodo/an-exploration-in-material-design-by-feedly-8c1a1cbdfdcd)
 - [From concept to reality: rebranding Google Squared - Jack Morgan](http://jackwmorgan.com/rebranding-google-squared/)
 - [Asana Rebranding](https://medium.com/swlh/circling-ourselves-the-story-behind-asana-s-rebrand-e8247516705a)
+- [HubSpot Landing page case study](https://www.uxpin.com/studio/blog/ux-case-study-hubspot-redesigned-homepage/)
 
 ---
 
@@ -87,6 +89,7 @@
 - [Good UI](http://www.goodui.org/)
 - [UX Design Resources](https://uxdesign.cc/)
 - [UX Excercises](https://medium.com/foursquare-direct/a-list-of-creative-exercises-for-creative-teams-c43b36f9dbde)
+- [Resources cards](https://resourcecards.com/)
 
 ##Author
 
