@@ -40,6 +40,7 @@
 - [Beagle by Podio: Proposal Software](https://getbeagle.co/?ref=producthunt)
 - [Freelancing, simple & secure](https://www.hellobonsai.com)
 - [Bulletproof contracts, simple e-signing, integrated escrow](https://www.hellobonsai.com/)
+- [Freelance Contract](https://www.and.co/the-freelance-contract?ref=producthunt)
 
 ###Nomad list
 

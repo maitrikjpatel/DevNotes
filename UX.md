@@ -5,6 +5,8 @@
 
 ## UX Process
 
+
+- [Design Guideline](http://designguidelines.co/)
 - [Google Sprint](http://www.gv.com/sprint/)
 - [The Ninja Skill for UX Designers — Medium](https://medium.com/@mollyinglish/the-ninja-skill-for-ux-designers-25f314f8f76c)
 - [The Basics of Great UX - Tuts  Web Design Article](https://webdesign.tutsplus.com/articles/the-basics-of-great-ux--webdesign-8823)
@@ -13,6 +15,12 @@
 - [A Personal Design Sprint](http://franciscortez.com/design-sprint/)
 - [So What to do for become designer](https://medium.com/@suelynyu/so-you-want-to-be-a-ux-designer-c3370d8ea14e)
 - [Toolkit for designer](https://novectors.com/resource-toolkit-for-a-product-designer-228d825d7b00)
+- [Design for Data](https://medium.com/xd-studio/our-product-design-process-9329cb3bc403#.m7ydb1i1f)
+- [Plasma Design System](https://medium.com/@andrewcouldwell/plasma-design-system-4d63fb6c1afc#.kmtjpq13n)
+- [Circular Design Guide](http://circulardesignguide.com/methods)
+- [Design Principles](https://medium.muz.li/design-principles-behind-great-products-6ef13cd74ccf)
+- [Atomic Design Process](https://nordnet.design/a-closer-look-at-our-atomic-workflow-in-action-by-the-nordnet-design-studio-6e48d6f46c3c)
+- [Create Front End Framework](https://medium.com/sketch-app-sources/how-to-create-a-front-end-framework-with-sketch-2379edb5e7df)
 
 ---
 
@@ -64,6 +72,7 @@
 - [UI Movement](http://uimovement.com/)
 - [Mobile Design](http://pricingpages.xyz/)
 - [ECom mobile Design](https://ecomm.design/)
+- [Lead Book](https://www.and.co/the-freelance-contract?ref=producthunt)
 
 ---
 
@@ -90,6 +99,7 @@
 - [UX Design Resources](https://uxdesign.cc/)
 - [UX Excercises](https://medium.com/foursquare-direct/a-list-of-creative-exercises-for-creative-teams-c43b36f9dbde)
 - [Resources cards](https://resourcecards.com/)
+- [Gradient Tool](https://webgradients.com)
 
 ##Author
 

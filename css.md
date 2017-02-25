@@ -18,6 +18,10 @@
 
 ### CSS Topics
 
+###CSS-Grid
+
+- [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
 ###BEM
 
 - [BEM 101](https://css-tricks.com/bem-101/)
@@ -61,6 +65,7 @@
 - [Flex Layouts](http://learnlayout.com/flexbox.html)
 - [Flex in 5 min](http://flexboxin5.com/)
 - [Interactive Flex](http://progressivered.com/fla/?d=0&v=1&h=1&s=0&i=000&a=000)
+- [Flex Animation](https://medium.freecodecamp.com/an-animated-guide-to-flexbox-d280cf6afc35#.wcjmuhxwg)
 - **Parent - Flex Container**
 
 		.container {
