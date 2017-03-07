@@ -8,6 +8,7 @@
 - [Iso-Bar Front End development standards](https://isobar-idev.github.io/code-standards)
 - [Front Dev Guidelines](https://taitems.github.io/Front-End-Development-Guidelines/#cssHtmlSection)
 - [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/)
+- [Front end handbook 2017](https://frontendmasters.gitbooks.io/front-end-handbook-2017/content/)
 
 ---
 ## Front End application development workflow

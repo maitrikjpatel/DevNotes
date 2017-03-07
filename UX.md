@@ -100,6 +100,8 @@
 - [UX Excercises](https://medium.com/foursquare-direct/a-list-of-creative-exercises-for-creative-teams-c43b36f9dbde)
 - [Resources cards](https://resourcecards.com/)
 - [Gradient Tool](https://webgradients.com)
+- [Sketch Tuts](https://www.switchtosketchapp.com/)
+- [Sketch Casts](https://www.sketchcasts.net)
 
 ##Author
 
