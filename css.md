@@ -13,6 +13,7 @@
 - [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892)
 - [CSS Tools](https://medium.com/@vilcins/css-tools-that-i-use-67cb8bfa2e2d)
 - [CSS Reference](http://cssreference.io)
+- [CSS Animation](http://animista.net/)
 
 ---
 
@@ -66,6 +67,7 @@
 - [Flex in 5 min](http://flexboxin5.com/)
 - [Interactive Flex](http://progressivered.com/fla/?d=0&v=1&h=1&s=0&i=000&a=000)
 - [Flex Animation](https://medium.freecodecamp.com/an-animated-guide-to-flexbox-d280cf6afc35#.wcjmuhxwg)
+
 - **Parent - Flex Container**
 
 		.container {

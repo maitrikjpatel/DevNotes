@@ -9,6 +9,8 @@
 - [Front Dev Guidelines](https://taitems.github.io/Front-End-Development-Guidelines/#cssHtmlSection)
 - [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/)
 - [Front end handbook 2017](https://frontendmasters.gitbooks.io/front-end-handbook-2017/content/)
+- [Boiler Plate](http://www.boilrplate.com/)
+- [FE Roadmap](https://github.com/kamranahmedse/developer-roadmap)
 
 ---
 ## Front End application development workflow

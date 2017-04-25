@@ -21,6 +21,8 @@
 - [Design Principles](https://medium.muz.li/design-principles-behind-great-products-6ef13cd74ccf)
 - [Atomic Design Process](https://nordnet.design/a-closer-look-at-our-atomic-workflow-in-action-by-the-nordnet-design-studio-6e48d6f46c3c)
 - [Create Front End Framework](https://medium.com/sketch-app-sources/how-to-create-a-front-end-framework-with-sketch-2379edb5e7df)
+- [Brand Sprint](https://medium.com/@jakek/the-three-hour-brand-sprint-3ccabf4b768a)
+- [Design Sprint](https://designsprintkit.withgoogle.com)
 
 ---
 
@@ -78,6 +80,7 @@
 
 ## Case Study
 
+- [Cas Study Club](https://www.casestudy.club)
 - [NYTimes Case Study](http://nytimes.tematroinoi.com/)
 - [What If We Could Rethink Digital Healthcare?](http://casestudies.f-i.com/healthcare/)
 - [An exploration in Material Design by feedly — Medium](https://medium.com/@abrodo/an-exploration-in-material-design-by-feedly-8c1a1cbdfdcd)

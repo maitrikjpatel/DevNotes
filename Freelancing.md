@@ -22,6 +22,7 @@
 - [Freelancing Union](https://www.freelancersunion.org/)
 - [Freelancing in Data](https://www.experfy.com/projects/category)
 - [SideProjectors | Marketplace to buy and sell side projects.](http://www.sideprojectors.com/project/home)
+- [Crew certified Freelancer](https://crew.co/)
 
 ###Learning and Tools
 
