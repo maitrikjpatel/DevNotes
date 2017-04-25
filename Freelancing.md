@@ -1,7 +1,7 @@
-#Freelancing Notes
+# Freelancing Notes
 ---
 
-###Freelancing work search boards
+### Freelancing work search boards
 
 - [Meeet](http://meeet.co/)
 - [Top Coder](http://www.topcoder.com/)
@@ -24,7 +24,7 @@
 - [SideProjectors | Marketplace to buy and sell side projects.](http://www.sideprojectors.com/project/home)
 - [Crew certified Freelancer](https://crew.co/)
 
-###Learning and Tools
+### Learning and Tools
 
 - [7 Days of free training for freelancers from The Creative Class](https://creativeclass.io/guide/)
 - [Tools for Freelancers - Find work, get paid, and manage your freelance career like a boss](https://thecreativeclass.io/guide/?ref=producthunt)
@@ -33,7 +33,7 @@
 - [Online Project Management Software – Solo](http://www.thrivesolo.com/online-project-management-software)
 - [Scheduling](https://calendly.com/)
 
-###Contract and Invoices
+### Contract and Invoices
 
 - [The latest version of my ‘killer contract’ for web designers and developers](https://gist.github.com/malarkey/4031110)
 - [Slimvoice](https://slimvoice.co/?ref=producthunt)
@@ -43,7 +43,7 @@
 - [Bulletproof contracts, simple e-signing, integrated escrow](https://www.hellobonsai.com/)
 - [Freelance Contract](https://www.and.co/the-freelance-contract?ref=producthunt)
 
-###Nomad list
+### Nomad list
 
 - [NomadWiki](http://www.nomadwiki.net/)
 - [NoDesk](http://nodesk.co/)
@@ -56,6 +56,6 @@
 - [Nomadic Designer Toolbox: Tips, Services & Hacks - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/nomadic-designer-toolbox-tips-services-hacks--cms-23078)
 
 ---
-##Author
+## Author
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
