@@ -37,6 +37,7 @@
 - [The Art of UI Animations, Lean UX SF](http://markgeyer.com/pres/the-art-of-ui-animations/#/)
 - [A Beginner’s Introduction to CSS Animation](https://webdesign.tutsplus.com/tutorials/a-beginners-introduction-to-css-animation--cms-21068)
 - [CSS Transitions](http://css3.bradshawenterprises.com/transitions/)
+- [CSS3: Animations vs. Transitions](https://www.kirupa.com/html5/css3_animations_vs_transitions.htm)
 
 #### Responsive design
 

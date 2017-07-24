@@ -32,9 +32,12 @@
 - [Freelancing Planner](http://cushionapp.com/)
 - [Online Project Management Software – Solo](http://www.thrivesolo.com/online-project-management-software)
 - [Scheduling](https://calendly.com/)
+- [Automate Freelancing workflow](http://www.plasticpollutioncoalition.org/about)
+- [Cost Estimate](http://www.estimapp.com/)
 
 ### Contract and Invoices
 
+- [Website Cost](https://fulfilli.com/)
 - [The latest version of my ‘killer contract’ for web designers and developers](https://gist.github.com/malarkey/4031110)
 - [Slimvoice](https://slimvoice.co/?ref=producthunt)
 - [Invoice Generator](https://invoice.to/)
@@ -42,6 +45,7 @@
 - [Freelancing, simple & secure](https://www.hellobonsai.com)
 - [Bulletproof contracts, simple e-signing, integrated escrow](https://www.hellobonsai.com/)
 - [Freelance Contract](https://www.and.co/the-freelance-contract?ref=producthunt)
+- [Invoice](https://prexview.com)
 
 ### Nomad list
 

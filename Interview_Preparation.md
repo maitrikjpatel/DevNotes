@@ -20,25 +20,21 @@
 ## Algorithms and Data Structure
 
 - [HackerRank](https://www.hackerrank.com/domains)
-- [Let's Code](https://leetcode.com/problemset/algorithms/)
 - [Geeks for Geeks](http://www.geeksforgeeks.org/)
-- [Data Structure in JS](https://github.com/duereg/js-algorithms)
-- [Visual Data Structure](http://visualgo.net/?ref=webdesignernews.com)
-- [Hired in tech](https://www.hiredintech.com/classrooms/system-design/lesson/60)
-- [Visual Code](https://www.educative.io/collection/5642554087309312/5679846214598656)
-
-## Online Test/Prep :
-
-- [Frame Work Test](http://dedesigntheweb.com)
-- [Interviewcake](https://www.interviewcake.com)
-- [Coderbyte](http://coderbyte.com)
-- [Interview Prep/Mock](https://www.pramp.com/)
+- [Visual Data Structure](http://visualgo.net/)
+- [Let's Code](https://leetcode.com/problemset/algorithms/)
+- [Visual Algo coding](http://algo-visualizer.jasonpark.me/#path=backtracking/knight's_tour/basic)
+- [Visual Code : PAID](https://www.educative.io/collection/5642554087309312/5679846214598656)
+- [Interviewcake : PAID](https://www.interviewcake.com)
+- [Coderbyte Paid : PAID](http://coderbyte.com)
+- [Interview Prep/Mock : PAID](https://www.pramp.com/)
 
 
 ## Good read for interview
 
 - [7 Lessons Learned From Interviewing 100+ App Developers](https://medium.com/@stevepyoung/7-lessons-learned-from-interviewing-100-app-developers-fee26e0dec97)
 - [How To Interview A Front End Developer](http://ilikekillnerds.com/2014/09/how-to-interview-a-front-end-developer-and-how-to-prepare-for-a-front-end-developer-interview/)
+- [Crack the FE interview ](https://medium.freecodecamp.com/cracking-the-front-end-interview-9a34cd46237)
 
 ## ResumeHelp
 
@@ -51,8 +47,6 @@
 ##  ApplyList
 
 - [Quick apply companies](https://github.com/j-delaney/easy-application)
-
-
 
 ---
 ## Author

@@ -11,6 +11,10 @@
 - [Front end handbook 2017](https://frontendmasters.gitbooks.io/front-end-handbook-2017/content/)
 - [Boiler Plate](http://www.boilrplate.com/)
 - [FE Roadmap](https://github.com/kamranahmedse/developer-roadmap)
+- [FE Guide](https://github.com/grab/front-end-guide)
+- [Morden Web Guide](https://github.com/dexteryy/spellbook-of-modern-webdev)
+- [FE Dev bookmarks](https://github.com/dypsilon/frontend-dev-bookmarks)
+- [FE Board](https://enboard.co/frontend/)
 
 ---
 ## Front End application development workflow
@@ -38,6 +42,13 @@
 - [Understanding Git Flow](https://guides.github.com/introduction/flow/index.html)
 - [GITHUB Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
 - [Gittip](https://www.gittip.com/)
+
+---
+
+## Styled components
+
+- [Styled Components](https://www.styled-components.com/docs/basics#motivation)
+- [Styling React Apps with Styled Components](https://www.youtube.com/watch?v=qu4U7lwZTRI)
 
 ----
 

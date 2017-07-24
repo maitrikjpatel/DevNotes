@@ -87,6 +87,8 @@
 - [From concept to reality: rebranding Google Squared - Jack Morgan](http://jackwmorgan.com/rebranding-google-squared/)
 - [Asana Rebranding](https://medium.com/swlh/circling-ourselves-the-story-behind-asana-s-rebrand-e8247516705a)
 - [HubSpot Landing page case study](https://www.uxpin.com/studio/blog/ux-case-study-hubspot-redesigned-homepage/)
+- [Design Principles](https://medium.muz.li/design-principles-behind-great-products-6ef13cd74ccf)
+- [Houzz Case Study](https://uxdesign.cc/houzz-a-ux-case-study-98843fbdfcba)
 
 ---
 
@@ -105,6 +107,7 @@
 - [Gradient Tool](https://webgradients.com)
 - [Sketch Tuts](https://www.switchtosketchapp.com/)
 - [Sketch Casts](https://www.sketchcasts.net)
+- [UX Job Boards](https://uxdesign.cc/ux-job-boards-24-places-to-find-a-job-in-user-experience-design-a886c2279982)
 
 ##Author
 
