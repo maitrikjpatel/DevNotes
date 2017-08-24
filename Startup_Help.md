@@ -33,7 +33,9 @@
 - [Growth marketing for free](https://thenextweb.com/entrepreneur/2015/10/30/18-best-places-to-promote-your-startup-for-virtually-nothing)
 - [Growth Tools](http://growthtools.io/)
 - [Growth Hacker kit](http://courses.growthhackerkit.com/)
-- 
+- [Side project Marketing](https://github.com/karllhughes/side-project-marketing)
+- [Product Launch List](https://github.com/mmccaff/PlacesToPostYourStartup)
+
 ## Startup_India
 
 - [CIIE](http://www.ciie.co/)
