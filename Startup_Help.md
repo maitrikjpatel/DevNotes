@@ -35,6 +35,7 @@
 - [Growth Hacker kit](http://courses.growthhackerkit.com/)
 - [Side project Marketing](https://github.com/karllhughes/side-project-marketing)
 - [Product Launch List](https://github.com/mmccaff/PlacesToPostYourStartup)
+- [Sales Email Template](http://insidesaassales.com/)
 
 ## Startup_India
 
