@@ -21,7 +21,7 @@
 - CSS Screen Example: 
 ![alt text](https://www.docusign.com/sites/default/files/Desktop_interview.png "Example")
 
-2. Move boxes clockwise and anticlockwise on clicking respective buttons. 
+2. Move boxes color clockwise and anticlockwise on clicking respective next and prev buttons. 
 
 - JS Animation Example: 
 
