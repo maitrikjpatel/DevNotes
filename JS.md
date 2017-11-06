@@ -1,4 +1,4 @@
-#JS Notes
+# JS Notes
 
 ---
 
@@ -54,7 +54,6 @@
 	- [Good Part](#good-part)
 	- [Bad Part](#bad-part)
 	- [Problem](#problem)
-- [Author](#author)
 
 ## Good Read
 
