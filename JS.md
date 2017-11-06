@@ -6,6 +6,11 @@
 - [JS/Jquery Libraries](#jsjquery-libraries)
 - [Angular](#angular)
 - [JS known topics](#js-known-topics)
+	- [Hoisting](#hoisting)
+	- [CallBack Hell](#callback-hell)
+	- [Promise](#promise)
+	- [JS Closures](#js-closures)
+	- [Event delegation](#event-delegation)
 - [Javascript Basic](#javascript-basic)
 	- ["While" vs "For" vs "Do/While"](#while-vs-for-vs-dowhile)
 	- [Array](#array)
@@ -52,6 +57,7 @@
 	- [Good Part](#good-part)
 	- [Bad Part](#bad-part)
 	- [Problem](#problem)
+
 
 ## Good Read
 
@@ -100,175 +106,180 @@
 
 ## JS known topics
 
+### Hoisting
 - **[Hoisting](https://scotch.io/tutorials/understanding-hoisting-in-javascript)**
-	- Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
-	- variable and function declarations are put into memory during the compile phase, but stays exactly where you typed it in your coding.
-	- The variables can be initialized and used before declared. But they cannot be used without initialization.
-	- all undeclared variables are global variables.
-	- JavaScript only hoists declarations, not initializations.
-	- Hoisted : Use -> Initialize (Hoisted variable is initialised with a value of undefined)
+- Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+- variable and function declarations are put into memory during the compile phase, but stays exactly where you typed it in your coding.
+- The variables can be initialized and used before declared. But they cannot be used without initialization.
+- all undeclared variables are global variables.
+- JavaScript only hoists declarations, not initializations.
+- Hoisted : Use -> Initialize (Hoisted variable is initialised with a value of undefined)
 
-			var x = 1; // Initialize x
-			console.log(x + " " + y); // '1 undefined' 
-			var y = 2; // Initialize y
+		var x = 1; // Initialize x
+		console.log(x + " " + y); // '1 undefined' 
+		var y = 2; // Initialize y
 
-	- Hoisted : Declare -> Use -> Initialize (Hoisted variable is initialised with a value of undefined)
+- Hoisted : Declare -> Use -> Initialize (Hoisted variable is initialised with a value of undefined)
 
-			// The following code will behave the same as the previous code: 
-			var x = 1; // Initialize x
-			var y; // Declare y
-			console.log(x + " " + y); // '1 undefined'
-			y = 2; // Initialize y
+		// The following code will behave the same as the previous code: 
+		var x = 1; // Initialize x
+		var y; // Declare y
+		console.log(x + " " + y); // '1 undefined'
+		y = 2; // Initialize y
 
-	- Avoid Hoisting pitfall : Initialize -> Use -> Declare
+- Avoid Hoisting pitfall : Initialize -> Use -> Declare
 
-			num = 6;
-			num + 7;
-			var num; 
-			/* gives no errors as long as num is declared*/
+		num = 6;
+		num + 7;
+		var num; 
+		/* gives no errors as long as num is declared*/
 
-	- Avoid Hoisting pitfall : Declare -> Initialize -> Use
+- Avoid Hoisting pitfall : Declare -> Initialize -> Use
 
-			var x = 1; // Declare and Initialize x
-			console.log(x); // '1'
+		var x = 1; // Declare and Initialize x
+		console.log(x); // '1'
 
-	- "use strict" : strict mode can help expose undeclared variables.
-	- ES6 let : The interpreter throws an error if we use a constant before declaring and initialising it.
+- "use strict" : strict mode can help expose undeclared variables.
+- ES6 let : The interpreter throws an error if we use a constant before declaring and initialising it.
 
-			console.log(hoist); // Output: ReferenceError: hoist is not defined
-			let hoist = 'The variable has been hoisted.';
+		console.log(hoist); // Output: ReferenceError: hoist is not defined
+		let hoist = 'The variable has been hoisted.';
 
-	- ES6 const : The interpreter throws an error if we use a constant before declaring and initialising it.
+- ES6 const : The interpreter throws an error if we use a constant before declaring and initialising it.
 
-			const PI;
-			console.log(PI); // Ouput: SyntaxError: Missing initializer in const declaration
-			PI=3.142;
+		const PI;
+		console.log(PI); // Ouput: SyntaxError: Missing initializer in const declaration
+		PI=3.142;
 
-			function getCircumference(radius) {
-				console.log(circumference)
-				circumference = PI*radius*2;
-				const PI = 22/7;
-			}
+		function getCircumference(radius) {
+			console.log(circumference)
+			circumference = PI*radius*2;
+			const PI = 22/7;
+		}
 
-			getCircumference(2) // ReferenceError: circumference is not defined
-			// PI was used before it was declared, which is illegal for const variables.
+		getCircumference(2) // ReferenceError: circumference is not defined
+		// PI was used before it was declared, which is illegal for const variables.
 
-	- Function declarations are hoisted over variable declarations but not over variable assignments.
+- Function declarations are hoisted over variable declarations but not over variable assignments.
 
-			var double = 22;
+		var double = 22;
 
-			function double(num) {
-				return (num*2);
-			}
+		function double(num) {
+			return (num*2);
+		}
 
-			console.log(typeof double); // Output: number
+		console.log(typeof double); // Output: number
 
-			var double;
+		var double;
 
-			function double(num) {
-				return (num*2);
-			}
+		function double(num) {
+			return (num*2);
+		}
 
-			console.log(typeof double); // Output: function
+		console.log(typeof double); // Output: function
+
+### CallBack Hell
 
 - [CallBack Hell](http://callbackhell.com/)
+- Don't nest functions. Give them names and place them at the top level of your program
+- Use **function hoisting** to your advantage to move functions 'below the fold'
+- Handle **every single error** in every one of your callbacks. Use a linter like standard to help you with this.
+- Create reusable functions and place them in a module to reduce the cognitive load required to understand your code. 
+- Splitting your code into small pieces like this also helps you handle errors, write tests, forces you to create a stable and documented public API for your code, and helps with refactoring.
 
-	- Don't nest functions. Give them names and place them at the top level of your program
-	- Use **function hoisting** to your advantage to move functions 'below the fold'
-	- Handle **every single error** in every one of your callbacks. Use a linter like standard to help you with this.
-	- Create reusable functions and place them in a module to reduce the cognitive load required to understand your code. 
-	- Splitting your code into small pieces like this also helps you handle errors, write tests, forces you to create a stable and documented public API for your code, and helps with refactoring.
+### Promise
 
 - [Promise](https://scotch.io/tutorials/javascript-promises-for-dummies)
-
-	- Promise are made of two parts. Control/Promise
-	- Control : One type of callback. Succeeded or Failed.
-	- Promise : Pending/Fullfilled/Rejected
+- Promise are made of two parts. Control/Promise
+- Control : One type of callback. Succeeded or Failed.
+- Promise : Pending/Fullfilled/Rejected
 
 			// promise syntax look like this
 			new Promise(/* executor*/ function (resolve, reject) { ... } );
 
-	- .then for go inside next chain. 
-	- .catch for find an error.
-	- Promise.all to execute after all promises resolved. 
-	- Promise.race to execute after first promise resolved. 
-	- Use Generator to make async code more readable.
+- .then for go inside next chain. 
+- .catch for find an error.
+- Promise.all to execute after all promises resolved. 
+- Promise.race to execute after first promise resolved. 
+- Use Generator to make async code more readable.
 
-- [JS Closures]
+### JS Closures
 
-	- A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
-	- The closure has three scope chains:
-		1. it has access to its own scope (variables defined between its curly brackets),
-		2. it has access to the outer function’s variables, and
-		3. it has access to the variables.
-	- Coding Example.
+- [JS Closures]()
+- A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
+- The closure has three scope chains:
+	1. it has access to its own scope (variables defined between its curly brackets),
+	2. it has access to the outer function’s variables, and
+	3. it has access to the variables.
+- Coding Example.
 
-			function showName (firstName, lastName) {
-				var nameIntro = "Your name is ";
+		function showName (firstName, lastName) {
+			var nameIntro = "Your name is ";
 
-			// this inner function has access to the outer function's variables, 		including the parameter​
+		// this inner function has access to the outer function's variables, 		including the parameter​
 
-				function makeFullName () {
-					​return nameIntro + firstName + " " + lastName;
-				}
-				​return makeFullName ();
+			function makeFullName () {
+				​return nameIntro + firstName + " " + lastName;
 			}
+			​return makeFullName ();
+		}
 
-			showName ("Michael", "Jackson"); // Your name is Michael Jackson
+		showName ("Michael", "Jackson"); // Your name is Michael Jackson
 
-			// Closure with argument
+		// Closure with argument
 
-			var digit_name = (function () {
-				var names = ['zero', 'one', 'two','three', 'four', 'five', 'six', 'seven','eight', 'nine'];
+		var digit_name = (function () {
+			var names = ['zero', 'one', 'two','three', 'four', 'five', 'six', 'seven','eight', 'nine'];
 
-				return function (n) {
-					return names[n];
-				};
-
-			}());
-
-			alert(digit_name(3)); // 'three'
-
-			------------------------------
-
-			(function outer() {
-				var x;
-				// The inner circle function cannot see y, In Diagram
-
-				return function inner(n) {
-					// The outer circle function can see x, In Diagram
-					var y = x;
-				};
-
-			}());
-
-			------------------------------
-
-			//---Real life example
-
-			function makeSizer(size) {
-			return function() {
-				document.body.style.fontSize = size + 'px';
+			return function (n) {
+				return names[n];
 			};
-			}
 
-			var size12 = makeSizer(12);
-			var size14 = makeSizer(14);
-			var size16 = makeSizer(16);
+		}());
 
-			document.getElementById('size-12').onclick = size12;
-			document.getElementById('size-14').onclick = size14;
-			document.getElementById('size-16').onclick = size16;
+		alert(digit_name(3)); // 'three'
 
-			//--- html code
-			<a href="#" id="size-12">12</a>
-			<a href="#" id="size-14">14</a>
-			<a href="#" id="size-16">16</a>
+		------------------------------
 
+		(function outer() {
+			var x;
+			// The inner circle function cannot see y, In Diagram
+
+			return function inner(n) {
+				// The outer circle function can see x, In Diagram
+				var y = x;
+			};
+
+		}());
+
+		------------------------------
+
+		//---Real life example
+
+		function makeSizer(size) {
+		return function() {
+			document.body.style.fontSize = size + 'px';
+		};
+		}
+
+		var size12 = makeSizer(12);
+		var size14 = makeSizer(14);
+		var size16 = makeSizer(16);
+
+		document.getElementById('size-12').onclick = size12;
+		document.getElementById('size-14').onclick = size14;
+		document.getElementById('size-16').onclick = size16;
+
+		//--- html code
+		<a href="#" id="size-12">12</a>
+		<a href="#" id="size-14">14</a>
+		<a href="#" id="size-16">16</a>
+
+### Event delegation
 
 ## Javascript Basic 
 
-- JS is class less programming language.
+- JavaScript is a multi-paradigm language, supporting imperative/procedural programming along with OOP (Object-Oriented Programming) with prototypal inheritance.and functional programming.
 
 - Object Creation Pattern - Encapsulation
 

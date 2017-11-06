@@ -10,6 +10,7 @@
 - [html 10 questions - Sitepoint](http://www.sitepoint.com/10-typical-html-interview-exercises/)
 - [CSS 10 questions - Sitepoint](http://www.sitepoint.com/12-little-known-css-facts/)
 - [CSS questions - CSS Tricks](https://css-tricks.com/interview-questions-css/)
+- [JS 10 imp questions](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
 - [JS 5 basic questions](https://medium.com/humans-create-software/how-do-you-judge-a-javascript-programmer-by-only-5-questions-f2abdf7dfd4a)
 - [JS 5 good questions - Topal](http://www.toptal.com/javascript#hiring-guide)
 - [JS 25 questions - Topal](http://www.toptal.com/javascript/interview-questions)
