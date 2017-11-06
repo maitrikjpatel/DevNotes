@@ -2,6 +2,60 @@
 
 ---
 
+<!-- TOC -->
+- [Good Read](#good-read)
+- [JS Guidelines and Tuts](#js-guidelines-and-tuts)
+- [JS/Jquery Libraries](#jsjquery-libraries)
+- [Angular](#angular)
+- [JS known topics](#js-known-topics)
+- [Javascript Basic](#javascript-basic)
+		- ["While" vs "For" vs "Do/While"](#while-vs-for-vs-dowhile)
+		- [Array](#array)
+		- [Object](#object)
+		- [Methods](#methods)
+		- [The "this" Keyword](#the-this-keyword)
+		- [Passing Objects into Functions](#passing-objects-into-functions)
+		- [Type of](#type-of)
+		- [Getting IN-timate](#getting-in-timate)
+		- [Prototype](#prototype)
+		- [DRY Penguins - Inheritance](#dry-penguins---inheritance)
+		- [Private Number and Methods](#private-number-and-methods)
+	- [Pseudoclassical Inheritance](#pseudoclassical-inheritance)
+	- [Functional Inheritance](#functional-inheritance)
+	- [MONAD](#monad)
+- [ES6](#es6)
+	- [Variables and Parameters](#variables-and-parameters)
+			- [Let](#let)
+			- [Const](#const)
+			- [Destructing](#destructing)
+			- [Default Parameters](#default-parameters)
+			- [REST Parameters](#rest-parameters)
+			- [Spread Operator](#spread-operator)
+			- [Template Literals](#template-literals)
+	- [Classes](#classes)
+	- [Functional Programming](#functional-programming)
+			- [Arrows](#arrows)
+			- [Iterators](#iterators)
+			- [Generators](#generators)
+			- [Iterables](#iterables)
+			- [For of](#for-of)
+			- [Comprehensions ( Not supported anymore)](#comprehensions--not-supported-anymore)
+	- [Built-In Objects](#built-in-objects)
+			- [Numbers](#numbers)
+			- [Math](#math)
+			- [New Array Function](#new-array-function)
+			- [SETS](#sets)
+			- [MAPS](#maps)
+			- [WAEKMAPS & WEAKSETS](#waekmaps--weaksets)
+	- [Objects](#objects)
+	- [Modules](#modules)
+- [JS Good Parts](#js-good-parts)
+	- [Best Practice](#best-practice)
+	- [Good Part](#good-part)
+	- [Bad Part](#bad-part)
+	- [Problem](#problem)
+- [Author](#author)
+
 ## Good Read
 
 - [The Basics of Object-Oriented JavaScript](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
@@ -14,11 +68,9 @@
 
 - [Human Javascript](http://read.humanjavascript.com/ch00-foreword.html)
 
-- [Getting Started JS](http://www.web-crunch.com/really-learn-javascript-series-part-1-getting-started/)
-
 ---
 
-### JS Guidelines and Tuts
+## JS Guidelines and Tuts
 
 - [Principles of writing consistent, idiomatic JS](https://github.com/rwaldron/idiomatic.js)
 
@@ -34,7 +86,7 @@
 
 ---
 
-### JS/Jquery Libraries
+## JS/Jquery Libraries
 
 
 - [A tidy repository of jQuery plugins](http://www.unheap.com/mobile/)
@@ -49,7 +101,7 @@
 
 ---
 
-### Angular
+## Angular
 
 - [Custom Deactives](http://www.toptal.com/angular-js/angular-js-demystifying-directives)
 
@@ -57,8 +109,177 @@
 
 ---
 
+## JS known topics
 
-## Javascript Basic
+- **[Hoisting](https://scotch.io/tutorials/understanding-hoisting-in-javascript)**
+	- Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+	- variable and function declarations are put into memory during the compile phase, but stays exactly where you typed it in your coding.
+	- The variables can be initialized and used before declared. But they cannot be used without initialization.
+	- all undeclared variables are global variables.
+	- JavaScript only hoists declarations, not initializations.
+	- Hoisted : Use -> Initialize (Hoisted variable is initialised with a value of undefined)
+
+			var x = 1; // Initialize x
+			console.log(x + " " + y); // '1 undefined' 
+			var y = 2; // Initialize y
+
+	- Hoisted : Declare -> Use -> Initialize (Hoisted variable is initialised with a value of undefined)
+
+			// The following code will behave the same as the previous code: 
+			var x = 1; // Initialize x
+			var y; // Declare y
+			console.log(x + " " + y); // '1 undefined'
+			y = 2; // Initialize y
+
+	- Avoid Hoisting pitfall : Initialize -> Use -> Declare
+
+			num = 6;
+			num + 7;
+			var num; 
+			/* gives no errors as long as num is declared*/
+
+	- Avoid Hoisting pitfall : Declare -> Initialize -> Use
+
+			var x = 1; // Declare and Initialize x
+			console.log(x); // '1'
+
+	- "use strict" : strict mode can help expose undeclared variables.
+	- ES6 let : The interpreter throws an error if we use a constant before declaring and initialising it.
+
+			console.log(hoist); // Output: ReferenceError: hoist is not defined
+			let hoist = 'The variable has been hoisted.';
+
+	- ES6 const : The interpreter throws an error if we use a constant before declaring and initialising it.
+
+			const PI;
+			console.log(PI); // Ouput: SyntaxError: Missing initializer in const declaration
+			PI=3.142;
+
+			function getCircumference(radius) {
+				console.log(circumference)
+				circumference = PI*radius*2;
+				const PI = 22/7;
+			}
+
+			getCircumference(2) // ReferenceError: circumference is not defined
+			// PI was used before it was declared, which is illegal for const variables.
+
+	- Function declarations are hoisted over variable declarations but not over variable assignments.
+
+			var double = 22;
+
+			function double(num) {
+				return (num*2);
+			}
+
+			console.log(typeof double); // Output: number
+
+			var double;
+
+			function double(num) {
+				return (num*2);
+			}
+
+			console.log(typeof double); // Output: function
+
+- [CallBack Hell](http://callbackhell.com/)
+
+	- Don't nest functions. Give them names and place them at the top level of your program
+	- Use **function hoisting** to your advantage to move functions 'below the fold'
+	- Handle **every single error** in every one of your callbacks. Use a linter like standard to help you with this.
+	- Create reusable functions and place them in a module to reduce the cognitive load required to understand your code. 
+	- Splitting your code into small pieces like this also helps you handle errors, write tests, forces you to create a stable and documented public API for your code, and helps with refactoring.
+
+- [Promise](https://scotch.io/tutorials/javascript-promises-for-dummies)
+
+	- Promise are made of two parts. Control/Promise
+	- Control : One type of callback. Succeeded or Failed.
+	- Promise : Pending/Fullfilled/Rejected
+
+			// promise syntax look like this
+			new Promise(/* executor*/ function (resolve, reject) { ... } );
+
+	- .then for go inside next chain. 
+	- .catch for find an error.
+	- Promise.all to execute after all promises resolved. 
+	- Promise.race to execute after first promise resolved. 
+	- Use Generator to make async code more readable.
+
+- [JS Closures]
+
+	- A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
+	- The closure has three scope chains:
+		1. it has access to its own scope (variables defined between its curly brackets),
+		2. it has access to the outer function’s variables, and
+		3. it has access to the variables.
+	- Coding Example.
+
+			function showName (firstName, lastName) {
+				var nameIntro = "Your name is ";
+
+			// this inner function has access to the outer function's variables, 		including the parameter​
+
+				function makeFullName () {
+					​return nameIntro + firstName + " " + lastName;
+				}
+				​return makeFullName ();
+			}
+
+			showName ("Michael", "Jackson"); // Your name is Michael Jackson
+
+			// Closure with argument
+
+			var digit_name = (function () {
+				var names = ['zero', 'one', 'two','three', 'four', 'five', 'six', 'seven','eight', 'nine'];
+
+				return function (n) {
+					return names[n];
+				};
+
+			}());
+
+			alert(digit_name(3)); // 'three'
+
+			------------------------------
+
+			(function outer() {
+				var x;
+				// The inner circle function cannot see y, In Diagram
+
+				return function inner(n) {
+					// The outer circle function can see x, In Diagram
+					var y = x;
+				};
+
+			}());
+
+			------------------------------
+
+			//---Real life example
+
+			function makeSizer(size) {
+			return function() {
+				document.body.style.fontSize = size + 'px';
+			};
+			}
+
+			var size12 = makeSizer(12);
+			var size14 = makeSizer(14);
+			var size16 = makeSizer(16);
+
+			document.getElementById('size-12').onclick = size12;
+			document.getElementById('size-14').onclick = size14;
+			document.getElementById('size-16').onclick = size16;
+
+			//--- html code
+			<a href="#" id="size-12">12</a>
+			<a href="#" id="size-14">14</a>
+			<a href="#" id="size-16">16</a>
+
+
+---
+
+## Javascript Basic 
 
 - JS is class less programming language.
 
@@ -105,11 +326,9 @@
 
 		var newArray = [[1,1,1], [1,1,1], [1,1,1]]
 
-
 - Learned about jagged arrays
 
 		var jagged = [[1,1,1],[1],[1,1]]
-
 
 #### Object
 
@@ -214,79 +433,6 @@
 		  return 2014 - bob.age;
 		};
 		console.log(bob.getYearOfBirth());
-
-#### JS Closures
-
-- A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
-- The closure has three scope chains:
-	1. it has access to its own scope (variables defined between its curly brackets),
-	2. it has access to the outer function’s variables, and
-	3. it has access to the variables.
-- Coding Example.
-
-		function showName (firstName, lastName) {
-			var nameIntro = "Your name is ";
-
-	    // this inner function has access to the outer function's variables, 		including the parameter​
-
-			function makeFullName () {
-				​return nameIntro + firstName + " " + lastName;
-			}
-			​return makeFullName ();
-		}
-
-		showName ("Michael", "Jackson"); // Your name is Michael Jackson
-
-		// Closure with argument
-
-		var digit_name = (function () {
-		 	var names = ['zero', 'one', 'two','three', 'four', 'five', 'six', 'seven','eight', 'nine'];
-
-		 	return function (n) {
-		 		return names[n];
-		 	};
-
-		}());
-
-		alert(digit_name(3)); // 'three'
-
-		------------------------------
-
-		(function outer() {
-		 	var x;
-			// The inner circle function cannot see y, In Diagram
-
-		 	return function inner(n) {
-				// The outer circle function can see x, In Diagram
-		 		var y = x;
-		 	};
-
-		}());
-
-		------------------------------
-
-		//---Real life example
-
-		function makeSizer(size) {
-		  return function() {
-		    document.body.style.fontSize = size + 'px';
-		  };
-		}
-
-		var size12 = makeSizer(12);
-		var size14 = makeSizer(14);
-		var size16 = makeSizer(16);
-
-		document.getElementById('size-12').onclick = size12;
-		document.getElementById('size-14').onclick = size14;
-		document.getElementById('size-16').onclick = size16;
-
-		//--- html code
-		<a href="#" id="size-12">12</a>
-		<a href="#" id="size-14">14</a>
-		<a href="#" id="size-16">16</a>
-
-
 
 #### The "this" Keyword
 
@@ -438,29 +584,6 @@
 		var myBalance = myBalanceMethod();
 		console.log(myBalance);
 
-
-### A Module Pattern
-
-- Module pattern is easily transformed into a powerful constructor pattern.
-
-		var singleton = (function () {
-		 	var privateVariable;
-
-		 	function privateFunction(x) {
-		 		...privateVariable...
-		 	}
-
-			return {
-			 	firstMethod: function (a, b) {
-			 		...privateVariable...
-			 	},
-			 	secondMethod: function (c) {
-			 		...privateFunction()...
-			 	}
-			};
-
-		}());
-
 ### Pseudoclassical Inheritance
 
 		function Gizmo(id) {
@@ -513,9 +636,507 @@
 		var monad = identity("Hello world.");
 		monad.bind(alert);
 
-## JS Good Parts
+---
+
+## ES6
+
+- [ES6](http://es6-features.org/)
+- [ES6 vs ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
+- [ES6 Tools](https://github.com/addyosmani/es6-tools)
+- Broweser Runtime Traceur but will be slow. 
+- Production side : ESnext, Babel, Traceur using grunt/gulp/webpack 
+- Polyfill manually of add ES6 Shim file. 
+
+
+### Variables and Parameters
+
+##### Let 
+
+- Var : Global and Function scope 
+- Let : Will provide true block scoping, unlike var
+- Ideal to use it for programming as it will help to avoid hosting.
+
+		var doWork = function(flag){
+        	if(flag){
+          		let  x = 3;
+           		return x;
+        	}
+      	}
+
+##### Const
+
+- will make variable Read only
+- Never change , will give error if you try to change it. 
+- Will shadow outer declaration
+- Block Scoping
+
+##### Destructing
+
+- Can destructure arrays
+- Can destructure objects
+- Work with parameters
+- [x, y] = [y, x]
+- let [ , x, y] = [1, 2, 3]
+- let [ , x, y, z] = [1, 2, 3] // "z" undefined 
+
+		let  doWork = function(url, {data, cache, headers}){
+			return data;
+      	}
+		
+		let result = doWork( 
+			"api/test", {
+				data: "test",
+				cache: false
+			}
+		);
+
+		expect(result).toBe("test");
+
+##### Default Parameters
+
+- Nice syntax for explicitly stating what the default value of parameter will be if missing.
+- Provide Defaults
+- Will Provide a value for undefined
+- Works with Destructing
+
+		var doWok  = function (name="Scott"){ 
+			return name 
+		};
+		var result = doWork(); // Scott
+		var result = doWork("undefined"); // Scott
+		var result = doWork(""); // No
+
+##### REST Parameters
+
+- It works as VAR Arguments. 
+- It is true array
+- ...RESTParameters
+- let  doWork = function(url, ...numbers){};
+
+##### Spread Operator
+
+- ...Spread Operator
+- Can spread an array across parameters
+- Can build arrays
+- var result = doWork(...[1,2,3])
+- var a = [4,5,6]
+- var b = [1,2,3,...a,7,8,9]; // [1,2,3,4,5,6,7,8,9]
+
+##### Template Literals
+
+- Can easily combine literals and data
+- Can help build URLs
+- Can use tags
+- let url = "http://apiserver/" + category + "/" + id;  // Old
+- let url = 'http://apiserver/${category}/${id}'; // Template Literals
+- USE : Domain specific language stays inside template
+
+### Classes
+
+- Class like c, c++, java
+- Do not have private or public visibility accessibility
+- Constructor: Class can have constructor 
+- Encapsulation : Getter & Setter , hide implementation details or logic
+- Inheritance : Use "extends" to inherits from class.
+- Every class extends itself to object 
+- every class extends Object as super class // Object(SuperClass) , Perosn(BaseClass)
+
+		class Person{
+			//---Constructor
+			constructor(name){
+				this.name = name;
+			}
+			
+			//---Getter 
+			get name(){
+				return this._name.toUpperCase();
+			}
+			 
+			//---Setter
+			set name(newValue){
+				if(newValue){
+					this._name = nameValue;
+				}
+			}
+			doWork(){
+				return "Not work and free";
+			}
+		}
+		//---Inheritance, Person(SuperClass) , Employee(BaseClass)
+		class Employee extends Person {
+			constructor(title, name){
+				//---Can invoke Super methods
+				super(name);
+				this.title = title;
+			}
+
+			get title(){
+				return this._title;
+			}
+
+			//---Override super methods
+			doWork(){
+				return `${this._name} is working and get paid`;
+				return "Paid" ;
+				//---Can invoke Super methods 
+				return super() + "Paid" ;
+			}
+		}
+
+		let e1 = new Employee("Dev","Maitrik");
+		let p1 = new Person("Kruti");
+
+### Functional Programming 
+
+##### Arrows 
+
+- Provide compact syntax to define a function
+- let add = (x,y) => x + y;
+- Allow passing function as parameter.
+- Can be used with array methods 
+
+		var numbers = [1,2,3,4];
+		var sum = numbers.forEach(n => += n); // output 10
+		var doubled = numbers.map(n => n * 2); // output [2,4,6,8]
+
+- Arrow function lexically binds "this" of the parents function. No need to worry about self closure by "var self = .this"  
+- Can be used with array methods lexically binds to 'this'
+
+##### Iterators
+
+- An object is an iterator when it knows how to access items from a collection one at a time, while keeping track of its current position within that sequence. In JavaScript an iterator is an object that provides a next() method which returns the next item in the sequence. 
+- Iterators : Iterators allows to walk through the collection one item at the time. 
+- Iterators is an object with a next method. 
+- This method returns an object with two properties: done and value.
+- Symbol.iterator function that every Iterable object must implement.
+
+##### Generators
+
+- While custom iterators are a useful tool, their creation requires careful programming due to the need to explicitly maintain their internal state. 
+- Generators provide a powerful alternative: they allow you to define an iterative algorithm by writing a single function which can maintain its own state.
+- Add * in front of function in class to make it generator.
+
+		//---Generators with for of loop
+
+		let numbers = function*(start, end){
+			for (let i = start; i <= end; i++){
+				console.log(i);
+			}
+		}
+		
+		let sum = 0 ;
+		console.log("next");
+		
+		//---For of
+		for(let n of numbers(1,5)){
+			sum += n;
+			console.log("next");
+		}
+
+- Can built by implementing symbol.iterator
+- Can take parameter from next(parm)
+
+		//---Generators to avoid it for not loop through entire array.
+
+		let count = 0;
+		let company = new Company();
+		company.addEmployees("Tim", "Maitrik", "Kruti", "Tom", "Parth")
+
+		let filter = function*(items, predicate){
+			for(let item of items){
+				console.log("filter", item);
+				if(predicate(item)){
+					yield item;
+				}
+			}
+		}
+
+		for (let employee of filter(company, e => e[0] == 'T')){
+			count += 1;
+		}
+
+		// Output will be 2
+
+##### Iterables
+
+- Any sequence of objects , Collection of items. Like Array, Map, Set or DOM. 
+- An object is iterable if it defines its iteration behavior, such as what values are looped over in a for...of construct. 
+- Some built-in types, such as Array or Map, have a default iteration behavior, while other types (such as Object) do not.
+- **Built-in iterables** : String, Array, TypedArray, Map and Set are all built-in iterables, because their prototype objects all have a Symbol.iterator method.
+
+##### For of
+
+- Loop over values instead of key/indexes 
+	- for (let i of numbers){console.log(i)};
+- Work with Iterables at a high level
+
+##### Comprehensions ( Not supported anymore)
+
+- Array comprehension is greedy and build concrete data structure.
+- Generator comprehension syntax with parentheses is more like the generator function that use yields.
+
+		var numbers = [for (n of [1,2,3]) n * n]; / [1,4,9]
+		var numbers = [for (n of [1,2,3]) if(n > 1) n * n]; / [4,9]
+		var numbers - (for (n of [1,2,3]) n * n); / [1,4,9] 
+	
+
+### Built-In Objects
+
+##### Numbers
+
+- Octal Literals : var octal = 0o71; // 57
+- Binary Literals : var bin = 0b1101; // 13
+- Parse octal value with number function : var octNum = Number("0o71"); // 57
+- Parse binary value with number function : var binNum = Number("0b101"); // 5
+- Correctly detect integer with isInteger. 
+
+##### [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+
+- Math new hyperbolic achosine, cosine functions.
+- Math.cbrt(x) function returns the cube root of a "x" number. 
+
+##### [New Array Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+- find function. 
+
+		var ary  = [1,5,10];
+		var match = ary.find(item => item > 8); // 10
+
+- findIndex function. 
+	
+		var ary  = [1,5,10].find(item => item > 3); // Index 1 of number 5
+
+- fill function : arr.fill(value, start, end)
+- copyWithin function : arr.copyWithin(target, start, end)
+- Array.of() method creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments. 
+
+		Array.of(7);       // [7] 
+		Array.of(1, 2, 3); // [1, 2, 3]
+
+- Array.from() method creates a new Array instance from an array-like or iterable object.		
+
+		const bar = ["a", "b", "c"];
+		Array.from(bar); // ["a", "b", "c"]
+		Array.from('foo'); // ["f", "o", "o"]
+
+- The entries() method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+
+		var a = ['a', 'b', 'c'];
+		var iterator = a.entries();
+
+		for (let e of iterator) {
+		console.log(e);
+		}
+		// [0, 'a']
+		// [1, 'b']
+		// [2, 'c']
+
+##### [SETS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/)
+
+- The Set object lets you store unique values of any type, whether primitive values or object references.
+
+		var mySet = new Set();
+		mySet.add(1);
+		mySet.add(5);
+		mySet.add('some text')
+
+		mySet.size; // 3
+
+##### [MAPS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+
+- The Map object holds key-value pairs. Any value (both objects and primitive values) may be used as either a key or a value.
+
+		var myMap = new Map();
+		myMap.set('a', 'alpha');
+		myMap.set('b', 'beta');
+		myMap.set('g', 'gamma');
+		myMap.get('b');  // Returns "beta".
+		myMap.size // 3
+
+##### WAEKMAPS & WEAKSETS
+
+- Invented to resolve garbage collector issue
+
+### Objects
+
+- Object.is() : Compare like ===
+	
+		if( -0 === 0) // true
+		Object.is( -0, 0) // false
+
+		if( NaN === NaN) // false
+		Object.is( NaN, NaN) // true
+
+- [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+
+	- Behave like extend/mixin
+	- It will new functionality to existing objects.
+
+			Object.assign(target, ...sources)
+			var o1 = { a: 1 };
+			var o2 = { b: 2 };
+			var o3 = { c: 3 };
+
+			var obj = Object.assign(o1, o2, o3);
+			console.log(obj); // { a: 1, b: 2, c: 3 }
+			console.log(o1);  // { a: 1, b: 2, c: 3 }, target object itself
+
+- [Object literals](http://www.benmvp.com/learning-es6-enhanced-object-literals/)
+
+- [Proxy object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) 
+	- The Proxy object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).
+	- var p = new Proxy(target, handler);
+
+			let view = new Proxy({
+				selected: null
+			},
+			{
+			set: function(obj, prop, newval) {
+				let oldval = obj[prop];
+
+				if (prop === 'selected') {
+				if (oldval) {
+					oldval.setAttribute('aria-selected', 'false');
+				}
+				if (newval) {
+					newval.setAttribute('aria-selected', 'true');
+				}
+				}
+
+				// The default behavior to store the value
+				obj[prop] = newval;
+
+				// Indicate success
+				return true;
+			}
+			});
+
+			let i1 = view.selected = document.getElementById('item-1');
+			console.log(i1.getAttribute('aria-selected')); // 'true'
+
+			let i2 = view.selected = document.getElementById('item-2');
+			console.log(i1.getAttribute('aria-selected')); // 'false'
+			console.log(i2.get
+
+### Modules
+
+- JavaScript does not have built-in support for modules
+- Module pattern is easily transformed into a powerful constructor pattern.
+
+		var singleton = (function () {
+			var privateVariable;
+
+			function privateFunction(x) {
+				...privateVariable...
+			}
+
+			return {
+				firstMethod: function (a, b) {
+					...privateVariable...
+				},
+				secondMethod: function (c) {
+					...privateFunction()...
+				}
+			};
+
+		}());
+
+- IIFE (immediately invoked function expression) modules pattern 
+
+- CommonJS Modules: The dominant implementation of this standard is in Node.js (Node.js modules have a few features that go beyond CommonJS). Characteristics:
+	- Compact syntax
+	- Designed for synchronous loading
+	- Main use: server
+
+- Asynchronous Module Definition (AMD): The most popular implementation of this standard is RequireJS. Characteristics:
+	- Slightly more complicated syntax, enabling AMD to work without eval() (or a compilation step).
+	- Designed for asynchronous loading
+	- Main use: browsers
+
+- [ECMAScript 6 modules](http://2ality.com/2014/09/es6-modules-final.html)
+	- Similar to CommonJS, they have a compact syntax, a preference for single exports and support for cyclic dependencies.
+	- Similar to AMD, they have direct support for asynchronous loading and configurable module loading.
+	- Named exports (several per module)
+
+			//------ lib.js ------
+			export const sqrt = Math.sqrt;
+			export function square(x) {
+				return x * x;
+			}
+			export function diag(x, y) {
+				return sqrt(square(x) + square(y));
+			}
+
+			//------ main.js ------
+			import { square, diag } from 'lib';
+			console.log(square(11)); // 121
+			console.log(diag(4, 3)); // 5
+
+			//------ main.js Import whole module------
+			import * as lib from 'lib';
+			console.log(lib.square(11)); // 121
+			console.log(lib.diag(4, 3)); // 5
+
+	- Default exports (one per module)
+
+			//------ myFunc.js ------
+			export default function () { ... };
+
+			//------ main1.js ------
+			import myFunc from 'myFunc';
+			myFunc();
+
+	- Importing
+
+			// Default exports and named exports
+			import { named } from 'src/mylib';
+			import { named1, named2 } from 'src/mylib';
+			import theDefault from 'src/mylib';
+			import theDefault, { named1, named2 } from 'src/mylib';
+
+			// Renaming: import named1 as myNamed1
+			import { named1 as myNamed1, named2 } from 'src/mylib';
+
+			// Importing the module as an object
+			// (with one property per named export)
+			import * as mylib from 'src/mylib';
+			import theDefault, * as mylib from 'src/mylib';
+
+			// Only load the module, don’t import anything
+			import 'src/mylib';
+
+	- Exporting
+
+			// All export can work with default naming too.
+			export var myVar1 = ...;
+			export let myVar2 = ...;
+			export const MY_CONST = ...;
+
+			export function myFunc() {
+				...
+			}
+
+			export function* myGeneratorFunc() {
+				...
+			}
+			export class MyClass {
+				...
+			}
+
+			//  list everything you want to export at the end of the module
+
+			const MY_CONST = ...;
+			function myFunc() {
+				...
+			}
+
+			export { MY_CONST, myFunc };
+			export { MY_CONST as THE_CONST, myFunc as theFunc };
+	- Use symbols to implement lightweight hiding technique. 
 
 ---
+
+## JS Good Parts
 
 ### Best Practice
 
@@ -756,184 +1377,6 @@
 		 		}
 		 	};
 		} 				
-
----
-
-## Jquery
-
----
-
-#### Basic Syntax
-
-- jQuery is a library, or set of helpful add-ons, to the JavaScript programming language. It may seem counterintuitive to learn how to use a library before learning the actual language, but there are a few good reasons for this.
-
-- It takes a while to become comfortable with JavaScript, and it's trickier to manipulate HTML elements directly with JavaScript than with jQuery. In order to help you build awesome websites faster, we're starting you off with jQuery.
-
-- jQuery provides a simple interface for the underlying JavaScript. It's easier for many users to learn jQuery first, then dive into the nitty-gritty JavaScript details later.
-- jQuery is much better at giving you immediate, visual results than regular JavaScript. By the end of this lesson, you'll have built your own interactive button!
-
-        $(document).ready(function() {
-          $('div').action(howfast);
-        });
-
-#### $p vs $('p')
-
-- $p is just a variable name. There is no magic associated with the $ in $p; it's just a convention for saying, "hey, this variable contains a jQuery object." We could call $p anything we want: $paragraph, paragraph, space_cows, whatever! It's just helpful for people reading our code to see $p, since this is a concise way of saying "hey, there's a 'p' jQuery object in here."
-
-        var $div= $('div');
-        $p = $("<p>I'm a new paragraph!</p>");
-
-#### 'this' is Important!
-
-- $('div').hide(); won't just hide the div you mouse into; it will hide all the divs on the page. How can we tell jQuery we only want to affect this particular div?
-- With this, of course! The this keyword refers to the jQuery object you're currently doing something with. Its complete rules are a little tricky, but the important thing to understand is if you use an event handler on an element—that's the fancy name for actions like .click() and .mouseenter(), since they handle jQuery events—you can call the actual event that occurs (such as fadeOut()) on $(this), and the event will only affect the element you're currently doing something with (for example, clicking on or mousing over).
-
-        $(document).ready(function() {
-          $('div').click(function() {
-              $(this).fadeOut('slow');
-          });
-        });
-
-#### Inserting Elements
-
-- .append() inserts the specified element as the last child of the target element. .prepend() inserts the specified element as the first child of the target element.
-
-        $(".info").append("<p>Stuff!</p>");
-        $(".info").prepend("<p>Stuff!</p>");
-
-- .appendTo() does the same as .append(), but it just reverses the order of "what to add" and "where to add it." The code has the same effect as the .append() code above. .prependTo() has a similar relationship to .prepend().
-
-        $('<p>Stuff!</p>').appendTo('.info');
-        $('<p>Stuff!</p>').pretendTo('.info');
-
-#### Before and After
-
-- We can specify where in the DOM we insert an element with the .before() and .after() functions.
-
-        $(document).ready(function(){
-        var $paragraph = $('<p>text goes here</p>');
-        $('div#one').after($paragraph);
-        $('div#two').after($paragraph);
-        });
-
-
-#### Moving Elements Around
-
-- Moving elements around in the DOM is a snap—all we need to do is use the jQuery functions we just learned on existing elements instead of creating new ones.
-
-        var $paragraph = $("p"); // existing element
-        $("div").after($paragraph); // Move it!
-        // Same as:
-        $("div").after($("p"));
-
-- We can select an element using $("p") and assign it to a variable
-- We can move the position in the DOM by using the variable in our after() statement
-- Note: This does not copy the element from one location to another, it moves the original element effectively saving you from having to delete the original
-
-        $(document).ready(
-          function(){
-              $('#one').after("<p>You are my sunshine</p>");
-              $('#two').after($('p'));
-          }
-        );
-
-#### Removing Elements
-
-- we have two jQuery functions, .empty() and .remove(), that help us delete content from our pages
-
-- .empty() deletes an element's content and all its descendants. For instance, if you .empty() an 'ol', you'll also remove all its 'li's and their text.
-
-- .remove(), not only deletes an element's content, but deletes the element itself.
-
-        $('selector').remove();
-        $('selector').empty();
-
-#### Adding and Removing Classes
-
-- jQuery includes two functions, .addClass() and .removeClass(), that can be used to add or remove a class from an element.
-
-- You aren't selecting anything, you are modifying your element. This means that you do not need # or . before your class.
-
-        $('selector').addClass('className');
-        $('selector').removeClass('className');
-
-#### Toggling Classes
-
-- As you probably guessed, jQuery includes a .toggleClass() function that does exactly this. If the element it's called on has the class it receives as an input, .toggleClass() removes that class; if the target element doesn't have that class, .toggleClass() adds it.
-
-        $('#text').toggleClass()('highlighted');
-
-
-#### Changing Your Style
-
-- resizing elements is so common, jQuery has specific .height() and .width() functions that can be used to change the heights and widths of HTML elements
-
-        $("div").height("100px");
-        $("div").width("50px");
-
-#### Modifying CSS + HTML
-
-- jQuery also includes a general-purpose .css() function that takes two inputs: the first is the CSS element to alter, and the second is the value to set it to.
-
-        $("div").css("background-color","#008800");
-
-- .html() can be used to set the contents of the first element match it finds. For instance, will get the HTML contents of the first div it finds, and will set the contents of the first div it finds to "I love jQuery!"
-s
-        $('div').html();
-        $('div').html("I love jQuery!");
-
-- .val() is used to get the value of form elements. For example, would get the value of the first checked checkbox that jQuery finds.
-
-        $('input:checkbox:checked').val();
-
-#### The .keydown() Event
-
-- The .keydown() event is triggered whenever a key on the keyboard is pressed. It only works on whatever page element has focus, so you'll need to click on the window containing your div before pressing a key in order for you to see its effects.
-
-- Let's go ahead and combine our new event with a new effect: .animate()! We'll use this to move an object on the screen whenever we press a key.
-
-- The .animate() effect takes two inputs: the animation to perform, and the time in which to perform the animation. Here's an example:
-
-        $(document).ready(function() {
-          $(document).event(function() {
-            $('div').effect(anim, duration);
-          });
-        });
-        //--Example
-        $(document).ready(function() {
-           $('div').animate({left:'+=10px'},500);
-        });
-
-#### jQuery UI
-
-- jQuery UI includes a number of ultra-fancy animations you can use to make your websites do incredible things.
-
-#### Example
-
-- Key Animate
-
-        $(document).ready(function() {
-            $(document).keydown(function(key) {
-                switch(parseInt(key.which,10)) {
-                    // Left arrow key pressed
-                    case 37:
-                        $('img').animate({left: "-=10px"}, 'fast');
-                        break;
-                    // Up Arrow Pressed
-                    case 38:
-                        $('img').animate({top: "-=10px"},'fast');
-                        break;
-                    // Right Arrow Pressed
-                    case 39:
-                        $('img').animate({left: "+=10px"}, 'fast');
-                        break;
-                    // Down Array Pressed
-                    case 40:
-                        $('img').animate({top: "+=10px"}, 'fast');
-                        break;
-                }
-            });
-        });
 
 ---
 

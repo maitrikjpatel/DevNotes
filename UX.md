@@ -57,6 +57,7 @@
 - [UX-Collective](http://collectui.com/)
 - [UX-Patterns](http://uipatterns.io/)
 - [UI Temple](http://www.uitemple.com/)
+- [SAAS Designs Flow](https://lookatthatsaas.com/)
 
 ---
 

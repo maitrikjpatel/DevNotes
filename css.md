@@ -48,7 +48,7 @@
 #### SVG/Font-Icons
 
 - [SVG stack](http://simurai.com/blog/2012/04/02/svg-stacks)
-- [SVG Vs Icon](http://ianfeather.co.uk/ten-reasons-we-switched-from-an-icon-font-to-svg/)
+- [SVG Vs Icon](http://ianfeather.comar.uk/ten-reasons-we-switched-from-an-icon-font-to-svg/)
 - [USE SVG](https://developers.google.com/web/fundamentals/design-and-ui/media/images/use-icons?hl=en)
 - [CSS Trciks SVG](https://css-tricks.com/using-svg/)
 - [SVG Sprite](https://github.com/jkphl/svg-sprite)

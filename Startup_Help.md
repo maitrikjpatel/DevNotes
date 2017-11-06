@@ -26,7 +26,9 @@
 - [Founders Kit](http://founderkit.com/)
 - [Startup Deals](https://startup.deals)
 - [F6S deals](https://www.f6s.com/swperks)
-- [Startup Guide](http://fi.co/posts/the-most-comprehensive-guide-to-the-silicon-valley-startup-ecosystem-ever-created)
+- [Startup Guide](htt(p://fi.co/posts/the-most-comprehensive-guide-to-the-silicon-valley-startup-ecosystem-ever-created)
+- [YC world startups](http://world.ycombinator.com/)
+- [25 Days Ideas](http://www.the25daysofideas.com/)
 
 ##Growth Hacking
 
@@ -36,6 +38,8 @@
 - [Side project Marketing](https://github.com/karllhughes/side-project-marketing)
 - [Product Launch List](https://github.com/mmccaff/PlacesToPostYourStartup)
 - [Sales Email Template](http://insidesaassales.com/)
+- [Brand Development](https://www.process.st/checklist/brand-identity-design/)
+- [PR Kit](https://jonapr.com/)
 
 ## Startup_India
 

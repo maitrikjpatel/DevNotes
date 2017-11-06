@@ -35,6 +35,7 @@
 - [7 Lessons Learned From Interviewing 100+ App Developers](https://medium.com/@stevepyoung/7-lessons-learned-from-interviewing-100-app-developers-fee26e0dec97)
 - [How To Interview A Front End Developer](http://ilikekillnerds.com/2014/09/how-to-interview-a-front-end-developer-and-how-to-prepare-for-a-front-end-developer-interview/)
 - [Crack the FE interview ](https://medium.freecodecamp.com/cracking-the-front-end-interview-9a34cd46237)
+- [Every programer should know](https://github.com/mr-mig/every-programmer-should-know)
 
 ## ResumeHelp
 
