@@ -1,8 +1,8 @@
-#CSS Notes
+# CSS Notes
 
 ---
 
-### CSS Guideline & Tuts
+## CSS Guideline & Tuts
 
 - [Learn Layout](http://learnlayout.com)
 - [CSS Guidelines](http://cssguidelin.es)
@@ -17,7 +17,7 @@
 
 ---
 
-### CSS Topics
+## CSS Topics
 
 ### CSS-Grid
 
@@ -95,7 +95,7 @@
 
 ---
 
-### SCSS
+## SCSS
 
 - [SCSS Project for Beginner](http://inspirationalpixels.com/tutorials/sass-projects-for-beginners-1)
 - [SCSS Guide](http://sass-lang.com/guide)
