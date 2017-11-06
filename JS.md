@@ -1,7 +1,5 @@
 # JS Notes
 
----
-
 <!-- TOC -->
 - [Good Read](#good-read)
 - [JS Guidelines and Tuts](#js-guidelines-and-tuts)
@@ -55,8 +53,6 @@
 	- [Bad Part](#bad-part)
 	- [Problem](#problem)
 
----
-
 ## Good Read
 
 - [The Basics of Object-Oriented JavaScript](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
@@ -69,7 +65,7 @@
 
 - [Human Javascript](http://read.humanjavascript.com/ch00-foreword.html)
 
----
+------
 
 ## JS Guidelines and Tuts
 
