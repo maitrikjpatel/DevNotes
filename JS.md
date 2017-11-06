@@ -65,8 +65,6 @@
 
 - [Human Javascript](http://read.humanjavascript.com/ch00-foreword.html)
 
-------
-
 ## JS Guidelines and Tuts
 
 - [Principles of writing consistent, idiomatic JS](https://github.com/rwaldron/idiomatic.js)
@@ -81,8 +79,6 @@
 
 - [JS without JQuery](http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/)
 
----
-
 ## JS/Jquery Libraries
 
 
@@ -96,15 +92,11 @@
 
 - [JQuery Boilerplate](http://jqueryboilerplate.com/)
 
----
-
 ## Angular
 
 - [Custom Deactives](http://www.toptal.com/angular-js/angular-js-demystifying-directives)
 
 - [Component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives "")
-
----
 
 ## JS known topics
 
@@ -273,8 +265,6 @@
 			<a href="#" id="size-14">14</a>
 			<a href="#" id="size-16">16</a>
 
-
----
 
 ## Javascript Basic 
 
@@ -632,8 +622,6 @@
 		var identity = MONAD();
 		var monad = identity("Hello world.");
 		monad.bind(alert);
-
----
 
 ## ES6
 
@@ -1131,8 +1119,6 @@
 			export { MY_CONST as THE_CONST, myFunc as theFunc };
 	- Use symbols to implement lightweight hiding technique. 
 
----
-
 ## JS Good Parts
 
 ### Best Practice
@@ -1374,8 +1360,6 @@
 		 		}
 		 	};
 		} 				
-
----
 
 ## Author
 
