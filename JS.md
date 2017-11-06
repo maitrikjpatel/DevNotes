@@ -55,6 +55,8 @@
 	- [Bad Part](#bad-part)
 	- [Problem](#problem)
 
+---
+
 ## Good Read
 
 - [The Basics of Object-Oriented JavaScript](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
