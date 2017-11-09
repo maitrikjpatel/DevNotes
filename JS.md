@@ -1,16 +1,19 @@
 # JS Notes
 
-<!-- TOC -->
 - [Good Read](#good-read)
 - [JS Guidelines and Tuts](#js-guidelines-and-tuts)
 - [JS/Jquery Libraries](#jsjquery-libraries)
 - [Angular](#angular)
 - [JS known topics](#js-known-topics)
+	- ["===" vs "=="](#vs)
 	- [Hoisting](#hoisting)
 	- [CallBack Hell](#callback-hell)
 	- [Promise](#promise)
+	- [Aync and Await](#aync-and-await)
 	- [JS Closures](#js-closures)
 	- [Event delegation](#event-delegation)
+	- [Favor object composition over class inheritance](#favor-object-composition-over-class-inheritance)
+	- [Functional Programming](#functional-programming)
 - [Javascript Basic](#javascript-basic)
 	- ["While" vs "For" vs "Do/While"](#while-vs-for-vs-dowhile)
 	- [Array](#array)
@@ -36,20 +39,20 @@
 		- [Spread Operator](#spread-operator)
 		- [Template Literals](#template-literals)
 	- [Classes](#classes)
-	- [Functional Programming](#functional-programming)
+	- [ES6 Functional Programming](#es6-functional-programming)
 		- [Arrows](#arrows)
 		- [Iterators](#iterators)
-		- [Generators](#generators)
 		- [Iterables](#iterables)
 		- [For of](#for-of)
-		- [Comprehensions ( Not supported anymore)](#comprehensions--not-supported-anymore)
+		- [Generators](#generators)
+		- [Comprehensions ( Not supported anymore)](#comprehensions-not-supported-anymore)
 	- [Built-In Objects](#built-in-objects)
 		- [Numbers](#numbers)
-		- [Math](#math)
-		- [New Array Function](#new-array-function)
-		- [SETS](#sets)
-		- [MAPS](#maps)
-		- [WAEKMAPS & WEAKSETS](#waekmaps--weaksets)
+		- [[Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)](#mathhttpsdevelopermozillaorgen-usdocswebjavascriptreferenceglobalobjectsmath)
+		- [[New Array Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)](#new-array-functionhttpsdevelopermozillaorgen-usdocswebjavascriptreferenceglobalobjectsarray)
+		- [[SETS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/)](#setshttpsdevelopermozillaorgen-usdocswebjavascriptreferenceglobalobjectsset)
+		- [[MAPS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)](#mapshttpsdevelopermozillaorgen-usdocswebjavascriptreferenceglobalobjectsmap)
+		- [WAEKMAPS & WEAKSETS](#waekmaps-weaksets)
 	- [Objects](#objects)
 	- [Modules](#modules)
 - [JS Good Parts](#js-good-parts)
@@ -57,7 +60,6 @@
 	- [Good Part](#good-part)
 	- [Bad Part](#bad-part)
 	- [Problem](#problem)
-
 
 ## Good Read
 
@@ -70,6 +72,8 @@
 - [Resources for Staying on Top of JavaScript](https://code.tutsplus.com/articles/resources-for-staying-on-top-of-javascript--cms-21369)
 
 - [Human Javascript](http://read.humanjavascript.com/ch00-foreword.html)
+
+- [JavaScript](https://javascript.info/)
 
 ## JS Guidelines and Tuts
 
@@ -105,6 +109,11 @@
 - [Component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives "")
 
 ## JS known topics
+
+### "===" vs "=="
+
+- "===" : same type and have the same value, then === produces true and !== produces false.
+- "==" : evil-twins/double-equal operator, however, tries to coerce the values before comparing them
 
 ### Hoisting
 - **[Hoisting](https://scotch.io/tutorials/understanding-hoisting-in-javascript)**
@@ -189,7 +198,8 @@
 
 ### Promise
 
-- [Promise](https://scotch.io/tutorials/javascript-promises-for-dummies)
+- [Promise for dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
+- [Video with Code Example](http://plnkr.co/edit/1ArvFxI0gWmajTpDaOSB?p=preview)
 - Promise are made of two parts. Control/Promise
 - Control : One type of callback. Succeeded or Failed.
 - Promise : Pending/Fullfilled/Rejected
@@ -203,15 +213,57 @@
 - Promise.race to execute after first promise resolved. 
 - Use Generator to make async code more readable.
 
+### Aync and Await 
+
+- [Understanding Async and Await](https://ponyfoo.com/articles/understanding-javascript-async-await)
+- [Async/Await Blows Promises](https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9)
+- Async/await is a new way to write asynchronous code. Previous options for asynchronous code are callbacks and promises.
+- Async/await is, like promises, non blocking.
+- Async/await makes asynchronous code look and behave a little more like synchronous code. This is where all its power lies.
+- Async - declares an asynchronous function (async function someName(){...}).
+	- Automatically transforms a regular function into a Promise.
+	- When called async functions resolve with whatever is returned in their body.
+	- Async functions enable the use of await.
+
+- Await - pauses the execution of async functions. (var result = await someAsyncCall();).
+	- When placed in front of a Promise call, await forces the rest of the code to wait until that Promise finishes and returns a result.
+	- Await works only with Promises, it does not work with callbacks.
+	- Await can only be used inside async functions.
+
 ### JS Closures
 
-- [JS Closures]()
+- A closure is the combination of a function and the lexical environment within which that function was declared.
 - A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
 - The closure has three scope chains:
 	1. it has access to its own scope (variables defined between its curly brackets),
 	2. it has access to the outer function’s variables, and
 	3. it has access to the variables.
 - Coding Example.
+
+		// Clouser in ES6
+		function createCounter() {
+		let counter = 0
+		const myFunction = function() {
+			counter = counter + 1
+			return counter
+		}
+		return myFunction
+		}
+		const increment = createCounter()
+		const c1 = increment()
+		const c2 = increment()
+		const c3 = increment()
+		console.log('example increment', c1, c2, c3) // example increment 1 2 3
+
+		------------------------------
+
+		let c = 4
+		const addX = x => n => n + x
+		const addThree = addX(3)
+		let d = addThree(c)
+		console.log('example partial application', d) // example partial application 7
+
+		------------------------------
 
 		function showName (firstName, lastName) {
 			var nameIntro = "Your name is ";
@@ -277,6 +329,37 @@
 
 ### Event delegation
 
+- [How JavaScript Event Delegation Works](https://davidwalsh.name/event-delegate)
+- [Event delegation](https://javascript.info/event-delegation)
+- [Bubbling and capturing](https://javascript.info/bubbling-and-capturing#stopping-bubbling)
+
+	- event.target – the deepest element that originated the event.
+	- event.currentTarget (=this) – the current element that handles the event (the one that has the handler on it)
+	- event.eventPhase – the current phase (capturing=1, bubbling=3).
+	- addEventListener without the 3rd argument or with the 3rd argument false.
+
+			el.addEventListener('click', listener, false) // listener doesn't capture
+			el.addEventListener('click', listener) // listener doesn't capture
+
+### Favor object composition over class inheritance
+
+### Functional Programming
+
+- [MPJ FP Videos](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
+- Less Code, Less Bugs, Less time.
+- Functions are values, exploit them by divide in small simple function.
+- Higher order function: Function taker other function as argument.
+- Filter take another function as argument and process array.
+- Composition : Composing them together using higher order function.
+- **Map** : Higher Order Function, take callback function.
+
+		var names = animals.map(function(animal){
+			return animal.name;
+		})
+
+- **Reduce** :
+
+
 ## Javascript Basic 
 
 - JavaScript is a multi-paradigm language, supporting imperative/procedural programming along with OOP (Object-Oriented Programming) with prototypal inheritance.and functional programming.
@@ -285,7 +368,7 @@
 
 - Object Reuse Pattern - Inheritance
 
-#### "While" vs "For" vs "Do/While"
+### "While" vs "For" vs "Do/While"
 
 
 - FOR loops are great for doing the same task over and over when you know ahead of time how many times you'll have to repeat the loop.
@@ -314,7 +397,7 @@
 			}while(myCondi)
 
 
-#### Array
+### Array
 
 - Learned about heterogenous arrays
 
@@ -328,7 +411,7 @@
 
 		var jagged = [[1,1,1],[1],[1,1]]
 
-#### Object
+### Object
 
 - Let's go back to the analogy of computer languages being like regular spoken languages. In English, you have nouns (which you can think of as "things") and verbs (which you can think of as "actions"). Until now, our nouns (data, such as numbers, strings, or variables) and verbs (functions) have been separate.
 
@@ -416,7 +499,7 @@
 		var name1 = bob.name;
 		var age1 = bob.age;
 
-#### Methods
+### Methods
 
 - Functions can only use parameters as an input, but methods can make calculations with object properties.
 
@@ -432,7 +515,7 @@
 		};
 		console.log(bob.getYearOfBirth());
 
-#### The "this" Keyword
+### The "this" Keyword
 
 - The keyword this acts as a placeholder, and will refer to whichever object called that method when the method is actually used.
 
@@ -450,7 +533,7 @@
 		bob.setAge(50);
 
 
-#### Passing Objects into Functions
+### Passing Objects into Functions
 
 - Making arrays of Objects, we can use objects as parameters for functions as well. That way, these functions can take advantage of the methods and properties that a certain object type provides.
 
@@ -472,7 +555,7 @@
 		// get the difference in age between alice and billy using our function
 		var diff = ageDifference(alice,billy)
 
-#### Type of
+### Type of
 
  - We can call typeof thing to figure this out. Generally, the most useful types are "number," "string," "function," and of course, "object."
 
@@ -487,7 +570,7 @@
 		console.log( myObj.hasOwnProperty('name') );
 		console.log( myObj.hasOwnProperty('nickname') );
 
-#### Getting IN-timate
+### Getting IN-timate
 
 - To print out all elements and properties, we can use a for/in loop, like this:
 
@@ -500,7 +583,7 @@
 		  console.log(nyc[x]);
 		}
 
-#### Prototype
+### Prototype
 
 - What a class has or doesn't have? That is the job of the prototype.
 - JavaScript automatically defines the prototype for class with a constructor.
@@ -521,11 +604,11 @@
 		snoopy.bark();
 		buddy.bark();
 
-#### DRY Penguins - Inheritance
+### DRY Penguins - Inheritance
 
 - In object-oriented programming, inheritance allows one class to see and use the methods and properties of another class. You can think of it as a child being able to use his or her parent's money because the child inherits the money.
 
-- We will learn more about inheritance as we continue this lesson, but for now let's just refresh our memories about how classes and objec
+- We will learn more about inheritance as we continue this lesson, but for now let's just refresh our memories about how classes and object
 
 - **Prototype chain**
 
@@ -556,7 +639,7 @@
 			console.log(myEmperor.numLegs); // should print 2
 			console.log(myEmperor.isAlive); // should print true
 
-#### Private Number and Methods
+### Private Number and Methods
 
 - Just as functions can have local variables which can only be accessed from within that function, objects can have private variables. Private variables are pieces of information you do not want to publicly share, and they can only be directly accessed from within the class.
 
@@ -639,6 +722,7 @@
 - [ES6](http://es6-features.org/)
 - [ES6 vs ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
 - [ES6 Tools](https://github.com/addyosmani/es6-tools)
+- [What is ES6](http://gonodejs.com/es6-interview-questions-answers/#what-is-javscript-es6)
 - Broweser Runtime Traceur but will be slow. 
 - Production side : ESnext, Babel, Traceur using grunt/gulp/webpack 
 - Polyfill manually of add ES6 Shim file. 
@@ -646,9 +730,9 @@
 
 ### Variables and Parameters
 
-##### Let 
+#### Let
 
-- Var : Global and Function scope 
+- Var : Global and Function scope
 - Let : Will provide true block scoping, unlike var
 - Ideal to use it for programming as it will help to avoid hosting.
 
@@ -659,14 +743,14 @@
         	}
       	}
 
-##### Const
+#### Const
 
 - will make variable Read only
-- Never change , will give error if you try to change it. 
+- Never change , will give error if you try to change it.
 - Will shadow outer declaration
 - Block Scoping
 
-##### Destructing
+#### Destructing
 
 - Can destructure arrays
 - Can destructure objects
@@ -688,7 +772,7 @@
 
 		expect(result).toBe("test");
 
-##### Default Parameters
+#### Default Parameters
 
 - Nice syntax for explicitly stating what the default value of parameter will be if missing.
 - Provide Defaults
@@ -702,14 +786,14 @@
 		var result = doWork("undefined"); // Scott
 		var result = doWork(""); // No
 
-##### REST Parameters
+#### REST Parameters
 
 - It works as VAR Arguments. 
 - It is true array
 - ...RESTParameters
 - let  doWork = function(url, ...numbers){};
 
-##### Spread Operator
+#### Spread Operator
 
 - ...Spread Operator
 - Can spread an array across parameters
@@ -718,7 +802,7 @@
 - var a = [4,5,6]
 - var b = [1,2,3,...a,7,8,9]; // [1,2,3,4,5,6,7,8,9]
 
-##### Template Literals
+#### Template Literals
 
 - Can easily combine literals and data
 - Can help build URLs
@@ -736,6 +820,7 @@
 - Inheritance : Use "extends" to inherits from class.
 - Every class extends itself to object 
 - every class extends Object as super class // Object(SuperClass) , Perosn(BaseClass)
+- A closure is the combination of a function and the lexical environment within which that function was declared.
 
 		class Person{
 			//---Constructor
@@ -782,9 +867,9 @@
 		let e1 = new Employee("Dev","Maitrik");
 		let p1 = new Person("Kruti");
 
-### Functional Programming 
+### ES6 Functional Programming 
 
-##### Arrows 
+#### Arrows 
 
 - Provide compact syntax to define a function
 - let add = (x,y) => x + y;
@@ -798,19 +883,33 @@
 - Arrow function lexically binds "this" of the parents function. No need to worry about self closure by "var self = .this"  
 - Can be used with array methods lexically binds to 'this'
 
-##### Iterators
+#### Iterators
 
 - An object is an iterator when it knows how to access items from a collection one at a time, while keeping track of its current position within that sequence. In JavaScript an iterator is an object that provides a next() method which returns the next item in the sequence. 
 - Iterators : Iterators allows to walk through the collection one item at the time. 
 - Iterators is an object with a next method. 
 - This method returns an object with two properties: done and value.
-- Symbol.iterator function that every Iterable object must implement.
+- Symbol.iterator function that every Iterable object must implement.  
 
-##### Generators
+#### Iterables
+
+- Any sequence of objects , Collection of items. Like Array, Map, Set or DOM. 
+- An object is iterable if it defines its iteration behavior, such as what values are looped over in a for...of construct. 
+- Some built-in types, such as Array or Map, have a default iteration behavior, while other types (such as Object) do not.
+- **Built-in iterables** : String, Array, TypedArray, Map and Set are all built-in iterables, because their prototype objects all have a Symbol.iterator method.
+
+#### For of
+
+- Loop over values instead of key/indexes 
+	- for (let i of numbers){console.log(i)};
+- Work with Iterables at a high level
+
+#### Generators
 
 - While custom iterators are a useful tool, their creation requires careful programming due to the need to explicitly maintain their internal state. 
 - Generators provide a powerful alternative: they allow you to define an iterative algorithm by writing a single function which can maintain its own state.
 - Add * in front of function in class to make it generator.
+- Pauseable/Iterable function. It pause every-time yield comes in function.
 
 		//---Generators with for of loop
 
@@ -853,20 +952,7 @@
 
 		// Output will be 2
 
-##### Iterables
-
-- Any sequence of objects , Collection of items. Like Array, Map, Set or DOM. 
-- An object is iterable if it defines its iteration behavior, such as what values are looped over in a for...of construct. 
-- Some built-in types, such as Array or Map, have a default iteration behavior, while other types (such as Object) do not.
-- **Built-in iterables** : String, Array, TypedArray, Map and Set are all built-in iterables, because their prototype objects all have a Symbol.iterator method.
-
-##### For of
-
-- Loop over values instead of key/indexes 
-	- for (let i of numbers){console.log(i)};
-- Work with Iterables at a high level
-
-##### Comprehensions ( Not supported anymore)
+#### Comprehensions ( Not supported anymore)
 
 - Array comprehension is greedy and build concrete data structure.
 - Generator comprehension syntax with parentheses is more like the generator function that use yields.
@@ -878,7 +964,7 @@
 
 ### Built-In Objects
 
-##### Numbers
+#### Numbers
 
 - Octal Literals : var octal = 0o71; // 57
 - Binary Literals : var bin = 0b1101; // 13
@@ -886,12 +972,12 @@
 - Parse binary value with number function : var binNum = Number("0b101"); // 5
 - Correctly detect integer with isInteger. 
 
-##### [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+#### [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 - Math new hyperbolic achosine, cosine functions.
 - Math.cbrt(x) function returns the cube root of a "x" number. 
 
-##### [New Array Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+#### [New Array Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 - find function. 
 
@@ -927,7 +1013,7 @@
 		// [1, 'b']
 		// [2, 'c']
 
-##### [SETS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/)
+#### [SETS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/)
 
 - The Set object lets you store unique values of any type, whether primitive values or object references.
 
@@ -938,7 +1024,7 @@
 
 		mySet.size; // 3
 
-##### [MAPS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+#### [MAPS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
 - The Map object holds key-value pairs. Any value (both objects and primitive values) may be used as either a key or a value.
 
@@ -949,7 +1035,7 @@
 		myMap.get('b');  // Returns "beta".
 		myMap.size // 3
 
-##### WAEKMAPS & WEAKSETS
+#### WAEKMAPS & WEAKSETS
 
 - Invented to resolve garbage collector issue
 

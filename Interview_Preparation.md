@@ -2,21 +2,27 @@
 
 ---
 
-## Front End Questions :
+### Front End Questions
 
 - [Front end interview Bible](http://www.thatjsdude.com/interview)
 - [Front end interview Bible_01](https://github.com/darcyclarke/Front-end-Developer-Interview-Questions)
 - [Most Common FE Interview questions](http://www.frontendjournal.com/most-common-technical-interview-question-for-frontend-developers)
+
+## HTML/CSS
+
 - [html 10 questions - Sitepoint](http://www.sitepoint.com/10-typical-html-interview-exercises/)
 - [CSS 10 questions - Sitepoint](http://www.sitepoint.com/12-little-known-css-facts/)
 - [CSS questions - CSS Tricks](https://css-tricks.com/interview-questions-css/)
+
+## JS 
+
 - [JS 10 imp questions](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
+- [JS OOP](http://blog.kevinchisholm.com/object-oriented-javascript/javascript-interview-questions-object-oriented-javascript/)
 - [JS 5 basic questions](https://medium.com/humans-create-software/how-do-you-judge-a-javascript-programmer-by-only-5-questions-f2abdf7dfd4a)
-- [JS 5 good questions - Topal](http://www.toptal.com/javascript#hiring-guide)
-- [JS 25 questions - Topal](http://www.toptal.com/javascript/interview-questions)
+- [JS 36 questions - Topal](http://www.toptal.com/javascript/interview-questions)
+- [JS Basic questions - Topal](http://www.toptal.com/javascript#hiring-guide)
 - [JS 5 typical questions - Sitepoint](http://www.sitepoint.com/5-typical-javascript-interview-exercises/ "")
 - [JS 5 questions - Sitepoint](http://www.sitepoint.com/5-javascript-interview-exercises/ "")
-- [JS OOP](http://blog.kevinchisholm.com/object-oriented-javascript/javascript-interview-questions-object-oriented-javascript/)
 
 ## Algorithms and Data Structure
 
@@ -29,7 +35,6 @@
 - [Interviewcake : PAID](https://www.interviewcake.com)
 - [Coderbyte Paid : PAID](http://coderbyte.com)
 - [Interview Prep/Mock : PAID](https://www.pramp.com/)
-
 
 ## Good read for interview
 

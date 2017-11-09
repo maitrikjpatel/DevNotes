@@ -22,6 +22,7 @@
 ### CSS-Grid
 
 - [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [FlexBox Vs Grids](https://aerolab.co/blog/flexbox-grids/)
 
 ### BEM
 
@@ -99,6 +100,7 @@
 
 - [SCSS Project for Beginner](http://inspirationalpixels.com/tutorials/sass-projects-for-beginners-1)
 - [SCSS Guide](http://sass-lang.com/guide)
+- [SCSS own grid](https://jsfiddle.net/maitrikjpatel/eaebjts7/)
 
 		//Define Variable
 
@@ -143,7 +145,7 @@
 - text-overflow
 - word-wrap:  normal | break-word
 - calc()
-- rem
+- [rem](https://jsfiddle.net/maitrikjpatel/h5hdtvt1/)
 - pointer-events : none; // can not have click event , for animation
 
 - CSS Reset :a short, often compressed (minified) set of CSS rules that resets the styling of all HTML elements to a consistent baseline.
