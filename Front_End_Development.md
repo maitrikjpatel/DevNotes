@@ -42,6 +42,7 @@
 - [Understanding Git Flow](https://guides.github.com/introduction/flow/index.html)
 - [GITHUB Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
 - [Gittip](https://www.gittip.com/)
+- [Flight rule for GIT](https://github.com/k88hudson/git-flight-rules)
 
 ---
 

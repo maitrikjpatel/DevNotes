@@ -10,7 +10,7 @@
 * [Mac Setup for beginners](https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
 * [Mac Freemium](http://www.producthunt.com/e/free-mac-utilities?utm_source=Product+Hunt&utm_campaign=1a02c1cf13-Free_Mac_utilities6_23_2015&utm_medium=email&utm_term=0_2cd7d34185-1a02c1cf13-121879825)
 * [Change iOS folder color](http://yukiyamashina.github.io/blog/2014/10/19/how-to-change-the-color-of-default-folder-icons-in-OS-X-Yosemite/)
-
+* [How to take notes](https://medium.com/design-voices/the-pen-is-mightier-than-the-laptop-2d057d3d5b7d)
 ---
 
 ### Web Development Apps
@@ -76,12 +76,10 @@
 
 ### Chrome Extension
 
-*   [Adblock Plus 1.8.7](https://adblockplus.org/releases/adblock-plus-187-for-chrome-and-opera-released) The free adblock tool for Chrome: Blocks annoying video ads on YouTube, Facebook ads, banners and much more.
 *   [Awesome Screenshot: Capture & Annotate 3.7.19](http://awesomescreenshot.com/) Capture the whole page or any portion, annotate screenshot, blur sensitive info, one-click upload to share.
 *   [Better History 3.7.8](https://chrome.google.com/webstore/detail/better-history/obciceimmggglbmelaidpjlmodcebijb?hl=en) A better look at your browsing history. The best searching, the sharpest interface, and the most useful filters - for your history.
 *   [Clear Cache 1.1.1](https://chrome.google.com/webstore/detail/clear-cache/cppjkneekbjaeellbfkmgnhonkkjfpdn?hl=en) Clear your cache and browsing data with a single click of a button.
 *   [CSS Gradient Inspector 0.2.0](https://chrome.google.com/webstore/detail/css-gradient-inspector/blklpjonlhpakchaahdnkcjkfmccmdik?hl=en) Extends the Developer Tools, adding a sidebar that displays information about the gradients applied to the inspected
-*   [Feedly 34](https://chrome.google.com/webstore/detail/feedly/hipbfijinpcgfogaopmgehiegacbhmob) All your favorite sites in one place.
 *   [Emmet Re:View 1.0.3](https://chrome.google.com/webstore/detail/emmet-review/epejoicbhllgiimigokgjdoijnpaphdp?hl=en) Shows views with all responsive media-query breakpoints for current page
 *   [Hover Zoom 5.5](https://chrome.google.com/webstore/detail/hover-zoom/nonjdcjchghhkdoolnlbekcfllmednbl?hl=en) Enlarge thumbnails on mouse over. Works on many sites (Facebook, Twitter, Flickr, Reddit, Amazon, Tumblr, etc).
 *   [HTML5 Outliner 0.5.1.72](https://chrome.google.com/webstore/detail/html5-outliner/afoibpobokebhgfnknfndkgemglggomo?hl=en) Generates a navigable page outline with heading and sectioning elements
@@ -89,13 +87,8 @@
 *   [JSONView 0.0.32.2](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en) Validate and view JSON documents
 *   [LiveReload 2.0.9](https://github.com/dz0ny/LiveReload-sublimetext2/issues/29)
 *   [Markdown Here 2.11.3](https://chrome.google.com/webstore/detail/markdown-here/elifhakcjgalahccnjkneoccemfahfoa?hl=en) Write your email in Markdown, then make it pretty.
-*   [Mobile/RWD Tester 1.5](https://chrome.google.com/webstore/detail/mobileresponsive-web-desi/elmekokodcohlommfikpmojheggnbelo?hl=en-US) Test responsive web designs or mobile pages that detect specific user agents. Test muliple devices at the same time!
 *   [Page Ruler 2.0.9](https://chrome.google.com/webstore/detail/page-ruler/jlpkojjdgbllmedoapgfodplfhcbnbpn?hl=fr) Draw a ruler to get pixel dimensions and positioning, and measure elements on any web page.
-*   [Panda | Hacker News, Dribbble, Designer News 3.21](https://chrome.google.com/webstore/detail/panda-hacker-news-dribbbl/jhiocdmmaannaccoofjfmjpbfkogmnap?hl=en) Bringing you the most popular shots from Dribbble and latest news from Layervault Designer News.
-*   [REST Console 4.0.2](https://chrome.google.com/webstore/detail/rest-console/cokgbflfommojglbmbpenpphppikmonn?hl=en) REST Console is an HTTP Request Visualizer and Constructor tool, helps developers build, debug and test RESTful APIs.
 *   [Responsive Web Design Tester 1.0.7](https://chrome.google.com/webstore/detail/responsive-web-design-tes/objclahbaimlfnbjdeobicmmlnbhamkg?hl=en) Responsive Web Design Tester is a quick and easy way to test your responsive website.
-*   [Sopularity 0.2.4](https://chrome.google.com/webstore/detail/sopularity/igjpgclnngpcigfbjncnpaloklgigmco?hl=en) Use Sopularity hashtag suggestions for each tweet you post.
-*   [Save to Pocket 1.9.9](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj?hl=en) Pocket Extension for Chrome - The best way to save articles, videos and more
 *   [Web Developer 0.4.6](https://chrome.google.com/webstore/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=en-US) Adds a toolbar button with various web developer tools. The official port of the Web Developer extension for Firefox.
 *   [Wikiwand: Wikipedia Modernized 4.5](https://chrome.google.com/webstore/detail/wikiwand-wikipedia-modern/emffkefkbkpkgpdeeooapgaicgmcbolj) Good old Wikipedia gets a great new look
 *   [WhatFont 2.0.2](https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=en) The easiest way to identify fonts on web pages.

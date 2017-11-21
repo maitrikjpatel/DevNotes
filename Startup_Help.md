@@ -8,6 +8,7 @@
 - [Bill Barnett on Strategy](http://www.barnetttalks.com/)
 - [Design Startup Google](http://designforstartup.net/)
 - [How to Start a Startup](http://startupclass.samaltman.com/)
+- [How to start a side project](https://medium.com/makesideproject/making-a-side-project-808fc040d27a)
 
 ### Slide/PPT helper
 
