@@ -23,6 +23,8 @@
 
 - [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [FlexBox Vs Grids](https://aerolab.co/blog/flexbox-grids/)
+- [Grid in 5 mins](https://medium.freecodecamp.org/learn-css-grid-in-5-minutes-f582e87b1228)
+- [CSS Grid Layouts](https://css-tricks.com/snippets/css/css-grid-starter-layouts/)
 
 ### BEM
 

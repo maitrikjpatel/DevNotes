@@ -22,6 +22,9 @@
 
 ## Tools / Kits
 
+- [Index Ventures OptionPlan](https://www.indexventures.com/optionplan)
+- [Startup Idea](https://oduta.com/)
+- [Name your company](http://launchaco.com/)
 - [Startup Stash](http://startupstash.com/)
 - [Startup recourses](http://startupcollections.com/)
 - [Founders Kit](http://founderkit.com/)
