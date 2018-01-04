@@ -35,6 +35,10 @@
 - [Interviewcake : PAID](https://www.interviewcake.com)
 - [Coderbyte Paid : PAID](http://coderbyte.com)
 - [Interview Prep/Mock : PAID](https://www.pramp.com/)
+- [Coding interview university](https://github.com/jwasham/coding-interview-university)
+- [Interactive coding challenges](https://github.com/donnemartin/interactive-coding-challenges)
+- [Hiring without whiteboards](https://github.com/poteto/hiring-without-whiteboards)
+- [Tech interview handbook](https://github.com/yangshun/tech-interview-handbook)
 
 ## Good read for interview
 
