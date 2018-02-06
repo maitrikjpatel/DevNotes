@@ -5,7 +5,7 @@
 
 ## UX Process
 
-
+- [Law of UX](https://lawsofux.com/)
 - [Design Guideline](http://designguidelines.co/)
 - [Google Sprint](http://www.gv.com/sprint/)
 - [The Ninja Skill for UX Designers — Medium](https://medium.com/@mollyinglish/the-ninja-skill-for-ux-designers-25f314f8f76c)
@@ -14,7 +14,6 @@
 - [Researching Products Before Diving Into Design](http://thenextweb.com/dd/2014/11/02/product-research-101-research-diving-design/)
 - [A Personal Design Sprint](http://franciscortez.com/design-sprint/)
 - [So What to do for become designer](https://medium.com/@suelynyu/so-you-want-to-be-a-ux-designer-c3370d8ea14e)
-- [Toolkit for designer](https://novectors.com/resource-toolkit-for-a-product-designer-228d825d7b00)
 - [Design for Data](https://medium.com/xd-studio/our-product-design-process-9329cb3bc403#.m7ydb1i1f)
 - [Plasma Design System](https://medium.com/@andrewcouldwell/plasma-design-system-4d63fb6c1afc#.kmtjpq13n)
 - [Circular Design Guide](http://circulardesignguide.com/methods)
@@ -43,7 +42,6 @@
 ## Inspiring Mobile Designs
 
 - [Pttrns - Navigations](http://www.pttrns.com/)
-- [Inspired UI - Mobile Apps Design Patterns](http://ipad.inspired-ui.com/page/3)
 - [Mobile Patterns](http://www.mobile-patterns.com/)
 - [After iOS 7 icons](http://afterios7icon.tumblr.com/)
 - [CAPPTIVATE.co | iOS UI Animations](http://capptivate.co/)
@@ -63,7 +61,6 @@
 
 ## Inspiring Website Designs
 
-- [Design Licks | Amazing websites everyday !](http://www.awwwards.com/search-websites/)
 - [CSS Gallery for Web Design Inspiration - CSS Nectar](http://cssnectar.com/)
 - [CSS Winner - Website Awards - CSS Award Gallery for Web Design Inspiration](http://www.csswinner.com/)
 - [CSS DA - Web Design Awards &amp; Inspiration For Web Designers &amp; Developers - CSS Design Awards](http://www.cssdesignawards.com/)
@@ -73,7 +70,6 @@
 - [Quick Inspiration for Different Layouts Calltoidea](http://www.calltoidea.com/)
 - [100 Dat UI](http://www.100daysui.com/)
 - [UI Movement](http://uimovement.com/)
-- [Mobile Design](http://pricingpages.xyz/)
 - [ECom mobile Design](https://ecomm.design/)
 - [Lead Book](https://www.and.co/the-freelance-contract?ref=producthunt)
 
@@ -87,7 +83,6 @@
 - [An exploration in Material Design by feedly — Medium](https://medium.com/@abrodo/an-exploration-in-material-design-by-feedly-8c1a1cbdfdcd)
 - [From concept to reality: rebranding Google Squared - Jack Morgan](http://jackwmorgan.com/rebranding-google-squared/)
 - [Asana Rebranding](https://medium.com/swlh/circling-ourselves-the-story-behind-asana-s-rebrand-e8247516705a)
-- [HubSpot Landing page case study](https://www.uxpin.com/studio/blog/ux-case-study-hubspot-redesigned-homepage/)
 - [Design Principles](https://medium.muz.li/design-principles-behind-great-products-6ef13cd74ccf)
 - [Houzz Case Study](https://uxdesign.cc/houzz-a-ux-case-study-98843fbdfcba)
 

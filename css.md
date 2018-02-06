@@ -26,6 +26,8 @@
 - [Grid in 5 mins](https://medium.freecodecamp.org/learn-css-grid-in-5-minutes-f582e87b1228)
 - [CSS Grid Layouts](https://css-tricks.com/snippets/css/css-grid-starter-layouts/)
 - [CSS Grid Course](https://scrimba.com/g/gR8PTE)
+- [Learn CSS GRID](https://cssgrid.io/)
+- [Mozila CSS Grid](https://mozilladevelopers.github.io/playground/css-grid/)
 
 ### BEM
 
@@ -52,8 +54,6 @@
 #### SVG/Font-Icons
 
 - [SVG stack](http://simurai.com/blog/2012/04/02/svg-stacks)
-- [SVG Vs Icon](http://ianfeather.comar.uk/ten-reasons-we-switched-from-an-icon-font-to-svg/)
-- [USE SVG](https://developers.google.com/web/fundamentals/design-and-ui/media/images/use-icons?hl=en)
 - [CSS Trciks SVG](https://css-tricks.com/using-svg/)
 - [SVG Sprite](https://github.com/jkphl/svg-sprite)
 - [SVG Sprite Techniques](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/)
@@ -309,7 +309,7 @@
 
 ### Specificity /  Speci-FISH-ity
 
-- [Best Doc for specificity](http://maitrikpatel.com/wp-content/uploads/2015/08/specifishity1.pdf)
+- [Best Doc for specificity](http://www.standardista.com/wp-content/uploads/2012/01/specificityimg.png)
 - Specificity is not inheritance
 - Priority : 0001 = 1 < 0101 = 101 < 1000
 

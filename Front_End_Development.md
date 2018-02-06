@@ -15,22 +15,34 @@
 - [Morden Web Guide](https://github.com/dexteryy/spellbook-of-modern-webdev)
 - [FE Dev bookmarks](https://github.com/dypsilon/frontend-dev-bookmarks)
 - [FE Board](https://enboard.co/frontend/)
+- [Project Guideline](https://github.com/wearehive/project-guidelines)
 
 ---
 ## Front End application development workflow
 
 - [Creating A JavaScript Project Checklist](http://blog.bitovi.com/creating-a-javascript-project-checklist/)
 - [Front-end Tooling Workflows](https://speakerdeck.com/addyosmani/front-end-tooling-workflows)
-- [State Of Web Development 2014](http://blog.xebia.com/2014/06/06/state-of-web-development-2014/)
 - [Planning A Front-end JavaScript Application](http://developer.telerik.com/featured/planning-front-end-javascript-application/)
 - [Automating Front-end Workflow](https://speakerdeck.com/addyosmani/automating-front-end-workflow)
 - [5 Workflow Tools for Front-End Developers](http://codecondo.com/5-workflow-tools-for-front-end-developers/)
 - [100 correct way to do css-breakpoints](https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862?ref=webdesignernews.com#.1vjgf6dbd)
+
+---
+
+## Styled components
+
+- [Styled Components](https://www.styled-components.com/docs/basics#motivation)
+- [Styling React Apps with Styled Components](https://www.youtube.com/watch?v=qu4U7lwZTRI)
+
+
+## Design Systems
+
+- [Design Systems List](https://github.com/alexpate/awesome-design-systems)
+- [UXPin Design System List](https://adele.uxpin.com/)
+
 ---
 
 ## Website Optimization
-
-- [Website Speed Optimization](https://kinsta.com/learn/page-speed/)
 - [Optimizing Web Performance](http://cdn2.hubspot.net/hub/156417/file-57811332-png/images/yottaa-how-to-optimize-your-website-checklist-infographic.png)
 
 ---
@@ -41,23 +53,13 @@
 - [Set Up Git](https://help.github.com/articles/set-up-git)
 - [Understanding Git Flow](https://guides.github.com/introduction/flow/index.html)
 - [GITHUB Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
-- [Gittip](https://www.gittip.com/)
 - [Flight rule for GIT](https://github.com/k88hudson/git-flight-rules)
-
----
-
-## Styled components
-
-- [Styled Components](https://www.styled-components.com/docs/basics#motivation)
-- [Styling React Apps with Styled Components](https://www.youtube.com/watch?v=qu4U7lwZTRI)
 
 ----
 
 ## Inspiring leaders in Front End and design field
 
 - [How to keep up to date on Front-End Technologies - The Recipe](http://uptodate.frontendrescue.org/)
-- [Judges : The Net Awards 2014 : Celebrating the best the Internet has to offer](https://thenetawards.com/judges/)
-- [Innovation by Design Awards 2015 | Co.Design | business + design](http://www.fastcodesign.com/innovation-by-design-awards-2015)
 - [Levelsio](https://levels.io/)
 - [egghead.io](https://egghead.io/)
 

@@ -64,49 +64,32 @@
 ## Good Read
 
 - [The Basics of Object-Oriented JavaScript](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
-
 - [JS Best Practice](https://www.thinkful.com/learn/javascript-best-practices-1/)
-
 - [You don't know JS](https://github.com/getify/You-Dont-Know-JS)
-
 - [Resources for Staying on Top of JavaScript](https://code.tutsplus.com/articles/resources-for-staying-on-top-of-javascript--cms-21369)
-
 - [Human Javascript](http://read.humanjavascript.com/ch00-foreword.html)
-
 - [JavaScript](https://javascript.info/)
+- [JS Object method explorer](https://sdras.github.io/object-explorer/)
 
 ## JS Guidelines and Tuts
-
 - [Principles of writing consistent, idiomatic JS](https://github.com/rwaldron/idiomatic.js)
-
 - [JQuery Guidelines](http://contribute.jquery.org/style-guide/js/)
-
 - [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide)
-
 - [JS Video Tuts](https://egghead.io/)
-
 - [JavaScript Regular Expression](http://tutorialzine.com/2014/12/learn-regular-expressions-in-20-minutes/)
-
 - [JS without JQuery](http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/)
 
 ## JS/Jquery Libraries
 
-
 - [A tidy repository of jQuery plugins](http://www.unheap.com/mobile/)
-
 - [JQuery Popular plugin lists](http://www.sitepoint.com/jquery-popular-plugins-list/)
-
 - [JS + Hardware](http://www.sitepoint.com/javascript-beyond-web-2014/)
-
 - [JQuery Plugin](http://jquery-plugins.net/)
-
 - [JQuery Boilerplate](http://jqueryboilerplate.com/)
 
 ## Angular
-
 - [Custom Deactives](http://www.toptal.com/angular-js/angular-js-demystifying-directives)
-
-- [Component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives "")
+- [Component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives)
 
 ## JS known topics
 

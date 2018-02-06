@@ -21,8 +21,9 @@
 - [JS 5 basic questions](https://medium.com/humans-create-software/how-do-you-judge-a-javascript-programmer-by-only-5-questions-f2abdf7dfd4a)
 - [JS 36 questions - Topal](http://www.toptal.com/javascript/interview-questions)
 - [JS Basic questions - Topal](http://www.toptal.com/javascript#hiring-guide)
-- [JS 5 typical questions - Sitepoint](http://www.sitepoint.com/5-typical-javascript-interview-exercises/ "")
-- [JS 5 questions - Sitepoint](http://www.sitepoint.com/5-javascript-interview-exercises/ "")
+- [JS 5 typical questions - Sitepoint](http://www.sitepoint.com/5-typical-javascript-interview-exercises/)
+- [JS 5 questions - Sitepoint](http://www.sitepoint.com/5-javascript-interview-exercises/)
+- [Javascript interview preparation](https://medium.freecodecamp.org/5-top-sites-for-javascript-interview-preparation-71b48e9a6c8a)
 
 ## Algorithms and Data Structure
 

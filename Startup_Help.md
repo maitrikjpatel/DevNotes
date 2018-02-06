@@ -30,9 +30,10 @@
 - [Founders Kit](http://founderkit.com/)
 - [Startup Deals](https://startup.deals)
 - [F6S deals](https://www.f6s.com/swperks)
-- [Startup Guide](htt(p://fi.co/posts/the-most-comprehensive-guide-to-the-silicon-valley-startup-ecosystem-ever-created)
 - [YC world startups](http://world.ycombinator.com/)
 - [25 Days Ideas](http://www.the25daysofideas.com/)
+- [Money Runway Calculator](https://www.startuprunway.io/)
+- [Startup Mate Guide](http://startupmate.flammate.com/)
 
 ##Growth Hacking
 
@@ -57,7 +58,6 @@
 - [Foundation — Episode 32 w/ Phil Libin](http://foundation.bz/)
 - [15 TED Talks That Will Change Your Life](http://mashable.com/2013/07/08/ted-talks-change-your-life/)
 - [Forbes: 30 Under 30 2015](http://www.forbes.com/30under30/#/)
-- [Small Empires | The Verge](http://www.theverge.com/video/small-empires)
 - [12 Startups in 12 Months](https://levels.io/)
 - [How to become Angel Investor](http://futureinvestor.co/p/angel)
 

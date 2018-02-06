@@ -20,7 +20,6 @@
 
 - [DataIsBeautiful](https://www.reddit.com/r/dataisbeautiful)
 - [Visually/](http://visual.ly/)
-- [bEST InfographicS](http://infographed.com)
 
 ---
 
