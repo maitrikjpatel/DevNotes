@@ -22,6 +22,7 @@
 
 ## Tools / Kits
 
+- [Shape Factory Basic tools](https://shapefactory.co/)
 - [Index Ventures OptionPlan](https://www.indexventures.com/optionplan)
 - [Startup Idea](https://oduta.com/)
 - [Name your company](http://launchaco.com/)
