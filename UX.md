@@ -90,6 +90,7 @@
 
 ## UX Resources
 
+- [UX Tools/](https://uxtools.co/)
 - [UX Career Guide](http://thenextweb.com/dd/2015/06/17/the-ultimate-guide-to-launching-your-ux-career/)
 - [UX Designer Tools](http://market.designmodo.com/tools/)
 - [Sketch Mockups](http://sketchrepo.com/)
