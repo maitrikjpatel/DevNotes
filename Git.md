@@ -1,8 +1,6 @@
 
 # GIT Notes
 
----
-
 ## Git Help
 
 - [Github Page](https://help.github.com/articles/create-a-repo)
@@ -75,6 +73,6 @@ git submodule update --init
 ```
 
 ---
-##Author
+## Author
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
