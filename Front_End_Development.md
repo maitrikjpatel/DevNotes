@@ -45,16 +45,6 @@
 ## Website Optimization
 - [Optimizing Web Performance](http://cdn2.hubspot.net/hub/156417/file-57811332-png/images/yottaa-how-to-optimize-your-website-checklist-infographic.png)
 
----
-
-## GIT Help
-
-- [Github Page](https://help.github.com/articles/create-a-repo)
-- [Set Up Git](https://help.github.com/articles/set-up-git)
-- [Understanding Git Flow](https://guides.github.com/introduction/flow/index.html)
-- [GITHUB Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
-- [Flight rule for GIT](https://github.com/k88hudson/git-flight-rules)
-
 ----
 
 ## Inspiring leaders in Front End and design field
