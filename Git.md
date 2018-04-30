@@ -12,7 +12,7 @@
 - [Flight rule for GIT](https://github.com/k88hudson/git-flight-rules)
 
 
-## [GIT Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)**
+## [GIT Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 **Adding a Submodule to a Repository**
 ```
