@@ -8,6 +8,7 @@
 - [Terminal Tips and Tricks](http://mac.tutsplus.com/tutorials/terminal/40-terminal-tips-and-tricks-you-never-thought-you-needed/)
 
 ### Good read for Bash files setup
+
  - [GitHub Dotfiles](http://dotfiles.github.io/)
 -  [Zero to Hero With Dotfiles](http://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
 -  [Awesome Dotfiles](https://github.com/webpro/awesome-dotfiles)

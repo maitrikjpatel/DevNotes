@@ -29,19 +29,6 @@
 
 ---
 
-## Styled components
-
-- [Styled Components](https://www.styled-components.com/docs/basics#motivation)
-- [Styling React Apps with Styled Components](https://www.youtube.com/watch?v=qu4U7lwZTRI)
-
-
-## Design Systems
-
-- [Design Systems List](https://github.com/alexpate/awesome-design-systems)
-- [UXPin Design System List](https://adele.uxpin.com/)
-
----
-
 ## Website Optimization
 - [Optimizing Web Performance](http://cdn2.hubspot.net/hub/156417/file-57811332-png/images/yottaa-how-to-optimize-your-website-checklist-infographic.png)
 
