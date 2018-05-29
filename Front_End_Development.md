@@ -41,6 +41,6 @@
 - [egghead.io](https://egghead.io/)
 
 
-##Author
+## Authoror
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com

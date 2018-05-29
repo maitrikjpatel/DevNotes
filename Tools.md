@@ -77,6 +77,6 @@
 * [GistBox](http://www.gistboxapp.com/) The Beautiful Way to Organize Code Snippets
 
 
-##Author
+## Authoror
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com

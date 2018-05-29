@@ -1,6 +1,5 @@
 # CSS Notes
 
----
 
 ## CSS Guideline & Tuts
 
@@ -15,7 +14,6 @@
 - [CSS Reference](http://cssreference.io)
 - [CSS Animation](http://animista.net/)
 
----
 
 ## CSS Topics
 
@@ -97,7 +95,6 @@
 			align- 			
 		}
 
----
 
 ## SCSS
 
@@ -135,8 +132,6 @@
 		  border-color: green;
 		}
 
-
----
 
 ## Notes
 

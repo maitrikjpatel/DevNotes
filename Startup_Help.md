@@ -69,6 +69,6 @@
 - [How to become Angel Investor](http://futureinvestor.co/p/angel)
 
 
-##Author
+## Authoror
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
