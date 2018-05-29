@@ -1,6 +1,6 @@
 # Startup Notes
 
-----
+-
 
 ## Startup Read
 
@@ -68,7 +68,7 @@
 - [12 Startups in 12 Months](https://levels.io/)
 - [How to become Angel Investor](http://futureinvestor.co/p/angel)
 
----
+
 ##Author
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com

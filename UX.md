@@ -1,7 +1,7 @@
 # User Experience and Design Notes
 “You’ve got to start with the customer experience and work backwards to the technology.” — Steve Jobs
 
----
+
 
 ## UX Process
 
@@ -23,7 +23,7 @@
 - [Brand Sprint](https://medium.com/@jakek/the-three-hour-brand-sprint-3ccabf4b768a)
 - [Design Sprint](https://designsprintkit.withgoogle.com)
 
----
+
 
 ## Good UX Read
 
@@ -37,7 +37,7 @@
 - [bauhaus school lessons](https://blog.prototypr.io/learning-in-the-bauhaus-school-five-lessons-for-todays-designers-and-five-ways-the-web-still-is-64f2985ce811)
 - [Cooper UX](https://www.cooper.com/)
 
----
+
 
 ## Inspiring Mobile Designs
 
@@ -57,7 +57,7 @@
 - [UI Temple](http://www.uitemple.com/)
 - [SAAS Designs Flow](https://lookatthatsaas.com/)
 
----
+
 
 ## Inspiring Website Designs
 
@@ -73,7 +73,7 @@
 - [ECom mobile Design](https://ecomm.design/)
 - [Lead Book](https://www.and.co/the-freelance-contract?ref=producthunt)
 
----
+
 
 ## Case Study
 
@@ -86,7 +86,7 @@
 - [Design Principles](https://medium.muz.li/design-principles-behind-great-products-6ef13cd74ccf)
 - [Houzz Case Study](https://uxdesign.cc/houzz-a-ux-case-study-98843fbdfcba)
 
----
+
 
 ## UX Resources
 

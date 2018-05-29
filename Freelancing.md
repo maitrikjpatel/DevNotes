@@ -1,5 +1,5 @@
 # Freelancing Notes
----
+
 
 ### Freelancing work search boards
 
@@ -55,7 +55,7 @@
 - [How Copass works for a Copasser - Copass](https://copass.org/how_it_works)
 - [Nomadic Designer Toolbox: Tips, Services & Hacks - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/nomadic-designer-toolbox-tips-services-hacks--cms-23078)
 
----
+
 ## Author
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com

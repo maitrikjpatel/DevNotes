@@ -1,6 +1,6 @@
 #JQuery Notes
 
----
+
 <!-- TOC -->
 
 - [JQuery Notes](#jquery-notes)
@@ -40,7 +40,7 @@
 
 ## Jquery
 
----
+
 
 ## Jquery
 
@@ -216,7 +216,7 @@ s
             });
         });
 
----
+
 
 ## Author
 
