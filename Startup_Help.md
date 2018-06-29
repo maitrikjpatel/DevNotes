@@ -1,6 +1,6 @@
 # Startup Notes
 
--
+---
 
 ## Startup Read
 
@@ -22,12 +22,13 @@
 
 ## Tools / Kits
 
-- [Shape Factory Basic tools](https://shapefactory.co/)
+- [Shape Factory Basic tools](httpshttps://hatchful.shopify.com/?ref=producthunt://shapefactory.co/)
 - [Index Ventures OptionPlan](https://www.indexventures.com/optionplan)
 - [Startup Idea](https://oduta.com/)
 - [Name your company](http://launchaco.com/)
 - [Name your company with AI](https://namelix.com/)
 - [Startup Stash](http://startupstash.com/)
+- [Design Your Logo](https://hatchful.shopify.com/?ref=producthunt)
 - [Startup recourses](http://startupcollections.com/)
 - [Founders Kit](http://founderkit.com/)
 - [Startup Deals](https://startup.deals)
@@ -67,6 +68,7 @@
 - [Forbes: 30 Under 30 2015](http://www.forbes.com/30under30/#/)
 - [12 Startups in 12 Months](https://levels.io/)
 - [How to become Angel Investor](http://futureinvestor.co/p/angel)
+- [Startup School](https://www.startupschool.org/)
 
 
 ## Authoror
