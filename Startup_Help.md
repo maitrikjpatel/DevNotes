@@ -10,7 +10,7 @@
 - [How to Start a Startup](http://startupclass.samaltman.com/)
 - [How to start a side project](https://medium.com/makesideproject/making-a-side-project-808fc040d27a)
 
-### Slide/PPT helper
+## Slide/PPT helper
 
 - [Startup Pitch Decks](https://attach.io/startup-pitch-decks/)
 - [Pitch Decks](http://dconstrct.com/pitch-decks/)
@@ -49,7 +49,7 @@
 - [Sales Email Template](http://insidesaassales.com/)
 - [Brand Development](https://www.process.st/checklist/brand-identity-design/)
 - [PR Kit](https://jonapr.com/)
-- 
+
 ## VC Networking
 
 - [VC Introduction](https://signal.nfx.com/login)
