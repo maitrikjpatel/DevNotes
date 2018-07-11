@@ -1,7 +1,5 @@
 # Startup Notes
 
----
-
 ## Startup Read
 
 - [Startup Tools « Steve Blank](http://steveblank.com/tools-and-blogs-for-entrepreneurs/)
