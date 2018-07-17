@@ -1,3 +1,8 @@
+---
+title: CSS Notes
+draft: false
+author: Maitrik Patel
+---
 
 # GIT Notes
 
