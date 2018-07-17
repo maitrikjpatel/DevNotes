@@ -15,7 +15,7 @@
 ### Chart/Dashboard Examples
 
 - [DataIsBeautiful](https://www.reddit.com/r/dataisbeautiful)
-- [Visually/](http://visual.ly/)
+- [Visually](http://visual.ly/)
 
 ### Data sources
 
