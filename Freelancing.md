@@ -1,6 +1,5 @@
 # Freelancing Notes
 
-
 ### Freelancing work search boards
 
 - [Meeet](http://meeet.co/)

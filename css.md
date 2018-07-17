@@ -14,7 +14,6 @@
 - [CSS Reference](http://cssreference.io)
 - [CSS Animation](http://animista.net/)
 
-
 ## CSS Topics
 
 ### CSS-Grid

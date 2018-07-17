@@ -1,13 +1,10 @@
 # Learning/Tuts Notes
 
-
-
 ## Learn Anything
 
 - [Learn anything for free](http://noexcuselist.com/)
 - [Computer Science free online](http://www.learnerstv.com/Free-Computer-Science-video-lecture-courses.htm)
 - [44 Website to learn anything](https://entrepreneurs.maqtoob.com/44-new-cool-websites-and-apps-to-learn-something-new-7b82beab1139)
-
 
 ## Learn Web Development
 

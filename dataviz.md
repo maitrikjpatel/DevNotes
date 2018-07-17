@@ -1,12 +1,8 @@
 # Data Visualization Notes
 
-
-
 ### Dashboard/Chart creation Tuts
 
 - [Build a Dynamic Dashboard](https://webdesign.tutsplus.com/tutorials/build-a-dynamic-dashboard-with-chartjs--webdesign-14363)
-
-
 
 ### Chart and Map libraries and frameworks
 
@@ -21,8 +17,6 @@
 - [DataIsBeautiful](https://www.reddit.com/r/dataisbeautiful)
 - [Visually/](http://visual.ly/)
 
-
-
 ### Data sources
 
 - [Data.gov](http://www.data.gov/)
@@ -30,8 +24,6 @@
 - [UNICEF](http://data.unicef.org/)
 - [Google Data](http://www.google.com/publicdata/directory)
 - [India's Open Government Data](https://data.gov.in/)
-
-
 
 ## Authoror
 

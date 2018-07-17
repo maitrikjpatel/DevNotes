@@ -3,15 +3,12 @@
 
 ## Apps & Tools I use for day to day UX/Front End Development.
 
-
-
 ### Mac setup articles
 
 * [Profucthunt Best Mac Apps](http://www.producthunt.com/e/products-for-mac-loverss)
 * [Mac Setup for beginners](https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
 * [Mac Freemium](http://www.producthunt.com/e/free-mac-utilities?utm_source=Product+Hunt&utm_campaign=1a02c1cf13-Free_Mac_utilities6_23_2015&utm_medium=email&utm_term=0_2cd7d34185-1a02c1cf13-121879825)
 * [How to take notes](https://medium.com/design-voices/the-pen-is-mightier-than-the-laptop-2d057d3d5b7d)
-
 
 ### Web Development Apps
 
@@ -26,8 +23,6 @@
 * [CyberDuck](http://cyberduck.io/) is also great alternative. 
 * [Mamp](https://www.mamp.info/en/downloads/) local server.
 * [Tree](http://mama.indstate.edu/users/ice/) command line application for get folder structure of you application.
-
-
 
 ### Utility Apps
 
@@ -45,8 +40,6 @@
 * [Sketch](https://www.sketchapp.com/)
 * [Caffeine](http://lightheadsw.com/caffeine/)
 
-
-
 ### Productivity Apps
 
 * [Alfred](http://www.alfredapp.com/)
@@ -55,8 +48,6 @@
 * [NameChanger](http://mrrsoftware.com/namechanger/)
 * [Self Control](http://selfcontrolapp.com/)
 * [iTerm](https://www.iterm2.com/)
-
-
 
 ### Chrome Extension
 
@@ -75,7 +66,6 @@
 * [WhatFont 2.0.2](https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=en) The easiest way to identify fonts on web pages.
 * [ZenHub for GitHub 1.0.3](https://chrome.google.com/webstore/detail/zenhub-for-github/ogcgkffhplmphkaahpmffcafajaocjbd?hl=en-US) ZenHub Supercharge Your GitHub Workflow
 * [GistBox](http://www.gistboxapp.com/) The Beautiful Way to Organize Code Snippets
-
 
 ## Authoror
 

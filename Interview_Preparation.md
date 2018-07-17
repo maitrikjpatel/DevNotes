@@ -1,7 +1,5 @@
 # Interview Preparation Notes
 
-
-
 ### Front End Questions
 
 - [Front end interview Bible](http://www.thatjsdude.com/interview)
@@ -59,7 +57,6 @@
 ##  ApplyList
 
 - [Quick apply companies](https://github.com/j-delaney/easy-application)
-
 
 ## Author
 
