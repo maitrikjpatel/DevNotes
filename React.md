@@ -1,8 +1,7 @@
 ---
-title: DocuSign
+title: React Notes
 draft: false
 author: Maitrik Patel
-
 ---
 
 # React
