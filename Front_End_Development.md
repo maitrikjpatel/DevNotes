@@ -1,10 +1,9 @@
 ---
-title: Front End Development Notes
+title: "Front End Development Notes"
 draft: false
-author: Maitrik Patel
+author: "Maitrik Patel"
+tags: "tools, development, design"
 ---
-
-# Front End Development Notes
 
 ### Front End Development Guideline
 
@@ -38,7 +37,3 @@ author: Maitrik Patel
 - [How to keep up to date on Front-End Technologies - The Recipe](http://uptodate.frontendrescue.org/)
 - [Levelsio](https://levels.io/)
 - [egghead.io](https://egghead.io/)
-
-or
-
-

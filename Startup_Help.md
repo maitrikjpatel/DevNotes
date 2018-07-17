@@ -1,4 +1,10 @@
-# Startup Notes
+---
+title: "Startup Notes"
+draft: false
+author: "Maitrik Patel"
+tags: "tools, development, design"
+---
+
 
 ## Startup Read
 
@@ -67,8 +73,3 @@
 - [12 Startups in 12 Months](https://levels.io/)
 - [How to become Angel Investor](http://futureinvestor.co/p/angel)
 - [Startup School](https://www.startupschool.org/)
-
-
-or
-
-

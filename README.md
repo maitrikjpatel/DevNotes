@@ -1,3 +1,11 @@
+---
+title: "ReadMe note"
+draft: true
+author: "Maitrik Patel"
+tags: "tools, development"
+---
+
+
 Following is list of notes which I use in day to day development work.
 
 ## Dev Notes
@@ -25,8 +33,3 @@ Following is list of notes which I use in day to day development work.
 - [How to become freelancing and earn quality life.](Freelancing.md)
 - [Crack that Interview](Interview_Preparation.md)
 - [Change lives. Change organizations. Change the world.](Startup_Help.md)
-
-
-
-
-

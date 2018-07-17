@@ -1,4 +1,9 @@
-# Data Visualization Notes
+---
+title: "Data Visualization Notes"
+draft: false
+author: "Maitrik Patel"
+tags: "tools, development"
+---
 
 ### Dashboard/Chart creation Tuts
 
@@ -24,7 +29,3 @@
 - [UNICEF](http://data.unicef.org/)
 - [Google Data](http://www.google.com/publicdata/directory)
 - [India's Open Government Data](https://data.gov.in/)
-
-or
-
-

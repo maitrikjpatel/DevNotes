@@ -1,19 +1,21 @@
-# Front End Development Notes
+---
+title: "Design Systems"
+draft: false
+author: "Maitrik Patel"
+tags: "tools, development, design"
+---
 
-## Design Systems Lists
+### Design Systems Lists
 
-- [Design Systems List](https://github.com/alexpate/awesome-design-systems)
-- [UXPin Design System List](https://adele.uxpin.com/)
+- [Design Systems Lists](#design-systems-lists)
+- [Design System Good Reads](#design-system-good-reads)
+- [Design System ToolKit](#design-system-toolkit)
 
-## Design System Good Reads
+### Design System Good Reads
 
 - [Consolidating design systems](https://medium.com/eightshapes-llc/consolidating-design-systems-6bb7ce72f393)
 
-## Design System ToolKit
+### Design System ToolKit
 
 - [BlueKit](https://github.com/blueberryapps/react-bluekit)
 - [Style-Guide](https://github.com/bradfrost/style-guide-guide)
-
-or
-
-

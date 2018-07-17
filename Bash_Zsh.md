@@ -1,4 +1,9 @@
-# Customize Your Shell & Command Prompt
+---
+title: "Customize Your Shell & Command Prompt"
+draft: false
+author: "Maitrik Patel"
+tags: "tools"
+---
 
 ### Bash and terminal tuts
 
@@ -15,7 +20,3 @@
 -  [Bash to Zsh](http://www.intridea.com/blog/2011/5/18/its-not-enough-to-bash-in-heads-youve-got-to-bash-in-minds-with-zsh)
 -  [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
 -  [Oh-My-Zsh Cheatsheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
-
-
-
-

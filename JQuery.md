@@ -1,31 +1,11 @@
-#JQuery Notes
+---
+title: "Jquery Notes"
+draft: true
+author: "Maitrik Patel"
+tags: "tools, development"
+---
 
-
-<!-- TOC -->
-
-- [JQuery Notes](#jquery-notes)
-    - [JS/Jquery Libraries](#jsjquery-libraries)
-    - [Jquery](#jquery)
-    - [Jquery](#jquery-1)
-            - [Basic Syntax](#basic-syntax)
-            - [$p vs $('p')](#p-vs-p)
-            - ['this' is Important!](#this-is-important)
-            - [Inserting Elements](#inserting-elements)
-            - [Before and After](#before-and-after)
-            - [Moving Elements Around](#moving-elements-around)
-            - [Removing Elements](#removing-elements)
-            - [Adding and Removing Classes](#adding-and-removing-classes)
-            - [Toggling Classes](#toggling-classes)
-            - [Changing Your Style](#changing-your-style)
-            - [Modifying CSS + HTML](#modifying-css--html)
-            - [The .keydown() Event](#the-keydown-event)
-            - [jQuery UI](#jquery-ui)
-            - [Example](#example)
-    - [Author](#author)
-
-<!-- /TOC -->
-
-## JS/Jquery Libraries
+## Jquery Libraries
 
 
 - [A tidy repository of jQuery plugins](http://www.unheap.com/mobile/)
@@ -215,9 +195,3 @@ s
                 }
             });
         });
-
-
-
-
-
-

@@ -1,4 +1,9 @@
-# Interview Preparation Notes
+---
+title: "Interview Preparation Notes"
+draft: false
+author: "Maitrik Patel"
+tags: "tools, development, design"
+---
 
 ### Front End Questions
 
@@ -57,7 +62,3 @@
 ##  ApplyList
 
 - [Quick apply companies](https://github.com/j-delaney/easy-application)
-
-
-
-

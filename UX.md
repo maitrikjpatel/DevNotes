@@ -1,5 +1,11 @@
-# User Experience and Design Notes
-“You’ve got to start with the customer experience and work backwards to the technology.” — Steve Jobs
+---
+title: "User Experience and Design Notes"
+draft: false
+author: "Maitrik Patel"
+tags: "tools, development, design"
+---
+
+> “You’ve got to start with the customer experience and work backwards to the technology.” — Steve Jobs
 
 ## UX Process
 
@@ -95,7 +101,3 @@
 - [Sketch Tuts](https://www.switchtosketchapp.com/)
 - [Sketch Casts](https://www.sketchcasts.net)
 - [UX Job Boards](https://uxdesign.cc/ux-job-boards-24-places-to-find-a-job-in-user-experience-design-a886c2279982)
-
-or
-
-

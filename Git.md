@@ -1,10 +1,9 @@
 ---
-title: CSS Notes
+title: "GIT Notes"
 draft: false
-author: Maitrik Patel
+author: "Maitrik Patel"
+tags: "tools, development"
 ---
-
-# GIT Notes
 
 ## Git Help
 
@@ -76,8 +75,3 @@ git clone --recursive
 cd components/canvasrunner
 git submodule update --init
 ```
-
-
-
-
-

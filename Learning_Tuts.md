@@ -1,4 +1,9 @@
-# Learning/Tuts Notes
+---
+title: "Learning/Tuts Notes"
+draft: false
+author: "Maitrik Patel"
+tags: "tools, development, design"
+---
 
 ## Learn Anything
 

@@ -1,65 +1,9 @@
-# JS Notes
-
-- [Good Read](#good-read)
-- [JS Guidelines and Tuts](#js-guidelines-and-tuts)
-- [JS/Jquery Libraries](#jsjquery-libraries)
-- [Angular](#angular)
-- [JS known topics](#js-known-topics)
-	- ["===" vs "=="](#vs)
-	- [Hoisting](#hoisting)
-	- [CallBack Hell](#callback-hell)
-	- [Promise](#promise)
-	- [Aync and Await](#aync-and-await)
-	- [JS Closures](#js-closures)
-	- [Event delegation](#event-delegation)
-	- [Favor object composition over class inheritance](#favor-object-composition-over-class-inheritance)
-	- [Functional Programming](#functional-programming)
-- [Javascript Basic](#javascript-basic)
-	- ["While" vs "For" vs "Do/While"](#while-vs-for-vs-dowhile)
-	- [Array](#array)
-	- [Object](#object)
-	- [Methods](#methods)
-	- [The "this" Keyword](#the-this-keyword)
-	- [Passing Objects into Functions](#passing-objects-into-functions)
-	- [Type of](#type-of)
-	- [Getting IN-timate](#getting-in-timate)
-	- [Prototype](#prototype)
-	- [DRY Penguins - Inheritance](#dry-penguins---inheritance)
-	- [Private Number and Methods](#private-number-and-methods)
-	- [Pseudoclassical Inheritance](#pseudoclassical-inheritance)
-	- [Functional Inheritance](#functional-inheritance)
-	- [MONAD](#monad)
-- [ES6](#es6)
-	- [Variables and Parameters](#variables-and-parameters)
-		- [Let](#let)
-		- [Const](#const)
-		- [Destructing](#destructing)
-		- [Default Parameters](#default-parameters)
-		- [REST Parameters](#rest-parameters)
-		- [Spread Operator](#spread-operator)
-		- [Template Literals](#template-literals)
-	- [Classes](#classes)
-	- [ES6 Functional Programming](#es6-functional-programming)
-		- [Arrows](#arrows)
-		- [Iterators](#iterators)
-		- [Iterables](#iterables)
-		- [For of](#for-of)
-		- [Generators](#generators)
-		- [Comprehensions ( Not supported anymore)](#comprehensions-not-supported-anymore)
-	- [Built-In Objects](#built-in-objects)
-		- [Numbers](#numbers)
-		- [[Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)](#mathhttpsdevelopermozillaorgen-usdocswebjavascriptreferenceglobalobjectsmath)
-		- [[New Array Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)](#new-array-functionhttpsdevelopermozillaorgen-usdocswebjavascriptreferenceglobalobjectsarray)
-		- [[SETS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/)](#setshttpsdevelopermozillaorgen-usdocswebjavascriptreferenceglobalobjectsset)
-		- [[MAPS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)](#mapshttpsdevelopermozillaorgen-usdocswebjavascriptreferenceglobalobjectsmap)
-		- [WAEKMAPS & WEAKSETS](#waekmaps-weaksets)
-	- [Objects](#objects)
-	- [Modules](#modules)
-- [JS Good Parts](#js-good-parts)
-	- [Best Practice](#best-practice)
-	- [Good Part](#good-part)
-	- [Bad Part](#bad-part)
-	- [Problem](#problem)
+---
+title: "Javacript Notes"
+draft: false
+author: "Maitrik Patel"
+tags: "tools, development"
+---
 
 ## Good Read
 
@@ -1442,8 +1386,4 @@
 		 			nice = null;
 		 		}
 		 	};
-		} 				
-
-
-
-
+		}

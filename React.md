@@ -1,37 +1,9 @@
 ---
-title: React Notes
+title: "React Notes"
 draft: false
-author: Maitrik Patel
+author: "Maitrik Patel"
+tags: "tools, development"
 ---
-
-# React
-
-## Table of content
-- [React](#react)
-  - [Table of content](#table-of-content)
-  - [Learning Articles](#learning-articles)
-  - [Notes](#notes)
-    - [Intro](#intro)
-    - [Codecademy - REACT-1](#codecademy---react-1)
-      - [JSX](#jsx)
-      - [React Component](#react-component)
-      - [Props](#props)
-      - [State](#state)
-      - [Prop vs State](#prop-vs-state)
-    - [Codecademy - REACT-2 - Programming Patterns](#codecademy---react-2---programming-patterns)
-      - [Stateless Components Inherit From Stateful Components](#stateless-components-inherit-from-stateful-components)
-        - [Pattern 1 : A stateful component passes its state down to a stateless component.](#pattern-1--a-stateful-component-passes-its-state-down-to-a-stateless-component)
-        - [Pattern 2 : The stateless, child component will update the state of the parent component.](#pattern-2--the-stateless-child-component-will-update-the-state-of-the-parent-component)
-        - [Pattern 3 : You will have one stateless component display information, and a differenstateless component offer the ability to change that information.**](#pattern-3--you-will-have-one-stateless-component-display-information-and-a-differenstateless-component-offer-the-ability-to-change-that-information)
-      - [Advance React](#advance-react)
-        - [Pattern 4 : Inline Styles, dividing components into presentational components and containecomponents.**](#pattern-4--inline-styles-dividing-components-into-presentational-components-and-containecomponents)
-        - [Pattern 5 : Separating presentational components from display components.](#pattern-5--separating-presentational-components-from-display-components)
-        - [propTypes](#proptypes)
-        - [Forms](#forms)
-      - [Lifestyle methods](#lifestyle-methods)
-        - [Mounting lifecycle methods](#mounting-lifecycle-methods)
-        - [Updating lifecycle methods](#updating-lifecycle-methods)
-        - [Unmounting lifecycle methods](#unmounting-lifecycle-methods)
 
 ## Learning Articles
   - [React Setup Articles](https://www.codecademy.com/articles/react-setup-i)

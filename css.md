@@ -1,11 +1,9 @@
 ---
-title: CSS Notes
+title: "CSS Notes"
 draft: false
-author: Maitrik Patel
+author: "Maitrik Patel"
+tags: "tools, development"
 ---
-
-# CSS Notes
-
 
 ## CSS Guideline & Tuts
 
@@ -514,7 +512,3 @@ author: Maitrik Patel
         .pencil{
             animation: drawALine 5s ease-in-out 100ms 5;
         }
-
-
-
-

@@ -1,7 +1,13 @@
-# Tools and Apps Notes
-"The right tools make the difference between an artist and a craftsman."
+---
+title: "Tools Notes"
+draft: false
+author: "Maitrik Patel"
+tags: "tools, development, design"
+---
 
-## Apps & Tools I use for day to day UX/Front End Development.
+> "The right tools make the difference between an artist and a craftsman."
+
+### Apps & Tools I use for day to day UX/Front End Development.
 
 ### Mac setup articles
 
@@ -66,7 +72,3 @@
 * [WhatFont 2.0.2](https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=en) The easiest way to identify fonts on web pages.
 * [ZenHub for GitHub 1.0.3](https://chrome.google.com/webstore/detail/zenhub-for-github/ogcgkffhplmphkaahpmffcafajaocjbd?hl=en-US) ZenHub Supercharge Your GitHub Workflow
 * [GistBox](http://www.gistboxapp.com/) The Beautiful Way to Organize Code Snippets
-
-or
-
-
