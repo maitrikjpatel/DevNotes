@@ -67,6 +67,6 @@
 * [ZenHub for GitHub 1.0.3](https://chrome.google.com/webstore/detail/zenhub-for-github/ogcgkffhplmphkaahpmffcafajaocjbd?hl=en-US) ZenHub Supercharge Your GitHub Workflow
 * [GistBox](http://www.gistboxapp.com/) The Beautiful Way to Organize Code Snippets
 
-## Authoror
+or
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+

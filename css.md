@@ -509,6 +509,6 @@
             animation: drawALine 5s ease-in-out 100ms 5;
         }
 
-## Author
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+
+

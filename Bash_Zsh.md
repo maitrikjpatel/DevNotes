@@ -16,6 +16,6 @@
 -  [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
 -  [Oh-My-Zsh Cheatsheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
 
-## Author
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+
+

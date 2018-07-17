@@ -14,6 +14,6 @@
 - [BlueKit](https://github.com/blueberryapps/react-bluekit)
 - [Style-Guide](https://github.com/bradfrost/style-guide-guide)
 
-## Authoror
+or
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+

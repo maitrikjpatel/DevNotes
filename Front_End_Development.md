@@ -33,6 +33,6 @@
 - [Levelsio](https://levels.io/)
 - [egghead.io](https://egghead.io/)
 
-## Authoror
+or
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+

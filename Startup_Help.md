@@ -69,6 +69,6 @@
 - [Startup School](https://www.startupschool.org/)
 
 
-## Authoror
+or
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+

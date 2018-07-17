@@ -58,6 +58,6 @@
 
 - [Quick apply companies](https://github.com/j-delaney/easy-application)
 
-## Author
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+
+

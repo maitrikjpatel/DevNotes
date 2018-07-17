@@ -25,6 +25,6 @@
 - [Google Data](http://www.google.com/publicdata/directory)
 - [India's Open Government Data](https://data.gov.in/)
 
-## Authoror
+or
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+

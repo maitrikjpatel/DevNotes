@@ -26,7 +26,7 @@ Following is list of notes which I use in day to day development work.
 - [Crack that Interview](Interview_Preparation.md)
 - [Change lives. Change organizations. Change the world.](Startup_Help.md)
 
-## Author
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+
+
 

@@ -73,6 +73,6 @@ git submodule update --init
 ```
 
 
-## Author
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+
+

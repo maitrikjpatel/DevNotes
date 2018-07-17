@@ -96,6 +96,6 @@
 - [Sketch Casts](https://www.sketchcasts.net)
 - [UX Job Boards](https://uxdesign.cc/ux-job-boards-24-places-to-find-a-job-in-user-experience-design-a886c2279982)
 
-## Authoror
+or
 
-- Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+
