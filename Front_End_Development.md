@@ -1,3 +1,9 @@
+---
+title: Front End Development Notes
+draft: false
+author: Maitrik Patel
+---
+
 # Front End Development Notes
 
 ### Front End Development Guideline
