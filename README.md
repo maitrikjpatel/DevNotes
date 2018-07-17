@@ -4,7 +4,7 @@ Following is list of notes which I use in day to day development work.
 
 - [Front End Development](Front_End_Development.md)
 - [Javascript](JS.md)
-- [React](react.md)
+- [React](React.md)
 - [CSS](css.md)
 - [GIT](Git.md)
 
@@ -29,3 +29,4 @@ Following is list of notes which I use in day to day development work.
 ## Author
 
 - Maitrik Patel || maitrikpatel.com || maitrik1419[at]gmail[dot]com
+
