@@ -1,8 +1,9 @@
 ---
 title: "Javacript Notes"
-draft: false
+publish: "true"
 author: "Maitrik Patel"
 tags: "tools, development"
+category: "note"
 ---
 
 ## Good Read

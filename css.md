@@ -1,8 +1,9 @@
 ---
 title: "CSS Notes"
-draft: false
+publish: "true"
 author: "Maitrik Patel"
 tags: "tools, development"
+category: "note"
 ---
 
 ## CSS Guideline & Tuts

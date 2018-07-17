@@ -1,8 +1,9 @@
 ---
 title: "ReadMe note"
-draft: true
+publish: "false"
 author: "Maitrik Patel"
 tags: "tools, development"
+category: "note"
 ---
 
 

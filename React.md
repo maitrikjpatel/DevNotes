@@ -1,8 +1,9 @@
 ---
 title: "React Notes"
-draft: false
+publish: "true"
 author: "Maitrik Patel"
 tags: "tools, development"
+category: "note"
 ---
 
 ## Learning Articles

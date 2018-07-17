@@ -1,8 +1,9 @@
 ---
 title: "GIT Notes"
-draft: false
+publish: "true"
 author: "Maitrik Patel"
 tags: "tools, development"
+category: "note"
 ---
 
 ## Git Help

@@ -1,8 +1,9 @@
 ---
 title: "Front End Development Notes"
-draft: false
+publish: "true"
 author: "Maitrik Patel"
 tags: "tools, development, design"
+category: "note"
 ---
 
 ### Front End Development Guideline

@@ -1,8 +1,9 @@
 ---
 title: "Customize Your Shell & Command Prompt"
-draft: false
+publish: "true"
 author: "Maitrik Patel"
 tags: "tools"
+category: "note"
 ---
 
 ### Bash and terminal tuts

@@ -1,8 +1,9 @@
 ---
 title: "Tools Notes"
-draft: false
+publish: "true"
 author: "Maitrik Patel"
 tags: "tools, development, design"
+category: "note"
 ---
 
 > "The right tools make the difference between an artist and a craftsman."

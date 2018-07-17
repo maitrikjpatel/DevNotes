@@ -1,8 +1,9 @@
 ---
 title: "User Experience and Design Notes"
-draft: false
+publish: "true"
 author: "Maitrik Patel"
 tags: "tools, development, design"
+category: "note"
 ---
 
 > “You’ve got to start with the customer experience and work backwards to the technology.” — Steve Jobs

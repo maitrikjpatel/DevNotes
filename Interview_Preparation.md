@@ -1,8 +1,9 @@
 ---
 title: "Interview Preparation Notes"
-draft: false
+publish: "true"
 author: "Maitrik Patel"
 tags: "tools, development, design"
+category: "note"
 ---
 
 ### Front End Questions
