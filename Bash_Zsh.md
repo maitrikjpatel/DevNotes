@@ -1,5 +1,5 @@
 ---
-title: "Customize Your Shell & Command Prompt"
+title: "Shell & Command Prompt"
 publish: "true"
 author: "Maitrik Patel"
 tags: "tools"
