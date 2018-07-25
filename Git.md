@@ -8,11 +8,11 @@ category: "note"
 
 ## Git Help
 
-- [Github Page](https://help.github.com/articles/create-a-repo)
-- [Set Up Git](https://help.github.com/articles/set-up-git)
-- [Understanding Git Flow](https://guides.github.com/introduction/flow/index.html)
-- [GITHUB Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet)
-- [Flight rule for GIT](https://github.com/k88hudson/git-flight-rules)
+- [Github Page ](https://help.github.com/articles/create-a-repo)
+- [Set Up Git ](https://help.github.com/articles/set-up-git)
+- [Understanding Git Flow ](https://guides.github.com/introduction/flow/index.html)
+- [GITHUB Cheat Sheet ](https://github.com/tiimgreen/github-cheat-sheet)
+- [Flight rule for GIT ](https://github.com/k88hudson/git-flight-rules)
 
 
 ## [GIT Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
