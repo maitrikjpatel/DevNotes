@@ -20,6 +20,7 @@ category: "note"
 - [Startup Pitch Decks](https://attach.io/startup-pitch-decks/)
 - [Pitch Decks](http://dconstrct.com/pitch-decks/)
 - [Slide Bean](https://slidebean.com/pitch-deck-template/)
+- [Pitch Decks](http://www.pitchenvy.io/)
 
 ## Startup Books
 
