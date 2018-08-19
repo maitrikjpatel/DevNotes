@@ -27,6 +27,7 @@ category: "note"
 - [Create Front End Framework](https://medium.com/sketch-app-sources/how-to-create-a-front-end-framework-with-sketch-2379edb5e7df)
 - [Brand Sprint](https://medium.com/@jakek/the-three-hour-brand-sprint-3ccabf4b768a)
 - [Design Sprint](https://designsprintkit.withgoogle.com)
+- [Design Process Book](https://www.netguru.co/design-process)
 
 ## Good UX Read
 

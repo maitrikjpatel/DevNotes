@@ -6,7 +6,6 @@ tags: "tools, development, design"
 category: "note"
 ---
 
-
 ## Startup Read
 
 - [Startup Tools « Steve Blank](http://steveblank.com/tools-and-blogs-for-entrepreneurs/)
@@ -44,6 +43,7 @@ category: "note"
 - [Money Runway Calculator](https://www.startuprunway.io/)
 - [Startup Mate Guide](http://startupmate.flammate.com/)
 - [Saas product weblist](https://picksaas.com/)
+- [Launch List](https://contentwritingchecklist.com/)
 
 ## Growth Hacking
 
