@@ -29,6 +29,7 @@ category: "note"
 - [CSS Grid Layouts](https://css-tricks.com/snippets/css/css-grid-starter-layouts/)
 - [CSS Grid Course](https://scrimba.com/g/gR8PTE)
 - [Learn CSS GRID](https://cssgrid.io/)
+- [css grid layout generator](https://www.layoutit.com/grid)
 - [Mozila CSS Grid](https://mozilladevelopers.github.io/playground/css-grid/)
 
 ### BEM
