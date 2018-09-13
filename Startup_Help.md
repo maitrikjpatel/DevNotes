@@ -75,3 +75,7 @@ category: "note"
 - [12 Startups in 12 Months](https://levels.io/)
 - [How to become Angel Investor](http://futureinvestor.co/p/angel)
 - [Startup School](https://www.startupschool.org/)
+
+## Funding
+
+- [Founder's guide to seed funding](http://propellerdb.com/oversubscribed/)

@@ -16,6 +16,7 @@ category: "note"
 ### Design System Good Reads
 
 - [Consolidating design systems](https://medium.com/eightshapes-llc/consolidating-design-systems-6bb7ce72f393)
+- [Design System In Figma](https://designcode.io/design-system-in-figma/)
 
 ### Design System ToolKit
 
