@@ -51,6 +51,7 @@ postColor: "#440000"
 - [Interactive coding challenges](https://github.com/donnemartin/interactive-coding-challenges)
 - [Hiring without whiteboards](https://github.com/poteto/hiring-without-whiteboards)
 - [Tech interview handbook](https://github.com/yangshun/tech-interview-handbook)
+- [50 data structure and algorithms interview questions](https://hackernoon.com/50-data-structure-and-algorithms-interview-questions-for-programmers-b4b1ac61f5b0)
 
 ## Good read for interview
 
