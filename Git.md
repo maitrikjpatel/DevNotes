@@ -1,9 +1,16 @@
 ---
-title: "GIT Notes"
-publish: "true"
-author: "Maitrik Patel"
-tags: "tools, development"
+date:  "2015-05-28T22:40:32.169Z"
+publish: "true" 
 category: "note"
+author: "Maitrik Patel"
+
+title: "GIT Notes"
+description: "Description Here"
+
+role: "tools, development"
+
+source: "Github"
+postColor: "#440000"
 ---
 
 ## Git Help

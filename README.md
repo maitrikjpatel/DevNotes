@@ -1,11 +1,17 @@
 ---
-title: "ReadMe note"
-publish: "false"
-author: "Maitrik Patel"
-tags: "tools, development"
+date:  "2015-05-28T22:40:32.169Z"
+publish: "true" 
 category: "note"
----
+author: "Maitrik Patel"
 
+title: "ReadMe note"
+description: "Description Here"
+
+role: "tools, development"
+
+source: "Github"
+postColor: "#440000"
+---
 
 Following is list of notes which I use in day to day development work.
 

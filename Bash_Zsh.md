@@ -1,9 +1,16 @@
 ---
-title: "Shell & Command Prompt"
-publish: "true"
-author: "Maitrik Patel"
-tags: "tools"
+date:  "2015-05-28T22:40:32.169Z"
+publish: "true" 
 category: "note"
+author: "Maitrik Patel"
+
+title: "Shell & Command Prompt"
+description: "Description Here"
+
+role: "tools" 
+
+source: "Github"
+postColor: "#440000"
 ---
 
 ### Bash and terminal tuts

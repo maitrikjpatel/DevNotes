@@ -1,9 +1,16 @@
 ---
-title: "Design Systems"
-publish: "true"
-author: "Maitrik Patel"
-tags: "tools, development, design"
+date:  "2015-05-28T22:40:32.169Z"
+publish: "true" 
 category: "note"
+author: "Maitrik Patel"
+
+title: "Design Systems"
+description: "Description Here"
+
+role: "tools, development, design"
+
+source: "Github"
+postColor: "#440000"
 ---
 
 ### Design Systems Lists

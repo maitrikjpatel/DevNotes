@@ -1,9 +1,16 @@
 ---
-title: "React Notes"
-publish: "true"
-author: "Maitrik Patel"
-tags: "tools, development"
+date:  "2015-05-28T22:40:32.169Z"
+publish: "true" 
 category: "note"
+author: "Maitrik Patel"
+
+title: "React Notes"
+description: "Description Here"
+
+role: "tools, development"
+
+source: "Github"
+postColor: "#440000"
 ---
 
 ## Learning Articles
@@ -29,6 +36,27 @@ category: "note"
   - Function Components - Use JSX
   - Class Components - Virtual
 
+### Tradeoffs
+
+Other             | React
+----------------- | -------------
+Framework         | Library
+Concise           | Explicit
+Twoway Binding    | One Way Binding
+Template-centric  | JS-Centic
+JS in Html        | Html in JS
+Separate (MVC)    | Single File (HTML/CSS/JS)
+Standard Component| Non-Standard
+Community         | Corporate ( FB )
+
+WebComponent      | React
+----------------- | -------------
+Templates         | JSX 
+Custom Elemen     | Declare React Components
+Shadow DOM        | CSS Modules, CSS in JS
+Imports           | One component per file
+
+ 
 ### Codecademy - REACT-1
 
 - Use **require** and **module.exports** to access one file from another
