@@ -56,6 +56,11 @@ Custom Elemen     | Declare React Components
 Shadow DOM        | CSS Modules, CSS in JS
 Imports           | One component per file
 
+### PropTypes vs Typescript(MS) vs Flow(FB)
+
+- PropTypes run on Runtime
+- Typescript check at Compile time
+- Flow can be run either runtime or compile time
  
 ### Codecademy - REACT-1
 
