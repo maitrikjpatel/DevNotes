@@ -34,13 +34,13 @@ postColor: "#440000"
 
 ## Tools / Kits
 
-- [Shape Factory Basic tools](httpshttps://hatchful.shopify.com/?ref=producthunt://shapefactory.co/)
+- [Shape Factory Basic tools](httpshttps://hatchful.shopify.com/)
 - [Index Ventures OptionPlan](https://www.indexventures.com/optionplan)
 - [Startup Idea](https://oduta.com/)
 - [Name your company](http://launchaco.com/)
 - [Name your company with AI](https://namelix.com/)
 - [Startup Stash](http://startupstash.com/)
-- [Design Your Logo](https://hatchful.shopify.com/?ref=producthunt)
+- [Design Your Logo](https://hatchful.shopify.com/)
 - [Startup recourses](http://startupcollections.com/)
 - [Founders Kit](http://founderkit.com/)
 - [Startup Deals](https://startup.deals)

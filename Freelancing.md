@@ -21,10 +21,10 @@ postColor: "#440000"
 - [YunoJuno - The Freelancer Elite](https://www.yunojuno.com/)
 - [OpenHatch - Community tools for free and open source software](https://openhatch.org/)
 - [Fiverr: The marketplace for creative & professional services](https://www.fiverr.com/)
-- [Hirable](http://wearehirable.com/?ref=producthunt)
-- [YunoJuno - Making Freelance Work](https://www.yunojuno.com/?ref=producthunt)
-- [Gun.io - Meet Verified Freelance Developers](https://gun.io/?ref=producthunt)
-- [Gigster - Hire a quality developer](http://www.trygigster.com/?ref=producthunt)
+- [Hirable](http://wearehirable.com/)
+- [YunoJuno - Making Freelance Work](https://www.yunojuno.com/)
+- [Gun.io - Meet Verified Freelance Developers](https://gun.io/)
+- [Gigster - Hire a quality developer](http://www.trygigster.com/)
 - [UpWork](https://www.upwork.com/)
 - [Design Jobs](http://weeklydesignjobs.com/)
 - [RemoteJob](http://talentboard.me/)
@@ -43,17 +43,18 @@ postColor: "#440000"
 - [Scheduling](https://calendly.com/)
 - [Automate Freelancing workflow](http://www.plasticpollutioncoalition.org/about)
 - [Cost Estimate](http://www.estimapp.com/)
-- [Buy Me a Coffee](https://www.buymeacoffee.com/?ref=producthunt)
+- [Buy Me a Coffee](https://www.buymeacoffee.com/)
+- [Remote/freelancing work Tools](https://remote.tools)
 
 ### Contract and Invoices
 
 - [Website Cost](https://fulfilli.com/)
 - [The latest version of my ‘killer contract’ for web designers and developers](https://gist.github.com/malarkey/4031110)
-- [Slimvoice](https://slimvoice.co/?ref=producthunt)
+- [Slimvoice](https://slimvoice.co/)
 - [Invoice Generator](https://invoice.to/)
 - [Freelancing, simple & secure](https://www.hellobonsai.com)
 - [Bulletproof contracts, simple e-signing, integrated escrow](https://www.hellobonsai.com/)
-- [Freelance Contract](https://www.and.co/the-freelance-contract?ref=producthunt)
+- [Freelance Contract](https://www.and.co/the-freelance-contract)
 - [Invoice](https://prexview.com)
 
 ### Nomad list

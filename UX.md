@@ -78,9 +78,7 @@ postColor: "#440000"
 - [100 Dat UI](http://www.100daysui.com/)
 - [UI Movement](http://uimovement.com/)
 - [ECom mobile Design](https://ecomm.design/)
-- [Lead Book](https://www.and.co/the-freelance-contract?ref=producthunt)
-
-
+- [Lead Book](https://www.and.co/the-freelance-contract)
 
 ## Case Study
 
