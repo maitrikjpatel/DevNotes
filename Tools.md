@@ -5,15 +5,13 @@ category: "note"
 author: "Maitrik Patel"
 
 title: "Tools Notes"
-description: "Description Here"
+description: "The right tools make the difference between an artist and a craftsman."
 
 role: "tools, development, design"
 
 source: "Github"
 postColor: "#440000"
 ---
-
-> "The right tools make the difference between an artist and a craftsman."
 
 ### Apps & Tools I use for day to day UX/Front End Development.
 
