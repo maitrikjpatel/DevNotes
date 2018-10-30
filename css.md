@@ -326,7 +326,7 @@ postColor: "#440000"
     - div p { }  ----- 2 (two HTML selectors)
     - .sith ------ 10 (one class selector)
     - div p.sith { }  -----  12 (two HTML selectors and a class selector)
-    - #sith ------ 100 (one id selector)
+    - sith ------ 100 (one id selector)
     - body #darkside .sith p { }  -----  112 (HTML selector, id selector, class selector, HTML selector; 1+100+10+1)
 
 #### Generated Content

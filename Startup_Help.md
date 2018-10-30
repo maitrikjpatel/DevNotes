@@ -5,7 +5,7 @@ category: "note"
 author: "Maitrik Patel"
 
 title: "Startup"
-description: "Description Here"
+description: "Change lives. Change organizations. Change the world."
 
 role: "tools, development, design"
 

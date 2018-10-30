@@ -5,7 +5,7 @@ category: "note"
 author: "Maitrik Patel"
 
 title: "Jquery"
-description: "Description Here"
+description: "JQuery is getting old but not dead."
 
 role: "tools, development"
 
@@ -13,7 +13,7 @@ source: "Github"
 postColor: "#440000"
 ---
 
-## Jquery Libraries
+## Libraries
 
 
 - [A tidy repository of jQuery plugins](http://www.unheap.com/mobile/)
@@ -26,11 +26,7 @@ postColor: "#440000"
 
 - [JQuery Boilerplate](http://jqueryboilerplate.com/)
 
-## Jquery
-
-
-
-## Jquery
+### Topics
 
 #### Basic Syntax
 
