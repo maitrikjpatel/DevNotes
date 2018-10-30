@@ -4,7 +4,7 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "Interview Preparation Notes"
+title: "Interview Preparation"
 description: "Description Here"
 
 role: "tools, development, design"

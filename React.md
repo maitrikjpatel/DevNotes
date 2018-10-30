@@ -4,7 +4,7 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "React Notes"
+title: "React"
 description: "Description Here"
 
 role: "tools, development"

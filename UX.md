@@ -4,7 +4,7 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "User Experience and Design Notes"
+title: "User Experience and Design"
 description: "Description Here"
 
 role: "tools, development, design"

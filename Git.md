@@ -4,8 +4,8 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "GIT Notes"
-description: "Description Here"
+title: "GIT"
+description: "What is GIT ?"
 
 role: "tools, development"
 
@@ -13,7 +13,7 @@ source: "Github"
 postColor: "#440000"
 ---
 
-## Git Help
+### Articles
 
 - [Github Page ](https://help.github.com/articles/create-a-repo)
 - [Set Up Git ](https://help.github.com/articles/set-up-git)
@@ -22,7 +22,7 @@ postColor: "#440000"
 - [Flight rule for GIT ](https://github.com/k88hudson/git-flight-rules)
 
 
-## [GIT Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+### [GIT Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 **Adding a Submodule to a Repository**
 ```

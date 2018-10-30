@@ -4,8 +4,8 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "Shell & Command Prompt"
-description: "Description Here"
+title: "Bash and Zsh"
+description: "Setup your terminal with Bash or Zsh."
 
 role: "tools" 
 

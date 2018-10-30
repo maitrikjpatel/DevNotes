@@ -4,7 +4,7 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "Tools Notes"
+title: "Tools"
 description: "The right tools make the difference between an artist and a craftsman."
 
 role: "tools, development, design"

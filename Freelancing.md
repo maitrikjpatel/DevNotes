@@ -4,8 +4,8 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "Freelancing Notes"
-description: "Description Here"
+title: "Freelancing"
+description: "Freelancing is a serious business."
 
 role: "tools, development, design"
 
@@ -13,7 +13,18 @@ source: "Github"
 postColor: "#440000"
 ---
 
-### Freelancing work search boards
+### Articles
+
+- [NomadWiki](http://www.nomadwiki.net/)
+- [NoDesk](http://nodesk.co/)
+- [Products for Nomads - The best products for digital nomads and remote workers by levels.io](http://www.producthunt.com/@levelsio/collections/products-for-nomads)
+- [Hacker Paradise: A Traveling Community for Developers, Designers, and Other Creative Types.](http://www.hackerparadise.org/)
+- [Coworking Space, Office Space On Rent | Ahmedabad](http://www.openxcelltechcenter.com/#lightbox[group-5]/1/)
+- [desksurfing.net - Coworking spaces around the world](http://www.desksurfing.net/)
+- [How Copass works for a Copasser - Copass](https://copass.org/how_it_works)
+- [Nomadic Designer Toolbox: Tips, Services & Hacks - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/nomadic-designer-toolbox-tips-services-hacks--cms-23078)
+
+### Work search boards
 
 - [Meeet](http://meeet.co/)
 - [Top Coder](http://www.topcoder.com/)
@@ -46,7 +57,7 @@ postColor: "#440000"
 - [Buy Me a Coffee](https://www.buymeacoffee.com/)
 - [Remote/freelancing work Tools](https://remote.tools)
 
-### Contract and Invoices
+### Contract and Invoices Tools
 
 - [Website Cost](https://fulfilli.com/)
 - [The latest version of my ‘killer contract’ for web designers and developers](https://gist.github.com/malarkey/4031110)
@@ -56,14 +67,3 @@ postColor: "#440000"
 - [Bulletproof contracts, simple e-signing, integrated escrow](https://www.hellobonsai.com/)
 - [Freelance Contract](https://www.and.co/the-freelance-contract)
 - [Invoice](https://prexview.com)
-
-### Nomad list
-
-- [NomadWiki](http://www.nomadwiki.net/)
-- [NoDesk](http://nodesk.co/)
-- [Products for Nomads - The best products for digital nomads and remote workers by levels.io](http://www.producthunt.com/@levelsio/collections/products-for-nomads)
-- [Hacker Paradise: A Traveling Community for Developers, Designers, and Other Creative Types.](http://www.hackerparadise.org/)
-- [Coworking Space, Office Space On Rent | Ahmedabad](http://www.openxcelltechcenter.com/#lightbox[group-5]/1/)
-- [desksurfing.net - Coworking spaces around the world](http://www.desksurfing.net/)
-- [How Copass works for a Copasser - Copass](https://copass.org/how_it_works)
-- [Nomadic Designer Toolbox: Tips, Services & Hacks - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/nomadic-designer-toolbox-tips-services-hacks--cms-23078)

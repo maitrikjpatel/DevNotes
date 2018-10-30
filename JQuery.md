@@ -4,7 +4,7 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "Jquery Notes"
+title: "Jquery"
 description: "Description Here"
 
 role: "tools, development"

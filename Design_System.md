@@ -5,7 +5,7 @@ category: "note"
 author: "Maitrik Patel"
 
 title: "Design Systems"
-description: "Description Here"
+description: "Design Systems is a product, serving products."
 
 role: "tools, development, design"
 
@@ -13,19 +13,20 @@ source: "Github"
 postColor: "#440000"
 ---
 
-### Design Systems Lists
+### Articles
 
-- [Design Systems Lists](#design-systems-lists)
-- [Design System Good Reads](#design-system-good-reads)
-- [Design System ToolKit](#design-system-toolkit)
-
-
-### Design System Good Reads
-
+- [Themeable design systems](http://bradfrost.com/blog/post/creating-themeable-design-systems/)
+- [Tokens in design systems](https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421)
 - [Consolidating design systems](https://medium.com/eightshapes-llc/consolidating-design-systems-6bb7ce72f393)
 - [Design System In Figma](https://designcode.io/design-system-in-figma/)
 
-### Design System ToolKit
+### Lists
+
+- [Awesome Design System](https://github.com/alexpate/awesome-design-systems)
+- [Collection of design systems](https://adele.uxpin.com/)
+
+### ToolKit
 
 - [BlueKit](https://github.com/blueberryapps/react-bluekit)
 - [Style-Guide](https://github.com/bradfrost/style-guide-guide)
+- [Storybook](https://storybook.js.org/)

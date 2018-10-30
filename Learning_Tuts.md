@@ -4,7 +4,7 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "Learning/Tuts Notes"
+title: "Learning/Tuts"
 description: "Description Here"
 
 role: "tools, development, design"

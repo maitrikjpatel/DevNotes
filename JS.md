@@ -4,7 +4,7 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "Javacript Notes"
+title: "Javacript"
 description: "Description Here"
 
 role: "tools, development"

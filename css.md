@@ -4,8 +4,8 @@ publish: "true"
 category: "note"
 author: "Maitrik Patel"
 
-title: "CSS Notes"
-description: "Description Here"
+title: "CSS"
+description: "CSS is Awesome."
 
 role: "tools, development" 
 
@@ -13,7 +13,7 @@ source: "Github"
 postColor: "#440000"
 ---
 
-## CSS Guideline & Tuts
+###  Articles & Tuts
 
 - [Learn Layout](http://learnlayout.com)
 - [CSS Guidelines](http://cssguidelin.es)
@@ -26,9 +26,9 @@ postColor: "#440000"
 - [CSS Reference](http://cssreference.io)
 - [CSS Animation](http://animista.net/)
 
-## CSS Topics
+###  Topics
 
-### CSS-Grid
+#### CSS-Grid
 
 - [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [FlexBox Vs Grids](https://aerolab.co/blog/flexbox-grids/)
@@ -39,7 +39,7 @@ postColor: "#440000"
 - [css grid layout generator](https://www.layoutit.com/grid)
 - [Mozila CSS Grid](https://mozilladevelopers.github.io/playground/css-grid/)
 
-### BEM
+#### BEM
 
 - [BEM 101](https://css-tricks.com/bem-101/)
 - [BEM Definitions](https://en.bem.info/method/definitions/)
@@ -107,73 +107,54 @@ postColor: "#440000"
 			align- 			
 		}
 
-
-## SCSS
+#### SCSS
 
 - [SCSS Project for Beginner](http://inspirationalpixels.com/tutorials/sass-projects-for-beginners-1)
 - [SCSS Guide](http://sass-lang.com/guide)
 - [SCSS own grid](https://jsfiddle.net/maitrikjpatel/eaebjts7/)
 
-		//Define Variable
+  ```
+	//Define Variable
 
-		$font-stack: Helvetica, sans-serif;
-		$primary-color: #333;
+	$font-stack: Helvetica, sans-serif;
+	$primary-color: #333;
 
-		// Import CSS file
-		@import 'reset';
+	// Import CSS file
+	@import 'reset';
 
-		//Mixin
+	//Mixin
 
-		@mixin border-radius($radius) {
-			-webkit-border-radius: $radius;
+	@mixin border-radius($radius) {
+		-webkit-border-radius: $radius;
 	    -moz-border-radius: $radius;
 	    -ms-border-radius: $radius;
 	    border-radius: $radius;
     	}
-		.box { @include border-radius(10px); }
+	.box { @include border-radius(10px); }
 
-		//Extend / Inheritance
+	//Extend / Inheritance
 
-		.message {
-		  border: 1px solid #ccc;
-		  padding: 10px;
-		  color: #333;
-		}
-		.success {
-		  @extend .message;
-		  border-color: green;
-		}
+	.message {
+	  border: 1px solid #ccc;
+	  padding: 10px;
+	  color: #333;
+	}
+	.success {
+	  @extend .message;
+	  border-color: green;
+	}
+  ```
 
+### Notes
 
-## Notes
-
-### New stuff
-
-- Cursors         
-- box-sizing: content-box | border-box
-- Shaders
-- text-overflow
-- word-wrap:  normal | break-word
-- calc()
-- [rem](https://jsfiddle.net/maitrikjpatel/h5hdtvt1/)
-- pointer-events : none; // can not have click event , for animation
-
-- CSS Reset :a short, often compressed (minified) set of CSS rules that resets the styling of all HTML elements to a consistent baseline.
-	- [Good Read on CSS RESET](http://cssreset.com/)
-	- Text outline for different browser. Chrome - yellow, firefox - dotted blue
-	- [Normalize.CSS](https://necolas.github.io/normalize.css/)
-- CSS Float
-- Shadow-box
-- [Backface-visibility](https://css-tricks.com/flat-icons-icon-fonts/)
-
-### Relational selectors
+#### Relational selectors
 
 - ul li :descendant selector matches nested li
 - ol > li : child selector matches li in ol but not nested ul
 - li.myClass + li adjacent sibling 
 - li.myClass ~: li general sibling selector matches later siblings, but not nested.
 
-### Attribute selectors
+#### Attribute selectors
 
 - E[attr] : Element E that has the attribute attr with any value.
 - E[attr="val"] : Element E that has the attribute attr with the exact, case-sensitive if attribute is case sensitive, value val.
@@ -207,11 +188,11 @@ postColor: "#440000"
         }
         }
 
-### Pseudo classes
+#### Pseudo classes
 
 - [CSS Reference | Codrops](http://tympanus.net/codrops/css_reference/)
 
-#### Basic UI pseudo-classes
+###### Basic UI pseudo-classes
 
 - :enabled
 - :disabled
@@ -221,7 +202,7 @@ postColor: "#440000"
 		  color: red;
 		}
 
-#### Form related UI pseudo-classes
+###### Form related UI pseudo-classes
 
 - :valid
 - :invalid
@@ -233,7 +214,7 @@ postColor: "#440000"
 - :read-write
 - :default
 
-#### Structural selectors and Nth Pseudo classes
+###### Structural selectors and Nth Pseudo classes
 
 - Target elements on the page based on their relationships to other elements in the DOM.
 - Updates dynamically if page updates.
@@ -277,7 +258,7 @@ postColor: "#440000"
 	        font-style: italic;
 	      }
 
-#### Other Pseudo Classes
+###### Other Pseudo Classes
 
 - :lang
 - :target
@@ -299,7 +280,7 @@ postColor: "#440000"
         section:not(:target) > div { z-index: -2; }
         section:target > div { z-index: -1; }
 
-#### Psuedo Element
+###### Psuedo Element
 
 - Pseudo-classes select elements that already exist.
 - Pseudo-elements create "faux" elements you can style.
@@ -310,11 +291,11 @@ postColor: "#440000"
 - ::before
 - ::after
 
-#### How to use selector in JS
+###### How to use selector in JS
 
 - jQuery $(selector) == document.querySelectorAll(selector)
 
-### Specificity /  Speci-FISH-ity
+#### Specificity /  Speci-FISH-ity
 
 - [Best Doc for specificity](http://www.standardista.com/wp-content/uploads/2012/01/specificityimg.png)
 - Specificity is not inheritance
@@ -348,9 +329,9 @@ postColor: "#440000"
     - #sith ------ 100 (one id selector)
     - body #darkside .sith p { }  -----  112 (HTML selector, id selector, class selector, HTML selector; 1+100+10+1)
 
-### Generated Content
+#### Generated Content
 
-#### :before and :after
+###### :before and :after
 
 - before and after must need the 'content"
 
@@ -360,7 +341,7 @@ postColor: "#440000"
             <after> - after content</after>
         </p>
 
-### Media Query
+#### Media Query
 
 - @media screen & @media print
 
@@ -398,14 +379,14 @@ postColor: "#440000"
           .transforms {}
         }
 
-### Viewport
+#### Viewport
 
 - The viewport varies with the device, and will be smaller on a mobile phone than on a computer screen.
 - Before tablets and mobile phones, web pages were designed only for computer screens, and it was common for web pages to have a static design and a fixed size.
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-### Font Face
+#### Font Face
 
 - How to add font files
 
@@ -443,7 +424,7 @@ postColor: "#440000"
                         0 0 0 60px purple;
             }
 
-### Background Image
+#### Background Image
 
 - background properties
 
@@ -467,7 +448,7 @@ postColor: "#440000"
         background: url(topImg.jpg) 0 0 / 30px 30px repeat scroll border-box content-box,
         background: url(botImg.jpg) 15px 15px / 30px 30px fixed border-box #609;
 
-### Border
+#### Border
 
 - border-width: (length) | thin | medium | thick | inherit {1,4};
 - border-radius: top right bottom left;
@@ -479,12 +460,12 @@ postColor: "#440000"
 
 - border-image: source || slice / width / outset  || repeat;        
 
-### CSS Gradient
+#### CSS Gradient
 
 - background: linear-gradient(direction, color-stop1, color-stop2, ...);
 - [Gredient Generator](http://www.cssmatic.com/gradient-generator)
 
-### Transforms
+#### Transforms
 
 - trasform:
     - translate(<length>[, <length>])
@@ -498,7 +479,7 @@ postColor: "#440000"
     - skewY(<angle>)
     - matrix(<num>, <num>, <num>, <num>, <num>, <num>)
 
-### Transitions
+#### Transitions
 
 - Enables the transition of properties from one state to the next over a defined length of time
 - transition-property: properties (or 'all') that transition

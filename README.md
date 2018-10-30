@@ -20,13 +20,13 @@ Following is list of notes which I use in day to day development work.
 - [Front End Development](Front_End_Development.md)
 - [Javascript](JS.md)
 - [React](React.md)
-- [CSS](css.md)
+- [CSS](CSS.md)
 - [GIT](Git.md)
 
 ## Design Notes
 
 - [User Experience and Design](UX.md)
-- [Data Visualization](dataviz.md)
+- [Data Visualization](DataViz.md)
 - [Design System](Design_System.md)
 
 ## Dev Environment Setup Notes
