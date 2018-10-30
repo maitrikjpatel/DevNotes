@@ -5,7 +5,7 @@ category: "note"
 author: "Maitrik Patel"
 
 title: "Jquery"
-description: "JQuery is getting old but not dead."
+description: "You might not need jQuery but just in case."
 
 role: "tools, development"
 
@@ -17,13 +17,9 @@ postColor: "#440000"
 
 
 - [A tidy repository of jQuery plugins](http://www.unheap.com/mobile/)
-
 - [JQuery Popular plugin lists](http://www.sitepoint.com/jquery-popular-plugins-list/)
-
 - [JS + Hardware](http://www.sitepoint.com/javascript-beyond-web-2014/)
-
 - [JQuery Plugin](http://jquery-plugins.net/)
-
 - [JQuery Boilerplate](http://jqueryboilerplate.com/)
 
 ### Topics

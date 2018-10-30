@@ -5,7 +5,7 @@ category: "note"
 author: "Maitrik Patel"
 
 title: "Javacript"
-description: "Description Here"
+description: "Javascript is taking over the world"
 
 role: "tools, development"
 
@@ -13,7 +13,7 @@ source: "Github"
 postColor: "#440000"
 ---
 
-## Good Read
+### Articles
 
 - [The Basics of Object-Oriented JavaScript](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
 - [JS Best Practice](https://www.thinkful.com/learn/javascript-best-practices-1/)
@@ -23,7 +23,7 @@ postColor: "#440000"
 - [JavaScript](https://javascript.info/)
 - [JS Object method explorer](https://sdras.github.io/object-explorer/)
 
-## JS Guidelines and Tuts
+### Tuts
 - [Principles of writing consistent, idiomatic JS](https://github.com/rwaldron/idiomatic.js)
 - [JQuery Guidelines](http://contribute.jquery.org/style-guide/js/)
 - [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide)
@@ -31,26 +31,18 @@ postColor: "#440000"
 - [JavaScript Regular Expression](http://tutorialzine.com/2014/12/learn-regular-expressions-in-20-minutes/)
 - [JS without JQuery](http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/)
 
-## JS/Jquery Libraries
-
-- [A tidy repository of jQuery plugins](http://www.unheap.com/mobile/)
-- [JQuery Popular plugin lists](http://www.sitepoint.com/jquery-popular-plugins-list/)
-- [JS + Hardware](http://www.sitepoint.com/javascript-beyond-web-2014/)
-- [JQuery Plugin](http://jquery-plugins.net/)
-- [JQuery Boilerplate](http://jqueryboilerplate.com/)
-
-## Angular
+### Angular
 - [Custom Deactives](http://www.toptal.com/angular-js/angular-js-demystifying-directives)
 - [Component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives)
 
-## JS known topics
+### Topics
 
-### "===" vs "=="
+#### "===" vs "=="
 
 - "===" : same type and have the same value, then === produces true and !== produces false.
 - "==" : evil-twins/double-equal operator, however, tries to coerce the values before comparing them
 
-### Hoisting
+#### Hoisting
 - **[Hoisting](https://scotch.io/tutorials/understanding-hoisting-in-javascript)**
 - Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
 - variable and function declarations are put into memory during the compile phase, but stays exactly where you typed it in your coding.
@@ -122,7 +114,7 @@ postColor: "#440000"
 
 		console.log(typeof double); // Output: function
 
-### CallBack Hell
+#### CallBack Hell
 
 - [CallBack Hell](http://callbackhell.com/)
 - Don't nest functions. Give them names and place them at the top level of your program
@@ -131,7 +123,7 @@ postColor: "#440000"
 - Create reusable functions and place them in a module to reduce the cognitive load required to understand your code. 
 - Splitting your code into small pieces like this also helps you handle errors, write tests, forces you to create a stable and documented public API for your code, and helps with refactoring.
 
-### Promise
+#### Promise
 
 - [Promise for dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
 - [Video with Code Example](http://plnkr.co/edit/1ArvFxI0gWmajTpDaOSB?p=preview)
@@ -148,7 +140,7 @@ postColor: "#440000"
 - Promise.race to execute after first promise resolved. 
 - Use Generator to make async code more readable.
 
-### Aync and Await 
+#### Aync and Await 
 
 - [Understanding Async and Await](https://ponyfoo.com/articles/understanding-javascript-async-await)
 - [Async/Await Blows Promises](https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9)
@@ -165,7 +157,7 @@ postColor: "#440000"
 	- Await works only with Promises, it does not work with callbacks.
 	- Await can only be used inside async functions.
 
-### JS Closures
+#### JS Closures
 
 - A closure is the combination of a function and the lexical environment within which that function was declared.
 - A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
@@ -262,7 +254,7 @@ postColor: "#440000"
 		<a href="#" id="size-14">14</a>
 		<a href="#" id="size-16">16</a>
 
-### Event delegation
+#### Event delegation
 
 - [How JavaScript Event Delegation Works](https://davidwalsh.name/event-delegate)
 - [Event delegation](https://javascript.info/event-delegation)
@@ -276,9 +268,9 @@ postColor: "#440000"
 			el.addEventListener('click', listener, false) // listener doesn't capture
 			el.addEventListener('click', listener) // listener doesn't capture
 
-### Favor object composition over class inheritance
+#### Favor object composition over class inheritance
 
-### Functional Programming
+#### Functional Programming
 
 - [MPJ FP Videos](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
 - Less Code, Less Bugs, Less time.
@@ -298,15 +290,13 @@ postColor: "#440000"
 	- Use external library like lodash to get currying funcitonlity. 
 - Recursion
 
-## Javascript Basic 
+#### Javascript Basic 
 
 - JavaScript is a multi-paradigm language, supporting imperative/procedural programming along with OOP (Object-Oriented Programming) with prototypal inheritance.and functional programming.
-
 - Object Creation Pattern - Encapsulation
-
 - Object Reuse Pattern - Inheritance
 
-### "While" vs "For" vs "Do/While"
+#### "While" vs "For" vs "Do/While"
 
 
 - FOR loops are great for doing the same task over and over when you know ahead of time how many times you'll have to repeat the loop.
@@ -335,7 +325,7 @@ postColor: "#440000"
 			}while(myCondi)
 
 
-### Array
+#### Array
 
 - Learned about heterogenous arrays
 
@@ -349,7 +339,7 @@ postColor: "#440000"
 
 		var jagged = [[1,1,1],[1],[1,1]]
 
-### Object
+#### Object
 
 - Let's go back to the analogy of computer languages being like regular spoken languages. In English, you have nouns (which you can think of as "things") and verbs (which you can think of as "actions"). Until now, our nouns (data, such as numbers, strings, or variables) and verbs (functions) have been separate.
 
@@ -437,7 +427,7 @@ postColor: "#440000"
 		var name1 = bob.name;
 		var age1 = bob.age;
 
-### Methods
+#### Methods
 
 - Functions can only use parameters as an input, but methods can make calculations with object properties.
 
@@ -453,7 +443,7 @@ postColor: "#440000"
 		};
 		console.log(bob.getYearOfBirth());
 
-### The "this" Keyword
+#### The "this" Keyword
 
 - The keyword this acts as a placeholder, and will refer to whichever object called that method when the method is actually used.
 
@@ -471,7 +461,7 @@ postColor: "#440000"
 		bob.setAge(50);
 
 
-### Passing Objects into Functions
+#### Passing Objects into Functions
 
 - Making arrays of Objects, we can use objects as parameters for functions as well. That way, these functions can take advantage of the methods and properties that a certain object type provides.
 
@@ -493,7 +483,7 @@ postColor: "#440000"
 		// get the difference in age between alice and billy using our function
 		var diff = ageDifference(alice,billy)
 
-### Type of
+#### Type of
 
  - We can call typeof thing to figure this out. Generally, the most useful types are "number," "string," "function," and of course, "object."
 
@@ -508,7 +498,7 @@ postColor: "#440000"
 		console.log( myObj.hasOwnProperty('name') );
 		console.log( myObj.hasOwnProperty('nickname') );
 
-### Getting IN-timate
+#### Getting IN-timate
 
 - To print out all elements and properties, we can use a for/in loop, like this:
 
@@ -521,7 +511,7 @@ postColor: "#440000"
 		  console.log(nyc[x]);
 		}
 
-### Prototype
+#### Prototype
 
 - What a class has or doesn't have? That is the job of the prototype.
 - JavaScript automatically defines the prototype for class with a constructor.
@@ -542,7 +532,7 @@ postColor: "#440000"
 		snoopy.bark();
 		buddy.bark();
 
-### DRY Penguins - Inheritance
+#### DRY Penguins - Inheritance
 
 - In object-oriented programming, inheritance allows one class to see and use the methods and properties of another class. You can think of it as a child being able to use his or her parent's money because the child inherits the money.
 
@@ -577,7 +567,7 @@ postColor: "#440000"
 			console.log(myEmperor.numLegs); // should print 2
 			console.log(myEmperor.isAlive); // should print true
 
-### Private Number and Methods
+#### Private Number and Methods
 
 - Just as functions can have local variables which can only be accessed from within that function, objects can have private variables. Private variables are pieces of information you do not want to publicly share, and they can only be directly accessed from within the class.
 
@@ -603,7 +593,7 @@ postColor: "#440000"
 		var myBalance = myBalanceMethod();
 		console.log(myBalance);
 
-### Pseudoclassical Inheritance
+#### Pseudoclassical Inheritance
 
 		function Gizmo(id) {
 		 	this.id = id;
@@ -619,7 +609,7 @@ postColor: "#440000"
 			return this.id === id;
 		}; 		
 
-### Functional Inheritance
+#### Functional Inheritance
 
 		function gizmo(id) {
 		 	return {
@@ -637,7 +627,7 @@ postColor: "#440000"
 		 	return that;
 		}
 
-### MONAD
+#### MONAD
 
 - Monad is a design pattern used to describe computations as a series of steps. They are extensively used in pure functional programming languages to manage side effects but can also be used in multiparadigm languages to control complexity.
 
@@ -655,7 +645,7 @@ postColor: "#440000"
 		var monad = identity("Hello world.");
 		monad.bind(alert);
 
-## ES6
+### ES6
 
 - [ES6](http://es6-features.org/)
 - [ES6 vs ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
@@ -665,10 +655,9 @@ postColor: "#440000"
 - Production side : ESnext, Babel, Traceur using grunt/gulp/webpack 
 - Polyfill manually of add ES6 Shim file. 
 
+#### Variables and Parameters
 
-### Variables and Parameters
-
-#### Let
+##### Let
 
 - Var : Global and Function scope
 - Let : Will provide true block scoping, unlike var
@@ -681,14 +670,14 @@ postColor: "#440000"
         	}
       	}
 
-#### Const
+##### Const
 
 - will make variable Read only
 - Never change , will give error if you try to change it.
 - Will shadow outer declaration
 - Block Scoping
 
-#### Destructing
+##### Destructing
 
 - Can destructure arrays
 - Can destructure objects
@@ -710,7 +699,7 @@ postColor: "#440000"
 
 		expect(result).toBe("test");
 
-#### Default Parameters
+##### Default Parameters
 
 - Nice syntax for explicitly stating what the default value of parameter will be if missing.
 - Provide Defaults
@@ -724,14 +713,14 @@ postColor: "#440000"
 		var result = doWork("undefined"); // Scott
 		var result = doWork(""); // No
 
-#### REST Parameters
+##### REST Parameters
 
 - It works as VAR Arguments. 
 - It is true array
 - ...RESTParameters
 - let  doWork = function(url, ...numbers){};
 
-#### Spread Operator
+##### Spread Operator
 
 - ...Spread Operator
 - Can spread an array across parameters
@@ -740,7 +729,7 @@ postColor: "#440000"
 - var a = [4,5,6]
 - var b = [1,2,3,...a,7,8,9]; // [1,2,3,4,5,6,7,8,9]
 
-#### Template Literals
+##### Template Literals
 
 - Can easily combine literals and data
 - Can help build URLs
@@ -749,7 +738,7 @@ postColor: "#440000"
 - let url = 'http://apiserver/${category}/${id}'; // Template Literals
 - USE : Domain specific language stays inside template
 
-### Classes
+#### Classes
 
 - Class like c, c++, java
 - Do not have private or public visibility accessibility
@@ -805,9 +794,9 @@ postColor: "#440000"
 		let e1 = new Employee("Dev","Maitrik");
 		let p1 = new Person("Kruti");
 
-### ES6 Functional Programming 
+#### ES6 Functional Programming 
 
-#### Arrows 
+##### Arrows 
 
 - Provide compact syntax to define a function
 - let add = (x,y) => x + y;
@@ -821,7 +810,7 @@ postColor: "#440000"
 - Arrow function lexically binds "this" of the parents function. No need to worry about self closure by "var self = .this"  
 - Can be used with array methods lexically binds to 'this'
 
-#### Iterators
+##### Iterators
 
 - An object is an iterator when it knows how to access items from a collection one at a time, while keeping track of its current position within that sequence. In JavaScript an iterator is an object that provides a next() method which returns the next item in the sequence. 
 - Iterators : Iterators allows to walk through the collection one item at the time. 
@@ -829,20 +818,20 @@ postColor: "#440000"
 - This method returns an object with two properties: done and value.
 - Symbol.iterator function that every Iterable object must implement.  
 
-#### Iterables
+##### Iterables
 
 - Any sequence of objects , Collection of items. Like Array, Map, Set or DOM. 
 - An object is iterable if it defines its iteration behavior, such as what values are looped over in a for...of construct. 
 - Some built-in types, such as Array or Map, have a default iteration behavior, while other types (such as Object) do not.
 - **Built-in iterables** : String, Array, TypedArray, Map and Set are all built-in iterables, because their prototype objects all have a Symbol.iterator method.
 
-#### For of
+##### For of
 
 - Loop over values instead of key/indexes 
 	- for (let i of numbers){console.log(i)};
 - Work with Iterables at a high level
 
-#### Generators
+##### Generators
 
 - While custom iterators are a useful tool, their creation requires careful programming due to the need to explicitly maintain their internal state. 
 - Generators provide a powerful alternative: they allow you to define an iterative algorithm by writing a single function which can maintain its own state.
@@ -890,7 +879,7 @@ postColor: "#440000"
 
 		// Output will be 2
 
-#### Comprehensions ( Not supported anymore)
+##### Comprehensions ( Not supported anymore)
 
 - Array comprehension is greedy and build concrete data structure.
 - Generator comprehension syntax with parentheses is more like the generator function that use yields.
@@ -900,9 +889,9 @@ postColor: "#440000"
 		var numbers - (for (n of [1,2,3]) n * n); / [1,4,9] 
 	
 
-### Built-In Objects
+#### Built-In Objects
 
-#### Numbers
+##### Numbers
 
 - Octal Literals : var octal = 0o71; // 57
 - Binary Literals : var bin = 0b1101; // 13
@@ -910,12 +899,12 @@ postColor: "#440000"
 - Parse binary value with number function : var binNum = Number("0b101"); // 5
 - Correctly detect integer with isInteger. 
 
-#### [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+##### [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
 - Math new hyperbolic achosine, cosine functions.
 - Math.cbrt(x) function returns the cube root of a "x" number. 
 
-#### [New Array Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+##### [New Array Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 - find function. 
 
@@ -951,7 +940,7 @@ postColor: "#440000"
 		// [1, 'b']
 		// [2, 'c']
 
-#### [SETS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/)
+##### [SETS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/)
 
 - The Set object lets you store unique values of any type, whether primitive values or object references.
 
@@ -962,7 +951,7 @@ postColor: "#440000"
 
 		mySet.size; // 3
 
-#### [MAPS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+##### [MAPS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
 - The Map object holds key-value pairs. Any value (both objects and primitive values) may be used as either a key or a value.
 
@@ -973,11 +962,11 @@ postColor: "#440000"
 		myMap.get('b');  // Returns "beta".
 		myMap.size // 3
 
-#### WAEKMAPS & WEAKSETS
+##### WAEKMAPS & WEAKSETS
 
 - Invented to resolve garbage collector issue
 
-### Objects
+#### Objects
 
 - Object.is() : Compare like ===
 	
@@ -1038,7 +1027,7 @@ postColor: "#440000"
 			console.log(i1.getAttribute('aria-selected')); // 'false'
 			console.log(i2.get
 
-### Modules
+#### Modules
 
 - JavaScript does not have built-in support for modules
 - Module pattern is easily transformed into a powerful constructor pattern.
@@ -1154,9 +1143,9 @@ postColor: "#440000"
 			export { MY_CONST as THE_CONST, myFunc as theFunc };
 	- Use symbols to implement lightweight hiding technique. 
 
-## JS Good Parts
+### JS Good Parts [Book]
 
-### Best Practice
+#### Best Practice
 
 - use UPPERCASE for global variable
 - x +=1 instead of x++
@@ -1194,7 +1183,7 @@ postColor: "#440000"
 			return expression;
 		}())
 
-### Good Part
+#### Good Part
 
 - Prototype
 - Objects
@@ -1207,7 +1196,7 @@ postColor: "#440000"
 - JS is loosely typed language
 - It is always better to use === and !==, which do not do type coercion.
 
-### Bad Part
+#### Bad Part
 
 - NaN :  Not a Number , NaN is not equal to anything, including NaN
 	- NaN === NaN is false
@@ -1215,7 +1204,7 @@ postColor: "#440000"
 -Equal and not equal : These operators can do type coercion  
 
 
-### Problem
+#### Problem
 
 - Problem 1: Write a function that takes an argument and returns that argument.
 

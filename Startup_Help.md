@@ -13,7 +13,7 @@ source: "Github"
 postColor: "#440000"
 ---
 
-## Startup Read
+### Startup Read
 
 - [Startup Tools « Steve Blank](http://steveblank.com/tools-and-blogs-for-entrepreneurs/)
 - [Bill Barnett on Strategy](http://www.barnetttalks.com/)
@@ -21,18 +21,18 @@ postColor: "#440000"
 - [How to Start a Startup](http://startupclass.samaltman.com/)
 - [How to start a side project](https://medium.com/makesideproject/making-a-side-project-808fc040d27a)
 
-## Slide/PPT helper
+### Slide/PPT helper
 
 - [Startup Pitch Decks](https://attach.io/startup-pitch-decks/)
 - [Pitch Decks](http://dconstrct.com/pitch-decks/)
 - [Slide Bean](https://slidebean.com/pitch-deck-template/)
 - [Pitch Decks](http://www.pitchenvy.io/)
 
-## Startup Books
+### Startup Books
 
 - [Design Books](http://a.co/3DkuKp6)
 
-## Tools / Kits
+### Tools / Kits
 
 - [Shape Factory Basic tools](httpshttps://hatchful.shopify.com/)
 - [Index Ventures OptionPlan](https://www.indexventures.com/optionplan)
@@ -53,7 +53,7 @@ postColor: "#440000"
 - [Launch List](https://contentwritingchecklist.com/)
 - [Build without Code](https://zeroqode.com)
 
-## Growth Hacking
+### Growth Hacking
 
 - [Growth marketing for free](https://thenextweb.com/entrepreneur/2015/10/30/18-best-places-to-promote-your-startup-for-virtually-nothing)
 - [Growth Tools](http://growthtools.io/)
@@ -64,17 +64,17 @@ postColor: "#440000"
 - [Brand Development](https://www.process.st/checklist/brand-identity-design/)
 - [PR Kit](https://jonapr.com/)
 
-## VC Networking
+### VC Networking
 
 - [VC Introduction](https://signal.nfx.com/login)
 
-## Startup_India
+### Startup_India
 
 - [CIIE](http://www.ciie.co/)
 - [MICA Incubator | EDC](https://www.mica.ac.in/edc/mica-incubator)
 - [Home - National Entrepreneurship Network](http://nenglobal.org/)
 
-## InspiringPeeps
+### Inspiring Leaders
 
 - [The stories behind the startups - Beta List](http://betali.st/interviews)
 - [Foundation — Episode 32 w/ Phil Libin](http://foundation.bz/)
@@ -84,6 +84,6 @@ postColor: "#440000"
 - [How to become Angel Investor](http://futureinvestor.co/p/angel)
 - [Startup School](https://www.startupschool.org/)
 
-## Funding
+### Funding
 
 - [Founder's guide to seed funding](http://propellerdb.com/oversubscribed/)
