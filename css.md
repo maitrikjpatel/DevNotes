@@ -145,7 +145,7 @@ postColor: "#440000"
 	}
   ```
 
-### Notes
+### What is CSS ?
 
 #### Relational selectors
 

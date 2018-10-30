@@ -5,7 +5,7 @@ category: "note"
 author: "Maitrik Patel"
 
 title: "React"
-description: "Description Here"
+description: "Let virtual DOM do its magic.s"
 
 role: "tools, development"
 
@@ -13,14 +13,14 @@ source: "Github"
 postColor: "#440000"
 ---
 
-## Learning Articles
+### Articles
   - [React Setup Articles](https://www.codecademy.com/articles/react-setup-i)
   - [JS React](https://jscomplete.com/repl)
   - [JS basics refresh](https://jscomplete.com/learn-javascript)
 
-## Notes
+### What is React ?
 
-### Intro
+#### Basic
 
 - It is JS library not framework.
 - Declarative
@@ -36,7 +36,10 @@ postColor: "#440000"
   - Function Components - Use JSX
   - Class Components - Virtual
 
-### Tradeoffs
+- Use **require** and **module.exports** to access one file from another
+- A React app is basically just a lot of components, setting **state** and passing **props** to one another.
+
+#### Tradeoffs
 
 Other             | React
 ----------------- | -------------
@@ -56,16 +59,11 @@ Custom Elemen     | Declare React Components
 Shadow DOM        | CSS Modules, CSS in JS
 Imports           | One component per file
 
-### PropTypes vs Typescript(MS) vs Flow(FB)
+#### PropTypes vs Typescript(MS) vs Flow(FB)
 
 - PropTypes run on Runtime
 - Typescript check at Compile time
 - Flow can be run either runtime or compile time
- 
-### Codecademy - REACT-1
-
-- Use **require** and **module.exports** to access one file from another
-- A React app is basically just a lot of components, setting **state** and passing **props** to one another.
 
 #### JSX
 
@@ -185,29 +183,30 @@ Imports           | One component per file
   - state contains "private" information for the component to initialise, change, and use on it's own.
   - State is reserved only for interactivity, that is, data that changes over time.
 
-### Codecademy - REACT-2 - Programming Patterns
-
 #### Stateless Components Inherit From Stateful Components
 
-##### Pattern 1 : A stateful component passes its state down to a stateless component.
+##### Pattern 1 : 
 
+  - A stateful component passes its state down to a stateless component.
   - Stateful <Parent /> passes a prop to stateless <Child />.
   - A stateful component class stores information as state.
   - A stateless component class displays that state.
   - A different stateless component class displays a way to change that state.
 
-##### Pattern 2 : The stateless, child component will update the state of the parent component.
+##### Pattern 2 : 
 
+  - The stateless, child component will update the state of the parent component.
   - A stateful, parent component passes down an event handler to a stateless, child component.
   - The child component then uses that event handler to update its parent's state.
 
-##### Pattern 3 : You will have one stateless component display information, and a differenstateless component offer the ability to change that information.**
+##### Pattern 3 : 
 
+  - You will have one stateless component display information, and a differenstateless component offer the ability to change that information.
   - An instance of the stateful component class is rendered. 
   - One stateless child component displays the `state`, and a different stateless child component displays a way to change the stateful component 
   - Files
 
-  - `Stateful / Parent.js`
+  - **`Stateful / Parent.js`**
 
         var React = require('react');
         var ReactDOM = require('react-dom');
@@ -240,7 +239,7 @@ Imports           | One component per file
           document.getElementById('app')
         );
 
-  - `Stateless / Child.js`
+  - **`Stateless / Child.js`**
 
         var React = require('react');
 
@@ -268,7 +267,7 @@ Imports           | One component per file
 
         module.exports = Child;
 
-  - `Stateless / Sibling.js`
+  - **`Stateless / Sibling.js`**
 
         var React = require('react');
 
@@ -287,10 +286,9 @@ Imports           | One component per file
 
         module.exports = Sibling;
 
-#### Advance React
+##### Pattern 4 : 
 
-##### Pattern 4 : Inline Styles, dividing components into presentational components and containecomponents.**
-
+  - Inline Styles, dividing components into presentational components and containecomponents.
   - `<h1 style={{ color: 'red' }}>Hello world</h1>`
   - The outer curly braces inject JavaScript into JSX. They say, "everything between us should be read as JavaScript, not JSX."
   - The inner curly braces create a JavaScript object literal. They make this a valid JavaScript object
@@ -344,8 +342,9 @@ Imports           | One component per file
         );
 
 
-##### Pattern 5 : Separating presentational components from display components.
+##### Pattern 5 : 
 
+  - Separating presentational components from display components.
   - Separating container components from presentational components is a popular React programming pattern.
   - If a component has to have state, make calculations based on props, or manage any other complex logic, then that component shouldn't also have to render HTML-like JSX.
   - Following this pattern separates your business logic from your presentational logic.
@@ -371,7 +370,7 @@ Imports           | One component per file
           return <h1>{props.title}</h1>;
         }
 
-##### propTypes
+#### propTypes
   - propTypes are useful for two reasons
     - **Prop validation** : Validation can ensure that your props are doing what they're supposed to be doing. If props are missing, or if they're present but they aren't what you're expecting, then a warning will print in the console. 
     - **Documentation** : Documenting props makes it easier to glance at a file and quickly understand the component class inside. When you have a lot of files, and you will, this can be a huge benefit.
@@ -390,7 +389,7 @@ Imports           | One component per file
             }
           });
 
-##### Forms
+#### Forms
   - A traditional form doesn't update the server until a user hits "submit." 
   - **Controlled component** : An uncontrolled component is a component that maintains its own internal state. 
   - **Uncontrolled component** : A controlled component is a component that does not maintain any internal state. 

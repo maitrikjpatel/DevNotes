@@ -31,10 +31,6 @@ postColor: "#440000"
 - [JavaScript Regular Expression](http://tutorialzine.com/2014/12/learn-regular-expressions-in-20-minutes/)
 - [JS without JQuery](http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/)
 
-### Angular
-- [Custom Deactives](http://www.toptal.com/angular-js/angular-js-demystifying-directives)
-- [Component based angularjs directives](https://www.airpair.com/angularjs/posts/component-based-angularjs-directives)
-
 ### Topics
 
 #### "===" vs "=="

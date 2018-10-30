@@ -5,7 +5,7 @@ category: "note"
 author: "Maitrik Patel"
 
 title: "Learning/Tuts"
-description: "Description Here"
+description: "Never Stop Learning: Stay Relevant, Reinvent Yourself, and Thrive"
 
 role: "tools, development, design"
 
@@ -19,7 +19,7 @@ postColor: "#440000"
 - [Computer Science free online](http://www.learnerstv.com/Free-Computer-Science-video-lecture-courses.htm)
 - [44 Website to learn anything](https://entrepreneurs.maqtoob.com/44-new-cool-websites-and-apps-to-learn-something-new-7b82beab1139)
 
-## Learn Web Development
+## Learn Development
 
 - [Free Web Development Courses | The Odin Project](http://www.theodinproject.com/courses)
 - [stanford CS142 Lectures](http://web.stanford.edu/class/cs142/lectures.html)
@@ -50,4 +50,4 @@ postColor: "#440000"
 - [Stack Overflow](http://stackoverflow.com/)
 - [Programming Tips & Tricks | Coderwall](https://coderwall.com/)
 - [Discover and discuss the best dev tools and cloud | StackShare](http://stackshare.io/)
-- [HackerRank | Technical Recruiting | Hiring the Best Engineers](https://www.hackerrank.com/)
+- [Technical Recruiting ](https://www.hackerrank.com/)
