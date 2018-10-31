@@ -5,7 +5,7 @@ category: "note"
 author: "Maitrik Patel"
 
 title: "React"
-description: "Let virtual DOM do its magic.s"
+description: "Let virtual DOM do its magic."
 
 role: "tools, development"
 
