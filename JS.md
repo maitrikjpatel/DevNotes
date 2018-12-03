@@ -10,7 +10,6 @@ description: "Javascript is taking over the world"
 role: "tools, development"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Articles

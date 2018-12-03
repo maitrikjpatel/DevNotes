@@ -10,7 +10,6 @@ description: "Let virtual DOM do its magic."
 role: "tools, development"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Articles

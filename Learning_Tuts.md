@@ -10,7 +10,6 @@ description: "Never Stop Learning: Stay Relevant, Reinvent Yourself, and Thrive"
 role: "tools, development, design"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ## Learn Anything

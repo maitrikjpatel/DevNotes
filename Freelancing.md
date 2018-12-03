@@ -10,7 +10,6 @@ description: "Freelancing is a serious business."
 role: "tools, development, design"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Articles

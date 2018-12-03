@@ -10,7 +10,6 @@ description: "Description Here"
 role: "tools, development"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 Following is list of notes which I use in day to day development work.

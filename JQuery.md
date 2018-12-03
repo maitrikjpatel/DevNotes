@@ -10,7 +10,6 @@ description: "You might not need jQuery but just in case."
 role: "tools, development"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ## Libraries

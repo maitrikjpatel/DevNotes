@@ -10,7 +10,6 @@ description: "The right tools make the difference between an artist and a crafts
 role: "tools, development, design"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Mac setup articles

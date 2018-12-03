@@ -10,7 +10,6 @@ description: "Change lives. Change organizations. Change the world."
 role: "tools, development, design"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Startup Read

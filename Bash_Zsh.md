@@ -10,7 +10,6 @@ description: "Setup your terminal with Bash or Zsh."
 role: "tools" 
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Bash and terminal tuts

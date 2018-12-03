@@ -10,7 +10,6 @@ description: "You’ve got to start with the customer experience and work backwa
 role: "tools, development, design"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Articles

@@ -10,7 +10,6 @@ description: "A user interface is like a joke. If you have to explain it, it’s
 role: "tools, development, design"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Articles

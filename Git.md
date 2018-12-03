@@ -10,7 +10,6 @@ description: "What is GIT ?"
 role: "tools, development"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Articles

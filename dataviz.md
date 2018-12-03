@@ -10,7 +10,6 @@ description: "Make information beautiful."
 role: "tools, development"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Dashboard Tuts

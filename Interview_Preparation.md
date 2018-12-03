@@ -10,7 +10,6 @@ description: "Crack that Interview"
 role: "tools, development, design"
 
 source: "Github"
-postColor: "#440000"
 ---
 
 ### Articles
