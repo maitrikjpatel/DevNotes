@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "Jquery"
 description: "You might not need jQuery but just in case."
 
-role: "tools, development"
+topics: "tools, development"
 
 source: "Github"
 ---

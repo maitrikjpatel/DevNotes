@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "UX - User Experience"
 description: "You’ve got to start with the customer experience and work backwards to the technology."
 
-role: "tools, development, design"
+topics: "tools, development, design"
 
 source: "Github"
 ---

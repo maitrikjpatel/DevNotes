@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "Design Systems"
 description: "Design Systems is a product, serving products."
 
-role: "tools, development, design"
+topics: "tools, development, design"
 
 source: "Github"
 ---

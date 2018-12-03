@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "Freelancing"
 description: "Freelancing is a serious business."
 
-role: "tools, development, design"
+topics: "tools, development, design"
 
 source: "Github"
 ---

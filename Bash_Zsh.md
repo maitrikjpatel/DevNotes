@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "Bash and Zsh"
 description: "Setup your terminal with Bash or Zsh."
 
-role: "tools" 
+topics: "tools" 
 
 source: "Github"
 ---

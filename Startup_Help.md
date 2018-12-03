@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "Startup"
 description: "Change lives. Change organizations. Change the world."
 
-role: "tools, development, design"
+topics: "tools, development, design"
 
 source: "Github"
 ---

@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "Front End Development"
 description: "A user interface is like a joke. If you have to explain it, it’s not that good."
 
-role: "tools, development, design"
+topics: "tools, development, design"
 
 source: "Github"
 ---

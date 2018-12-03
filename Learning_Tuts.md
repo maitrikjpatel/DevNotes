@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "Learning/Tuts"
 description: "Never Stop Learning: Stay Relevant, Reinvent Yourself, and Thrive"
 
-role: "tools, development, design"
+topics: "tools, development, design"
 
 source: "Github"
 ---

@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "Data Visualization"
 description: "Make information beautiful."
 
-role: "tools, development"
+topics: "tools, development"
 
 source: "Github"
 ---

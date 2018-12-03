@@ -7,7 +7,7 @@ author: "Maitrik Patel"
 title: "Tools"
 description: "The right tools make the difference between an artist and a craftsman."
 
-role: "tools, development, design"
+topics: "tools, development, design"
 
 source: "Github"
 ---
