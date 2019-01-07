@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "Design Systems"
-description: "Design Systems is a product, serving products."
+title: 'Design Systems'
+description: 'Design Systems is a product, serving products.'
 
-topics: "tools, development, design"
+topics: 'tools, development, design'
 
-source: "Github"
+source: 'Github'
 ---
 
 ### Articles

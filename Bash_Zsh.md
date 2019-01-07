@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "Bash and Zsh"
-description: "Setup your terminal with Bash or Zsh."
+title: 'Bash and Zsh'
+description: 'Setup your terminal with Bash or Zsh.'
 
-topics: "tools" 
+topics: 'tools'
 
-source: "Github"
+source: 'Github'
 ---
 
 ### Bash and terminal tuts
@@ -21,9 +21,9 @@ source: "Github"
 
 ### Good read for Bash files setup
 
- - [GitHub Dotfiles](http://dotfiles.github.io/)
--  [Zero to Hero With Dotfiles](http://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
--  [Awesome Dotfiles](https://github.com/webpro/awesome-dotfiles)
--  [Bash to Zsh](http://www.intridea.com/blog/2011/5/18/its-not-enough-to-bash-in-heads-youve-got-to-bash-in-minds-with-zsh)
--  [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
--  [Oh-My-Zsh Cheatsheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
+- [GitHub Dotfiles](http://dotfiles.github.io/)
+- [Zero to Hero With Dotfiles](http://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
+- [Awesome Dotfiles](https://github.com/webpro/awesome-dotfiles)
+- [Bash to Zsh](http://www.intridea.com/blog/2011/5/18/its-not-enough-to-bash-in-heads-youve-got-to-bash-in-minds-with-zsh)
+- [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)
+- [Oh-My-Zsh Cheatsheet](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet)

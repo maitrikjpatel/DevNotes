@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "UX - User Experience"
-description: "You’ve got to start with the customer experience and work backwards to the technology."
+title: 'UX - User Experience'
+description: 'You’ve got to start with the customer experience and work backwards to the technology.'
 
-topics: "tools, development, design"
+topics: 'tools, development, design'
 
-source: "Github"
+source: 'Github'
 ---
 
 ### Articles
@@ -23,7 +23,6 @@ source: "Github"
 - [UX for kids](https://medium.com/@deanvipond/explaining-graphic-design-to-four-year-olds-fe9257ffaf3d)
 - [bauhaus school lessons](https://blog.prototypr.io/learning-in-the-bauhaus-school-five-lessons-for-todays-designers-and-five-ways-the-web-still-is-64f2985ce811)
 - [Cooper UX](https://www.cooper.com/)
-
 
 ### Resources
 
@@ -43,7 +42,7 @@ source: "Github"
 - [Sketch Casts](https://www.sketchcasts.net)
 - [UX Job Boards](https://uxdesign.cc/ux-job-boards-24-places-to-find-a-job-in-user-experience-design-a886c2279982)
 - [Illustration](https://www.drawkit.io/)
-  
+
 ### Case Study
 
 - [Cas Study Club](https://www.casestudy.club)
@@ -61,7 +60,7 @@ source: "Github"
 - [Design Guideline](http://designguidelines.co/)
 - [Google Sprint](http://www.gv.com/sprint/)
 - [The Ninja Skill for UX Designers — Medium](https://medium.com/@mollyinglish/the-ninja-skill-for-ux-designers-25f314f8f76c)
-- [The Basics of Great UX - Tuts  Web Design Article](https://webdesign.tutsplus.com/articles/the-basics-of-great-ux--webdesign-8823)
+- [The Basics of Great UX - Tuts Web Design Article](https://webdesign.tutsplus.com/articles/the-basics-of-great-ux--webdesign-8823)
 - [7 Rules for Creating Gorgeous UI (Part 1) — Medium](https://medium.com/@erikdkennedy/7-rules-for-creating-gorgeous-ui-part-1-559d4e805cda)
 - [Researching Products Before Diving Into Design](http://thenextweb.com/dd/2014/11/02/product-research-101-research-diving-design/)
 - [A Personal Design Sprint](http://franciscortez.com/design-sprint/)

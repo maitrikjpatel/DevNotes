@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "Interview Preparation"
-description: "Crack that Interview"
+title: 'Interview Preparation'
+description: 'Crack that Interview'
 
-topics: "tools, development, design"
+topics: 'tools, development, design'
 
-source: "Github"
+source: 'Github'
 ---
 
 ### Articles
@@ -37,7 +37,7 @@ source: "Github"
 
 ### Questions
 
-#### Front End 
+#### Front End
 
 - [Front end interview Bible](http://www.thatjsdude.com/interview)
 - [Front end interview Bible_01](https://github.com/darcyclarke/Front-end-Developer-Interview-Questions)
@@ -49,7 +49,7 @@ source: "Github"
 - [CSS 10 questions - Sitepoint](http://www.sitepoint.com/12-little-known-css-facts/)
 - [CSS questions - CSS Tricks](https://css-tricks.com/interview-questions-css/)
 
-#### JS 
+#### JS
 
 - [JS 10 imp questions](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
 - [JS OOP](http://blog.kevinchisholm.com/object-oriented-javascript/javascript-interview-questions-object-oriented-javascript/)

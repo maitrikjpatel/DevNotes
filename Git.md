@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "GIT"
-description: "What is GIT ?"
+title: 'GIT'
+description: 'What is GIT ?'
 
-topics: "tools, development"
+topics: 'tools, development'
 
-source: "Github"
+source: 'Github'
 ---
 
 ### Articles
@@ -20,15 +20,16 @@ source: "Github"
 - [GITHUB Cheat Sheet ](https://github.com/tiimgreen/github-cheat-sheet)
 - [Flight rule for GIT ](https://github.com/k88hudson/git-flight-rules)
 
-
 ### [GIT Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 **Adding a Submodule to a Repository**
+
 ```
 git submodule add <url> <destination>
 ```
 
 **Submodule Basic commands**
+
 ```
 git submodule status
 git submodule init
@@ -36,6 +37,7 @@ git submodule update
 ```
 
 **Update Submodule URLs**
+
 ```
 git submodule sync
 ```
@@ -48,12 +50,14 @@ git rm -rf <submodule location>
 ```
 
 **Clone submodule in a cloned repository**
+
 ```
 git submodule update --remote
 git submodule update --init --recursive
 ```
 
 ### Update all submodules
+
 ```
 git submodule foreach git pull origin master
 cd ..
@@ -62,6 +66,7 @@ git push
 ```
 
 ### Edit a submodule
+
 ```
 cd components/canvasrunner
 <edit>
@@ -73,11 +78,13 @@ git push
 ```
 
 ### Clone repositories with submodules
+
 ```
 git clone --recursive
 ```
 
 ### Pull submodule if you forgot to clone --recursive
+
 ```
 cd components/canvasrunner
 git submodule update --init

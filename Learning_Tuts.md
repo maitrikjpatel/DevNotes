@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "Learning/Tuts"
-description: "Never Stop Learning: Stay Relevant, Reinvent Yourself, and Thrive"
+title: 'Learning/Tuts'
+description: 'Never Stop Learning: Stay Relevant, Reinvent Yourself, and Thrive'
 
-topics: "tools, development, design"
+topics: 'tools, development, design'
 
-source: "Github"
+source: 'Github'
 ---
 
 ## Learn Anything

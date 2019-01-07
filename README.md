@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "false" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'false'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "ReadMe note"
-description: "Description Here"
+title: 'ReadMe note'
+description: 'Description Here'
 
-topics: "tools, development"
+topics: 'tools, development'
 
-source: "Github"
+source: 'Github'
 ---
 
 Following is list of notes which I use in day to day development work.

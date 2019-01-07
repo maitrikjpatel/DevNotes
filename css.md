@@ -1,18 +1,18 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "CSS"
-description: "CSS is Awesome."
+title: 'CSS'
+description: 'CSS is Awesome.'
 
-topics: "tools, development" 
+topics: 'tools, development'
 
-source: "Github"
+source: 'Github'
 ---
 
-###  Articles & Tuts
+### Articles & Tuts
 
 - [Learn Layout](http://learnlayout.com)
 - [CSS Guidelines](http://cssguidelin.es)
@@ -25,7 +25,7 @@ source: "Github"
 - [CSS Reference](http://cssreference.io)
 - [CSS Animation](http://animista.net/)
 
-###  Topics
+### Topics
 
 #### CSS-Grid
 
@@ -84,27 +84,27 @@ source: "Github"
 
 - **Parent - Flex Container**
 
-		.container {
-			display: flex;  <-- or inline-flex -->
-			flex-direction: row | row-reverse | column | column-reverse;  
-			flex-wrap: nowrap | wrap | wrap-reverse;					
-			flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
-			justify-content: flex-start | flex-end | center | space-between | space-around;
-			align-items: flex-start | flex-end | center | baseline | stretch;
-			align-content: flex-start | flex-end | center | space-between | space-around | stretch;
-		} 						
+      		.container {
+      			display: flex;  <-- or inline-flex -->
+      			flex-direction: row | row-reverse | column | column-reverse;
+      			flex-wrap: nowrap | wrap | wrap-reverse;
+      			flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
+      			justify-content: flex-start | flex-end | center | space-between | space-around;
+      			align-items: flex-start | flex-end | center | baseline | stretch;
+      			align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+      		}
 
 - **Children - Flex Items**
 
-		.item {
-			order: <integer>;
-		    flex-grow: <number>;  <-- default 0 -->
-			flex-shrink: <number>;  <-- default 1 -->
-			flex-basis: <length> | auto;  <-- default auto --> 		
-			flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-			align-self: auto | flex-start | flex-end | center | baseline | stretch;
-			align- 			
-		}
+      		.item {
+      			order: <integer>;
+      		    flex-grow: <number>;  <-- default 0 -->
+      			flex-shrink: <number>;  <-- default 1 -->
+      			flex-basis: <length> | auto;  <-- default auto -->
+      			flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+      			align-self: auto | flex-start | flex-end | center | baseline | stretch;
+      			align-
+      		}
 
 #### SCSS
 
@@ -113,35 +113,35 @@ source: "Github"
 - [SCSS own grid](https://jsfiddle.net/maitrikjpatel/eaebjts7/)
 
   ```
-	//Define Variable
+  		//Define Variable
 
-	$font-stack: Helvetica, sans-serif;
-	$primary-color: #333;
+  		$font-stack: Helvetica, sans-serif;
+  		$primary-color: #333;
 
-	// Import CSS file
-	@import 'reset';
+  		// Import CSS file
+  		@import 'reset';
 
-	//Mixin
+  		//Mixin
 
-	@mixin border-radius($radius) {
-		-webkit-border-radius: $radius;
-	    -moz-border-radius: $radius;
-	    -ms-border-radius: $radius;
-	    border-radius: $radius;
+  		@mixin border-radius($radius) {
+  			-webkit-border-radius: $radius;
+  		    -moz-border-radius: $radius;
+  		    -ms-border-radius: $radius;
+  		    border-radius: $radius;
     	}
-	.box { @include border-radius(10px); }
+  		.box { @include border-radius(10px); }
 
-	//Extend / Inheritance
+  		//Extend / Inheritance
 
-	.message {
-	  border: 1px solid #ccc;
-	  padding: 10px;
-	  color: #333;
-	}
-	.success {
-	  @extend .message;
-	  border-color: green;
-	}
+  		.message {
+  		  border: 1px solid #ccc;
+  		  padding: 10px;
+  		  color: #333;
+  		}
+  		.success {
+  		  @extend .message;
+  		  border-color: green;
+  		}
   ```
 
 ### What is CSS ?
@@ -150,7 +150,7 @@ source: "Github"
 
 - ul li :descendant selector matches nested li
 - ol > li : child selector matches li in ol but not nested ul
-- li.myClass + li adjacent sibling 
+- li.myClass + li adjacent sibling
 - li.myClass ~: li general sibling selector matches later siblings, but not nested.
 
 #### Attribute selectors
@@ -159,28 +159,29 @@ source: "Github"
 - E[attr="val"] : Element E that has the attribute attr with the exact, case-sensitive if attribute is case sensitive, value val.
 - E[attr|=val] : Element E whose attribute attr has a value val or begins with val- ("val" plus "-").
 
-		p[lang|="en"]{ <-- p[lang|="en"]{ <--    <p lang="en-us">  <p lang="en-uk"> --> }
+      		p[lang|="en"]{ <-- p[lang|="en"]{ <--    <p lang="en-us">  <p lang="en-uk"> --> }
 
 - E[attr~=val] : Sibling / Element E whose attribute attr has within its value the space-separated full word val.
 
-		a[title~=more] { <-- a[title~=more] { <-- <a title="want more info about this?">}
+      		a[title~=more] { <-- a[title~=more] { <-- <a title="want more info about this?">}
 
 - E[attr^=val] : Element E whose attribute attr starts with the value val.
 
-		a[href^=mailto] {background- a[href^=mailto] {background-image: url(emailicon.gif);}  
-		a[href^=http]:after {content: " (" attr(href) ")";}
+      		a[href^=mailto] {background- a[href^=mailto] {background-image: url(emailicon.gif);}
+      		a[href^=http]:after {content: " (" attr(href) ")";}
 
-- E[attr$=val] : Element E whose attribute attr ends in val . 
+- E[attr$=val] : Element E whose attribute attr ends in val .
 
-		a[href$=pdf] {background-image: url(pdficon.gif);}
-		a[href$=pdf]:after {content: " (PDF)";}
+      		a[href$=pdf] {background-image: url(pdficon.gif);}
+      		a[href$=pdf]:after {content: " (PDF)";}
+
 - E[attr*=val] : Element E whose attribute attr matches val anywhere within the attribute. Similar to E[attr~=val] above, except the val can be part of a word.
 
 - Note: Multiple attributes work! a[title][href]
 
-		@media print{
-			abbr[title]:after {
-	        content: "(" attr(title) ")";
+      		@media print{
+      			abbr[title]:after {
+      	        content: "(" attr(title) ")";
         }
         a[href^=http]:after {
           content: "(" attr(href) ")";
@@ -197,9 +198,9 @@ source: "Github"
 - :disabled
 - :checked
 
-		input[type=checkbox]:checked + label {
-		  color: red;
-		}
+      		input[type=checkbox]:checked + label {
+      		  color: red;
+      		}
 
 ###### Form related UI pseudo-classes
 
@@ -219,43 +220,43 @@ source: "Github"
 - Updates dynamically if page updates.
 - Reduced need for extra markup, classes and IDs
 
-    - :nth-child()
-    - :nth-last-child()
-    - :nth-of-type()
-    - :nth-last-of-type()
-    - :first-child*
-    - :last-child
-    - :first-of-type
-    - :last-of-type
-    - :only-child
-    - :only-of-type
-    - :root
-    - :empty
-    - :not(:empty)
+  - :nth-child()
+  - :nth-last-child()
+  - :nth-of-type()
+  - :nth-last-of-type()
+  - :first-child\*
+  - :last-child
+  - :first-of-type
+  - :last-of-type
+  - :only-child
+  - :only-of-type
+  - :root
+  - :empty
+  - :not(:empty)
 
-	      tr:first-child,
-	      tr:last-child {
-	        font-weight: bold;
-	      }
-	      tr:first-of-type,
-	      tr:last-of-type{
-	        text-decoration:line-through;
-	      }
-	      tr:nth-child(even) {
-	        background-color: #CCC;
-	      }
-	      tr:nth-child(3) {
-	        color: #CCC;
-	      }
-	      tr:nth-of-type(odd) {
-	        background-color: #FFF;
-	      }
-	      tr:nth-of-type(4n) {
-	        color: #C61800;
-	      }
-	      tr:nth-of-type(3n-1) {
-	        font-style: italic;
-	      }
+              tr:first-child,
+              tr:last-child {
+                font-weight: bold;
+              }
+              tr:first-of-type,
+              tr:last-of-type{
+                text-decoration:line-through;
+              }
+              tr:nth-child(even) {
+                background-color: #CCC;
+              }
+              tr:nth-child(3) {
+                color: #CCC;
+              }
+              tr:nth-of-type(odd) {
+                background-color: #FFF;
+              }
+              tr:nth-of-type(4n) {
+                color: #C61800;
+              }
+              tr:nth-of-type(3n-1) {
+                font-style: italic;
+              }
 
 ###### Other Pseudo Classes
 
@@ -272,7 +273,7 @@ source: "Github"
         section:not(:target) > a {
           border-bottom: 0;
           background-color: #eee;
-        }   
+        }
         section:target > a {
           background-color: white;
         }
@@ -294,7 +295,7 @@ source: "Github"
 
 - jQuery $(selector) == document.querySelectorAll(selector)
 
-#### Specificity /  Speci-FISH-ity
+#### Specificity / Speci-FISH-ity
 
 - [Best Doc for specificity](http://www.standardista.com/wp-content/uploads/2012/01/specificityimg.png)
 - Specificity is not inheritance
@@ -307,26 +308,26 @@ source: "Github"
 - Element : 0-0-1
 - Global Selector : 0-0-0
 
-		ul > li { color : red } // 0-0-2
-		ul li { color : blue } // 0-0-2 : will apply due to order
+      		ul > li { color : red } // 0-0-2
+      		ul li { color : blue } // 0-0-2 : will apply due to order
 
 - Example
 
-    - * { }  ----- 0
-    - li { }  -----  1 (one element)
-    - li:first-line { }  ----- 2 (one element, one pseudo-element)
-    - ul li { }  ----- 2 (two elements)
-    - ul ol+li { }  -----  3 (three elements)
-    - h1 + universal[rel=up] { }  -----  11 (one attribute, one element)
-    - ul ol li.red { }  -----  13 (one class, three elements)
-    - li.red.level { }  -----  21 (two classes, one element)
-    - style=””  ----- 1000 (one inline styling)
-    - p { }  ----- 1 (one HTML selector)
-    - div p { }  ----- 2 (two HTML selectors)
-    - .sith ------ 10 (one class selector)
-    - div p.sith { }  -----  12 (two HTML selectors and a class selector)
-    - sith ------ 100 (one id selector)
-    - body #darkside .sith p { }  -----  112 (HTML selector, id selector, class selector, HTML selector; 1+100+10+1)
+  - - { } ----- 0
+  - li { } ----- 1 (one element)
+  - li:first-line { } ----- 2 (one element, one pseudo-element)
+  - ul li { } ----- 2 (two elements)
+  - ul ol+li { } ----- 3 (three elements)
+  - h1 + universal[rel=up] { } ----- 11 (one attribute, one element)
+  - ul ol li.red { } ----- 13 (one class, three elements)
+  - li.red.level { } ----- 21 (two classes, one element)
+  - style=”” ----- 1000 (one inline styling)
+  - p { } ----- 1 (one HTML selector)
+  - div p { } ----- 2 (two HTML selectors)
+  - .sith ------ 10 (one class selector)
+  - div p.sith { } ----- 12 (two HTML selectors and a class selector)
+  - sith ------ 100 (one id selector)
+  - body #darkside .sith p { } ----- 112 (HTML selector, id selector, class selector, HTML selector; 1+100+10+1)
 
 #### Generated Content
 
@@ -349,21 +350,21 @@ source: "Github"
         <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/smartphone.css' />
 
 - In CSS
-        @media screen and (max-width: 480px){
-          a {
-            transition: background-color 200ms linear 50ms;
-          }
-        }
+  @media screen and (max-width: 480px){
+  a {
+  transition: background-color 200ms linear 50ms;
+  }
+  }
 
 - Media Query Options
 
-    - (min/max)-width: viewport width
-    - (min/max)-height: viewport height
-    - (min/max)-device-width: screen width
-    - (min/max)-device-height: screen height
-    - orientation: portrait(h>w) | landscape(w>h)
-    - (min/max)-aspect-ratio: width/height
-    - (min/max)-device-aspect-ratio: device-width/height
+  - (min/max)-width: viewport width
+  - (min/max)-height: viewport height
+  - (min/max)-device-width: screen width
+  - (min/max)-device-height: screen height
+  - orientation: portrait(h>w) | landscape(w>h)
+  - (min/max)-aspect-ratio: width/height
+  - (min/max)-device-aspect-ratio: device-width/height
 
 - Media Query Syntax/Punctuation/Tidbits
 
@@ -412,7 +413,7 @@ source: "Github"
         text-shadow: left top blur color;
         .trans { text-shadow: 0 5px 1px rgba(0,0,0,0.2);}
 
-- box-shadow: inset? [horiz] [vert] [blur] [spread] [color];    
+- box-shadow: inset? [horiz][vert] [blur][spread] [color];
 
         .rainbow {
             box-shadow: 0 0 0 10px red,
@@ -427,14 +428,14 @@ source: "Github"
 
 - background properties
 
-    - background-color
-    - background-image : none | url | image-list | element-reference  | gradient;
-    - background-repeat : repeat | repeat-x | repeat-y | no-repeat | space | round;
-    - background-attachment : fixed | local | scroll;
-    - background-position : top left bottom right;
-    - background-clip: border-box | padding-box | content-box;
-    - background-origin: border-box | padding-box | content-box;
-    - background-size: auto | contain | cover | length;     
+  - background-color
+  - background-image : none | url | image-list | element-reference | gradient;
+  - background-repeat : repeat | repeat-x | repeat-y | no-repeat | space | round;
+  - background-attachment : fixed | local | scroll;
+  - background-position : top left bottom right;
+  - background-clip: border-box | padding-box | content-box;
+  - background-origin: border-box | padding-box | content-box;
+  - background-size: auto | contain | cover | length;
 
 - multiple background-image
 
@@ -443,7 +444,7 @@ source: "Github"
 - Background shorthand
 
         background: img position / size repeat attachment origin clip,
-        background: img position / size repeat attachment box{1,2} bgcolor;  
+        background: img position / size repeat attachment box{1,2} bgcolor;
         background: url(topImg.jpg) 0 0 / 30px 30px repeat scroll border-box content-box,
         background: url(botImg.jpg) 15px 15px / 30px 30px fixed border-box #609;
 
@@ -457,7 +458,7 @@ source: "Github"
         border: width style color;
         border-left: width style color;
 
-- border-image: source || slice / width / outset  || repeat;        
+- border-image: source || slice / width / outset || repeat;
 
 #### CSS Gradient
 
@@ -467,16 +468,16 @@ source: "Github"
 #### Transforms
 
 - trasform:
-    - translate(length[, length])
-    - translateX(length)
-    - translateY(length)
-    - scale(number[, number])
-    - scaleX(number)
-    - scaleY(number)
-    - rotate(angle)
-    - skewX(angle)
-    - skewY(angle)
-    - matrix(num, num, num, num, num, num)
+  - translate(length[, length])
+  - translateX(length)
+  - translateY(length)
+  - scale(number[, number])
+  - scaleX(number)
+  - scaleY(number)
+  - rotate(angle)
+  - skewX(angle)
+  - skewY(angle)
+  - matrix(num, num, num, num, num, num)
 
 #### Transitions
 
@@ -489,12 +490,12 @@ source: "Github"
 
 - Animation properties
 
-    - animation-name: drawALine;
-    - animation-duration: 3s;
-    - animation-timing-function: linear | ease-in | ease-out | ease-in-out | cubic-bezier(x1, - y1, x2, y2) | step-start | step-end | steps( X, start|end);
-    - animation-iteration-count: 3;
-    - animation-direction: normal | alternate | reverse | alternate-reverse;
-    - animation-fill-mode: none | forwards | backwards | both;
+  - animation-name: drawALine;
+  - animation-duration: 3s;
+  - animation-timing-function: linear | ease-in | ease-out | ease-in-out | cubic-bezier(x1, - y1, x2, y2) | step-start | step-end | steps( X, start|end);
+  - animation-iteration-count: 3;
+  - animation-direction: normal | alternate | reverse | alternate-reverse;
+  - animation-fill-mode: none | forwards | backwards | both;
 
 - Animation Shorthand
 

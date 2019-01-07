@@ -1,19 +1,18 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "Jquery"
-description: "You might not need jQuery but just in case."
+title: 'Jquery'
+description: 'You might not need jQuery but just in case.'
 
-topics: "tools, development"
+topics: 'tools, development'
 
-source: "Github"
+source: 'Github'
 ---
 
 ## Libraries
-
 
 - [A tidy repository of jQuery plugins](http://www.unheap.com/mobile/)
 - [JQuery Popular plugin lists](http://www.sitepoint.com/jquery-popular-plugins-list/)
@@ -76,7 +75,6 @@ source: "Github"
         $('div#two').after($paragraph);
         });
 
-
 #### Moving Elements Around
 
 - Moving elements around in the DOM is a snap—all we need to do is use the jQuery functions we just learned on existing elements instead of creating new ones.
@@ -123,7 +121,6 @@ source: "Github"
 
         $('#text').toggleClass()('highlighted');
 
-
 #### Changing Your Style
 
 - resizing elements is so common, jQuery has specific .height() and .width() functions that can be used to change the heights and widths of HTML elements
@@ -138,9 +135,9 @@ source: "Github"
         $("div").css("background-color","#008800");
 
 - .html() can be used to set the contents of the first element match it finds. For instance, will get the HTML contents of the first div it finds, and will set the contents of the first div it finds to "I love jQuery!"
-s
-        $('div').html();
-        $('div').html("I love jQuery!");
+  s
+  $('div').html();
+  $('div').html("I love jQuery!");
 
 - .val() is used to get the value of form elements. For example, would get the value of the first checked checkbox that jQuery finds.
 

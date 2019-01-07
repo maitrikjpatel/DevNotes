@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "Data Visualization"
-description: "Make information beautiful."
+title: 'Data Visualization'
+description: 'Make information beautiful.'
 
-topics: "tools, development"
+topics: 'tools, development'
 
-source: "Github"
+source: 'Github'
 ---
 
 ### Dashboard Tuts

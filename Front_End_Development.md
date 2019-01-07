@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "Front End Development"
-description: "A user interface is like a joke. If you have to explain it, it’s not that good."
+title: 'Front End Development'
+description: 'A user interface is like a joke. If you have to explain it, it’s not that good.'
 
-topics: "tools, development, design"
+topics: 'tools, development, design'
 
-source: "Github"
+source: 'Github'
 ---
 
 ### Articles
@@ -37,6 +37,7 @@ source: "Github"
 - [100 correct way to do css-breakpoints](https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862?ref=webdesignernews.com#.1vjgf6dbd)
 
 ### Website Optimization
+
 - [Optimizing Web Performance](http://cdn2.hubspot.net/hub/156417/file-57811332-png/images/yottaa-how-to-optimize-your-website-checklist-infographic.png)
 
 ### Leaders in Space

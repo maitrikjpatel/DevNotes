@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "Freelancing"
-description: "Freelancing is a serious business."
+title: 'Freelancing'
+description: 'Freelancing is a serious business.'
 
-topics: "tools, development, design"
+topics: 'tools, development, design'
 
-source: "Github"
+source: 'Github'
 ---
 
 ### Articles
@@ -48,7 +48,7 @@ source: "Github"
 ### Learning and Tools
 
 - [7 Days of free training for freelancers from The Creative Class](https://creativeclass.io/guide/)
-- [2011/03 Mike Monteiro | F*ck You. Pay Me. on Vimeo](https://vimeo.com/22053820)
+- [2011/03 Mike Monteiro | F\*ck You. Pay Me. on Vimeo](https://vimeo.com/22053820)
 - [Freelancing Planner](http://cushionapp.com/)
 - [Scheduling](https://calendly.com/)
 - [Automate Freelancing workflow](http://www.plasticpollutioncoalition.org/about)

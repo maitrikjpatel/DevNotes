@@ -1,15 +1,15 @@
 ---
-date:  "2015-05-28T22:40:32.169Z"
-publish: "true" 
-category: "note"
-author: "Maitrik Patel"
+date: '2015-05-28T22:40:32.169Z'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
 
-title: "Tools"
-description: "The right tools make the difference between an artist and a craftsman."
+title: 'Tools'
+description: 'The right tools make the difference between an artist and a craftsman.'
 
-topics: "tools, development, design"
+topics: 'tools, development, design'
 
-source: "Github"
+source: 'Github'
 ---
 
 ### Mac setup articles
@@ -21,7 +21,7 @@ source: "Github"
 
 ### Web Development Apps
 
-- [VSC](https://code.visualstudio.com/) - Modern, approachable, and hackable text-editor. 
+- [VSC](https://code.visualstudio.com/) - Modern, approachable, and hackable text-editor.
 - [CodeKit](https://incident57.com/codekit/) -  Auto detect and compile JS/Coffeescript/Less/Compass/SCSS/Images, etc.
 - [Dash](http://kapeli.com/dash) - An amazing browser and code snippets manager for Mac.
 - [DiffMerge](https://sourcegear.com/diffmerge/) - An application to visually compare and merge files
