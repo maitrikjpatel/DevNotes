@@ -188,7 +188,7 @@ source: 'Github'
 ##### Pattern 1 :
 
 - A stateful component passes its state down to a stateless component.
-- Stateful <Parent /> passes a prop to stateless <Child />.
+- Stateful Parent passes a prop to stateless Child.
 - A stateful component class stores information as state.
 - A stateless component class displays that state.
 - A different stateless component class displays a way to change that state.
