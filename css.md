@@ -428,13 +428,13 @@ source: "Github"
 - background properties
 
     - background-color
-    - background-image : none | <url> | <image-list> | <element-reference>  | <gradient>;
+    - background-image : none | url | image-list | element-reference  | gradient;
     - background-repeat : repeat | repeat-x | repeat-y | no-repeat | space | round;
     - background-attachment : fixed | local | scroll;
     - background-position : top left bottom right;
     - background-clip: border-box | padding-box | content-box;
     - background-origin: border-box | padding-box | content-box;
-    - background-size: auto | contain | cover | <length>;     
+    - background-size: auto | contain | cover | length;     
 
 - multiple background-image
 
@@ -467,16 +467,16 @@ source: "Github"
 #### Transforms
 
 - trasform:
-    - translate(<length>[, <length>])
-    - translateX(<length>)
-    - translateY(<length>)
-    - scale(<number>[, <number>])
-    - scaleX(<number>)
-    - scaleY(<number>)
-    - rotate(<angle>)
-    - skewX(<angle>)
-    - skewY(<angle>)
-    - matrix(<num>, <num>, <num>, <num>, <num>, <num>)
+    - translate(length[, length])
+    - translateX(length)
+    - translateY(length)
+    - scale(number[, number])
+    - scaleX(number)
+    - scaleY(number)
+    - rotate(angle)
+    - skewX(angle)
+    - skewY(angle)
+    - matrix(num, num, num, num, num, num)
 
 #### Transitions
 

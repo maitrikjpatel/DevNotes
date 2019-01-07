@@ -69,7 +69,7 @@ Imports           | One component per file
   - JSX is a syntax extension for JavaScript. It was written to be used with React. JSX code looks a lot like HTML.
   - There's a rule that we haven't mentioned: a JSX expression must have exactly one outermost element.
   - class become className
-  - you have to include the slash in end of tag. If you write a self-closing tag in JSX and forget the slash, you will raise an error.<br>
+  - you have to include the slash in end of tag. If you write a self-closing tag in JSX and forget the slash, you will raise an error.
 
   - Wrapping your code in curly braces between JSX tags, treat it like ordinary JavaScript and not like JSX.
 
