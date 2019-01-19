@@ -42,6 +42,7 @@ source: 'Github'
 - [Sketch Casts](https://www.sketchcasts.net)
 - [UX Job Boards](https://uxdesign.cc/ux-job-boards-24-places-to-find-a-job-in-user-experience-design-a886c2279982)
 - [Illustration](https://www.drawkit.io/)
+- [All in One Bookmark Links for Designer](https://www.evernote.design)
 
 ### Case Study
 
