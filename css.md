@@ -84,27 +84,31 @@ source: 'Github'
 
 - **Parent - Flex Container**
 
-      		.container {
-      			display: flex;  <-- or inline-flex -->
-      			flex-direction: row | row-reverse | column | column-reverse;
-      			flex-wrap: nowrap | wrap | wrap-reverse;
-      			flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
-      			justify-content: flex-start | flex-end | center | space-between | space-around;
-      			align-items: flex-start | flex-end | center | baseline | stretch;
-      			align-content: flex-start | flex-end | center | space-between | space-around | stretch;
-      		}
+```
+.container {
+	display: flex;  <-- or inline-flex -->
+	flex-direction: row | row-reverse | column | column-reverse;
+	flex-wrap: nowrap | wrap | wrap-reverse;
+	flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
+	justify-content: flex-start | flex-end | center | space-between | space-around;
+	align-items: flex-start | flex-end | center | baseline | stretch;
+	align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+```
 
 - **Children - Flex Items**
 
-      		.item {
-      			order: <integer>;
-      		    flex-grow: <number>;  <-- default 0 -->
-      			flex-shrink: <number>;  <-- default 1 -->
-      			flex-basis: <length> | auto;  <-- default auto -->
-      			flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-      			align-self: auto | flex-start | flex-end | center | baseline | stretch;
-      			align-
-      		}
+```
+.item {
+	order: <integer>;
+    flex-grow: <number>;  <-- default 0 -->
+	flex-shrink: <number>;  <-- default 1 -->
+	flex-basis: <length> | auto;  <-- default auto -->
+	flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+	align-self: auto | flex-start | flex-end | center | baseline | stretch;
+	align-
+}
+```
 
 #### SCSS
 
@@ -112,37 +116,37 @@ source: 'Github'
 - [SCSS Guide](http://sass-lang.com/guide)
 - [SCSS own grid](https://jsfiddle.net/maitrikjpatel/eaebjts7/)
 
-  ```
-  		//Define Variable
+```
+//Define Variable
 
-  		$font-stack: Helvetica, sans-serif;
-  		$primary-color: #333;
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
 
-  		// Import CSS file
-  		@import 'reset';
+// Import CSS file
+@import 'reset';
 
-  		//Mixin
+//Mixin
 
-  		@mixin border-radius($radius) {
-  			-webkit-border-radius: $radius;
-  		    -moz-border-radius: $radius;
-  		    -ms-border-radius: $radius;
-  		    border-radius: $radius;
-    	}
-  		.box { @include border-radius(10px); }
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+.box { @include border-radius(10px); }
 
-  		//Extend / Inheritance
+//Extend / Inheritance
 
-  		.message {
-  		  border: 1px solid #ccc;
-  		  padding: 10px;
-  		  color: #333;
-  		}
-  		.success {
-  		  @extend .message;
-  		  border-color: green;
-  		}
-  ```
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+.success {
+  @extend .message;
+  border-color: green;
+}
+```
 
 ### What is CSS ?
 
@@ -179,14 +183,16 @@ source: 'Github'
 
 - Note: Multiple attributes work! a[title][href]
 
-      		@media print{
-      			abbr[title]:after {
-      	        content: "(" attr(title) ")";
-        }
-        a[href^=http]:after {
-          content: "(" attr(href) ")";
-        }
-        }
+```
+@media print{
+	abbr[title]:after {
+    content: "(" attr(title) ")";
+  }
+  a[href^=http]:after {
+    content: "(" attr(href) ")";
+  }
+}
+```
 
 #### Pseudo classes
 
@@ -198,9 +204,11 @@ source: 'Github'
 - :disabled
 - :checked
 
-      		input[type=checkbox]:checked + label {
-      		  color: red;
-      		}
+```
+input[type=checkbox]:checked + label {
+  color: red;
+}
+```
 
 ###### Form related UI pseudo-classes
 
@@ -234,29 +242,31 @@ source: 'Github'
   - :empty
   - :not(:empty)
 
-              tr:first-child,
-              tr:last-child {
-                font-weight: bold;
-              }
-              tr:first-of-type,
-              tr:last-of-type{
-                text-decoration:line-through;
-              }
-              tr:nth-child(even) {
-                background-color: #CCC;
-              }
-              tr:nth-child(3) {
-                color: #CCC;
-              }
-              tr:nth-of-type(odd) {
-                background-color: #FFF;
-              }
-              tr:nth-of-type(4n) {
-                color: #C61800;
-              }
-              tr:nth-of-type(3n-1) {
-                font-style: italic;
-              }
+```
+tr:first-child,
+tr:last-child {
+  font-weight: bold;
+}
+tr:first-of-type,
+tr:last-of-type{
+  text-decoration:line-through;
+}
+tr:nth-child(even) {
+  background-color: #CCC;
+}
+tr:nth-child(3) {
+  color: #CCC;
+}
+tr:nth-of-type(odd) {
+  background-color: #FFF;
+}
+tr:nth-of-type(4n) {
+  color: #C61800;
+}
+tr:nth-of-type(3n-1) {
+  font-style: italic;
+}
+```
 
 ###### Other Pseudo Classes
 
@@ -267,18 +277,19 @@ source: 'Github'
 - :hover
 - :active
 - :focus
-
 - Tab Nav without JS
 
-        section:not(:target) > a {
-          border-bottom: 0;
-          background-color: #eee;
-        }
-        section:target > a {
-          background-color: white;
-        }
-        section:not(:target) > div { z-index: -2; }
-        section:target > div { z-index: -1; }
+```
+section:not(:target) > a {
+  border-bottom: 0;
+  background-color: #eee;
+}
+section:target > a {
+  background-color: white;
+}
+section:not(:target) > div { z-index: -2; }
+section:target > div { z-index: -1; }
+```
 
 ###### Psuedo Element
 
@@ -308,8 +319,10 @@ source: 'Github'
 - Element : 0-0-1
 - Global Selector : 0-0-0
 
-      		ul > li { color : red } // 0-0-2
-      		ul li { color : blue } // 0-0-2 : will apply due to order
+```
+ul > li { color : red } // 0-0-2
+ul li { color : blue } // 0-0-2 : will apply due to order
+```
 
 - Example
 
@@ -335,11 +348,13 @@ source: 'Github'
 
 - before and after must need the 'content"
 
-        <p>
-            <before>before content - </before>
-                the content
-            <after> - after content</after>
-        </p>
+```
+<p>
+    <before>before content - </before>
+        the content
+    <after> - after content</after>
+</p>
+```
 
 #### Media Query
 
@@ -347,14 +362,19 @@ source: 'Github'
 
 - In link
 
-        <link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/smartphone.css' />
+```
+<link rel='stylesheet' media='screen and (min-width: 320px) and (max-width: 480px)' href='css/smartphone.css' />
+```
 
 - In CSS
-  @media screen and (max-width: 480px){
+
+```
+@media screen and (max-width: 480px){
   a {
   transition: background-color 200ms linear 50ms;
   }
-  }
+}
+```
 
 - Media Query Options
 
@@ -368,61 +388,73 @@ source: 'Github'
 
 - Media Query Syntax/Punctuation/Tidbits
 
-        media="only print and (color)"
-        media="only screen and (orientation: portrait)"
-        media="not screen and (color)"
-        media="print, screen and (min-width: 480px)"
-        @media screen and (-webkit-min-device-pixel-ratio: 2) {
-         .iphone4 { <-- high DPI -->}
-        }
-        @screen and (transform-3d) {
-          .transforms {}
-        }
+```
+media="only print and (color)"
+media="only screen and (orientation: portrait)"
+media="not screen and (color)"
+media="print, screen and (min-width: 480px)"
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+ .iphone4 { <-- high DPI -->}
+}
+@screen and (transform-3d) {
+  .transforms {}
+}
+```
 
 #### Viewport
 
 - The viewport varies with the device, and will be smaller on a mobile phone than on a computer screen.
 - Before tablets and mobile phones, web pages were designed only for computer screens, and it was common for web pages to have a static design and a fixed size.
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+```
 
 #### Font Face
 
 - How to add font files
 
-        @font-face {
-          font-family: 'blah';
-          src: url('blah.eot');
-          src: url('blah.eot?#iefix')
-                 format('embedded-opentype'),
-             url('blah.woff') format('woff'),
-             url('blah.ttf') format('truetype'),
-             url('blah.svg#blahRegular') format('svg');
-          font-weight: normal;
-          font-style: normal;
-        }
+```
+@font-face {
+  font-family: 'blah';
+  src: url('blah.eot');
+  src: url('blah.eot?#iefix')
+         format('embedded-opentype'),
+     url('blah.woff') format('woff'),
+     url('blah.ttf') format('truetype'),
+     url('blah.svg#blahRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+```
 
 - How to add/apply in CSS selectors
 
-        body {
-          font-family: 'blah', arial, san-serif;
-        }
+```
+body {
+  font-family: 'blah', arial, san-serif;
+}
+```
 
 - Text Shadows
 
-        text-shadow: left top blur color;
-        .trans { text-shadow: 0 5px 1px rgba(0,0,0,0.2);}
+```
+text-shadow: left top blur color;
+.trans { text-shadow: 0 5px 1px rgba(0,0,0,0.2);}
+```
 
 - box-shadow: inset? [horiz][vert] [blur][spread] [color];
 
-        .rainbow {
-            box-shadow: 0 0 0 10px red,
-                        0 0 0 20px orange,
-                        0 0 0 30px yellow,
-                        0 0 0 40px green,
-                        0 0 0 50px blue,
-                        0 0 0 60px purple;
-            }
+```
+.rainbow {
+  box-shadow: 0 0 0 10px red,
+              0 0 0 20px orange,
+              0 0 0 30px yellow,
+              0 0 0 40px green,
+              0 0 0 50px blue,
+              0 0 0 60px purple;
+}
+```
 
 #### Background Image
 
@@ -439,14 +471,18 @@ source: 'Github'
 
 - multiple background-image
 
-        background-image: url(brown.gif), url(blue.gif);
+```
+background-image: url(brown.gif), url(blue.gif);
+```
 
 - Background shorthand
 
-        background: img position / size repeat attachment origin clip,
-        background: img position / size repeat attachment box{1,2} bgcolor;
-        background: url(topImg.jpg) 0 0 / 30px 30px repeat scroll border-box content-box,
-        background: url(botImg.jpg) 15px 15px / 30px 30px fixed border-box #609;
+```
+background: img position / size repeat attachment origin clip,
+background: img position / size repeat attachment box{1,2} bgcolor;
+background: url(topImg.jpg) 0 0 / 30px 30px repeat scroll border-box content-box,
+background: url(botImg.jpg) 15px 15px / 30px 30px fixed border-box #609;
+```
 
 #### Border
 
@@ -455,8 +491,10 @@ source: 'Github'
 - border-color: top right bottom left;
 - Border shorthand
 
-        border: width style color;
-        border-left: width style color;
+```
+border: width style color;
+border-left: width style color;
+```
 
 - border-image: source || slice / width / outset || repeat;
 
@@ -499,6 +537,8 @@ source: 'Github'
 
 - Animation Shorthand
 
-        .pencil{
-            animation: drawALine 5s ease-in-out 100ms 5;
-        }
+```
+.pencil{
+    animation: drawALine 5s ease-in-out 100ms 5;
+}
+```

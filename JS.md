@@ -1164,5 +1164,3 @@ source: 'Github'
 
 - NaN : Not a Number , NaN is not equal to anything, including NaN - NaN === NaN is false - NaN !== NaN is true
   -Equal and not equal : These operators can do type coercion
-
-#### [Problem & Solution](http://jsfiddle.net/maitrikjpatel/c3hq589f/4/)
