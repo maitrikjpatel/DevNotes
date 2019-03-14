@@ -33,7 +33,6 @@ source: 'Github'
 - [Latex Resume](https://latexresu.me/generator/templates)
 - [Resume Coach](https://app.resumecoach.com)
 - [Free Resume templates](http://www.creativebloq.com/career/free-resume-templates-111517854)
-- [Free Resume templates](http://designscrazed.org/best-free-resume-templates/)
 
 ### Questions
 
