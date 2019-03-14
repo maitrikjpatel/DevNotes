@@ -4,7 +4,7 @@ publish: 'true'
 category: 'note'
 author: 'Maitrik Patel'
 
-title: 'Javacript'
+title: 'Javascript'
 description: 'Javascript is taking over the world'
 
 topics: 'tools, development'
