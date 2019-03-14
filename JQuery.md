@@ -4,7 +4,7 @@ publish: 'true'
 category: 'note'
 author: 'Maitrik Patel'
 
-title: 'Jquery'
+title: 'JQuery'
 description: 'You might not need jQuery but just in case.'
 
 topics: 'tools, development'
