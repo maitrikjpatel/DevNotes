@@ -32,6 +32,7 @@ source: 'Github'
 
 ### Utility Apps
 
+- [Notion](https://www.notion.so/)
 - [Franz](https://meetfranz.com/)
 - [Bartender](http://www.macbartender.com/)
 - [Day One](http://dayoneapp.com/)
@@ -41,10 +42,8 @@ source: 'Github'
 - [Slack](https://itunes.apple.com/us/app/slack/id803453959?mt=12)
 - [Unarchiver](http://wakaba.c3.cx/s/apps/unarchiver.html)
 - [Dropbox](https://www.dropbox.com/en/downloading?os=mac)
-- [Google Drive](https://www.google.com/drive/download/)
-- [Clock Screen Saver](http://padbury.me/clock/)
 - [Sketch](https://www.sketchapp.com/)
-- [Caffeine](http://lightheadsw.com/caffeine/)
+- [Figma](https://www.figma.com/downloads/)
 
 ### Productivity Apps
 
@@ -54,6 +53,8 @@ source: 'Github'
 - [NameChanger](http://mrrsoftware.com/namechanger/)
 - [Self Control](http://selfcontrolapp.com/)
 - [iTerm](https://www.iterm2.com/)
+- [Easy resolution](http://easyresapp.com/)
+- [Caffeine](http://lightheadsw.com/caffeine/)
 
 ### Chrome Extension
 
