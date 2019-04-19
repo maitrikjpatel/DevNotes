@@ -14,6 +14,8 @@ source: 'Github'
 
 ### Articles & Tuts
 
+- [CSS Diner](http://flukeout.github.io/)
+- [Grid or Flex](https://css-irl.info/to-grid-or-to-flex/)
 - [Learn Layout](http://learnlayout.com)
 - [CSS Guidelines](http://cssguidelin.es)
 - [CSS 3D Shape editor](http://tridiv.com/)
@@ -27,16 +29,56 @@ source: 'Github'
 
 ### Topics
 
-#### CSS-Grid
+#### Grid
 
+- [CSS Grid Graden](https://cssgridgarden.com/)
 - [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [FlexBox Vs Grids](https://aerolab.co/blog/flexbox-grids/)
+- [Learn Grid in Videos](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag)
 - [Grid in 5 mins](https://medium.freecodecamp.org/learn-css-grid-in-5-minutes-f582e87b1228)
 - [CSS Grid Layouts](https://css-tricks.com/snippets/css/css-grid-starter-layouts/)
 - [CSS Grid Course](https://scrimba.com/g/gR8PTE)
 - [Learn CSS GRID](https://cssgrid.io/)
 - [css grid layout generator](https://www.layoutit.com/grid)
 - [Mozila CSS Grid](https://mozilladevelopers.github.io/playground/css-grid/)
+
+#### Flex
+
+- [CSS Flex Froggy](https://flexboxfroggy.com/)
+- [CSS Tricks Flex-box CheatSheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [CSS Flexbox great article](http://www.chriswrightdesign.com/experiments/using-flexbox-today)
+- [Flex Layouts](http://learnlayout.com/flexbox.html)
+- [Flex in 5 min](http://flexboxin5.com/)
+- [Interactive Flex](http://progressivered.com/fla/?d=0&v=1&h=1&s=0&i=000&a=000)
+- [Flex Animation](https://medium.freecodecamp.com/an-animated-guide-to-flexbox-d280cf6afc35#.wcjmuhxwg)
+
+- **Parent - Flex Container**
+
+```
+.container {
+	display: flex;  <-- or inline-flex -->
+	flex-direction: row | row-reverse | column | column-reverse;
+	flex-wrap: nowrap | wrap | wrap-reverse;
+	flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
+	justify-content: flex-start | flex-end | center | space-between | space-around;
+	align-items: flex-start | flex-end | center | baseline | stretch;
+	align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+```
+
+- **Children - Flex Items**
+
+```
+.item {
+	order: <integer>;
+  lex-grow: <number>;  <-- default 0 -->
+	flex-shrink: <number>;  <-- default 1 -->
+	flex-basis: <length> | auto;  <-- default auto -->
+	flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+	align-self: auto | flex-start | flex-end | center | baseline | stretch;
+	align-
+}
+```
 
 #### BEM
 
@@ -72,43 +114,6 @@ source: 'Github'
 #### Web-Components
 
 - [Web-Components using Shadow Dom / Angular](http://tech.opentable.com/2015/04/20/creating-content-scaffold-components-shadow-dom/)
-
-#### FlexBox
-
-- [CSS Tricks Flex-box CheatSheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [CSS Flexbox great article](http://www.chriswrightdesign.com/experiments/using-flexbox-today)
-- [Flex Layouts](http://learnlayout.com/flexbox.html)
-- [Flex in 5 min](http://flexboxin5.com/)
-- [Interactive Flex](http://progressivered.com/fla/?d=0&v=1&h=1&s=0&i=000&a=000)
-- [Flex Animation](https://medium.freecodecamp.com/an-animated-guide-to-flexbox-d280cf6afc35#.wcjmuhxwg)
-
-- **Parent - Flex Container**
-
-```
-.container {
-	display: flex;  <-- or inline-flex -->
-	flex-direction: row | row-reverse | column | column-reverse;
-	flex-wrap: nowrap | wrap | wrap-reverse;
-	flex-flow: <‘flex-direction’> || <‘flex-wrap’>;
-	justify-content: flex-start | flex-end | center | space-between | space-around;
-	align-items: flex-start | flex-end | center | baseline | stretch;
-	align-content: flex-start | flex-end | center | space-between | space-around | stretch;
-}
-```
-
-- **Children - Flex Items**
-
-```
-.item {
-	order: <integer>;
-    flex-grow: <number>;  <-- default 0 -->
-	flex-shrink: <number>;  <-- default 1 -->
-	flex-basis: <length> | auto;  <-- default auto -->
-	flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-	align-self: auto | flex-start | flex-end | center | baseline | stretch;
-	align-
-}
-```
 
 #### SCSS
 

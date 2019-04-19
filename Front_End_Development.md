@@ -12,6 +12,17 @@ topics: 'tools, development, design'
 source: 'Github'
 ---
 
+### Basics 
+
+- [How does the Internet work?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
+- [How the web works?](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
+- [How Browsers Work](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork)
+- [How HTTP works](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [HTTP: The Protocol Every Web Developer Must Know](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)
+- [HTML-CSS](https://internetingishard.com/html-and-css/)
+- [MarkSheet](https://marksheet.io/)
+- [Resilient Web Design](https://resilientwebdesign.com/)
+
 ### Articles
 
 - [Sapient Front End development standards](https://sapient-global.github.io/best-practices)
