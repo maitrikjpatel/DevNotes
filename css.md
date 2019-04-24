@@ -14,21 +14,23 @@ source: 'Github'
 
 ### Articles & Tuts
 
-- [Css Vocabulary](http://apps.workflower.fi/vocabs/css/en)
-- [CSS Reference Sheet](https://cssreference.io/)
-- [CSS Diner](http://flukeout.github.io/)
 - [Grid or Flex](https://css-irl.info/to-grid-or-to-flex/)
-- [Learn Layout](http://learnlayout.com)
-- [CSS 3D Shape editor](http://tridiv.com/)
-- [CSS Reference](http://cssreference.io)
-- [CSS Animation](http://animista.net/)
 - [CSS Guidelines](http://cssguidelin.es)
 - [Maintainable CSS](https://maintainablecss.com/)
-- [CSS Tools](https://medium.com/@vilcins/css-tools-that-i-use-67cb8bfa2e2d)
+- [CSS Tools List](https://medium.com/@vilcins/css-tools-that-i-use-67cb8bfa2e2d)
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
 - [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
 - [7 CSS Units You Might Not Know About - Tuts+ Web Design Article](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
 - [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892)
+
+### Tools and playground 
+
+- [Css Vocabulary](http://apps.workflower.fi/vocabs/css/en)
+- [CSS Reference Sheet](https://cssreference.io/)
+- [CSS Diner](http://flukeout.github.io/)
+- [Learn Layout](http://learnlayout.com)
+- [CSS 3D Shape editor](http://tridiv.com/)
+- [CSS Animation](http://animista.net/)
 
 ### Topics
 
@@ -55,10 +57,8 @@ source: 'Github'
 - [Interactive Flex](http://progressivered.com/fla/?d=0&v=1&h=1&s=0&i=000&a=000)
 - [Flex Animation](https://medium.freecodecamp.com/an-animated-guide-to-flexbox-d280cf6afc35#.wcjmuhxwg)
 
-- **Parent - Flex Container**
-
 ```
-.container {
+.parent-flex-container {
 	display: flex;  <-- or inline-flex -->
 	flex-direction: row | row-reverse | column | column-reverse;
 	flex-wrap: nowrap | wrap | wrap-reverse;
@@ -67,12 +67,8 @@ source: 'Github'
 	align-items: flex-start | flex-end | center | baseline | stretch;
 	align-content: flex-start | flex-end | center | space-between | space-around | stretch;
 }
-```
 
-- **Children - Flex Items**
-
-```
-.item {
+.child-flex-item {
 	order: <integer>;
   lex-grow: <number>;  <-- default 0 -->
 	flex-shrink: <number>;  <-- default 1 -->

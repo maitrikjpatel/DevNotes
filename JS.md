@@ -31,6 +31,13 @@ source: 'Github'
 - [JavaScript Regular Expression](http://tutorialzine.com/2014/12/learn-regular-expressions-in-20-minutes/)
 - [JS without JQuery](http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/)
 
+### Books and Tuts
+
+- [Javascript Enlightenment](https://frontendmasters.com/books/javascript-enlightenment)
+- [Eloquent Javascript](http://eloquentjavascript.net/)
+- [MDN JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
+- [Javascript](http://javascript.info/)
+
 ### Topics
 
 #### "===" vs "=="
