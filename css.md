@@ -14,6 +14,8 @@ source: 'Github'
 
 ### Articles & Tuts
 
+- [Css Vocabulary](http://apps.workflower.fi/vocabs/css/en)
+- [CSS Reference Sheet](https://cssreference.io/)
 - [CSS Diner](http://flukeout.github.io/)
 - [Grid or Flex](https://css-irl.info/to-grid-or-to-flex/)
 - [Learn Layout](http://learnlayout.com)

@@ -22,6 +22,8 @@ source: 'Github'
 - [HTML-CSS](https://internetingishard.com/html-and-css/)
 - [MarkSheet](https://marksheet.io/)
 - [Resilient Web Design](https://resilientwebdesign.com/)
+- [Learn About HTML Head](https://gethead.info/)
+- [FE Code Guide](http://codeguide.co)
 
 ### Articles
 
@@ -50,8 +52,3 @@ source: 'Github'
 ### Website Optimization
 
 - [Optimizing Web Performance](http://cdn2.hubspot.net/hub/156417/file-57811332-png/images/yottaa-how-to-optimize-your-website-checklist-infographic.png)
-
-### Leaders in Space
-
-- [How to keep up to date on Front-End Technologies - The Recipe](http://uptodate.frontendrescue.org/)
-- [Levelsio](https://levels.io/)
