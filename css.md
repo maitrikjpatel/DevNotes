@@ -19,15 +19,16 @@ source: 'Github'
 - [CSS Diner](http://flukeout.github.io/)
 - [Grid or Flex](https://css-irl.info/to-grid-or-to-flex/)
 - [Learn Layout](http://learnlayout.com)
-- [CSS Guidelines](http://cssguidelin.es)
 - [CSS 3D Shape editor](http://tridiv.com/)
+- [CSS Reference](http://cssreference.io)
+- [CSS Animation](http://animista.net/)
+- [CSS Guidelines](http://cssguidelin.es)
+- [Maintainable CSS](https://maintainablecss.com/)
+- [CSS Tools](https://medium.com/@vilcins/css-tools-that-i-use-67cb8bfa2e2d)
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
 - [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
 - [7 CSS Units You Might Not Know About - Tuts+ Web Design Article](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
 - [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892)
-- [CSS Tools](https://medium.com/@vilcins/css-tools-that-i-use-67cb8bfa2e2d)
-- [CSS Reference](http://cssreference.io)
-- [CSS Animation](http://animista.net/)
 
 ### Topics
 
@@ -82,13 +83,34 @@ source: 'Github'
 }
 ```
 
-#### BEM
+#### BEM vs ITCSS
 
 - [BEM 101](https://css-tricks.com/bem-101/)
 - [BEM Definitions](https://en.bem.info/method/definitions/)
 - [BEMCSS architecture](https://medium.com/@mjtweaver/css-architecture-bemcss-block-element-modifier-e642bd0f4218)
 - [BEM Problem and how to avoid them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them)
 - [BEM vs SMACSS](http://www.sitepoint.com/bem-smacss-advice-from-developers/)
+- [Inverted Triangle CSS - ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
+
+```
+## Inverted Triangle CSS
+
+- Settings – used with preprocessors and contain font, colors definitions, etc.
+
+- Tools – globally used mixins and functions. It’s important not to output any CSS in the first 2 layers.
+
+- Generic – reset and/or normalize styles, box-sizing definition, etc. This is the first layer which generates actual CSS.
+
+- Elements – styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we 
+can redefine them here.
+- Objects – class-based selectors which define undecorated design patterns, for example media object known from OOCSS
+
+- Components – specific UI components. This is where majority of our work takes place and our UI components are often 
+composed of Objects and Components
+
+- Utilities – utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide 
+helper class
+```
 
 #### CSS Animation & Transitions
 
