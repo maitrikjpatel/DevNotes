@@ -38,273 +38,8 @@ source: 'Github'
 
 - [JS Object method explorer](https://sdras.github.io/object-explorer/)
 
-### Topics
 
-#### "===" vs "=="
-
-- "===" : same type and have the same value, then === produces true and !== produces false.
-- "==" : evil-twins/double-equal operator, however, tries to coerce the values before comparing them
-
-#### Hoisting
-
-- **[Hoisting](https://scotch.io/tutorials/understanding-hoisting-in-javascript)**
-- Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
-- variable and function declarations are put into memory during the compile phase, but stays exactly where you typed it in your coding.
-- The variables can be initialized and used before declared. But they cannot be used without initialization.
-- all undeclared variables are global variables.
-- JavaScript only hoists declarations, not initializations.
-- Hoisted : Use -> Initialize (Hoisted variable is initialised with a value of undefined)
-
-```
-var x = 1; // Initialize x
-console.log(x + " " + y); // '1 undefined'
-var y = 2; // Initialize y
-```
-
-- Hoisted : Declare -> Use -> Initialize (Hoisted variable is initialised with a value of undefined)
-
-```
-// The following code will behave the same as the previous code:
-var x = 1; // Initialize x
-var y; // Declare y
-console.log(x + " " + y); // '1 undefined'
-y = 2; // Initialize y
-```
-
-- Avoid Hoisting pitfall : Initialize -> Use -> Declare
-
-```
-num = 6;
-num + 7;
-var num;
-/* gives no errors as long as num is declared*/
-```
-
-- Avoid Hoisting pitfall : Declare -> Initialize -> Use
-
-```
-var x = 1; // Declare and Initialize x
-console.log(x); // '1'
-```
-
-- "use strict" : strict mode can help expose undeclared variables.
-- ES6 let : The interpreter throws an error if we use a constant before declaring and initialising it.
-
-```
-console.log(hoist); // Output: ReferenceError: hoist is not defined
-let hoist = 'The variable has been hoisted.';
-```
-
-- ES6 const : The interpreter throws an error if we use a constant before declaring and initialising it.
-
-```
-const PI;
-console.log(PI); // Ouput: SyntaxError: Missing initializer in const declaration
-PI=3.142;
-
-function getCircumference(radius) {
-	console.log(circumference)
-	circumference = PI*radius*2;
-	const PI = 22/7;
-}
-
-getCircumference(2) // ReferenceError: circumference is not defined
-// PI was used before it was declared, which is illegal for const variables.
-```
-
-- Function declarations are hoisted over variable declarations but not over variable assignments.
-
-```
-var double = 22;
-
-function double(num) {
-	return (num*2);
-}
-
-console.log(typeof double); // Output: number
-
-var double;
-
-function double(num) {
-	return (num*2);
-}
-
-console.log(typeof double); // Output: function
-```
-
-#### CallBack Hell
-
-- [CallBack Hell](http://callbackhell.com/)
-- Don't nest functions. Give them names and place them at the top level of your program
-- Use **function hoisting** to your advantage to move functions 'below the fold'
-- Handle **every single error** in every one of your callbacks. Use a linter like standard to help you with this.
-- Create reusable functions and place them in a module to reduce the cognitive load required to understand your code.
-- Splitting your code into small pieces like this also helps you handle errors, write tests, forces you to create a stable and documented public API for your code, and helps with refactoring.
-
-#### Promise
-
-- [Promise for dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
-- [Video with Code Example](http://plnkr.co/edit/1ArvFxI0gWmajTpDaOSB?p=preview)
-- Promise are made of two parts. Control/Promise
-- Control : One type of callback. Succeeded or Failed.
-- Promise : Pending/Fullfilled/Rejected
-
-```
-// promise syntax look like this
-new Promise(/* executor*/ function (resolve, reject) { ... } );
-```
-
-- .then for go inside next chain.
-- .catch for find an error.
-- Promise.all to execute after all promises resolved.
-- Promise.race to execute after first promise resolved.
-- Use Generator to make async code more readable.
-
-#### Aync and Await
-
-- [Understanding Async and Await](https://ponyfoo.com/articles/understanding-javascript-async-await)
-- [Async/Await Blows Promises](https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9)
-- Async/await is a new way to write asynchronous code. Previous options for asynchronous code are callbacks and promises.
-- Async/await is, like promises, non blocking.
-- Async/await makes asynchronous code look and behave a little more like synchronous code. This is where all its power lies.
-- Async - declares an asynchronous function (async function someName(){...}). - Automatically transforms a regular function into a Promise. - When called async functions resolve with whatever is returned in their body. - Async functions enable the use of await.
-
-- Await - pauses the execution of async functions. (var result = await someAsyncCall();). - When placed in front of a Promise call, await forces the rest of the code to wait until that Promise finishes and returns a result. - Await works only with Promises, it does not work with callbacks. - Await can only be used inside async functions.
-
-#### JS Closures
-
-- A closure is the combination of a function and the lexical environment within which that function was declared.
-- A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
-- The closure has three scope chains: 1. it has access to its own scope (variables defined between its curly brackets), 2. it has access to the outer function’s variables, and 3. it has access to the variables.
-- Coding Example.
-
-```
-// Clouser in ES6
-function createCounter() {
-let counter = 0
-const myFunction = function() {
-	counter = counter + 1
-	return counter
-}
-return myFunction
-}
-const increment = createCounter()
-const c1 = increment()
-const c2 = increment()
-const c3 = increment()
-console.log('example increment', c1, c2, c3) // example increment 1 2 3
-
-------------------------------
-
-let c = 4
-const addX = x => n => n + x
-const addThree = addX(3)
-let d = addThree(c)
-console.log('example partial application', d) // example partial application 7
-
-------------------------------
-
-function showName (firstName, lastName) {
-	var nameIntro = "Your name is ";
-
-// this inner function has access to the outer function's variables, 		including the parameter​
-
-	function makeFullName () {
-		​return nameIntro + firstName + " " + lastName;
-	}
-	​return makeFullName ();
-}
-
-showName ("Michael", "Jackson"); // Your name is Michael Jackson
-
-// Closure with argument
-
-var digit_name = (function () {
-	var names = ['zero', 'one', 'two','three', 'four', 'five', 'six', 'seven','eight', 'nine'];
-
-	return function (n) {
-		return names[n];
-	};
-
-}());
-
-alert(digit_name(3)); // 'three'
-
-------------------------------
-
-(function outer() {
-	var x;
-	// The inner circle function cannot see y, In Diagram
-
-	return function inner(n) {
-		// The outer circle function can see x, In Diagram
-		var y = x;
-	};
-
-}());
-
-------------------------------
-
-//---Real life example
-
-function makeSizer(size) {
-return function() {
-	document.body.style.fontSize = size + 'px';
-};
-}
-
-var size12 = makeSizer(12);
-var size14 = makeSizer(14);
-var size16 = makeSizer(16);
-
-document.getElementById('size-12').onclick = size12;
-document.getElementById('size-14').onclick = size14;
-document.getElementById('size-16').onclick = size16;
-
-//--- html code
-<a href="#" id="size-12">12</a>
-<a href="#" id="size-14">14</a>
-<a href="#" id="size-16">16</a>						
-```
-
-#### Event delegation
-
-- [How JavaScript Event Delegation Works](https://davidwalsh.name/event-delegate)
-- [Event delegation](https://javascript.info/event-delegation)
-- [Bubbling and capturing](https://javascript.info/bubbling-and-capturing#stopping-bubbling)
-	- event.target – the deepest element that originated the event.
-	- event.currentTarget (=this) – the current element that handles the event (the one that has the handler on it)
-	- event.eventPhase – the current phase (capturing=1, bubbling=3).
-	- addEventListener without the 3rd argument or with the 3rd argument false.
-
-```
-el.addEventListener('click', listener, false) // listener doesn't capture
-el.addEventListener('click', listener) // listener doesn't capture
-```
-
-#### Favor object composition over class inheritance
-
-#### Functional Programming
-
-- [MPJ FP Videos](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
-- Less Code, Less Bugs, Less time.
-- Functions are values, exploit them by divide in small simple function.
-- Higher order function: Function taker other function as argument.
-- Filter take another function as argument and process array.
-- Composition : Composing them together using higher order function.
-- **Map** : Higher Order Function, take callback function.
-
-```
-var names = animals.map(function(animal){
-	return animal.name;
-})
-```
-
-- Reduce
-- **Currying** : Currying is a way of constructing functions that allows partial application of a function’s arguments. - What this means is that you can pass all of the arguments a function is expecting and get the result, or pass a subset of those arguments and get a function back that’s waiting for the rest of the arguments. - Use external library like lodash to get currying funcitonlity.
-- Recursion
-
-#### Javascript Basic
+### Javascript Basic
 
 - JavaScript is a multi-paradigm language, supporting imperative/procedural programming along with OOP (Object-Oriented Programming) with prototypal inheritance.and functional programming.
 - Object Creation Pattern - Encapsulation
@@ -690,6 +425,273 @@ var identity = MONAD();
 var monad = identity("Hello world.");
 monad.bind(alert);
 ```
+
+### Topics
+
+#### "===" vs "=="
+
+- "===" : same type and have the same value, then === produces true and !== produces false.
+- "==" : evil-twins/double-equal operator, however, tries to coerce the values before comparing them
+
+#### Hoisting
+
+- **[Hoisting](https://scotch.io/tutorials/understanding-hoisting-in-javascript)**
+- Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+- variable and function declarations are put into memory during the compile phase, but stays exactly where you typed it in your coding.
+- The variables can be initialized and used before declared. But they cannot be used without initialization.
+- all undeclared variables are global variables.
+- JavaScript only hoists declarations, not initializations.
+- Hoisted : Use -> Initialize (Hoisted variable is initialised with a value of undefined)
+
+```
+var x = 1; // Initialize x
+console.log(x + " " + y); // '1 undefined'
+var y = 2; // Initialize y
+```
+
+- Hoisted : Declare -> Use -> Initialize (Hoisted variable is initialised with a value of undefined)
+
+```
+// The following code will behave the same as the previous code:
+var x = 1; // Initialize x
+var y; // Declare y
+console.log(x + " " + y); // '1 undefined'
+y = 2; // Initialize y
+```
+
+- Avoid Hoisting pitfall : Initialize -> Use -> Declare
+
+```
+num = 6;
+num + 7;
+var num;
+/* gives no errors as long as num is declared*/
+```
+
+- Avoid Hoisting pitfall : Declare -> Initialize -> Use
+
+```
+var x = 1; // Declare and Initialize x
+console.log(x); // '1'
+```
+
+- "use strict" : strict mode can help expose undeclared variables.
+- ES6 let : The interpreter throws an error if we use a constant before declaring and initialising it.
+
+```
+console.log(hoist); // Output: ReferenceError: hoist is not defined
+let hoist = 'The variable has been hoisted.';
+```
+
+- ES6 const : The interpreter throws an error if we use a constant before declaring and initialising it.
+
+```
+const PI;
+console.log(PI); // Ouput: SyntaxError: Missing initializer in const declaration
+PI=3.142;
+
+function getCircumference(radius) {
+	console.log(circumference)
+	circumference = PI*radius*2;
+	const PI = 22/7;
+}
+
+getCircumference(2) // ReferenceError: circumference is not defined
+// PI was used before it was declared, which is illegal for const variables.
+```
+
+- Function declarations are hoisted over variable declarations but not over variable assignments.
+
+```
+var double = 22;
+
+function double(num) {
+	return (num*2);
+}
+
+console.log(typeof double); // Output: number
+
+var double;
+
+function double(num) {
+	return (num*2);
+}
+
+console.log(typeof double); // Output: function
+```
+
+#### CallBack Hell
+
+- [CallBack Hell](http://callbackhell.com/)
+- Don't nest functions. Give them names and place them at the top level of your program
+- Use **function hoisting** to your advantage to move functions 'below the fold'
+- Handle **every single error** in every one of your callbacks. Use a linter like standard to help you with this.
+- Create reusable functions and place them in a module to reduce the cognitive load required to understand your code.
+- Splitting your code into small pieces like this also helps you handle errors, write tests, forces you to create a stable and documented public API for your code, and helps with refactoring.
+
+#### Promise
+
+- [Promise for dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
+- [Video with Code Example](http://plnkr.co/edit/1ArvFxI0gWmajTpDaOSB?p=preview)
+- Promise are made of two parts. Control/Promise
+- Control : One type of callback. Succeeded or Failed.
+- Promise : Pending/Fullfilled/Rejected
+
+```
+// promise syntax look like this
+new Promise(/* executor*/ function (resolve, reject) { ... } );
+```
+
+- .then for go inside next chain.
+- .catch for find an error.
+- Promise.all to execute after all promises resolved.
+- Promise.race to execute after first promise resolved.
+- Use Generator to make async code more readable.
+
+#### Aync and Await
+
+- [Understanding Async and Await](https://ponyfoo.com/articles/understanding-javascript-async-await)
+- [Async/Await Blows Promises](https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9)
+- Async/await is a new way to write asynchronous code. Previous options for asynchronous code are callbacks and promises.
+- Async/await is, like promises, non blocking.
+- Async/await makes asynchronous code look and behave a little more like synchronous code. This is where all its power lies.
+- Async - declares an asynchronous function (async function someName(){...}). - Automatically transforms a regular function into a Promise. - When called async functions resolve with whatever is returned in their body. - Async functions enable the use of await.
+
+- Await - pauses the execution of async functions. (var result = await someAsyncCall();). - When placed in front of a Promise call, await forces the rest of the code to wait until that Promise finishes and returns a result. - Await works only with Promises, it does not work with callbacks. - Await can only be used inside async functions.
+
+#### JS Closures
+
+- A closure is the combination of a function and the lexical environment within which that function was declared.
+- A closure is an inner function that has access to the outer (enclosing) function’s variables—scope chain.
+- The closure has three scope chains: 1. it has access to its own scope (variables defined between its curly brackets), 2. it has access to the outer function’s variables, and 3. it has access to the variables.
+- Coding Example.
+
+```
+// Clouser in ES6
+function createCounter() {
+let counter = 0
+const myFunction = function() {
+	counter = counter + 1
+	return counter
+}
+return myFunction
+}
+const increment = createCounter()
+const c1 = increment()
+const c2 = increment()
+const c3 = increment()
+console.log('example increment', c1, c2, c3) // example increment 1 2 3
+
+------------------------------
+
+let c = 4
+const addX = x => n => n + x
+const addThree = addX(3)
+let d = addThree(c)
+console.log('example partial application', d) // example partial application 7
+
+------------------------------
+
+function showName (firstName, lastName) {
+	var nameIntro = "Your name is ";
+
+// this inner function has access to the outer function's variables, 		including the parameter​
+
+	function makeFullName () {
+		​return nameIntro + firstName + " " + lastName;
+	}
+	​return makeFullName ();
+}
+
+showName ("Michael", "Jackson"); // Your name is Michael Jackson
+
+// Closure with argument
+
+var digit_name = (function () {
+	var names = ['zero', 'one', 'two','three', 'four', 'five', 'six', 'seven','eight', 'nine'];
+
+	return function (n) {
+		return names[n];
+	};
+
+}());
+
+alert(digit_name(3)); // 'three'
+
+------------------------------
+
+(function outer() {
+	var x;
+	// The inner circle function cannot see y, In Diagram
+
+	return function inner(n) {
+		// The outer circle function can see x, In Diagram
+		var y = x;
+	};
+
+}());
+
+------------------------------
+
+//---Real life example
+
+function makeSizer(size) {
+return function() {
+	document.body.style.fontSize = size + 'px';
+};
+}
+
+var size12 = makeSizer(12);
+var size14 = makeSizer(14);
+var size16 = makeSizer(16);
+
+document.getElementById('size-12').onclick = size12;
+document.getElementById('size-14').onclick = size14;
+document.getElementById('size-16').onclick = size16;
+
+//--- html code
+<a href="#" id="size-12">12</a>
+<a href="#" id="size-14">14</a>
+<a href="#" id="size-16">16</a>						
+```
+
+#### Event delegation
+
+- [How JavaScript Event Delegation Works](https://davidwalsh.name/event-delegate)
+- [Event delegation](https://javascript.info/event-delegation)
+- [Bubbling and capturing](https://javascript.info/bubbling-and-capturing#stopping-bubbling)
+	- event.target – the deepest element that originated the event.
+	- event.currentTarget (=this) – the current element that handles the event (the one that has the handler on it)
+	- event.eventPhase – the current phase (capturing=1, bubbling=3).
+	- addEventListener without the 3rd argument or with the 3rd argument false.
+
+```
+el.addEventListener('click', listener, false) // listener doesn't capture
+el.addEventListener('click', listener) // listener doesn't capture
+```
+
+#### Favor object composition over class inheritance
+
+#### Functional Programming
+
+- [MPJ FP Videos](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
+- Less Code, Less Bugs, Less time.
+- Functions are values, exploit them by divide in small simple function.
+- Higher order function: Function taker other function as argument.
+- Filter take another function as argument and process array.
+- Composition : Composing them together using higher order function.
+- **Map** : Higher Order Function, take callback function.
+
+```
+var names = animals.map(function(animal){
+	return animal.name;
+})
+```
+
+- Reduce
+- **Currying** : Currying is a way of constructing functions that allows partial application of a function’s arguments. - What this means is that you can pass all of the arguments a function is expecting and get the result, or pass a subset of those arguments and get a function back that’s waiting for the rest of the arguments. - Use external library like lodash to get currying funcitonlity.
+- Recursion
+
 
 ### ES6
 
