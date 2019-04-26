@@ -12,31 +12,31 @@ topics: 'tools, development'
 source: 'Github'
 ---
 
-### Articles
+### Tuts
 
-- [The Basics of Object-Oriented JavaScript](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
-- [JS Best Practice](https://www.thinkful.com/learn/javascript-best-practices-1/)
+- [MDN JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
+- [JavaScript Information](https://javascript.info/)
 - [You don't know JS](https://github.com/getify/You-Dont-Know-JS)
 - [Resources for Staying on Top of JavaScript](https://code.tutsplus.com/articles/resources-for-staying-on-top-of-javascript--cms-21369)
-- [Human Javascript](http://read.humanjavascript.com/ch00-foreword.html)
-- [JavaScript](https://javascript.info/)
-- [JS Object method explorer](https://sdras.github.io/object-explorer/)
+- [Eloquent Javascript](http://eloquentjavascript.net/)
 
 ### Tuts
 
-- [Principles of writing consistent, idiomatic JS](https://github.com/rwaldron/idiomatic.js)
-- [JQuery Guidelines](http://contribute.jquery.org/style-guide/js/)
-- [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide)
+- [Javascript Enlightenment](https://frontendmasters.com/books/javascript-enlightenment)
 - [JS Video Tuts](https://egghead.io/)
+
+### Articles and Guideline
+
+- [The Basics of Object-Oriented JavaScript](http://code.tutsplus.com/tutorials/the-basics-of-object-oriented-javascript--net-7670)
 - [JavaScript Regular Expression](http://tutorialzine.com/2014/12/learn-regular-expressions-in-20-minutes/)
 - [JS without JQuery](http://tutorialzine.com/2014/06/10-tips-for-writing-javascript-without-jquery/)
+- [Principles of writing consistent, idiomatic JS](https://github.com/rwaldron/idiomatic.js)
+- [JS Best Practice](https://www.thinkful.com/learn/javascript-best-practices-1/)
+- [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide)
 
-### Books and Tuts
+### Tools
 
-- [Javascript Enlightenment](https://frontendmasters.com/books/javascript-enlightenment)
-- [Eloquent Javascript](http://eloquentjavascript.net/)
-- [MDN JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
-- [Javascript](http://javascript.info/)
+- [JS Object method explorer](https://sdras.github.io/object-explorer/)
 
 ### Topics
 
