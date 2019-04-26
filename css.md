@@ -31,6 +31,7 @@ source: 'Github'
 - [Learn Layout](http://learnlayout.com)
 - [CSS 3D Shape editor](http://tridiv.com/)
 - [CSS Animation](http://animista.net/)
+- [Layout cookbook](https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook)
 
 ### Topics
 
@@ -122,6 +123,13 @@ helper class
 - [Responsive Image](https://www.smashingmagazine.com/2014/05/responsive-images-done-right-guide-picture-srcset/)
 - [Codepan Demo](http://codepen.io/martinwolf/pen/hFxyj/)
 
+### CSS inheritance 
+
+- **inherit** : Sets the property value applied to a selected element to be the same as that of its parent element.
+- **initial** : Sets the property value applied to a selected element to be the same as the value set for that element in the browser's default style sheet. If no value is set by the browser's default style sheet and the property is naturally inherited, then the property value is set to inherit instead.
+- **unset** : Resets the property to its natural value, which means that if the property is naturally inherited it acts like inherit, otherwise it acts like initial.
+- **revert** :Reverts the property to the value it would have had if the current origin had not applied any styles to it.
+
 #### SVG/Font-Icons
 
 - [SVG stack](http://simurai.com/blog/2012/04/02/svg-stacks)
@@ -179,8 +187,8 @@ $primary-color: #333;
 
 - ul li :descendant selector matches nested li
 - ol > li : child selector matches li in ol but not nested ul
-- li.myClass + li adjacent sibling
-- li.myClass ~: li general sibling selector matches later siblings, but not nested.
+- li.myClass + li : adjacent sibling
+- li.myClass ~ li : general sibling selector matches later siblings, but not nested.
 
 #### Attribute selectors
 
