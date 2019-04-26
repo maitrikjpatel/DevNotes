@@ -18,6 +18,7 @@ source: 'Github'
 - [Tokens in design systems](https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421)
 - [Consolidating design systems](https://medium.com/eightshapes-llc/consolidating-design-systems-6bb7ce72f393)
 - [Design System In Figma](https://designcode.io/design-system-in-figma/)
+- [Inclusive Components](https://inclusive-components.design)
 
 ### Lists
 
