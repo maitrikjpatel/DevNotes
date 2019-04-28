@@ -33,17 +33,83 @@ source: 'Github'
 - [Principles of writing consistent, idiomatic JS](https://github.com/rwaldron/idiomatic.js)
 - [JS Best Practice](https://www.thinkful.com/learn/javascript-best-practices-1/)
 - [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide)
+- [DOM manipulation in vanilla JS](https://medium.freecodecamp.org/dom-manipulation-in-vanilla-js-2036a568dcd9)
 
 ### Tools
 
 - [JS Object method explorer](https://sdras.github.io/object-explorer/)
 
-
 ### Javascript Basic
 
 - JavaScript is a multi-paradigm language, supporting imperative/procedural programming along with OOP (Object-Oriented Programming) with prototypal inheritance.and functional programming.
+- JavaScript interprets the line break as an “implicit” semicolon. This is called an automatic semicolon insertion.
+
+```
+<!-- works -->
+alert('Hello')
+alert('World')
+
+<!-- works -->
+alert("There will be an error")
+[1, 2].forEach(alert)
+
+```
+
 - Object Creation Pattern - Encapsulation
 - Object Reuse Pattern - Inheritance
+
+#### use strict
+- The "use strict" directive switches the engine to the “modern” mode, changing the behavior of some built-in features.
+Strict mode is enabled by placing "use strict" at the top of a script or function.
+
+### Data-Types 
+
+- Primitive data-types
+	-	All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever).
+	- string, number, boolean, null, undefined, symbol( ES6)
+- Non Primitive data-types
+	- Object
+
+#### Type of
+
+- We can call typeof thing to figure this out. Generally, the most useful types are "number," "string," "function," and of course, "object."
+
+```
+var someObject = {someProperty: someValue};
+console.log( typeof someObject );
+```
+
+- We show how to use hasOwnProperty in the last two lines. It returns true or false, based on whether an object has a certain property.
+
+ObjectName["PropertyName"]
+
+```
+var myObj = {
+	name : '"lol"'
+};
+console.log( myObj.hasOwnProperty('name') );
+console.log( myObj.hasOwnProperty('nickname') );
+```
+
+### Type Conversions
+
+- ToString, String(value) – Occurs when we output something. Can be performed with String(value). The conversion to string is usually obvious for primitive values.
+
+- ToNumber, Number(value)– Occurs in math operations. Can be performed with Number(value).
+
+```
+undefined	-> NaN
+null	-> 0
+true / false	-> 1 / 0
+string	-> The string is read “as is”, whitespaces from both sides are ignored. An empty string becomes 0. An error gives NaN
+```
+
+- ToBoolean, Boolean(value) – Occurs in logical operations. Can be performed with Boolean(value).
+
+```
+0, null, undefined, NaN, ""	-> false
+any other -> value
+```
 
 #### "While" vs "For" vs "Do/While"
 
@@ -244,27 +310,6 @@ var billy = new Person("Billy", 25);
 var diff = ageDifference(alice,billy)
 ```
 
-#### Type of
-
-- We can call typeof thing to figure this out. Generally, the most useful types are "number," "string," "function," and of course, "object."
-
-```
-var someObject = {someProperty: someValue};
-console.log( typeof someObject );
-```
-
-- We show how to use hasOwnProperty in the last two lines. It returns true or false, based on whether an object has a certain property.
-
-ObjectName["PropertyName"]
-
-```
-var myObj = {
-	name : '"lol"'
-};
-console.log( myObj.hasOwnProperty('name') );
-console.log( myObj.hasOwnProperty('nickname') );
-```
-
 #### Getting IN-timate
 
 - To print out all elements and properties, we can use a for/in loop, like this:
@@ -428,10 +473,32 @@ monad.bind(alert);
 
 ### Topics
 
-#### "===" vs "=="
+#### ["===" vs "=="](https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a)
 
 - "===" : same type and have the same value, then === produces true and !== produces false.
 - "==" : evil-twins/double-equal operator, however, tries to coerce the values before comparing them
+	- Double equals also performs type coercion.
+- Falsy values : false, null, undefined, "" (empty string), 0, NaN
+
+#### [Null vs Undefined](https://codeburst.io/javascript-null-vs-undefined-20f955215a2)
+
+- **Null**
+	- null is an empty or non-existent value.
+	- null must be assigned.
+	- when using typeof to test null, it returns object
+- **Undefined**
+	- Undefined most typically means a variable has been declared, but not defined.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| Definition | variable has been declared but not yet been assigned a value | assignment value that means “no value”|
+| Type | Undefined | Object|
+| JSON | Invalid | Valid|
+| Nature | Variable declared but not yet assigned | Represent intentional absence of object value|
+| Check | typeof variableName === “undefined” | variableName === null|
+| Arithmetic | Not-a-number (NaN) error | treated as zero value|
+| Comparison | Equality operator will return true | Identity operator will return false|
+| Identifier | Can be an identifier for a property of global object | Not an identifier for a property of the global object|
 
 #### Hoisting
 
@@ -699,7 +766,7 @@ var names = animals.map(function(animal){
 - [ES6 vs ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
 - [ES6 Tools](https://github.com/addyosmani/es6-tools)
 - [What is ES6](http://gonodejs.com/es6-interview-questions-answers/#what-is-javscript-es6)
-- Broweser Runtime Traceur but will be slow.
+- Broweer Runtime Traceur but will be slow.
 - Production side : ESnext, Babel, Traceur using grunt/gulp/webpack
 - Polyfill manually of add ES6 Shim file.
 
@@ -726,6 +793,7 @@ var doWork = function(flag){
 - Never change , will give error if you try to change it.
 - Will shadow outer declaration
 - Block Scoping
+- We generally use upper case for constants that are “hard-coded”. Or, in other words, when the value is known prior to execution and directly written into the code.
 
 ##### Destructing
 
