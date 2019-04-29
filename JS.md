@@ -66,11 +66,16 @@ alert("There will be an error")
 
 #### Data-Types 
 
-- Primitive data-types
+Distinctions between primitives and objects
+
+- A primitive
 	-	All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever).
-	- string, number, boolean, null, undefined, symbol( ES6)
-- Non Primitive data-types
-	- Object 
+	- Is a value of a primitive type.
+	- There are 6 primitive types: string, number, boolean, symbol, null and undefined.
+
+- An object
+	- Is capable of storing multiple values as properties.
+	- Can be created with {}, for instance: {name: "John", age: 30}. There are other kinds of objects in JavaScript; functions, for example, are objects.
 
 #### Typeof
 
@@ -130,7 +135,7 @@ any other -> value
 - **Undefined**
 	- Undefined most typically means a variable has been declared, but not defined.
 
-| Tables        | Are           | Cool  |
+| Tables        | Undefined      | Null  |
 | ------------- |:-------------:| -----:|
 | Definition | variable has been declared but not yet been assigned a value | assignment value that means “no value”|
 | Type | Undefined | Object|
@@ -286,21 +291,21 @@ let sayHi = function(name) {  // (*) no magic any more
 	- **Object literal:**
 		- Literal notation creates a single object. Literal notation uses **curly brackets { }** and the object's default properties are defined within the brackets using **property:value** notation.
 
-		```
-		var objectName = {};
+	```
+	var objectName = {};
 
-		var james = {
-			job: "programmer",
-			married: false,
-		};
+	var james = {
+		job: "programmer",
+		married: false,
+	};
 
-		var myObject = {
-				iAm : 'an object',
-				whatAmI : function(){
-						alert('I am ' + this.iAm);
-				}
-		}
-		```
+	var myObject = {
+			iAm : 'an object',
+			whatAmI : function(){
+					alert('I am ' + this.iAm);
+			}
+	}
+	```
 
 	- **Object constructor:**
 
@@ -308,23 +313,23 @@ let sayHi = function(name) {  // (*) no magic any more
 
 		- Constructor notation involves defining an object constructor. And like defining a function, we use the function keyword. You can think of this constructor as a "template" from which you can create multiple objects. To create a new object from a constructor, we use the new keyword.
 
-		```
-		function myObject(){
-				this.iAm = 'an object';
-				this.whatAmI = function(){
-						alert('I am ' + this.iAm);
-				};
-		};
+	```
+	function myObject(){
+			this.iAm = 'an object';
+			this.whatAmI = function(){
+					alert('I am ' + this.iAm);
+			};
+	};
 
-		var objectName = new myObject();
+	var objectName = new myObject();
 
-		function Person(job, married) {
-				this.job = job;
-				this.married = married;
-		}
+	function Person(job, married) {
+			this.job = job;
+			this.married = married;
+	}
 
-		var gabby = new Person("student",true);
-		```
+	var gabby = new Person("student",true);
+	```
 
 	- **Differences between constructor and literal**
 
@@ -339,18 +344,18 @@ let sayHi = function(name) {  // (*) no magic any more
 	- An advantage of bracket notation is that we are not restricted to just using strings that is: no spaces and other limitations.
 	- Square brackets notation obj["property"]. Square brackets allow to take the key from a variable, like obj[varWithKey].
 
-	```
-	let user = {};
+```
+let user = {};
 
-	// set
-	user["likes birds"] = true;
+// set
+user["likes birds"] = true;
 
-	// get
-	alert(user["likes birds"]); // true
+// get
+alert(user["likes birds"]); // true
 
-	// delete
-	delete user["likes birds"];
-	```
+// delete
+delete user["likes birds"];
+```
 
 - **Additional operators**
 
@@ -364,53 +369,140 @@ let sayHi = function(name) {  // (*) no magic any more
 	- When an object variable is copied – the reference is copied, the object is not duplicated.
 	- If we imagine an object as a cabinet, then a variable is a key to it. Copying a variable duplicates the key, but not the cabinet itself.
 
+```
+
+let user = {
+	name: "John",
+	age: 30
+};
+
+//-----------Copying object---------
+let admin = user; // copy the reference
+alert( user.name ); // John
+
+//-----------Clone using loop---------
+// Cloning
+let user = {
+	name: "John",
+	age: 30
+};
+
+let clone = {}; // the new empty object
+for (let key in user) {
+	clone[key] = user[key];
+}
+clone.name = "Pete"; // changed the data in it
+alert( user.name ); // still John in the original object
+
+//---------Object.Assign------------
+- let clone = Object.assign({}, user);
+```
+
+#### Garbage collection
+
+- The main concept of memory management in JavaScript is reachability.
+- Simply put, “reachable” values are those that are accessible or usable somehow. They are guaranteed to be stored in memory.
+- If object is unreachable and Garbage collector will junk the data and free the memory.
+
+#### Symbols 
+
+- “Symbol” value represents a unique identifier.
+- Symbols are guaranteed to be unique. Even if we create many symbols with the same description, they are different values. 
+
+```
+// id is a symbol with the description "id"
+let id1 = Symbol("id");
+let id2 = Symbol("id");
+
+alert(id1 == id2); // false
+```
+
+- Symbols don’t auto-convert to a string
+- Symbol in an object literal, we need square brackets.
+
+```
+let id = Symbol("id");
+
+let user = {
+  name: "John",
+  [id]: 123 // not just "id: 123"
+};
+```
+
+- **Global symbols**
+	- Symbols inside the registry are called global symbols. If we want an application-wide symbol, accessible everywhere in the code – that’s what they are for.
+
+	```
+	// read from the global registry
+	let id = Symbol.for("id"); // if the symbol did not exist, it is created
 	```
 
-	let user = {
-		name: "John",
-		age: 30
-	};
+	- The Symbol.keyFor internally uses the global symbol registry to look up the key for the symbol. So it doesn’t work for non-global symbols. If the symbol is not global, it won’t be able to find it and return undefined.
 
-	//-----------Copying object---------
-	let admin = user; // copy the reference
-	alert( user.name ); // John
-
-	//-----------Clone using loop---------
-	// Cloning
-	let user = {
-		name: "John",
-		age: 30
-	};
-
-	let clone = {}; // the new empty object
-	for (let key in user) {
-		clone[key] = user[key];
-	}
-	clone.name = "Pete"; // changed the data in it
-	alert( user.name ); // still John in the original object
-
-	//---------Object.Assign------------
-	- let clone = Object.assign({}, user);
 	```
+	alert( Symbol.keyFor(Symbol.for("name")) ); // name, global symbol
+	alert( Symbol.keyFor(Symbol("name2")) ); // undefined, the argument isn't a global symbol
+	```
+
+#### Methods 
+
+- Functions that are stored in object properties are called “methods”.
+- Methods allow objects to “act” like object.doSomething().
+- Methods can reference the object as this.
 
 #### The "this" Keyword
 
 - The keyword this acts as a placeholder, and will refer to whichever object called that method when the method is actually used.
+- When a function is declared, it may use this, but that this has no value until the function is called.
 
 ```
-var setAge = function (newAge) {
-	this.age = newAge;
+let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    alert(this.name);
+  }
 };
 
-// now we make bob
-var bob = new Object();
-bob.age = 30;
-// and down here we just use the method we already made
-bob.setAge = setAge;
-
-// change bob's age to 50 here
-bob.setAge(50);
+user.sayHi(); // John
 ```
+
+- That function can be copied between objects.
+- When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
+
+- "this" is undefined in strict mode. If we try to access this.name, there will be an error.
+
+```
+function sayHi() {
+  alert(this);
+}
+
+sayHi(); // undefined
+```
+
+- In non-strict mode the value of this in such case will be the global object (window in a browser, we’ll get to it later in the chapter Global object). This is a historical behavior that "use strict" fixes.
+
+- NOTE: Arrow functions are special: they have no this. When this is accessed inside an arrow function, it is taken from outside.
+
+#### Object to primitive conversion
+
+- The object-to-primitive conversion is called automatically by many built-in functions and operators that expect a primitive as a value.
+
+- There are 3 types (hints) of it:
+	- "string" (for alert and other string conversions)
+	- "number" (for maths)
+	- "default" (few operators)
+
+- The specification describes explicitly which operator uses which hint. There are very few operators that “don’t know what to expect” and use the "default" hint. Usually for built-in objects "default" hint is handled the same way as "number", so in practice the last two are often merged together.
+
+- The conversion algorithm is:
+
+- Call obj[Symbol.toPrimitive](hint) if the method exists,
+- Otherwise if hint is "string"
+	- try obj.toString() and obj.valueOf(), whatever exists.
+- Otherwise if hint is "number" or "default"
+	- try obj.valueOf() and obj.toString(), whatever exists.
 
 #### Passing Objects into Functions
 
