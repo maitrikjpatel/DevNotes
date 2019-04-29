@@ -12,7 +12,7 @@ topics: 'tools, development'
 source: 'Github'
 ---
 
-### Tuts
+### Reading Tuts
 
 - [MDN JS](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)
 - [JavaScript Information](https://javascript.info/)
@@ -38,6 +38,7 @@ source: 'Github'
 ### Tools
 
 - [JS Object method explorer](https://sdras.github.io/object-explorer/)
+- [JavaScript Visualizer](https://tylermcginnis.com/javascript-visualizer/)
 
 ### Javascript Basic
 
@@ -59,18 +60,19 @@ alert("There will be an error")
 - Object Reuse Pattern - Inheritance
 
 #### use strict
+- To fully enable all features of modern JavaScript, we should start scripts with "use strict".
 - The "use strict" directive switches the engine to the “modern” mode, changing the behavior of some built-in features.
-Strict mode is enabled by placing "use strict" at the top of a script or function.
+- Strict mode is enabled by placing "use strict" at the top of a script or function.
 
-### Data-Types 
+#### Data-Types 
 
 - Primitive data-types
 	-	All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever).
 	- string, number, boolean, null, undefined, symbol( ES6)
 - Non Primitive data-types
-	- Object
+	- Object 
 
-#### Type of
+#### Typeof
 
 - We can call typeof thing to figure this out. Generally, the most useful types are "number," "string," "function," and of course, "object."
 
@@ -91,7 +93,7 @@ console.log( myObj.hasOwnProperty('name') );
 console.log( myObj.hasOwnProperty('nickname') );
 ```
 
-### Type Conversions
+#### Type Conversions
 
 - ToString, String(value) – Occurs when we output something. Can be performed with String(value). The conversion to string is usually obvious for primitive values.
 
@@ -110,6 +112,42 @@ string	-> The string is read “as is”, whitespaces from both sides are ignore
 0, null, undefined, NaN, ""	-> false
 any other -> value
 ```
+
+
+#### ["===" vs "=="](https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a)
+
+- "===" : same type and have the same value, then === produces true and !== produces false.
+- "==" : evil-twins/double-equal operator, however, tries to coerce the values before comparing them
+	- Double equals also performs type coercion.
+- Falsy values : false, null, undefined, "" (empty string), 0, NaN
+
+#### [Null vs Undefined](https://codeburst.io/javascript-null-vs-undefined-20f955215a2)
+
+- **Null**
+	- null is an empty or non-existent value.
+	- null must be assigned.
+	- when using typeof to test null, it returns object
+- **Undefined**
+	- Undefined most typically means a variable has been declared, but not defined.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| Definition | variable has been declared but not yet been assigned a value | assignment value that means “no value”|
+| Type | Undefined | Object|
+| JSON | Invalid | Valid|
+| Nature | Variable declared but not yet assigned | Represent intentional absence of object value|
+| Check | typeof variableName === “undefined” | variableName === null|
+| Arithmetic | Not-a-number (NaN) error | treated as zero value|
+| Comparison | Equality operator will return true | Identity operator will return false|
+| Identifier | Can be an identifier for a property of global object | Not an identifier for a property of the global object|
+
+#### Comparisons
+
+- Comparison operators return a boolean value.
+- Strings are compared letter-by-letter in the “dictionary” order.
+- When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
+- The values null and undefined equal == each other and do not equal any other value.
+- Be careful when using comparisons like > or < with variables that can occasionally be null/undefined. Checking for null/undefined separately is a good idea.
 
 #### "While" vs "For" vs "Do/While"
 
@@ -160,112 +198,200 @@ var newArray = [[1,1,1], [1,1,1], [1,1,1]]
 var jagged = [[1,1,1],[1],[1,1]]
 ```
 
+#### Function 
+
+- Functions are values. They can be assigned, copied or declared in any place of the code.
+
+- **Function Declaration**
+- If the function is declared as a separate statement in the main code flow, that’s called a “Function Declaration”.
+- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
+- a function, declared as a separate statement, in the main code flow.
+
+```
+function sum(a, b) {
+  return a + b;
+}
+```
+
+- **Function Expression**
+
+- If the function is created as a part of an expression, it’s called a “Function Expression”.
+- Function Expressions are created when the execution flow reaches them.
+-  A function, created inside an expression or inside another syntax construct. Here, the function is created at the right side of the “assignment expression”
+```
+let sum = function(a, b) {
+  return a + b;
+};
+```
+
+- ***Callback functions**
+
+- The arguments of ask are called callback functions or just callbacks.
+
+```
+// Without CallBack
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "You agreed." );
+}
+
+function showCancel() {
+  alert( "You canceled the execution." );
+}
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel);
+
+// With CallBack
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+
+```
+
+**Function Expression vs Function Declaration**
+
+- A Function Expression is created when the execution reaches it and is usable from then on.
+- Function Declaration is usable in the whole script/code block.
+
+```
+// The Function Declaration sayHi is created when JavaScript is preparing 
+// to start the script and is visible everywhere in it.
+sayHi("John"); // Hello, John
+
+function sayHi(name) {
+  alert( `Hello, ${name}` );
+}
+
+// A Function Expression won't work
+
+sayHi("John"); // error!
+
+let sayHi = function(name) {  // (*) no magic any more
+  alert( `Hello, ${name}` );
+};
+```
+
 #### Object
 
 - Let's go back to the analogy of computer languages being like regular spoken languages. In English, you have nouns (which you can think of as "things") and verbs (which you can think of as "actions"). Until now, our nouns (data, such as numbers, strings, or variables) and verbs (functions) have been separate.
 
-- A constructor, as its name suggests, is designed to create and set up multiple instances of an object. **An object literal** on the other hand is one-off, like string and number literals, and used more often as configuration objects or global singletons (e.g. for namespacing).
+- A constructor, as its name suggests, is designed to create and set up multiple instances of an object. 
+- An object literal on the other hand is one-off, like string and number literals, and used more often as configuration objects or global singletons (e.g. for namespacing).
+	- **Object literal:**
+		- Literal notation creates a single object. Literal notation uses **curly brackets { }** and the object's default properties are defined within the brackets using **property:value** notation.
 
-- **Object literal:**
+		```
+		var objectName = {};
 
-  - Literal notation creates a single object. Literal notation uses **curly brackets { }** and the object's default properties are defined within the brackets using **property:value** notation.
-
-```
-var objectName = {};
-//---
-var james = {
-  job: "programmer",
-  married: false,
-};
-//---
-var myObject = {
-    iAm : 'an object',
-    whatAmI : function(){
-        alert('I am ' + this.iAm);
-    }
-}
-```
-
-- **Object constructor:**
-
-  - When we write **bob = new Object( );** we are using a built-in constructor called Object. This constructor is already defined by the JavaScript language and just makes an object with **no properties or methods.**
-
-  - Constructor notation involves defining an object constructor. And like defining a function, we use the function keyword. You can think of this constructor as a "template" from which you can create multiple objects. To create a new object from a constructor, we use the new keyword.
-
-```
-function myObject(){
-		this.iAm = 'an object';
-		this.whatAmI = function(){
-				alert('I am ' + this.iAm);
+		var james = {
+			job: "programmer",
+			married: false,
 		};
-};
 
-var objectName = new myObject();
+		var myObject = {
+				iAm : 'an object',
+				whatAmI : function(){
+						alert('I am ' + this.iAm);
+				}
+		}
+		```
 
-//-----
+	- **Object constructor:**
 
-function Person(job, married) {
-		this.job = job;
-		this.married = married;
-}
+		- When we write **bob = new Object( );** we are using a built-in constructor called Object. This constructor is already defined by the JavaScript language and just makes an object with **no properties or methods.**
 
-var gabby = new Person("student",true);
-```
+		- Constructor notation involves defining an object constructor. And like defining a function, we use the function keyword. You can think of this constructor as a "template" from which you can create multiple objects. To create a new object from a constructor, we use the new keyword.
 
-* Differences between constructor and literal
+		```
+		function myObject(){
+				this.iAm = 'an object';
+				this.whatAmI = function(){
+						alert('I am ' + this.iAm);
+				};
+		};
 
-	- The constructor object has its properties and methods defined with the keyword 'this' in front of it, whereas the literal version does not.
+		var objectName = new myObject();
 
-	- In the constructor object the properties/methods have their 'values' defined after an equal sign '=' whereas in the literal version, they are defined after a colon ':'.
+		function Person(job, married) {
+				this.job = job;
+				this.married = married;
+		}
 
-	- The constructor function can have (optional) semi-colons ';' at the end of each property/method declaration whereas in the literal version if you have more than one property or method, they MUST be separated with a comma ',', and they CANNOT have semi-colons after them, otherwise JavaScript will return an error.
+		var gabby = new Person("student",true);
+		```
 
-* Bracket Notation : ObjectName["PropertyName"]
+	- **Differences between constructor and literal**
 
-	- An advantage of bracket notation is that we are not restricted to just using strings in the brackets. We can also use variables whose values are property names:
+		- The constructor object has its properties and methods defined with the keyword 'this' in front of it, whereas the literal version does not.
 
-```
-var dog = {
-	species: "greyhound",
-	weight: 60,
-	age: 4
-};
+		- In the constructor object the properties/methods have their 'values' defined after an equal sign '=' whereas in the literal version, they are defined after a colon ':'.
 
-var species = dog["species"];
-var weight = dog["weight"];
-var ageProp = "age"
+		- The constructor function can have (optional) semi-colons ';' at the end of each property/method declaration whereas in the literal version if you have more than one property or method, they MUST be separated with a comma ',', and they CANNOT have semi-colons after them, otherwise JavaScript will return an error.
 
-console.log(dog.age);
-console.log(dog[ageProp]);
+- **Bracket Notation : ObjectName["PropertyName"]**
 
-* Dot Notation : ObjectName.PropertyName
+	- An advantage of bracket notation is that we are not restricted to just using strings that is: no spaces and other limitations.
+	- Square brackets notation obj["property"]. Square brackets allow to take the key from a variable, like obj[varWithKey].
 
-var bob = {
-name: "Bob Smith",
-age: 30
-};
+	```
+	let user = {};
 
-var name1 = bob.name;
-var age1 = bob.age;
-```
+	// set
+	user["likes birds"] = true;
 
-#### Methods
+	// get
+	alert(user["likes birds"]); // true
 
-- Functions can only use parameters as an input, but methods can make calculations with object properties.
+	// delete
+	delete user["likes birds"];
+	```
 
-```
-var bob = new Object();
-bob.age = 17;
-// this time we have added a method, setAge
-bob.setAge = function (newAge){
-	bob.age = newAge;
-};
+- **Additional operators**
 
-bob.getYearOfBirth = function () {
-	return 2014 - bob.age;
-};
-console.log(bob.getYearOfBirth());
-```
+	- To delete a property: delete obj.prop.
+	- To check if a property with the given key exists: "key" in obj.
+	- To iterate over an object: for (let key in obj) loop.
+
+- **Cloning and merging, Object.assign**
+
+	- A variable stores not the object itself, but its “address in memory”, in other words “a reference” to it.
+	- When an object variable is copied – the reference is copied, the object is not duplicated.
+	- If we imagine an object as a cabinet, then a variable is a key to it. Copying a variable duplicates the key, but not the cabinet itself.
+
+	```
+
+	let user = {
+		name: "John",
+		age: 30
+	};
+
+	//-----------Copying object---------
+	let admin = user; // copy the reference
+	alert( user.name ); // John
+
+	//-----------Clone using loop---------
+	// Cloning
+	let user = {
+		name: "John",
+		age: 30
+	};
+
+	let clone = {}; // the new empty object
+	for (let key in user) {
+		clone[key] = user[key];
+	}
+	clone.name = "Pete"; // changed the data in it
+	alert( user.name ); // still John in the original object
+
+	//---------Object.Assign------------
+	- let clone = Object.assign({}, user);
+	```
 
 #### The "this" Keyword
 
@@ -472,33 +598,6 @@ monad.bind(alert);
 ```
 
 ### Topics
-
-#### ["===" vs "=="](https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a)
-
-- "===" : same type and have the same value, then === produces true and !== produces false.
-- "==" : evil-twins/double-equal operator, however, tries to coerce the values before comparing them
-	- Double equals also performs type coercion.
-- Falsy values : false, null, undefined, "" (empty string), 0, NaN
-
-#### [Null vs Undefined](https://codeburst.io/javascript-null-vs-undefined-20f955215a2)
-
-- **Null**
-	- null is an empty or non-existent value.
-	- null must be assigned.
-	- when using typeof to test null, it returns object
-- **Undefined**
-	- Undefined most typically means a variable has been declared, but not defined.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| Definition | variable has been declared but not yet been assigned a value | assignment value that means “no value”|
-| Type | Undefined | Object|
-| JSON | Invalid | Valid|
-| Nature | Variable declared but not yet assigned | Represent intentional absence of object value|
-| Check | typeof variableName === “undefined” | variableName === null|
-| Arithmetic | Not-a-number (NaN) error | treated as zero value|
-| Comparison | Equality operator will return true | Identity operator will return false|
-| Identifier | Can be an identifier for a property of global object | Not an identifier for a property of the global object|
 
 #### Hoisting
 
