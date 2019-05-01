@@ -135,8 +135,8 @@ any other -> value
 - **Undefined**
 	- Undefined most typically means a variable has been declared, but not defined.
 
-| Tables        | Undefined      | Null  |
-| ------------- |:-------------:| -----:|
+| Tables        | Undefined      |  Null  |
+| ------------- |---------------|--------|
 | Definition | variable has been declared but not yet been assigned a value | assignment value that means “no value”|
 | Type | Undefined | Object|
 | JSON | Invalid | Valid|
