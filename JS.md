@@ -259,7 +259,7 @@ var jagged = [[1,1,1],[1],[1,1]]
 	);
 	```
 
-**Function Expression vs Function Declaration**
+- **Function Expression vs Function Declaration**
 
 	- A Function Expression is created when the execution reaches it and is usable from then on.
 	- Function Declaration is usable in the whole script/code block.
