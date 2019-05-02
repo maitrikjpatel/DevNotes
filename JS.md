@@ -208,79 +208,79 @@ var jagged = [[1,1,1],[1],[1,1]]
 - Functions are values. They can be assigned, copied or declared in any place of the code.
 
 - **Function Declaration**
-- If the function is declared as a separate statement in the main code flow, that’s called a “Function Declaration”.
-- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
-- a function, declared as a separate statement, in the main code flow.
 
-```
-function sum(a, b) {
-  return a + b;
-}
-```
+	- If the function is declared as a separate statement in the main code flow, that’s called a “Function Declaration”.
+	- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
+	- a function, declared as a separate statement, in the main code flow.
+
+	```
+	function sum(a, b) {
+		return a + b;
+	}
+	```
 
 - **Function Expression**
 
-- If the function is created as a part of an expression, it’s called a “Function Expression”.
-- Function Expressions are created when the execution flow reaches them.
--  A function, created inside an expression or inside another syntax construct. Here, the function is created at the right side of the “assignment expression”
-```
-let sum = function(a, b) {
-  return a + b;
-};
-```
+	- If the function is created as a part of an expression, it’s called a “Function Expression”.
+	- Function Expressions are created when the execution flow reaches them.
+	-  A function, created inside an expression or inside another syntax construct. Here, the function is created at the right side of the “assignment expression”
+	```
+	let sum = function(a, b) {
+		return a + b;
+	};
+	```
 
-- ***Callback functions**
+- **Callback functions**
 
-- The arguments of ask are called callback functions or just callbacks.
+	- The arguments of ask are called callback functions or just callbacks.
 
-```
-// Without CallBack
-function ask(question, yes, no) {
-  if (confirm(question)) yes()
-  else no();
-}
+	```
+	// Without CallBack
+	function ask(question, yes, no) {
+		if (confirm(question)) yes()
+		else no();
+	}
 
-function showOk() {
-  alert( "You agreed." );
-}
+	function showOk() {
+		alert( "You agreed." );
+	}
 
-function showCancel() {
-  alert( "You canceled the execution." );
-}
-// usage: functions showOk, showCancel are passed as arguments to ask
-ask("Do you agree?", showOk, showCancel);
+	function showCancel() {
+		alert( "You canceled the execution." );
+	}
+	// usage: functions showOk, showCancel are passed as arguments to ask
+	ask("Do you agree?", showOk, showCancel);
 
-// With CallBack
-ask(
-  "Do you agree?",
-  function() { alert("You agreed."); },
-  function() { alert("You canceled the execution."); }
-);
-
-```
+	// With CallBack
+	ask(
+		"Do you agree?",
+		function() { alert("You agreed."); },
+		function() { alert("You canceled the execution."); }
+	);
+	```
 
 **Function Expression vs Function Declaration**
 
-- A Function Expression is created when the execution reaches it and is usable from then on.
-- Function Declaration is usable in the whole script/code block.
+	- A Function Expression is created when the execution reaches it and is usable from then on.
+	- Function Declaration is usable in the whole script/code block.
 
-```
-// The Function Declaration sayHi is created when JavaScript is preparing 
-// to start the script and is visible everywhere in it.
-sayHi("John"); // Hello, John
+	```
+	// The Function Declaration sayHi is created when JavaScript is preparing 
+	// to start the script and is visible everywhere in it.
+	sayHi("John"); // Hello, John
 
-function sayHi(name) {
-  alert( `Hello, ${name}` );
-}
+	function sayHi(name) {
+		alert( `Hello, ${name}` );
+	}
 
-// A Function Expression won't work
+	// A Function Expression won't work
 
-sayHi("John"); // error!
+	sayHi("John"); // error!
 
-let sayHi = function(name) {  // (*) no magic any more
-  alert( `Hello, ${name}` );
-};
-```
+	let sayHi = function(name) {  // (*) no magic any more
+		alert( `Hello, ${name}` );
+	};
+	```
 
 #### Object
 
