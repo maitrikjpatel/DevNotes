@@ -40,10 +40,12 @@ source: 'Github'
 - [JS Object method explorer](https://sdras.github.io/object-explorer/)
 - [JavaScript Visualizer](https://tylermcginnis.com/javascript-visualizer/)
 
-### Javascript Basic
+### Javascript.info Basic
 
 - JavaScript is a multi-paradigm language, supporting imperative/procedural programming along with OOP (Object-Oriented Programming) with prototypal inheritance.and functional programming.
 - JavaScript interprets the line break as an “implicit” semicolon. This is called an automatic semicolon insertion.
+- Object Creation Pattern - Encapsulation
+- Object Reuse Pattern - Inheritance
 
 ```
 <!-- works -->
@@ -55,9 +57,6 @@ alert("There will be an error")
 [1, 2].forEach(alert)
 
 ```
-
-- Object Creation Pattern - Encapsulation
-- Object Reuse Pattern - Inheritance
 
 #### use strict
 - To fully enable all features of modern JavaScript, we should start scripts with "use strict".
@@ -294,14 +293,14 @@ do{
 		- Constructor notation involves defining an object constructor. And like defining a function, we use the function keyword. You can think of this constructor as a "template" from which you can create multiple objects. To create a new object from a constructor, we use the new keyword.
 
 	```
-	function myObject(){
+	function Object(){
 			this.iAm = 'an object';
 			this.whatAmI = function(){
 					alert('I am ' + this.iAm);
 			};
 	};
 
-	var objectName = new myObject();
+	var objectName = new Object();
 
 	function Person(job, married) {
 			this.job = job;
@@ -493,6 +492,40 @@ sayHi(); // undefined
 
 ##### Number
 
+- All numbers in JavaScript are stored in 64-bit format IEEE-754, also known as “double precision floating point numbers”.
+- Append "e" with the zeroes count to the number. Like: 123e6 is 123 with 6 zeroes.
+- A negative number after "e" causes the number to be divided by 1 with given zeroes. That’s for one-millionth or such.
+
+- For different numeral systems:
+	- Can write numbers directly in hex (0x), octal (0o) and binary (0b) systems
+	- parseInt(str, base) parses an integer from any numeral system with base: 2 ≤ base ≤ 36.
+	- num.toString(base) converts a number to a string in the numeral system with the given base.
+	
+- For converting values like 12pt and 100px to a number:
+	- Use parseInt/parseFloat for the “soft” conversion, which reads a number from a string and then returns the value they could read before the error.
+
+- For fractions:
+	- Round using Math.floor, Math.ceil, Math.trunc, Math.round or num.toFixed(precision).
+	- Make sure to remember there’s a loss of precision when working with fractions.
+
+- More mathematical functions:
+	- See the Math object when you need them. The library is very small, but can cover basic needs.
+
+##### Strings
+
+- There are 3 types of quotes. Backticks allow a string to span multiple lines and embed expressions.
+- Strings in JavaScript are encoded using UTF-16.
+- We can use special characters like \n and insert letters by their unicode using \u....
+- To get a character, use: [].
+- To get a substring, use: slice or substring.
+- To lowercase/uppercase a string, use: toLowerCase/toUpperCase.
+- To look for a substring, use: indexOf, or includes/startsWith/endsWith for simple checks.
+- To compare strings according to the language, use: localeCompare, otherwise they are compared by character codes.
+
+- There are several other helpful methods in strings:
+	- str.trim() – removes (“trims”) spaces from the beginning and end of the string.
+	- str.repeat(n) – repeats the string n times.
+
 ##### Array
 
 - Array is a special kind of object, suited to storing and managing ordered data items.
@@ -551,197 +584,53 @@ for (let i in arr) – never use.
 	- reverse() – reverses the array in-place, then returns it.
 	- split/join – convert a string to array and back.
 	- reduce(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
+	- sort(), reverse() and splice() modify the array itself.
+	- slice(), concat() and map() create a new array.
 
 - **Additionally:**
 	- Array.isArray(arr) checks arr for being an array.
 
-- sort(), reverse() and splice() modify the array itself.
-- slice(), concat() and map() create a new array.
+##### Iterables
 
-#### Passing Objects into Functions
+- Iterable objects is a generalization of arrays. That’s a concept that allows to make any object useable in a for..of loop.
+- Objects that can be used in for..of are called iterable.
+- Technically, iterables must implement the method named Symbol.iterator.
+	- The result of obj[Symbol.iterator] is called an iterator. It handles the further iteration process.
+	- An iterator must have the method named next() that returns an object {done: Boolean, value: any}, here done:true denotes the iteration end, otherwise the value is the next value.
+- The Symbol.iterator method is called automatically by for..of, but we also can do it directly.
+- Built-in iterables like strings or arrays, also implement Symbol.iterator.
+- String iterator knows about surrogate pairs.
+- Array.from(obj[, mapFn, thisArg]) makes a real Array of an iterable or array-like obj, and we can then use array methods on it. The optional arguments mapFn and thisArg allow us to apply a function to each item.
 
-- Making arrays of Objects, we can use objects as parameters for functions as well. That way, these functions can take advantage of the methods and properties that a certain object type provides.
+##### Map, Set, WeakMap and WeakSet
 
-```
-// Our person constructor
-function Person (name, age) {
-		this.name = name;
-		this.age = age;
-}
+- **MAP*
+	- Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
+	- unlike objects, keys are not converted to strings. Any type of key is possible.
 
-// We can make a function which takes persons as arguments
-// This one computes the difference in ages between two people
-var ageDifference = function(person1, person2) {
-		return person1.age - person2.age;
-}
-
-var alice = new Person("Alice", 30);
-var billy = new Person("Billy", 25);
-
-// get the difference in age between alice and billy using our function
-var diff = ageDifference(alice,billy)
-```
-
-#### Getting IN-timate
-
-- To print out all elements and properties, we can use a for/in loop, like this:
+	- new Map() – creates the map.
+	- map.set(key, value) – stores the value by the key.
+	- map.get(key) – returns the value by the key, undefined if key doesn’t exist 	- in map.
+	- map.has(key) – returns true if the key exists, false otherwise.
+	- map.delete(key) – removes the value by the key.
+	- map.clear() – clears the map
+	- map.size – returns the current element count.
 
 ```
-for(var property in dog) {
-	console.log(property);
-}
+let map = new Map();
 
-// write a for-in loop to print the value of nyc's properties
-for(var x in nyc) {
-	console.log(nyc[x]);
-}
+map.set('1', 'str1');   // a string key
+map.set(1, 'num1');     // a numeric key
+map.set(true, 'bool1'); // a boolean key
+
+// remember the regular Object? it would convert keys to string
+// Map keeps the type, so these two are different:
+alert( map.get(1)   ); // 'num1'
+alert( map.get('1') ); // 'str1'
+
+alert( map.size ); // 3
 ```
 
-#### Prototype
-
-- What a class has or doesn't have? That is the job of the prototype.
-- JavaScript automatically defines the prototype for class with a constructor.
-- If you want to add a method to a class such that all members of the class can use it, we use the following syntax to extend the prototype:
-
-```
-className.prototype.newMethod = function() {
-	statements;
-};
-//-----
-function Dog (breed) {
-	this.breed = breed;
-}
-Dog.prototype.bark = function() {
-	console.log("Woof");
-};
-var buddy = new Dog("golden Retriever");
-var snoopy = new Dog("Beagle");
-snoopy.bark();
-buddy.bark();
-```
-
-#### DRY Penguins - Inheritance
-
-- In object-oriented programming, inheritance allows one class to see and use the methods and properties of another class. You can think of it as a child being able to use his or her parent's money because the child inherits the money.
-
-- We will learn more about inheritance as we continue this lesson, but for now let's just refresh our memories about how classes and object
-
-- **Prototype chain**
-
-	- If JavaScript encounters something it can't find in the current class's methods or properties, it looks up the prototype chain to see if it's defined in a class that it inherits from. This keeps going upwards until it stops all the way at the top: the mighty Object.prototype (more on this later).
-
-```
-// original classes
-function Animal(name, numLegs) {
-		this.name = name;
-		this.numLegs = numLegs;
-		this.isAlive = true;
-}
-function Penguin(name) {
-		this.name = name;
-		this.numLegs = 2;
-}
-function Emperor(name) {
-		this.name = name;
-		this.saying = "Waddle waddle";
-}
-
-// set up the prototype chain
-Penguin.prototype = new Animal();
-Emperor.prototype = new Penguin();
-
-var myEmperor = new Emperor("Jules");
-
-console.log(myEmperor.saying); // should print "Waddle waddle"
-console.log(myEmperor.numLegs); // should print 2
-console.log(myEmperor.isAlive); // should print true
-```
-
-#### Private Number and Methods
-
-- Just as functions can have local variables which can only be accessed from within that function, objects can have private variables. Private variables are pieces of information you do not want to publicly share, and they can only be directly accessed from within the class.
-
-```
-function Person(first,last,age) {
-	this.firstname = first;
-	this.lastname = last;
-	this.age = age;
-	var bankBalance = 7500; // PRIVATE NUMBER
-
-	var returnBalance = function() {
-		return bankBalance;
-	};
-
-	// create the new function here
-	this.askTeller = function() {
-		return returnBalance;
-	};
-}
-
-var john = new Person('John','Smith',30);
-console.log(john.returnBalance);
-var myBalanceMethod = john.askTeller();
-var myBalance = myBalanceMethod();
-console.log(myBalance);
-```
-
-#### Pseudoclassical Inheritance
-
-```
-function Gizmo(id) {
-	this.id = id;
-}
-Gizmo.prototype.toString = function () {
-	return "gizmo " + this.id;
-};
-function Hoozit(id) {
-	this.id = id;
-}
-Hoozit.prototype = new Gizmo();
-Hoozit.prototype.test = function (id) {
-	return this.id === id;
-};
-```
-
-#### Functional Inheritance
-
-```
-function gizmo(id) {
-	return {
-		id: id,
-		toString: function () {
-			return "gizmo " + this.id;
-		}
-	};
-}
-function hoozit(id) {
-	var that = gizmo(id);
-	that.test = function (testid) {
-		return testid === this.id;
-	};
-	return that;
-}
-```
-
-#### MONAD
-
-- Monad is a design pattern used to describe computations as a series of steps. They are extensively used in pure functional programming languages to manage side effects but can also be used in multiparadigm languages to control complexity.
-
-```
-function MONAD() {
-	return function unit(value) {
-		var monad = Object.create(null);
-		monad.bind = function (func) {
-			return func(value);
-		};
-		return monad;
-	};
-}
-
-var identity = MONAD();
-var monad = identity("Hello world.");
-monad.bind(alert);
-```
 
 ### Topics
 
@@ -1592,3 +1481,190 @@ expression
 
 - NaN : Not a Number , NaN is not equal to anything, including NaN - NaN === NaN is false - NaN !== NaN is true
   -Equal and not equal : These operators can do type coercion
+
+## ---------------CODEACADEMY-----------------
+
+#### Passing Objects into Functions
+
+- Making arrays of Objects, we can use objects as parameters for functions as well. That way, these functions can take advantage of the methods and properties that a certain object type provides.
+
+```
+// Our person constructor
+function Person (name, age) {
+		this.name = name;
+		this.age = age;
+}
+
+// We can make a function which takes persons as arguments
+// This one computes the difference in ages between two people
+var ageDifference = function(person1, person2) {
+		return person1.age - person2.age;
+}
+
+var alice = new Person("Alice", 30);
+var billy = new Person("Billy", 25);
+
+// get the difference in age between alice and billy using our function
+var diff = ageDifference(alice,billy)
+```
+
+#### Getting IN-timate
+
+- To print out all elements and properties, we can use a for/in loop, like this:
+
+```
+for(var property in dog) {
+	console.log(property);
+}
+
+// write a for-in loop to print the value of nyc's properties
+for(var x in nyc) {
+	console.log(nyc[x]);
+}
+```
+
+#### Prototype
+
+- What a class has or doesn't have? That is the job of the prototype.
+- JavaScript automatically defines the prototype for class with a constructor.
+- If you want to add a method to a class such that all members of the class can use it, we use the following syntax to extend the prototype:
+
+```
+className.prototype.newMethod = function() {
+	statements;
+};
+//-----
+function Dog (breed) {
+	this.breed = breed;
+}
+Dog.prototype.bark = function() {
+	console.log("Woof");
+};
+var buddy = new Dog("golden Retriever");
+var snoopy = new Dog("Beagle");
+snoopy.bark();
+buddy.bark();
+```
+
+#### DRY Penguins - Inheritance
+
+- In object-oriented programming, inheritance allows one class to see and use the methods and properties of another class. You can think of it as a child being able to use his or her parent's money because the child inherits the money.
+
+- We will learn more about inheritance as we continue this lesson, but for now let's just refresh our memories about how classes and object
+
+- **Prototype chain**
+
+	- If JavaScript encounters something it can't find in the current class's methods or properties, it looks up the prototype chain to see if it's defined in a class that it inherits from. This keeps going upwards until it stops all the way at the top: the mighty Object.prototype (more on this later).
+
+```
+// original classes
+function Animal(name, numLegs) {
+		this.name = name;
+		this.numLegs = numLegs;
+		this.isAlive = true;
+}
+function Penguin(name) {
+		this.name = name;
+		this.numLegs = 2;
+}
+function Emperor(name) {
+		this.name = name;
+		this.saying = "Waddle waddle";
+}
+
+// set up the prototype chain
+Penguin.prototype = new Animal();
+Emperor.prototype = new Penguin();
+
+var myEmperor = new Emperor("Jules");
+
+console.log(myEmperor.saying); // should print "Waddle waddle"
+console.log(myEmperor.numLegs); // should print 2
+console.log(myEmperor.isAlive); // should print true
+```
+
+#### Private Number and Methods
+
+- Just as functions can have local variables which can only be accessed from within that function, objects can have private variables. Private variables are pieces of information you do not want to publicly share, and they can only be directly accessed from within the class.
+
+```
+function Person(first,last,age) {
+	this.firstname = first;
+	this.lastname = last;
+	this.age = age;
+	var bankBalance = 7500; // PRIVATE NUMBER
+
+	var returnBalance = function() {
+		return bankBalance;
+	};
+
+	// create the new function here
+	this.askTeller = function() {
+		return returnBalance;
+	};
+}
+
+var john = new Person('John','Smith',30);
+console.log(john.returnBalance);
+var myBalanceMethod = john.askTeller();
+var myBalance = myBalanceMethod();
+console.log(myBalance);
+```
+
+#### Pseudoclassical Inheritance
+
+```
+function Gizmo(id) {
+	this.id = id;
+}
+Gizmo.prototype.toString = function () {
+	return "gizmo " + this.id;
+};
+function Hoozit(id) {
+	this.id = id;
+}
+Hoozit.prototype = new Gizmo();
+Hoozit.prototype.test = function (id) {
+	return this.id === id;
+};
+```
+
+#### Functional Inheritance
+
+```
+function gizmo(id) {
+	return {
+		id: id,
+		toString: function () {
+			return "gizmo " + this.id;
+		}
+	};
+}
+function hoozit(id) {
+	var that = gizmo(id);
+	that.test = function (testid) {
+		return testid === this.id;
+	};
+	return that;
+}
+```
+
+#### MONAD
+
+- Monad is a design pattern used to describe computations as a series of steps. They are extensively used in pure functional programming languages to manage side effects but can also be used in multiparadigm languages to control complexity.
+
+```
+function MONAD() {
+	return function unit(value) {
+		var monad = Object.create(null);
+		monad.bind = function (func) {
+			return func(value);
+		};
+		return monad;
+	};
+}
+
+var identity = MONAD();
+var monad = identity("Hello world.");
+monad.bind(alert);
+```
