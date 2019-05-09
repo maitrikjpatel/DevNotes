@@ -41,6 +41,7 @@ source: 'Github'
 - [Skillshare](https://www.skillshare.com)
 - [Degreed](https://degreed.com/for-me)
 - [EGGHead](https://egghead.io/)
+- [Course Catalog](https://courseroot.com)
 
 ## Dev Community
 

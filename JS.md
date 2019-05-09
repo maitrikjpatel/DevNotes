@@ -183,26 +183,6 @@ do{
 }while(myCondi)
 ```
 
-#### Array
-
-- Learned about heterogenous arrays
-
-```
-var myArray = [ 23,true,"lol"]
-```
-
-- Learned about multidimensional arrays
-
-```
-var newArray = [[1,1,1], [1,1,1], [1,1,1]]
-```
-
-- Learned about jagged arrays
-
-```
-var jagged = [[1,1,1],[1],[1,1]]
-```
-
 #### Function 
 
 - Functions are values. They can be assigned, copied or declared in any place of the code.
@@ -377,8 +357,10 @@ let user = {
 };
 
 //-----------Copying object---------
+
 let admin = user; // copy the reference
-alert( user.name ); // John
+admin.name = "Pete" // Updated to user reference object
+alert( user.name ); // Pete as object reference changed
 
 //-----------Clone using loop---------
 // Cloning
@@ -391,11 +373,13 @@ let clone = {}; // the new empty object
 for (let key in user) {
 	clone[key] = user[key];
 }
+
 clone.name = "Pete"; // changed the data in it
-alert( user.name ); // still John in the original object
+alert( user.name ); // John in original object as clone has its own object reference
 
 //---------Object.Assign------------
-- let clone = Object.assign({}, user);
+let clone = Object.assign({}, user);
+
 ```
 
 #### Garbage collection
@@ -444,16 +428,16 @@ let user = {
 	alert( Symbol.keyFor(Symbol("name2")) ); // undefined, the argument isn't a global symbol
 	```
 
-#### Methods 
+#### Methods
 
 - Functions that are stored in object properties are called “methods”.
 - Methods allow objects to “act” like object.doSomething().
-- Methods can reference the object as this.
+- Methods can reference the object as "this".
 
 #### The "this" Keyword
 
-- The keyword this acts as a placeholder, and will refer to whichever object called that method when the method is actually used.
-- When a function is declared, it may use this, but that this has no value until the function is called.
+- The keyword "this" acts as a placeholder, and will refer to whichever object called that method when the method is actually used.
+- When a function is declared, it may use "this", but that "this" has no value until the function is called.
 
 ```
 let user = {
@@ -469,9 +453,9 @@ user.sayHi(); // John
 ```
 
 - That function can be copied between objects.
-- When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
-
-- "this" is undefined in strict mode. If we try to access this.name, there will be an error.
+- When a function is called in the “method” syntax: object.method(), the value of "this" during the call is object.
+- "this" is undefined in strict mode.
+- If we try to access this.name, there will be an error.
 
 ```
 function sayHi() {
@@ -481,7 +465,7 @@ function sayHi() {
 sayHi(); // undefined
 ```
 
-- In non-strict mode the value of this in such case will be the global object (window in a browser, we’ll get to it later in the chapter Global object). This is a historical behavior that "use strict" fixes.
+- In non-strict mode the value of "this" in such case will be the global object (window in a browser, we’ll get to it later in the chapter Global object). This is a historical behavior that "use strict" fixes.
 
 - NOTE: Arrow functions are special: they have no this. When this is accessed inside an arrow function, it is taken from outside.
 
@@ -498,11 +482,81 @@ sayHi(); // undefined
 
 - The conversion algorithm is:
 
-- Call obj[Symbol.toPrimitive](hint) if the method exists,
+- Call obj[Symbol.toPrimitive] (hint) if the method exists,
 - Otherwise if hint is "string"
 	- try obj.toString() and obj.valueOf(), whatever exists.
 - Otherwise if hint is "number" or "default"
 	- try obj.valueOf() and obj.toString(), whatever exists.
+
+
+#### Data Types
+
+##### Number
+
+##### Array
+
+- Array is a special kind of object, suited to storing and managing ordered data items.
+- The call to new Array(number) creates an array with the given length, but without elements.
+```
+// square brackets (usual)
+let arr = [item1, item2...];
+
+// new Array (exceptionally rare)
+let arr = new Array(item1, item2...);
+
+let arr = new Array(2); // will it create an array of [2] ?
+alert( arr[0] ); // undefined! no elements.
+alert( arr.length ); // length 2
+```
+
+- Array implement only toString conversion
+
+```
+alert( [] + 1 ); // ( "" + 1 ) -> "1"
+alert( [1] + 1 ); // ( "1" + 1 ) -> "11"
+alert( [1,2] + 1 ); // ( "1,2" + 1 ) ->  "1,21"
+```
+
+- Loop in array
+
+```
+for (let i=0; i<arr.length; i++) – works fastest, old-browser-compatible.
+for (let item of arr) – the modern syntax for items only,
+for (let i in arr) – never use.
+```
+
+- We can use an array as a deque with the following operations:
+
+-	**To add/remove elements:**
+	- push(...items) adds items to the end.
+	- pop() removes the element from the end and returns it.
+	- shift() removes the element from the beginning and returns it.
+	- unshift(...items) adds items to the beginning.
+	- splice(position, deleteCount, ...items) – at index position delete deleteCount elements and insert items.
+	- slice(start, end) – creates a new array, copies elements from position start till end (not inclusive) into it.
+	- forEach(func(item, index, array){}) – calls func for every element, does not return anything.
+	- concat(...items) – returns a new array: copies all members of the current one and adds items to it. If any of items is an array, then its elements are taken.
+
+- **To search among elements:**
+	- indexOf/lastIndexOf(item, pos) – look for item starting from position pos, return the index or -1 if not found.
+	- includes(value) – returns true if the array has value, otherwise false.
+	- find/filter(func) – filter elements through the function, return first/all values that make it return true.
+	- findIndex is like find, but returns the index instead of a value.
+	- To iterate over elements:
+	- forEach(func) – calls func for every element, does not return anything.
+
+- **To transform the array:**
+	- map(func) – creates a new array from results of calling func for every element.
+	- sort(func) – sorts the array in-place, then returns it.
+	- reverse() – reverses the array in-place, then returns it.
+	- split/join – convert a string to array and back.
+	- reduce(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
+
+- **Additionally:**
+	- Array.isArray(arr) checks arr for being an array.
+
+- sort(), reverse() and splice() modify the array itself.
+- slice(), concat() and map() create a new array.
 
 #### Passing Objects into Functions
 
@@ -927,8 +981,6 @@ document.getElementById('size-16').onclick = size16;
 el.addEventListener('click', listener, false) // listener doesn't capture
 el.addEventListener('click', listener) // listener doesn't capture
 ```
-
-#### Favor object composition over class inheritance
 
 #### Functional Programming
 
