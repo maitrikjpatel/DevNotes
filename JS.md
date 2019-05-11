@@ -813,10 +813,13 @@ showMenu(options);
 ##### Date and time
 
 - Use it to store creation/modification times, to measure time, or just to print out the current date.
+- Months are counted from zero (yes, January is a zero month).
+- Days of week in getDay() are also counted from zero (that’s Sunday).
 
 ```
 new Date(year, month, date, hours, minutes, seconds, ms)
 ```
+
 - Access date components
 	- getFullYear()
 	- getMonth()
@@ -838,6 +841,79 @@ new Date(year, month, date, hours, minutes, seconds, ms)
 	- setSeconds(sec [, ms])
 	- setMilliseconds(ms)
 	- setTime(milliseconds)
+
+- Date.now()
+	- There’s a special method Date.now() that returns the current timestamp.
+	- It is semantically equivalent to new Date().getTime(), but it doesn’t create an intermediate Date object. So it’s faster and doesn’t put pressure on garbage collection.
+
+##### JSON 
+- The JSON (JavaScript Object Notation) is a general format to represent values and objects. 
+- JavaScript provides methods:
+		- JSON.stringify to convert objects into JSON.
+		- JSON.parse to convert JSON back into an object.
+
+- JSON is data-only cross-language specification, so some JavaScript-specific object properties are skipped by JSON.stringify.
+- Namely:
+	- Function properties (methods).
+	- Symbolic properties.
+	- Properties that store undefined.
+
+```
+let user = {
+  sayHi() { // ignored
+    alert("Hello");
+  },
+  [Symbol("id")]: 123, // ignored
+  something: undefined // ignored
+};
+
+alert( JSON.stringify(user) ); // {} (empty object)
+```
+
+- The important limitation: there must be no circular references.
+
+```
+let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  participants: ["john", "ann"]
+};
+
+meetup.place = room;       // meetup references room
+room.occupiedBy = meetup; // room references meetup
+
+JSON.stringify(meetup); // Error: Converting circular structure to JSON
+```
+
+- Excluding and transforming: replacer
+	- `let json = JSON.stringify(value[, replacer, space])`
+	- JSON.stringify is used with the first argument only. But if we need to fine-tune the replacement process, like to filter out circular references, we can use the second argument of JSON.stringify.
+
+```
+let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  participants: [{name: "John"}, {name: "Alice"}],
+  place: room // meetup references room
+};
+
+room.occupiedBy = meetup; // room references meetup
+
+alert( JSON.stringify(meetup, ['title', 'participants', 'place', 'name', 'number']) );
+/*
+{
+  "title":"Conference",
+  "participants":[{"name":"John"},{"name":"Alice"}],
+  "place":{"number":23}
+}
+*/
+```
 
 ### Topics
 
