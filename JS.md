@@ -604,7 +604,7 @@ for (let i in arr) – never use.
 
 ##### Map, Set, WeakMap and WeakSet
 
-- **MAP*
+- **MAP**
 	- Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
 	- unlike objects, keys are not converted to strings. Any type of key is possible.
 
@@ -631,6 +631,213 @@ alert( map.get('1') ); // 'str1'
 alert( map.size ); // 3
 ```
 
+- **Map from Object**
+- When a Map is created, we can pass an array (or another iterable) with key-value pairs, like this:
+
+```
+// array of [key, value] pairs
+let map = new Map([
+  ['1',  'str1'],
+  [1,    'num1'],
+  [true, 'bool1']
+]);
+```
+
+- **Iteration over Map**
+	- For looping over a map, there are 3 methods:
+
+		- map.keys() – returns an iterable for keys,
+		- map.values() – returns an iterable for values,
+		- map.entries() – returns an iterable for entries [key, value], it’s used by default in for..of.
+
+```
+let recipeMap = new Map([
+  ['cucumber', 500],
+  ['tomatoes', 350],
+  ['onion',    50]
+]);
+
+// iterate over keys (vegetables)
+for (let vegetable of recipeMap.keys()) {
+  alert(vegetable); // cucumber, tomatoes, onion
+}
+
+// iterate over values (amounts)
+for (let amount of recipeMap.values()) {
+  alert(amount); // 500, 350, 50
+}
+
+// iterate over [key, value] entries
+for (let entry of recipeMap) { // the same as of recipeMap.entries()
+  alert(entry); // cucumber,500 (and so on)
+}
+```
+- **SET**
+	- A Set is a collection of values, where each value may occur only once.
+	- Its main methods are:
+		- new Set(iterable) – creates the set, optionally from an array of values (any iterable will do).
+		- set.add(value) – adds a value, returns the set itself.
+		- set.delete(value) – removes the value, returns true if value existed at the moment of - the call, otherwise false.
+		- set.has(value) – returns true if the value exists in the set, otherwise false.
+		- set.clear() – removes everything from the set.
+		- set.size – is the elements count.
+
+```
+let set = new Set();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+// visits, some users come multiple times
+set.add(john);
+set.add(pete);
+set.add(mary);
+set.add(john);
+set.add(mary);
+
+// set keeps only unique values
+alert( set.size ); // 3
+
+for (let user of set) {
+  alert(user.name); // John (then Pete and Mary)
+}
+```
+- Iteration over Set
+
+```
+let set = new Set(["oranges", "apples", "bananas"]);
+
+for (let value of set) alert(value);
+
+// the same with forEach:
+set.forEach((value, valueAgain, set) => {
+  alert(value);
+});
+```
+- set.keys() – returns an iterable object for values,
+- set.values() – same as set.keys, for compatibility with Map,
+- set.entries() – returns an iterable object for entries [value, value], exists for compatibility with Map.
+
+- **WeakMap**
+	- WeakMap is a variant of Map that allows only objects as keys and removes them once they become inaccessible by other means.
+	- It does not support operations on the structure as a whole: no size, no clear(), no iterations.
+
+- **WeakSet**
+	- WeakSet is a variant of Set that only stores objects and removes them once they become inaccessible by other means.
+
+- WeakSet/WeakMap is a special kind of Set/Map that does not prevent JavaScript from removing its items from memory.
+- Also does not support size/clear() and iterations.
+- WeakMap and WeakSet are used as “secondary” data structures in addition to the “main” object storage.
+- Once the object is removed from the main storage, if it is only found in the WeakMap/WeakSet, it will be cleaned up automatically.
+
+##### Destructuring assignment
+
+- Destructuring assignment is a special syntax that allows us to “unpack” arrays or objects into a bunch of variables, as sometimes they are more convenient. 
+
+```
+// let [item1 = default, item2, ...rest] = array
+// we have an array with the name and surname
+let arr = ["Ilya", "Kantor"]
+
+// destructuring assignment
+let [firstName, surname] = arr;
+
+alert(firstName); // Ilya
+alert(surname);  // Kantor
+```
+
+- **Object destructuring**
+
+The destructuring assignment also works with objects.
+
+```
+// let {prop : varName = default, ...} = object
+let options = {
+  title: "Menu",
+  width: 100,
+  height: 200
+};
+
+let {title, width, height} = options;
+
+alert(title);  // Menu
+alert(width);  // 100
+alert(height); // 200
+```
+
+```
+let options = {
+  title: "Menu"
+};
+
+// chnage name
+// assign value 
+// change order
+// function({
+//   incomingProperty: parameterName = defaultValue
+//.})
+let {
+	width: w = 100, 
+	height: h = 200, 
+	title
+	} = options;
+
+alert(title);  // Menu
+alert(w);      // 100
+alert(h);      // 200
+```
+
+- Smart function parameters 
+
+```
+let options = {
+  title: "My menu",
+  items: ["Item1", "Item2"]
+};
+
+function showMenu({
+  title = "Untitled",
+  width: w = 100,  // width goes to w
+  height: h = 200, // height goes to h
+  items: [item1, item2] // items first element goes to item1, second to item2
+}) {
+  alert( `${title} ${w} ${h}` ); // My Menu 100 200
+  alert( item1 ); // Item1
+  alert( item2 ); // Item2
+}
+
+showMenu(options);
+```
+
+##### Date and time
+
+- Use it to store creation/modification times, to measure time, or just to print out the current date.
+
+```
+new Date(year, month, date, hours, minutes, seconds, ms)
+```
+- Access date components
+	- getFullYear()
+	- getMonth()
+	- getDate()
+	- getHours()
+	- getMinutes()
+	- getSeconds()
+	- getMilliseconds()
+	- getTime()
+	- getTime()
+	- getTimezoneOffset()
+
+- Setting date components
+	- setFullYear(year [, month, date])
+	- setMonth(month [, date])
+	- setDate(date)
+	- setHours(hour [, min, sec, ms])
+	- setMinutes(min [, sec, ms])
+	- setSeconds(sec [, ms])
+	- setMilliseconds(ms)
+	- setTime(milliseconds)
 
 ### Topics
 
@@ -1482,7 +1689,7 @@ expression
 - NaN : Not a Number , NaN is not equal to anything, including NaN - NaN === NaN is false - NaN !== NaN is true
   -Equal and not equal : These operators can do type coercion
 
-## ---------------CODEACADEMY-----------------
+### ---------------CODEACADEMY-----------------
 
 #### Passing Objects into Functions
 
