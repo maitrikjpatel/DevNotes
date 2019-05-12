@@ -34,6 +34,7 @@ source: 'Github'
 - [JS Best Practice](https://www.thinkful.com/learn/javascript-best-practices-1/)
 - [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide)
 - [DOM manipulation in vanilla JS](https://medium.freecodecamp.org/dom-manipulation-in-vanilla-js-2036a568dcd9)
+- [Javascript variable definitions scope](https://medium.freecodecamp.org/the-visual-guide-to-javascript-variable-definitions-scope-2717ad9f0169)
 
 ### Tools
 
@@ -1179,6 +1180,8 @@ sayHi(); // Pete
 
 - Var : Global and Function scope
 	- var variables are either function-wide or global, they are visible through blocks.
+	- Variables have no block scope, they are visible minimum at the function level.
+	- Hoisting : Variable declarations are processed at function start.
 
 - Let : Will provide true block scoping, unlike var
 	- Ideal to use it for programming as it will help to avoid hosting.
@@ -1189,6 +1192,70 @@ sayHi(); // Pete
 	- Will shadow outer declaration
 	- Block Scoping
 	- We generally use upper case for constants that are “hard-coded”. Or, in other words, when the value is known prior to execution and directly written into the code.
+
+
+#### Global object
+- The global object provides variables and functions that are available anywhere.
+- “window” object
+	- "let/const" doesn't create a window property
+	- The value of this in the global scope is window.
+	-  All scripts share the same global scope, so variables declared in one <script> become visible in another ones:
+	```
+	// Window 1
+	<script>
+		var a = 1;
+		let b = 2;
+	</script>
+
+	// Window 2
+	<script>
+		alert(a); // 1
+		alert(b); // 2
+	</script>
+	```
+	- Different scripts (possibly from different sources) see variables of each other.
+	- The idea to merge multiple aspects into a single window object was to “make things simple", but the multi-purpose window is considered a design mistake in the language.
+	- Solution: 
+		- Using <script type="module"> fixes the design flaw of the language by separating top-level scope from window.
+		- Such script is considered a separate “module” with its own top-level scope (lexical environment).
+
+		```
+		<script type="module">
+		// ----- var x does not become a property of window -----
+		var x = 5;
+		alert(window.x); // undefined
+		// ----- this in a module is undefined -----
+		alert(this); // undefined
+		let x = 5;
+		</script>
+
+		<script type="module">
+			alert(window.x); // undefined
+			alert(x); // Error: undeclared variable
+		</script>
+		```
+	- Valid uses of the global object
+		- create “polyfills”: add functions that are not supported by the environment (say, an old browser), but exist in the modern standard.
+		```
+		if (!window.Promise) {
+			window.Promise = ... // custom implementation of the modern language feature
+		}
+		```
+
+
+#### Functional Object
+
+- Functions are objects.
+- JavaScript, functions are first-class objects, because they can have properties and methods just like any other object.
+- Named Function Expression
+	- Named Function Expression, or NFE, is a term for Function Expressions that have a name.
+	```
+	let sayHi = function func(who) {
+		alert(`Hello, ${who}`);
+	};
+	```
+	- It allows the function to reference itself internally.
+	- It is not visible outside of the function.
 
 
 ### Topics
