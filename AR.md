@@ -1,6 +1,6 @@
 ---
-date: '2019-01-01'
-publish: 'false'
+date: '2019-01-04'
+publish: 'true'
 category: 'note'
 author: 'Maitrik Patel'
 
