@@ -915,10 +915,11 @@ new Date(year, month, date, hours, minutes, seconds, ms)
 	}
 	*/
 	```
+
 - **JSON.parse**
-	- `let value = JSON.parse(str[, reviver]);`
 
 	```
+	//Syntax : let value = JSON.parse(str[, reviver]);
 	let schedule = `{
 		"meetups": [
 			{"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
@@ -1039,6 +1040,7 @@ let merged = [0, ...arr, 2, ...arr2];
 alert( [...str] ); // H,e,l,l,o
 alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
 ```
+
 #### Rest parameters vs spread operator.
 
 - There’s an easy way to distinguish between them:
@@ -1095,27 +1097,21 @@ sayHi(); // Pete
 	```
 	function makeWorker() {
 		let name = "Pete";
-
 		return function() {
 			alert(name);
 		};
 	}
-
 	let name = "John";
-
 	// create a function
 	let work = makeWorker();
-
 	// call it
 	work(); // Pete
 
 	// ----- Example Two ------
 
 	let count = 100;
-
 	function makeCounter() {
 		let count = 0;
-
 		return function() {
 			return count++; // has access to the outer counter
 		};
@@ -1178,6 +1174,21 @@ sayHi(); // Pete
 		alert("Unary plus starts the expression");
 	}();
 	```
+
+#### Var vs Let vs Const
+
+- Var : Global and Function scope
+	- var variables are either function-wide or global, they are visible through blocks.
+
+- Let : Will provide true block scoping, unlike var
+	- Ideal to use it for programming as it will help to avoid hosting.
+
+- Const
+	- will make variable Read only
+	- Never change , will give error if you try to change it.
+	- Will shadow outer declaration
+	- Block Scoping
+	- We generally use upper case for constants that are “hard-coded”. Or, in other words, when the value is known prior to execution and directly written into the code.
 
 
 ### Topics
