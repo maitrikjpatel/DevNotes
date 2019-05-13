@@ -87,8 +87,7 @@ console.log( typeof someObject );
 ```
 
 - We show how to use hasOwnProperty in the last two lines. It returns true or false, based on whether an object has a certain property.
-
-ObjectName["PropertyName"]
+- ObjectName["PropertyName"]
 
 ```
 var myObj = {
@@ -1256,6 +1255,222 @@ sayHi(); // Pete
 	```
 	- It allows the function to reference itself internally.
 	- It is not visible outside of the function.
+
+#### "new Function" Sysntax 
+
+- "new Function" allows to turn any string into a function.
+
+```
+// Sysntax 
+// let func = new Function ([arg1[, arg2[, ...argN]],] functionBody)
+
+let sum = new Function('a', 'b', 'return a + b');
+alert( sum(1, 2) ); // 3
+```
+
+- Functions created with new Function, have [[Environment]] referencing the global Lexical Environment, not the outer one. 
+- Hence, they cannot use outer variables. But that’s actually good, because it saves us from errors. Passing parameters explicitly is a much better method architecturally and causes no problems with minifiers.
+
+#### Scheduling: setTimeout and setInterval
+
+- setTimeout : allows to run a function once after the interval of time.
+
+```
+// syntax
+// `let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)`
+
+function sayHi(phrase, who) {
+  alert( phrase + ', ' + who );
+}
+setTimeout(sayHi, 1000, "Hello", "John"); // Hello, John
+```
+
+- setInterval : allows to run a function regularly with the interval between the runs.
+
+```
+// Syntax
+// let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...)
+
+// repeat with the interval of 2 seconds
+let timerId = setInterval(() => alert('tick'), 2000);
+// after 5 seconds stop
+setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+Modal
+```
+
+- Recursive setTimeout
+	- Recursive setTimeout guarantees a delay between the executions, while setInterval – does not.
+	- The real delay between func calls for setInterval is less than in the code because the time taken by func's execution “consumes” a part of the interval.
+
+```
+// he real delay between func calls for setInterval is less than in the code
+let i = 1;
+setInterval(function() {
+  func(i);
+}, 100);
+
+// The recursive setTimeout guarantees the fixed delay (here 100ms).
+let i = 1;
+setTimeout(function run() {
+  func(i);
+  setTimeout(run, 100);
+}, 100);
+```
+
+- Zero time scheduling
+	- Zero-timeout scheduling setTimeout(...,0) is used to schedule the call “as soon as possible, but after the current code is complete”.
+	```
+	setTimeout(() => alert("World"));
+	alert("Hello");
+	```
+	- The first line “puts the call into calendar after 0ms”. But the scheduler will only “check the calendar” after the current code is complete, so "Hello" is first, and "World" – after it
+	- Where do we use it ?
+		- Trick to split CPU-hungry tasks using setTimeout.
+		- To let the browser do something else while the process is going on (paint the progress bar).
+
+#### Decorators and forwarding, call/apply
+- Decorator is a wrapper around a function that alters its behavior. The main job is still carried out by the function.
+- Decorators can be seen as “features” or “aspects” that can be added to a function. We can add one or add many. And all this without changing its code!
+- To implement cachingDecorator, we studied methods:
+	- func.call(context, arg1, arg2…) – calls func with given context and arguments.
+	- func.apply(context, args) – calls func passing context as this and array-like args into a list of arguments.
+	- The generic call forwarding is usually done with apply:
+	```
+	let wrapper = function() {
+		return original.apply(this, arguments);
+	}
+	```
+
+#### Function binding, bind
+
+-  In JavaScript it’s easy to lose this. Once a method is passed somewhere separately from the object – this is lost.
+
+```
+let user = {
+  firstName: "John",
+  sayHi() {
+    alert(`Hello, ${this.firstName}!`);
+  }
+};
+
+setTimeout(user.sayHi, 1000); // Hello, undefined!
+```
+
+- Functions provide a built-in method bind that allows to fix this.
+- `let boundFunc = func.bind(context);`
+- The result of func.bind(context) is a special function-like “exotic object”, that is callable as function and transparently passes the call to func setting this=context.
+- Method func.bind(context, ...args) returns a “bound variant” of function func that fixes the context this and first arguments if given.
+
+```
+let user = {
+  firstName: "John",
+  say(phrase) {
+    alert(`${phrase}, ${this.firstName}!`);
+  }
+};
+
+let say = user.say.bind(user);
+
+say("Hello"); // Hello, John ("Hello" argument is passed to say)
+say("Bye"); // Bye, John ("Bye" is passed to say)
+```
+
+#### Partial Function 
+
+- partial function application – we create a new function by fixing some parameters of the existing one.
+- partial application is useful when we have a very generic function and want a less universal variant of it for convenience.
+
+```
+function mul(a, b) {
+  return a * b;
+}
+
+let double = mul.bind(null, 2);
+
+alert( double(3) ); // = mul(2, 3) = 6
+alert( double(4) ); // = mul(2, 4) = 8
+alert( double(5) ); // = mul(2, 5) = 10
+```
+
+#### Currying 
+
+- Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
+- The currying requires the function to have a known fixed number of arguments.
+- Currying is great when we want easy partials.
+
+```
+function curry(f) { // curry(f) does the currying transform
+  return function(a) {
+    return function(b) {
+      return f(a, b);
+    };
+  };
+}
+
+// usage
+function sum(a, b) {
+  return a + b;
+}
+
+let carriedSum = curry(sum);
+alert( carriedSum(1)(2) ); // 3
+```
+
+- Advanced currying allows the function to be both callable normally and partially.
+- Most implementations of currying in JavaScript are advanced, as described: they also keep the function callable in the multi-argument variant.
+```
+function curry(func) {
+
+  return function curried(...args) {
+    if (args.length >= func.length) {
+      return func.apply(this, args);
+    } else {
+      return function(...args2) {
+        return curried.apply(this, args.concat(args2));
+      }
+    }
+  };
+}
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+let curriedSum = curry(sum);
+
+alert( curriedSum(1, 2, 3) ); // 6, still callable normally
+alert( curriedSum(1)(2,3) ); // 6, currying of 1st arg
+alert( curriedSum(1)(2)(3) ); // 6, full currying
+```
+
+#### Arrow functions
+
+- Arrow functions have no “this”
+- Arrow functions do not have this. If this is accessed, it is taken from the outside.
+- Arrow functions can’t be used as constructors. They can’t be called with new.
+- Arrows have no “arguments”
+
+```
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+		// Traditional func will give error
+    this.students.forEach(function(student) {
+      // Error: Cannot read property 'title' of undefined
+      alert(this.title + ': ' + student)
+    });
+
+		// Arrow function will work 
+		this.students.forEach(
+      student => alert(this.title + ': ' + student)
+    );
+  }
+};
+
+group.showList();
+```
+
 
 
 ### Topics
