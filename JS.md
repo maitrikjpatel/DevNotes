@@ -1328,12 +1328,15 @@ setTimeout(function run() {
 		- Trick to split CPU-hungry tasks using setTimeout.
 		- To let the browser do something else while the process is going on (paint the progress bar).
 
-#### Decorators and forwarding, call/apply
-- Decorator is a wrapper around a function that alters its behavior. The main job is still carried out by the function.
-- Decorators can be seen as “features” or “aspects” that can be added to a function. We can add one or add many. And all this without changing its code!
-- To implement cachingDecorator, we studied methods:
+#### Call / Apply / Bind
+- Call
+	- The call() method is used to call a function with a given this and arguments provided to it individually.
 	- func.call(context, arg1, arg2…) – calls func with given context and arguments.
-	- func.apply(context, args) – calls func passing context as this and array-like args into a list of arguments.
+
+- Apply
+	- The apply() method is an important method of the function prototype and is used to call other functions with a provided this keyword value and arguments provided in the form of array or an array like object.
+
+	- func.apply(context, [args]) – calls func passing context as this and array-like args into a list of arguments.
 	- The generic call forwarding is usually done with apply:
 	```
 	let wrapper = function() {
@@ -1341,39 +1344,40 @@ setTimeout(function run() {
 	}
 	```
 
-#### Function binding, bind
+- Bind
+	-  In JavaScript it’s easy to lose this. Once a method is passed somewhere separately from the object – this is lost.
+	- The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called. 
 
--  In JavaScript it’s easy to lose this. Once a method is passed somewhere separately from the object – this is lost.
+	```
+	let user = {
+		firstName: "John",
+		sayHi() {
+			alert(`Hello, ${this.firstName}!`);
+		}
+	};
 
-```
-let user = {
-  firstName: "John",
-  sayHi() {
-    alert(`Hello, ${this.firstName}!`);
-  }
-};
+	setTimeout(user.sayHi, 1000); // Hello, undefined!
+	// When setTimeout invokes it later, this will refer to something useless
+	```
+	- Functions provide a built-in method bind that allows to fix this.
+	- `let boundFunc = func.bind(context);`
+	- The result of func.bind(context) is a special function-like “exotic object”, that is callable as function and transparently passes the call to func setting this=context.
+	- Method func.bind(context, ...args) returns a “bound variant” of function func that fixes the context this and first arguments if given.
 
-setTimeout(user.sayHi, 1000); // Hello, undefined!
-```
+		```
+	let user = {
+		firstName: "John",
+		say(phrase) {
+			alert(`${phrase}, ${this.firstName}!`);
+		}
+	};
 
-- Functions provide a built-in method bind that allows to fix this.
-- `let boundFunc = func.bind(context);`
-- The result of func.bind(context) is a special function-like “exotic object”, that is callable as function and transparently passes the call to func setting this=context.
-- Method func.bind(context, ...args) returns a “bound variant” of function func that fixes the context this and first arguments if given.
+	let say = user.say.bind(user);
 
-```
-let user = {
-  firstName: "John",
-  say(phrase) {
-    alert(`${phrase}, ${this.firstName}!`);
-  }
-};
-
-let say = user.say.bind(user);
-
-say("Hello"); // Hello, John ("Hello" argument is passed to say)
-say("Bye"); // Bye, John ("Bye" is passed to say)
-```
+	say("Hello"); // Hello, John ("Hello" argument is passed to say)
+	say("Bye"); // Bye, John ("Bye" is passed to say)
+	```
+-  apply(), call(), and bind() all take a this argument as a context to execute a function in, but call() and apply() invoke the function immediately where bind() returns a function that we can pass around or store as needed. 
 
 #### Partial Function 
 
@@ -1418,6 +1422,7 @@ alert( carriedSum(1)(2) ); // 3
 
 - Advanced currying allows the function to be both callable normally and partially.
 - Most implementations of currying in JavaScript are advanced, as described: they also keep the function callable in the multi-argument variant.
+
 ```
 function curry(func) {
 
@@ -1471,6 +1476,248 @@ let group = {
 group.showList();
 ```
 
+#### Property flags and descriptors
+
+- Objects can store properties and property was a simple “key-value” pair to us.
+- However, Object properties, besides a value, have three special attributes (so-called “flags”)
+	- writable – if true, can be changed, otherwise it’s read-only.
+	- enumerable – if true, then listed in loops, otherwise not listed.
+	- configurable – if true, the property can be deleted and these attributes can be modified, otherwise not.
+
+	- Object.getOwnPropertyDescriptor allows to query the full information about a property.
+
+	```
+	// Syntax : Object.getOwnPropertyDescriptor(obj, propertyName);
+	let user = {
+		name: "John"
+	};
+
+	let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+
+	alert( JSON.stringify(descriptor, null, 2 ) );
+	/* property descriptor:
+	{
+		"value": "John",
+		"writable": true,
+		"enumerable": true,
+		"configurable": true
+	}
+	*/
+	```
+
+	- Object.defineProperty allows to change property.
+
+	```
+	// Syntax : Object.defineProperty(obj, propertyName, descriptor)
+	// For Multiple properties : Object.defineProperties(obj, descriptors)
+	let user = {};
+
+	Object.defineProperty(user, "name", {
+		value: "John",
+		writable: false,
+		enumerable: true,
+  	configurable: true
+	});
+
+	let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+
+	alert( JSON.stringify(descriptor, null, 2 ) );
+	/*
+	{
+		"value": "John",
+		"writable": false,
+		"enumerable": true,
+		"configurable": true
+	}
+	*/
+	```
+
+#### Property Getter and Setters
+
+- Two type of property in object. 
+	- data properties : 
+	- accessor properties : essentially functions that work on getting and setting a value
+		- Accessor properties are only accessible with get/set.
+		- get – a function without arguments, that works when a property is read,
+		- set – a function with one argument, that is called when the property is set,
+		- enumerable – same as for data properties,
+		- configurable – same as for data properties.
+
+	```
+	let user = {
+		name: "John",
+		surname: "Smith",
+
+		get fullName() {
+			return `${this.name} ${this.surname}`;
+		},
+
+		set fullName(value) {
+			[this.name, this.surname] = value.split(" ");
+		}
+	};
+
+	// set fullName is executed with the given value.
+	user.fullName = "Alice Cooper";
+
+	alert(user.name); // Alice
+	alert(user.surname); // Cooper
+	```
+
+	- Smarter getters/setters
+		- Getters/setters can be used as wrappers over “real” property values to gain more control over them.
+
+		```
+		let user = {
+			get name() {
+				return this._name;
+			},
+
+			set name(value) {
+				if (value.length < 4) {
+					alert("Name is too short, need at least 4 characters");
+					return;
+				}
+				this._name = value;
+			}
+		};
+
+		user.name = "Pete";
+		alert(user.name); // Pete
+
+		user.name = ""; // Name is too short...
+		```
+
+#### Prototypal inheritance
+
+- Prototypes are the mechanism by which JavaScript objects inherit features from one another. 
+- In JavaScript, all objects have a hidden [[Prototype]] property that’s either another object or null.
+
+```
+let animal = {
+  eats: true,
+  walk() {
+    alert("Animal walk");
+  }
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+let longEar = {
+  earLength: 10,
+  __proto__: rabbit
+};
+
+// walk is taken from the prototype chain
+longEar.walk(); // Animal walk
+alert(longEar.jumps); // true (from rabbit)
+```
+
+- There are actually only two limitations:
+	- The references can’t go in circles. JavaScript will throw an error if we try to assign __proto__ in a circle.
+	- The value of __proto__ can be either an object or null, other types (like primitives) are ignored.
+
+- “this” : 
+	- No matter where the method is found: in an object or its prototype. In a method call, "this" is always the object before the dot "object.method()".
+	- If we call obj.method(), and the method is taken from the prototype, this still references obj. So methods always work with the current object even if they are inherited.
+	- In inheritance methods are shared, but the object state is not.
+
+#### F.prtotype
+- Setting a [[Prototype]] for objects created via a constructor function
+- F.prototype only used at new F time
+
+```
+let animal = {
+  eats: true
+};
+function Rabbit(name) {
+  this.name = name;
+}
+Rabbit.prototype = animal;
+let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
+alert( rabbit.eats ); // true
+```
+
+#### Native prototypes
+
+- The "prototype" property is widely used by the core of JavaScript itself. All built-in constructor functions use it.
+- Object.prototype
+	- obj = {} is the same as obj = new Object(), where Object is a built-in object constructor function, with its own prototype referencing a huge object with toString and other methods.
+	```
+	let obj = {};
+	alert(obj.__proto__ === Object.prototype); // true
+	// obj.toString === obj.__proto__.toString == Object.prototype.toString
+	// obj -> Object.prototype -> null
+	```
+- built-in objects : Array, Date, Function
+	- Array/Date/Function ->  Array/Date/Function.prototype (provides Array/Date/Function methods) ->  Object.prototype (provides toString, object methods...). -> null
+	- By specification, all of the built-in prototypes have Object.prototype on the top. Sometimes people say that “everything inherits from objects”.
+	
+	```
+	// ----- Array ------
+	let arr = [1, 2, 3];
+	// it inherits from Array.prototype?
+	alert( arr.__proto__ === Array.prototype ); // true
+	// then from Object.prototype?
+	alert( arr.__proto__.__proto__ === Object.prototype ); // true
+	// and null on the top.
+	alert( arr.__proto__.__proto__.__proto__ ); // null
+	// the result of Array.prototype.toString
+	alert(arr); // 1,2,3 
+
+	// ----- Function -------
+	function f() {}
+	// it inherits from Function.prototype?
+	alert(f.__proto__ == Function.prototype); // true
+	// then from Object.prototype?
+	alert(f.__proto__.__proto__ == Object.prototype); // true, inherit from objects
+	```
+
+- Primitives
+	- strings, numbers and booleans are not object. But....
+		- They are not objects. But if we try to access their properties, then temporary wrapper objects are created using built-in constructors String, Number, Boolean, they provide the methods and disappear.
+	- null and undefined have no corresponding prototypes too
+
+- Changing native prototypes
+	- Native prototypes can be modified. For instance, if we add a method to String.prototype, it becomes available to all strings:
+	- During the process of development, we may have ideas for new built-in methods we’d like to have, and we may be tempted to add them to native prototypes. But that is generally a bad idea.
+	- In modern programming, there is only one case where modifying native prototypes is approved. That’s polyfilling.
+
+	```
+	String.prototype.show = function() {
+		alert(this);
+	};
+
+	"BOOM!".show(); // BOOM!
+	```
+
+#### Prototype methods, objects without __proto__
+
+- Modern Prototype methods
+	- Object.create(proto[, descriptors]) –  creates an empty object with given proto as [[Prototype]] (can be null) and optional property descriptors.
+		- Object.create provides an easy way to shallow-copy an object with all descriptors:
+		- `let clone = Object.create(Object.getPrototypeOf(obj), Object.getOwnPropertyDescriptors(obj));`
+	- Object.getPrototypeOf(obj) – returns the [[Prototype]] of obj (same as __proto__ getter).
+	- Object.setPrototypeOf(obj, proto) – sets the [[Prototype]] of obj to proto (same as __proto__ setter).
+- The built-in __proto__ getter/setter is unsafe if we’d want to put user-generated keys in to an object. 
+- `Object.create(null)` to create a “very plain” object without __proto__
+
+```
+let animal = {
+  eats: true
+};
+
+// create a new object with animal as a prototype
+let rabbit = Object.create(animal);
+
+alert(rabbit.eats); // true
+alert(Object.getPrototypeOf(rabbit) === animal); // get the prototype of rabbit
+
+Object.setPrototypeOf(rabbit, {}); // change the prototype of rabbit to {}
+```
 
 
 ### Topics
@@ -1695,190 +1942,3 @@ expression
 
 - NaN : Not a Number , NaN is not equal to anything, including NaN - NaN === NaN is false - NaN !== NaN is true
   -Equal and not equal : These operators can do type coercion
-
-### ---------------CODEACADEMY-----------------
-
-#### Passing Objects into Functions
-
-- Making arrays of Objects, we can use objects as parameters for functions as well. That way, these functions can take advantage of the methods and properties that a certain object type provides.
-
-```
-// Our person constructor
-function Person (name, age) {
-		this.name = name;
-		this.age = age;
-}
-
-// We can make a function which takes persons as arguments
-// This one computes the difference in ages between two people
-var ageDifference = function(person1, person2) {
-		return person1.age - person2.age;
-}
-
-var alice = new Person("Alice", 30);
-var billy = new Person("Billy", 25);
-
-// get the difference in age between alice and billy using our function
-var diff = ageDifference(alice,billy)
-```
-
-#### Getting IN-timate
-
-- To print out all elements and properties, we can use a for/in loop, like this:
-
-```
-for(var property in dog) {
-	console.log(property);
-}
-
-// write a for-in loop to print the value of nyc's properties
-for(var x in nyc) {
-	console.log(nyc[x]);
-}
-```
-
-#### Prototype
-
-- What a class has or doesn't have? That is the job of the prototype.
-- JavaScript automatically defines the prototype for class with a constructor.
-- If you want to add a method to a class such that all members of the class can use it, we use the following syntax to extend the prototype:
-
-```
-className.prototype.newMethod = function() {
-	statements;
-};
-//-----
-function Dog (breed) {
-	this.breed = breed;
-}
-Dog.prototype.bark = function() {
-	console.log("Woof");
-};
-var buddy = new Dog("golden Retriever");
-var snoopy = new Dog("Beagle");
-snoopy.bark();
-buddy.bark();
-```
-
-#### DRY Penguins - Inheritance
-
-- In object-oriented programming, inheritance allows one class to see and use the methods and properties of another class. You can think of it as a child being able to use his or her parent's money because the child inherits the money.
-
-- We will learn more about inheritance as we continue this lesson, but for now let's just refresh our memories about how classes and object
-
-- **Prototype chain**
-
-	- If JavaScript encounters something it can't find in the current class's methods or properties, it looks up the prototype chain to see if it's defined in a class that it inherits from. This keeps going upwards until it stops all the way at the top: the mighty Object.prototype (more on this later).
-
-```
-// original classes
-function Animal(name, numLegs) {
-		this.name = name;
-		this.numLegs = numLegs;
-		this.isAlive = true;
-}
-function Penguin(name) {
-		this.name = name;
-		this.numLegs = 2;
-}
-function Emperor(name) {
-		this.name = name;
-		this.saying = "Waddle waddle";
-}
-
-// set up the prototype chain
-Penguin.prototype = new Animal();
-Emperor.prototype = new Penguin();
-
-var myEmperor = new Emperor("Jules");
-
-console.log(myEmperor.saying); // should print "Waddle waddle"
-console.log(myEmperor.numLegs); // should print 2
-console.log(myEmperor.isAlive); // should print true
-```
-
-#### Private Number and Methods
-
-- Just as functions can have local variables which can only be accessed from within that function, objects can have private variables. Private variables are pieces of information you do not want to publicly share, and they can only be directly accessed from within the class.
-
-```
-function Person(first,last,age) {
-	this.firstname = first;
-	this.lastname = last;
-	this.age = age;
-	var bankBalance = 7500; // PRIVATE NUMBER
-
-	var returnBalance = function() {
-		return bankBalance;
-	};
-
-	// create the new function here
-	this.askTeller = function() {
-		return returnBalance;
-	};
-}
-
-var john = new Person('John','Smith',30);
-console.log(john.returnBalance);
-var myBalanceMethod = john.askTeller();
-var myBalance = myBalanceMethod();
-console.log(myBalance);
-```
-
-#### Pseudoclassical Inheritance
-
-```
-function Gizmo(id) {
-	this.id = id;
-}
-Gizmo.prototype.toString = function () {
-	return "gizmo " + this.id;
-};
-function Hoozit(id) {
-	this.id = id;
-}
-Hoozit.prototype = new Gizmo();
-Hoozit.prototype.test = function (id) {
-	return this.id === id;
-};
-```
-
-#### Functional Inheritance
-
-```
-function gizmo(id) {
-	return {
-		id: id,
-		toString: function () {
-			return "gizmo " + this.id;
-		}
-	};
-}
-function hoozit(id) {
-	var that = gizmo(id);
-	that.test = function (testid) {
-		return testid === this.id;
-	};
-	return that;
-}
-```
-
-#### MONAD
-
-- Monad is a design pattern used to describe computations as a series of steps. They are extensively used in pure functional programming languages to manage side effects but can also be used in multiparadigm languages to control complexity.
-
-```
-function MONAD() {
-	return function unit(value) {
-		var monad = Object.create(null);
-		monad.bind = function (func) {
-			return func(value);
-		};
-		return monad;
-	};
-}
-
-var identity = MONAD();
-var monad = identity("Hello world.");
-monad.bind(alert);
-```
