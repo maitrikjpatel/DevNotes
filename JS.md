@@ -1364,7 +1364,7 @@ setTimeout(function run() {
 	- The result of func.bind(context) is a special function-like “exotic object”, that is callable as function and transparently passes the call to func setting this=context.
 	- Method func.bind(context, ...args) returns a “bound variant” of function func that fixes the context this and first arguments if given.
 
-		```
+	```
 	let user = {
 		firstName: "John",
 		say(phrase) {
