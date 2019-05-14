@@ -1720,6 +1720,364 @@ Object.setPrototypeOf(rabbit, {}); // change the prototype of rabbit to {}
 ```
 
 
+
+#### Class 
+
+- A class is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).
+- MyClass is technically a function, while methods are written to MyClass.prototype.
+
+```
+lass MyClass {
+  prop = value; // field
+
+  constructor(...) { // constructor
+    // ...
+  }
+
+  method(...) {} // method
+
+  get something(...) {} // getter method
+  set something(...) {} // setter method
+
+  [Symbol.iterator]() {} // method with computed name/symbol name
+  // ...
+}
+```
+
+- What is class ? : a class is a kind of a function.
+
+```
+class User {
+  constructor(name) { this.name = name; }
+  sayHi() { alert(this.name); }
+}
+
+// proof: User is a function
+alert(typeof User); // function
+
+// ...or, more precisely, the constructor method
+alert(User === User.prototype.constructor); // true
+
+// The methods are in User.prototype, e.g:
+alert(User.prototype.sayHi); // alert(this.name);
+
+// there are exactly two methods in the prototype
+alert(Object.getOwnPropertyNames(User.prototype)); // constructor, sayHi
+```
+
+- Sometimes people say that class is a “syntax sugar” in JavaScript,because we could actually declare class without class keyword.
+- there are important differences
+	1. a function created by class is labelled by a special internal property [[FunctionKind]]:"classConstructor". So it’s not entirely the same as creating it manually.
+	2. Class methods are non-enumerable. A class definition sets enumerable flag to false for all methods in the "prototype".
+	3. Classes always use strict. All code inside the class construct is automatically in strict mode.
+
+- Class Expression
+
+```
+let User = class MyClass {
+  sayHi() {
+    alert(MyClass); // MyClass is visible only inside the class
+  }
+};
+
+new User().sayHi(); // works, shows MyClass definition
+alert(MyClass); // error, MyClass not visible outside of the class
+```
+
+#### Class inheritance
+
+- To inherit from another class, we should specify "extends" and the parent class before the braces {..}.
+
+```
+class Animal {
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+  run(speed) {
+    this.speed += speed;
+    alert(`${this.name} runs with speed ${this.speed}.`);
+  }
+  stop() {
+    this.speed = 0;
+    alert(`${this.name} stopped.`);
+  }
+}
+
+// Inherit from Animal by specifying "extends Animal"
+class Rabbit extends Animal {
+  hide() {
+    alert(`${this.name} hides!`);
+  }
+}
+
+let rabbit = new Rabbit("White Rabbit");
+
+rabbit.run(5); // White Rabbit runs with speed 5.
+rabbit.hide(); // White Rabbit hides!
+```
+
+- Any expression is allowed after extends
+- `class User extends f("Hello") {}`
+
+- Overriding a method and constructor
+	- Classes provide "super" keyword for that.
+	- super.method(...) to call a parent method.
+	- super(...) to call a parent constructor (inside our constructor only).
+	- Arrow functions have no super
+	- Constructors in inheriting classes must call super(...), and (!) do it before using this.
+
+#### Static properties and methods
+
+- Static method calls are made directly on the class and are not callable on instances of the class. Static methods are often used to create utility functions.
+- Static methods are used for the functionality that belongs to the class as a whole.
+- Static properties are used when we’d like to store class-level data, also not bound to an instance.
+
+```
+class MyClass {
+  static property = ...;
+
+  static method() {
+    ...
+  }
+}
+```
+
+#### Private and protected properties and methods
+- In terms of OOP, delimiting of the internal interface from the external one is called encapsulation.
+- Coffee machine outside and inside, Programming objects are like coffee machines.
+- JavaScript, there are three types of properties and members:
+	- Public: accessible from anywhere. They comprise the external interface. Till now we were only using public properties and methods.
+	- Protected: accessible only from inside the class and those extending it.
+		- Protected properties are usually prefixed with an underscore _. "_waterAmount" 
+		- That’s a well-known convention, not enforced at the language level. Programmers should only access a field starting with _ from its class and classes inheriting from it.
+		- Use getter/setter syntax to setup.
+		
+		```
+		class CoffeeMachine {
+			_waterAmount = 0;
+
+			set waterAmount(value) {
+				if (value < 0) throw new Error("Negative water");
+				this._waterAmount = value;
+			}
+
+			get waterAmount() {
+				return this._waterAmount;
+			}
+
+			constructor(power) {
+				this._power = power;
+			}
+
+		}
+
+		// create the coffee machine
+		let coffeeMachine = new CoffeeMachine(100);
+
+		// add water
+		coffeeMachine.waterAmount = -10; // Error: Negative water
+		```
+	- Private: accessible only from inside the class. These are for the internal interface.	
+		- Privates should start with #. They are only accessible from inside the class.
+		- On the language level, # is a special sign that the field is private. We can’t access it from outside or from inheriting classes.
+		```
+		class CoffeeMachine {
+			#waterLimit = 200;
+
+			#checkWater(value) {
+				if (value < 0) throw new Error("Negative water");
+				if (value > this.#waterLimit) throw new Error("Too much water");
+			}
+
+			_waterAmount = 0;
+
+			set waterAmount(value) {
+				this.#checkWater(value);
+
+				this._waterAmount = value;
+			}
+
+			get waterAmount() {
+				return this.waterAmount;
+			}
+
+		}
+
+		let coffeeMachine = new CoffeeMachine();
+
+		coffeeMachine.#checkWater(); // Error
+		coffeeMachine.#waterLimit = 1000; // Error
+
+		coffeeMachine.waterAmount = 100; // Works
+		```
+
+#### Extending built-in classes
+- Built-in classes like Array, Map and others are extendable also.
+- Built-in methods like filter, map and others – return new objects of exactly the inherited type. They rely on the constructor property to do so.
+- `arr.constructor === PowerArray`
+```
+// here PowerArray inherits from the native Array:
+// add one more method to it (can do more)
+class PowerArray extends Array {
+  isEmpty() {
+    return this.length === 0;
+  }
+}
+
+let arr = new PowerArray(1, 2, 5, 10, 50);
+alert(arr.isEmpty()); // false
+
+let filteredArr = arr.filter(item => item >= 10);
+alert(filteredArr); // 10, 50
+alert(filteredArr.isEmpty()); // false
+```
+ 
+#### Class checking: "instanceof"
+- The instanceof operator allows to check whether an object belongs to a certain class. It also takes inheritance into account.
+
+```
+class Rabbit {}
+let rabbit = new Rabbit();
+
+// is it an object of Rabbit class?
+alert( rabbit instanceof Rabbit ); // true
+
+// works with constructor functions instead of class
+function Rabbit() {}
+alert( new Rabbit() instanceof Rabbit ); // true
+
+// built-in classes like Array:
+let arr = [1, 2, 3];
+alert( arr instanceof Array ); // true
+alert( arr instanceof Object ); // true
+```
+
+#### Mixins
+- We can only inherit from a single object. There can be only one [[Prototype]] for an object.
+- A class may extend only one other class.
+- Sometimes that feels limiting
+- A mixin is a class that contains methods for use by other classes without having to be the parent class of those other classes.
+- A mixin provides methods that implement a certain behavior, but we do not use it alone, we use it to add the behavior to other classes.
+- Mixins may become a point of conflict if they occasionally overwrite native class methods. So generally one should think well about the naming for a mixin, to minimize such possibility.
+
+```
+let sayMixin = {
+  say(phrase) {
+    alert(phrase);
+  }
+};
+
+let sayHiMixin = {
+  __proto__: sayMixin, // (or we could use Object.create to set the prototype here)
+
+  sayHi() {
+    // call parent method
+    super.say(`Hello ${this.name}`);
+  },
+  sayBye() {
+    super.say(`Bye ${this.name}`);
+  }
+};
+
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+// copy the methods
+Object.assign(User.prototype, sayHiMixin);
+
+// now User can say hi
+new User("Dude").sayHi(); // Hello Dude!
+```
+
+#### Error handling, "try..catch"
+- The try..catch construct has two main blocks: try, and then catch:
+- try..catch to work, the code must be runnable means javascript code required to be syntactically correct.
+ ```
+try {
+  // code...
+} catch (err) {
+  // error handling
+}
+// ---- Example -----
+try {
+  alert('Start of try runs');  // (1) <--
+  lalala; // error, variable is not defined!
+  alert('End of try (never reached)');  // (2)
+} catch(err) {
+  alert(`Error has occurred!`); // (3) <--
+
+	alert(err); // (4) <-- ReferenceError: lalala is not defined
+	alert(err.name); // ReferenceError
+  alert(err.message); // lalala is not defined
+  alert(err.stack); // ReferenceError: lalala is not defined at ...
+}
+alert("...Then the execution continues");
+```
+
+- Real life example, If json is malformed, JSON.parse generates an error, so the script “dies”.
+
+```
+let json = "{ bad json }";
+
+try {
+
+  let user = JSON.parse(json); // <-- when an error occurs...
+  alert( user.name ); // doesn't work
+
+} catch (e) {
+  // ...the execution jumps here
+  alert( "Our apologies, the data has errors, we'll try to request it one more time." );
+  alert( e.name );
+  alert( e.message );
+}
+```
+
+- Throw and Rethrowing
+
+```
+let json = '{ "age": 30 }'; // incomplete data
+try {
+  let user = JSON.parse(json);
+  if (!user.name) {
+    throw new SyntaxError("Incomplete data: no name"); // throw
+  }
+  blabla(); // unexpected error
+  alert( user.name );
+
+} catch(e) {
+  if (e.name == "SyntaxError") {
+    alert( "JSON Error: " + e.message );
+  } else {
+    throw e; // rethrow (*)
+  }
+}
+```
+
+- try…catch…finally
+	-  The finally clause works in case of any exit from try..catch, even via the return statement: right after try..catch is done, but before the calling code gets the control.
+	- The try..catch construct may have one more code clause: finally.
+	- The code has two ways of execution:
+		- If you answer “Yes” to “Make an error?”, then try -> catch -> finally.
+		- If you say “No”, then try -> finally.
+	- The finally clause is often used when code start doing something before try..catch and want to finalize it in any case of outcome.
+
+		```
+		try {
+			... try to execute the code ...
+		} catch(e) {
+			... handle errors ...
+		} finally {
+			... execute always ...
+		}
+		```
+- Even if we don’t have try..catch, most environments allow to setup a “global” error handler to catch errors that “fall out”. In-browser that’s window.onerror.
+
+
+
 ### Topics
 
 #### Hoisting
