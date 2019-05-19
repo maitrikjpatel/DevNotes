@@ -265,10 +265,11 @@ do{
 
 - Let's go back to the analogy of computer languages being like regular spoken languages. In English, you have nouns (which you can think of as "things") and verbs (which you can think of as "actions"). Until now, our nouns (data, such as numbers, strings, or variables) and verbs (functions) have been separate.
 
-- A constructor, as its name suggests, is designed to create and set up multiple instances of an object. 
+- A constructor, as its name suggests, is designed to create and set up multiple instances of an object.
 - An object literal on the other hand is one-off, like string and number literals, and used more often as configuration objects or global singletons (e.g. for namespacing).
-	- **Object literal:**
-		- Literal notation creates a single object. Literal notation uses **curly brackets { }** and the object's default properties are defined within the brackets using **property:value** notation.
+
+- **Object literal:**
+	- Literal notation creates a single object. Literal notation uses **curly brackets { }** and the object's default properties are defined within the brackets using **property:value** notation.
 
 	```
 	var objectName = {};
@@ -286,11 +287,11 @@ do{
 	}
 	```
 
-	- **Object constructor:**
+- **Object constructor:**
 
-		- When we write **bob = new Object( );** we are using a built-in constructor called Object. This constructor is already defined by the JavaScript language and just makes an object with **no properties or methods.**
+	- When we write **bob = new Object( );** we are using a built-in constructor called Object. This constructor is already defined by the JavaScript language and just makes an object with **no properties or methods.**
 
-		- Constructor notation involves defining an object constructor. And like defining a function, we use the function keyword. You can think of this constructor as a "template" from which you can create multiple objects. To create a new object from a constructor, we use the new keyword.
+	- Constructor notation involves defining an object constructor. And like defining a function, we use the function keyword. You can think of this constructor as a "template" from which you can create multiple objects. To create a new object from a constructor, we use the new keyword.
 
 	```
 	function Object(){
@@ -310,13 +311,10 @@ do{
 	var gabby = new Person("student",true);
 	```
 
-	- **Differences between constructor and literal**
-
-		- The constructor object has its properties and methods defined with the keyword 'this' in front of it, whereas the literal version does not.
-
-		- In the constructor object the properties/methods have their 'values' defined after an equal sign '=' whereas in the literal version, they are defined after a colon ':'.
-
-		- The constructor function can have (optional) semi-colons ';' at the end of each property/method declaration whereas in the literal version if you have more than one property or method, they MUST be separated with a comma ',', and they CANNOT have semi-colons after them, otherwise JavaScript will return an error.
+- **Differences between constructor and literal**
+	- The constructor object has its properties and methods defined with the keyword 'this' in front of it, whereas the literal version does not.
+	- In the constructor object the properties/methods have their 'values' defined after an equal sign '=' whereas in the literal version, they are defined after a colon ':'.
+	- The constructor function can have (optional) semi-colons ';' at the end of each property/method declaration whereas in the literal version if you have more than one property or method, they MUST be separated with a comma ',', and they CANNOT have semi-colons after them, otherwise JavaScript will return an error.
 
 - **Bracket Notation : ObjectName["PropertyName"]**
 
@@ -559,6 +557,8 @@ for (let i in arr) – never use.
 ```
 
 - We can use an array as a deque with the following operations:
+- sort(), reverse() and splice() modify the array itself.
+- slice(), concat() and map() create a new array.
 
 -	**To add/remove elements:**
 	- push(...items) adds items to the end.
@@ -584,8 +584,11 @@ for (let i in arr) – never use.
 	- reverse() – reverses the array in-place, then returns it.
 	- split/join – convert a string to array and back.
 	- reduce(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
-	- sort(), reverse() and splice() modify the array itself.
-	- slice(), concat() and map() create a new array.
+	```
+	let value = arr.reduce(function(previousValue, item, index, array) {
+		// ...
+	}, initial);
+	```
 
 - **Additionally:**
 	- Array.isArray(arr) checks arr for being an array.
@@ -764,12 +767,6 @@ let {title, width, height} = options;
 alert(title);  // Menu
 alert(width);  // 100
 alert(height); // 200
-```
-
-```
-let options = {
-  title: "Menu"
-};
 
 // chnage name
 // assign value 
@@ -777,6 +774,11 @@ let options = {
 // function({
 //   incomingProperty: parameterName = defaultValue
 //.})
+
+let options = {
+  title: "Menu"
+};
+
 let {
 	width: w = 100, 
 	height: h = 200, 
