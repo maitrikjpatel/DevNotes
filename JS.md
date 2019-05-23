@@ -1270,7 +1270,7 @@ let sum = new Function('a', 'b', 'return a + b');
 alert( sum(1, 2) ); // 3
 ```
 
-- Functions created with new Function, have [[Environment]] referencing the global Lexical Environment, not the outer one. 
+- Functions created with new Function, have [[Environment]] referencing the global Lexical Environment, not the outer one.
 - Hence, they cannot use outer variables. But that’s actually good, because it saves us from errors. Passing parameters explicitly is a much better method architecturally and causes no problems with minifiers.
 
 #### Scheduling: setTimeout and setInterval
@@ -1333,12 +1333,12 @@ setTimeout(function run() {
 #### Call / Apply / Bind
 - Call
 	- The call() method is used to call a function with a given this and arguments provided to it individually.
-	- func.call(context, arg1, arg2…) – calls func with given context and arguments.
+	- myFunc.call(context, arg1, arg2…) – calls func with given context and arguments.
 
 - Apply
 	- The apply() method is an important method of the function prototype and is used to call other functions with a provided this keyword value and arguments provided in the form of array or an array like object.
 
-	- func.apply(context, [args]) – calls func passing context as this and array-like args into a list of arguments.
+	- myFunc.apply(context, [args]) – calls func passing context as this and array-like args into a list of arguments.
 	- The generic call forwarding is usually done with apply:
 	```
 	let wrapper = function() {
