@@ -1199,7 +1199,8 @@ sayHi(); // Pete
 - “window” object
 	- "let/const" doesn't create a window property
 	- The value of this in the global scope is window.
-	-  All scripts share the same global scope, so variables declared in one <script> become visible in another ones:
+	-  All scripts share the same global scope, so variables declared in one "<script/>" become visible in another ones:
+
 	```
 	// Window 1
 	<script>
