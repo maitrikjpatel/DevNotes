@@ -513,8 +513,8 @@ sayHi(); // undefined
 
 - There are 3 types of quotes. Backticks allow a string to span multiple lines and embed expressions.
 - Strings in JavaScript are encoded using UTF-16.
-- We can use special characters like \n and insert letters by their unicode using \u....
-- To get a character, use: [].
+- We can use special characters like "\n" and insert letters by their unicode using "\u...."	
+- To get a character, use: "[]".
 - To get a substring, use: slice or substring.
 - To lowercase/uppercase a string, use: toLowerCase/toUpperCase.
 - To look for a substring, use: indexOf, or includes/startsWith/endsWith for simple checks.
