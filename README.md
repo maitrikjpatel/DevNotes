@@ -16,7 +16,7 @@ Following is list of notes which I use in day to day development work.
 
 ## Dev Notes
 
-- [Front End Development](Front_End_Development.md)
+- [Front End Development](FrontEndDevelopment.md)
 - [Javascript](JS.md)
 - [Javascript ES6](ES6.md)
 - [React](React.md)

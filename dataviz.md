@@ -26,6 +26,7 @@ source: 'Github'
 
 - [DataIsBeautiful](https://www.reddit.com/r/dataisbeautiful)
 - [Visually](http://visual.ly/)
+- [Info is Beautiful](https://oberhaeuser.info/)
 
 ### Data sources
 
