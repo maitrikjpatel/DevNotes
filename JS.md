@@ -48,7 +48,7 @@ source: 'Github'
 - Object Creation Pattern - Encapsulation
 - Object Reuse Pattern - Inheritance
 
-```
+```js
 <!-- works -->
 alert('Hello')
 alert('World')
@@ -56,7 +56,6 @@ alert('World')
 <!-- works -->
 alert("There will be an error")
 [1, 2].forEach(alert)
-
 ```
 
 #### use strict
@@ -103,7 +102,7 @@ console.log( myObj.hasOwnProperty('nickname') );
 
 - ToNumber, Number(value)– Occurs in math operations. Can be performed with Number(value).
 
-```
+```js
 undefined	-> NaN
 null	-> 0
 true / false	-> 1 / 0
@@ -112,7 +111,7 @@ string	-> The string is read “as is”, whitespaces from both sides are ignore
 
 - ToBoolean, Boolean(value) – Occurs in logical operations. Can be performed with Boolean(value).
 
-```
+```js
 0, null, undefined, NaN, ""	-> false
 any other -> value
 ```
@@ -161,7 +160,7 @@ any other -> value
 
 - Sometimes you want to make sure your loop runs at least one time no matter what. When this is the case, you want a modified while loop called a DO/WHILE loop.
 
-```
+```js
 #FOR Loop
 for( var i = 0; i < 10 ; i++){
 
@@ -192,7 +191,7 @@ do{
 	- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
 	- a function, declared as a separate statement, in the main code flow.
 
-	```
+	```js
 	function sum(a, b) {
 		return a + b;
 	}
@@ -203,7 +202,8 @@ do{
 	- If the function is created as a part of an expression, it’s called a “Function Expression”.
 	- Function Expressions are created when the execution flow reaches them.
 	-  A function, created inside an expression or inside another syntax construct. Here, the function is created at the right side of the “assignment expression”
-	```
+	
+	```js
 	let sum = function(a, b) {
 		return a + b;
 	};
@@ -213,7 +213,7 @@ do{
 
 	- The arguments of ask are called callback functions or just callbacks.
 
-	```
+	```js
 	// Without CallBack
 	function ask(question, yes, no) {
 		if (confirm(question)) yes()
@@ -243,7 +243,7 @@ do{
 	- A Function Expression is created when the execution reaches it and is usable from then on.
 	- Function Declaration is usable in the whole script/code block.
 
-	```
+	```js
 	// The Function Declaration sayHi is created when JavaScript is preparing 
 	// to start the script and is visible everywhere in it.
 	sayHi("John"); // Hello, John
@@ -271,7 +271,7 @@ do{
 - **Object literal:**
 	- Literal notation creates a single object. Literal notation uses **curly brackets { }** and the object's default properties are defined within the brackets using **property:value** notation.
 
-	```
+	```js
 	var objectName = {};
 
 	var james = {
@@ -293,7 +293,7 @@ do{
 
 	- Constructor notation involves defining an object constructor. And like defining a function, we use the function keyword. You can think of this constructor as a "template" from which you can create multiple objects. To create a new object from a constructor, we use the new keyword.
 
-	```
+	```js
 	function Object(){
 			this.iAm = 'an object';
 			this.whatAmI = function(){
@@ -321,7 +321,7 @@ do{
 	- An advantage of bracket notation is that we are not restricted to just using strings that is: no spaces and other limitations.
 	- Square brackets notation obj["property"]. Square brackets allow to take the key from a variable, like obj[varWithKey].
 
-```
+```js
 let user = {};
 
 // set
@@ -346,8 +346,7 @@ delete user["likes birds"];
 	- When an object variable is copied – the reference is copied, the object is not duplicated.
 	- If we imagine an object as a cabinet, then a variable is a key to it. Copying a variable duplicates the key, but not the cabinet itself.
 
-```
-
+```js
 let user = {
 	name: "John",
 	age: 30
@@ -390,7 +389,7 @@ let clone = Object.assign({}, user);
 - “Symbol” value represents a unique identifier.
 - Symbols are guaranteed to be unique. Even if we create many symbols with the same description, they are different values. 
 
-```
+```js
 // id is a symbol with the description "id"
 let id1 = Symbol("id");
 let id2 = Symbol("id");
@@ -401,7 +400,7 @@ alert(id1 == id2); // false
 - Symbols don’t auto-convert to a string
 - Symbol in an object literal, we need square brackets.
 
-```
+```js
 let id = Symbol("id");
 
 let user = {
@@ -413,7 +412,7 @@ let user = {
 - **Global symbols**
 	- Symbols inside the registry are called global symbols. If we want an application-wide symbol, accessible everywhere in the code – that’s what they are for.
 
-	```
+	```js
 	// read from the global registry
 	let id = Symbol.for("id"); // if the symbol did not exist, it is created
 	```
@@ -436,7 +435,7 @@ let user = {
 - The keyword "this" acts as a placeholder, and will refer to whichever object called that method when the method is actually used.
 - When a function is declared, it may use "this", but that "this" has no value until the function is called.
 
-```
+```js
 let user = {
   name: "John",
   age: 30,
@@ -454,7 +453,7 @@ user.sayHi(); // John
 - "this" is undefined in strict mode.
 - If we try to access this.name, there will be an error.
 
-```
+```js
 function sayHi() {
   alert(this);
 }
@@ -527,7 +526,8 @@ sayHi(); // undefined
 
 - Array is a special kind of object, suited to storing and managing ordered data items.
 - The call to new Array(number) creates an array with the given length, but without elements.
-```
+
+```js
 // square brackets (usual)
 let arr = [item1, item2...];
 
@@ -541,7 +541,7 @@ alert( arr.length ); // length 2
 
 - Array implement only toString conversion
 
-```
+```js
 alert( [] + 1 ); // ( "" + 1 ) -> "1"
 alert( [1] + 1 ); // ( "1" + 1 ) -> "11"
 alert( [1,2] + 1 ); // ( "1,2" + 1 ) ->  "1,21"
@@ -549,7 +549,7 @@ alert( [1,2] + 1 ); // ( "1,2" + 1 ) ->  "1,21"
 
 - Loop in array
 
-```
+```js
 for (let i=0; i<arr.length; i++) – works fastest, old-browser-compatible.
 for (let item of arr) – the modern syntax for items only,
 for (let i in arr) – never use.
@@ -583,7 +583,8 @@ for (let i in arr) – never use.
 	- reverse() – reverses the array in-place, then returns it.
 	- split/join – convert a string to array and back.
 	- reduce(func, initial) – calculate a single value over the array by calling func for each element and passing an intermediate result between the calls.
-	```
+	
+	```js
 	let value = arr.reduce(function(previousValue, item, index, array) {
 		// ...
 	}, initial);
@@ -618,7 +619,7 @@ for (let i in arr) – never use.
 	- map.clear() – clears the map
 	- map.size – returns the current element count.
 
-```
+```js
 let map = new Map();
 
 map.set('1', 'str1');   // a string key
@@ -636,7 +637,7 @@ alert( map.size ); // 3
 - **Map from Object**
 - When a Map is created, we can pass an array (or another iterable) with key-value pairs, like this:
 
-```
+```js
 // array of [key, value] pairs
 let map = new Map([
   ['1',  'str1'],
@@ -652,7 +653,7 @@ let map = new Map([
 		- map.values() – returns an iterable for values,
 		- map.entries() – returns an iterable for entries [key, value], it’s used by default in for..of.
 
-```
+```js
 let recipeMap = new Map([
   ['cucumber', 500],
   ['tomatoes', 350],
@@ -674,6 +675,7 @@ for (let entry of recipeMap) { // the same as of recipeMap.entries()
   alert(entry); // cucumber,500 (and so on)
 }
 ```
+
 - **SET**
 	- A Set is a collection of values, where each value may occur only once.
 	- Its main methods are:
@@ -684,7 +686,7 @@ for (let entry of recipeMap) { // the same as of recipeMap.entries()
 		- set.clear() – removes everything from the set.
 		- set.size – is the elements count.
 
-```
+```js
 let set = new Set();
 
 let john = { name: "John" };
@@ -705,9 +707,10 @@ for (let user of set) {
   alert(user.name); // John (then Pete and Mary)
 }
 ```
+
 - Iteration over Set
 
-```
+```js
 let set = new Set(["oranges", "apples", "bananas"]);
 
 for (let value of set) alert(value);
@@ -737,7 +740,7 @@ set.forEach((value, valueAgain, set) => {
 
 - Destructuring assignment is a special syntax that allows us to “unpack” arrays or objects into a bunch of variables, as sometimes they are more convenient. 
 
-```
+```js
 // let [item1 = default, item2, ...rest] = array
 // we have an array with the name and surname
 let arr = ["Ilya", "Kantor"]
@@ -753,7 +756,7 @@ alert(surname);  // Kantor
 
 The destructuring assignment also works with objects.
 
-```
+```js
 // let {prop : varName = default, ...} = object
 let options = {
   title: "Menu",
@@ -791,7 +794,7 @@ alert(h);      // 200
 
 - Smart function parameters 
 
-```
+```js
 let options = {
   title: "My menu",
   items: ["Item1", "Item2"]
@@ -817,7 +820,7 @@ showMenu(options);
 - Months are counted from zero (yes, January is a zero month).
 - Days of week in getDay() are also counted from zero (that’s Sunday).
 
-```
+```js
 new Date(year, month, date, hours, minutes, seconds, ms)
 ```
 
@@ -860,7 +863,7 @@ new Date(year, month, date, hours, minutes, seconds, ms)
 		- Symbolic properties.
 		- Properties that store undefined.
 
-	```
+	```js
 	let user = {
 		sayHi() { // ignored
 			alert("Hello");
@@ -874,7 +877,7 @@ new Date(year, month, date, hours, minutes, seconds, ms)
 
 	- The important limitation: there must be no circular references.
 
-	```
+	```js
 	let room = {
 		number: 23
 	};
@@ -894,7 +897,7 @@ new Date(year, month, date, hours, minutes, seconds, ms)
 		- `let json = JSON.stringify(value[, replacer[, space]])`
 		- JSON.stringify is used with the first argument only. But if we need to fine-tune the replacement process, like to filter out circular references, we can use the second argument of JSON.stringify.
 
-	```
+	```js
 	let room = {
 		number: 23
 	};
@@ -919,7 +922,7 @@ new Date(year, month, date, hours, minutes, seconds, ms)
 
 - **JSON.parse**
 
-	```
+	```js
 	//Syntax : let value = JSON.parse(str[, reviver]);
 	let schedule = `{
 		"meetups": [
@@ -940,7 +943,7 @@ new Date(year, month, date, hours, minutes, seconds, ms)
 - **Custom “toJSON”**
 	- Like toString for string conversion, an object may provide method toJSON for to-JSON conversion. JSON.stringify automatically calls it if available.
 
-	```
+	```js
 	let room = {
 		number: 23,
 		toJSON() {
@@ -973,12 +976,13 @@ new Date(year, month, date, hours, minutes, seconds, ms)
 - A recursively-defined data structure is a data structure that can be defined using itself.
 	- For instance, the linked list can be defined as a data structure consisting of an object referencing a list (or null).
 	- `list = { value, next -> list }`
-	- Linked list 
-	```
-	let list = { value: 1 };
-	list.next = { value: 2 };
-	list.next.next = { value: 3 };
-	list.next.next.next = { value: 4 };
+	- Linked list
+	
+	```js
+		let list = { value: 1 };
+		list.next = { value: 2 };
+		list.next.next = { value: 3 };
+		list.next.next.next = { value: 4 };
 	```
 	- Trees like HTML elements tree or the department tree from this chapter are also naturally recursive: they branch and every branch can have other branches.
 
@@ -986,7 +990,7 @@ new Date(year, month, date, hours, minutes, seconds, ms)
 - A function can be called with any number of arguments, no matter how it is defined.
 - The rest parameters must be at the end
 
-```
+```js
 function showName(firstName, lastName, ...titles) {
   alert( firstName + ' ' + lastName ); // Julius Caesar
 
@@ -1007,7 +1011,7 @@ showName("Julius", "Caesar", "Consul", "Imperator");
 	- All arguments of a function call are also available in “old-style” arguments: array-like iterable object.
 	- Arrow functions do not have "arguments"
 
-```
+```js
 function showName() {
   alert( arguments.length );
   alert( arguments[0] );
@@ -1032,7 +1036,7 @@ showName("Ilya");
 	- The spread operator operates only on iterables.
 - the task of turning something into an array, Array.from tends to be more universal.
 
-```
+```js
 let arr = [3, 5, 1];
 let arr2 = [8, 9, 15];
 let str = "Hello";
@@ -1072,7 +1076,7 @@ alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
 	- One call – one Lexical Environment : a new function Lexical Environment is created each time a function runs.
 	- Lexical Environment is cleaned up and deleted after the function run
 
-```
+```js
 //----No Clousre----
 //----Access outer Lexical Envrionment Object variable---
 let name = "John";
@@ -1095,7 +1099,7 @@ sayHi(); // Pete
 		2. it has access to the outer function’s variables, and 
 		3. it has access to the global scope variables.
 
-	```
+	```js
 	function makeWorker() {
 		let name = "Pete";
 		return function() {
@@ -1157,7 +1161,8 @@ sayHi(); // Pete
 - **Immediately-invoked function expressions - IIFE**
 	- The Function Expression is wrapped with parenthesis (function {...})
 	- Parentheses around the function is a trick to show JavaScript that the function is created in the context of another expression, and hence it’s a Function Expression: it needs no name and can be called immediately.
-	```
+	
+	```js
 	// Ways to create IIFE
 	(function() {
 		alert("Parentheses around the function");
@@ -1201,7 +1206,7 @@ sayHi(); // Pete
 	- The value of this in the global scope is window.
 	-  All scripts share the same global scope, so variables declared in one "<script/>" become visible in another ones:
 
-	```
+	```js
 	// Window 1
 	<script>
 		var a = 1;
@@ -1220,7 +1225,7 @@ sayHi(); // Pete
 		- Using <script type="module"> fixes the design flaw of the language by separating top-level scope from window.
 		- Such script is considered a separate “module” with its own top-level scope (lexical environment).
 
-		```
+		```js
 		<script type="module">
 		// ----- var x does not become a property of window -----
 		var x = 5;
@@ -1237,7 +1242,7 @@ sayHi(); // Pete
 		```
 	- Valid uses of the global object
 		- create “polyfills”: add functions that are not supported by the environment (say, an old browser), but exist in the modern standard.
-		```
+		```js
 		if (!window.Promise) {
 			window.Promise = ... // custom implementation of the modern language feature
 		}
@@ -1250,7 +1255,7 @@ sayHi(); // Pete
 - JavaScript, functions are first-class objects, because they can have properties and methods just like any other object.
 - Named Function Expression
 	- Named Function Expression, or NFE, is a term for Function Expressions that have a name.
-	```
+	```js
 	let sayHi = function func(who) {
 		alert(`Hello, ${who}`);
 	};
@@ -1262,7 +1267,7 @@ sayHi(); // Pete
 
 - "new Function" allows to turn any string into a function.
 
-```
+```js
 // Sysntax 
 // let func = new Function ([arg1[, arg2[, ...argN]],] functionBody)
 
@@ -1277,7 +1282,7 @@ alert( sum(1, 2) ); // 3
 
 - setTimeout : allows to run a function once after the interval of time.
 
-```
+```js
 // syntax
 // `let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)`
 
@@ -1289,7 +1294,7 @@ setTimeout(sayHi, 1000, "Hello", "John"); // Hello, John
 
 - setInterval : allows to run a function regularly with the interval between the runs.
 
-```
+```js
 // Syntax
 // let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...)
 
@@ -1304,7 +1309,7 @@ Modal
 	- Recursive setTimeout guarantees a delay between the executions, while setInterval – does not.
 	- The real delay between func calls for setInterval is less than in the code because the time taken by func's execution “consumes” a part of the interval.
 
-```
+```js
 // he real delay between func calls for setInterval is less than in the code
 let i = 1;
 setInterval(function() {
@@ -1321,7 +1326,7 @@ setTimeout(function run() {
 
 - Zero time scheduling
 	- Zero-timeout scheduling setTimeout(...,0) is used to schedule the call “as soon as possible, but after the current code is complete”.
-	```
+	```js
 	setTimeout(() => alert("World"));
 	alert("Hello");
 	```
@@ -1340,7 +1345,7 @@ setTimeout(function run() {
 
 	- myFunc.apply(context, [args]) – calls func passing context as this and array-like args into a list of arguments.
 	- The generic call forwarding is usually done with apply:
-	```
+	```js
 	let wrapper = function() {
 		return original.apply(this, arguments);
 	}
@@ -1350,7 +1355,7 @@ setTimeout(function run() {
 	-  In JavaScript it’s easy to lose this. Once a method is passed somewhere separately from the object – this is lost.
 	- The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called. 
 
-	```
+	```js
 	let user = {
 		firstName: "John",
 		sayHi() {
@@ -1366,7 +1371,7 @@ setTimeout(function run() {
 	- The result of func.bind(context) is a special function-like “exotic object”, that is callable as function and transparently passes the call to func setting this=context.
 	- Method func.bind(context, ...args) returns a “bound variant” of function func that fixes the context this and first arguments if given.
 
-	```
+	```js
 	let user = {
 		firstName: "John",
 		say(phrase) {
@@ -1386,7 +1391,7 @@ setTimeout(function run() {
 - partial function application – we create a new function by fixing some parameters of the existing one.
 - partial application is useful when we have a very generic function and want a less universal variant of it for convenience.
 
-```
+```js
 function mul(a, b) {
   return a * b;
 }
@@ -1404,7 +1409,7 @@ alert( double(5) ); // = mul(2, 5) = 10
 - The currying requires the function to have a known fixed number of arguments.
 - Currying is great when we want easy partials.
 
-```
+```js
 function curry(f) { // curry(f) does the currying transform
   return function(a) {
     return function(b) {
@@ -1425,7 +1430,7 @@ alert( carriedSum(1)(2) ); // 3
 - Advanced currying allows the function to be both callable normally and partially.
 - Most implementations of currying in JavaScript are advanced, as described: they also keep the function callable in the multi-argument variant.
 
-```
+```js
 function curry(func) {
 
   return function curried(...args) {
@@ -1456,7 +1461,7 @@ alert( curriedSum(1)(2)(3) ); // 6, full currying
 - Arrow functions can’t be used as constructors. They can’t be called with new.
 - Arrows have no “arguments”
 
-```
+```js
 let group = {
   title: "Our Group",
   students: ["John", "Pete", "Alice"],
@@ -1488,7 +1493,7 @@ group.showList();
 
 	- Object.getOwnPropertyDescriptor allows to query the full information about a property.
 
-	```
+	```js
 	// Syntax : Object.getOwnPropertyDescriptor(obj, propertyName);
 	let user = {
 		name: "John"
@@ -1509,7 +1514,7 @@ group.showList();
 
 	- Object.defineProperty allows to change property.
 
-	```
+	```js
 	// Syntax : Object.defineProperty(obj, propertyName, descriptor)
 	// For Multiple properties : Object.defineProperties(obj, descriptors)
 	let user = {};
@@ -1545,7 +1550,7 @@ group.showList();
 		- enumerable – same as for data properties,
 		- configurable – same as for data properties.
 
-	```
+	```js
 	let user = {
 		name: "John",
 		surname: "Smith",
@@ -1569,7 +1574,7 @@ group.showList();
 	- Smarter getters/setters
 		- Getters/setters can be used as wrappers over “real” property values to gain more control over them.
 
-		```
+		```js
 		let user = {
 			get name() {
 				return this._name;
@@ -1595,7 +1600,7 @@ group.showList();
 - Prototypes are the mechanism by which JavaScript objects inherit features from one another. 
 - In JavaScript, all objects have a hidden [[Prototype]] property that’s either another object or null.
 
-```
+```js
 let animal = {
   eats: true,
   walk() {
@@ -1631,7 +1636,7 @@ alert(longEar.jumps); // true (from rabbit)
 - Setting a [[Prototype]] for objects created via a constructor function
 - F.prototype only used at new F time
 
-```
+```js
 let animal = {
   eats: true
 };
@@ -1648,7 +1653,7 @@ alert( rabbit.eats ); // true
 - The "prototype" property is widely used by the core of JavaScript itself. All built-in constructor functions use it.
 - Object.prototype
 	- obj = {} is the same as obj = new Object(), where Object is a built-in object constructor function, with its own prototype referencing a huge object with toString and other methods.
-	```
+	```js
 	let obj = {};
 	alert(obj.__proto__ === Object.prototype); // true
 	// obj.toString === obj.__proto__.toString == Object.prototype.toString
@@ -1658,7 +1663,7 @@ alert( rabbit.eats ); // true
 	- Array/Date/Function ->  Array/Date/Function.prototype (provides Array/Date/Function methods) ->  Object.prototype (provides toString, object methods...). -> null
 	- By specification, all of the built-in prototypes have Object.prototype on the top. Sometimes people say that “everything inherits from objects”.
 	
-	```
+	```js
 	// ----- Array ------
 	let arr = [1, 2, 3];
 	// it inherits from Array.prototype?
@@ -1688,7 +1693,7 @@ alert( rabbit.eats ); // true
 	- During the process of development, we may have ideas for new built-in methods we’d like to have, and we may be tempted to add them to native prototypes. But that is generally a bad idea.
 	- In modern programming, there is only one case where modifying native prototypes is approved. That’s polyfilling.
 
-	```
+	```js
 	String.prototype.show = function() {
 		alert(this);
 	};
@@ -1707,7 +1712,7 @@ alert( rabbit.eats ); // true
 - The built-in __proto__ getter/setter is unsafe if we’d want to put user-generated keys in to an object. 
 - `Object.create(null)` to create a “very plain” object without __proto__
 
-```
+```js
 let animal = {
   eats: true
 };
@@ -1728,7 +1733,7 @@ Object.setPrototypeOf(rabbit, {}); // change the prototype of rabbit to {}
 - A class is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).
 - MyClass is technically a function, while methods are written to MyClass.prototype.
 
-```
+```js
 lass MyClass {
   prop = value; // field
 
@@ -1748,7 +1753,7 @@ lass MyClass {
 
 - What is class ? : a class is a kind of a function.
 
-```
+```js
 class User {
   constructor(name) { this.name = name; }
   sayHi() { alert(this.name); }
@@ -1775,7 +1780,7 @@ alert(Object.getOwnPropertyNames(User.prototype)); // constructor, sayHi
 
 - Class Expression
 
-```
+```js
 let User = class MyClass {
   sayHi() {
     alert(MyClass); // MyClass is visible only inside the class
@@ -1790,7 +1795,7 @@ alert(MyClass); // error, MyClass not visible outside of the class
 
 - To inherit from another class, we should specify "extends" and the parent class before the braces {..}.
 
-```
+```js
 class Animal {
   constructor(name) {
     this.speed = 0;
@@ -1835,7 +1840,7 @@ rabbit.hide(); // White Rabbit hides!
 - Static methods are used for the functionality that belongs to the class as a whole.
 - Static properties are used when we’d like to store class-level data, also not bound to an instance.
 
-```
+```js
 class MyClass {
   static property = ...;
 
@@ -1855,7 +1860,7 @@ class MyClass {
 		- That’s a well-known convention, not enforced at the language level. Programmers should only access a field starting with _ from its class and classes inheriting from it.
 		- Use getter/setter syntax to setup.
 		
-		```
+		```js
 		class CoffeeMachine {
 			_waterAmount = 0;
 
@@ -1883,7 +1888,7 @@ class MyClass {
 	- Private: accessible only from inside the class. These are for the internal interface.	
 		- Privates should start with #. They are only accessible from inside the class.
 		- On the language level, # is a special sign that the field is private. We can’t access it from outside or from inheriting classes.
-		```
+		```js
 		class CoffeeMachine {
 			#waterLimit = 200;
 
@@ -1918,7 +1923,7 @@ class MyClass {
 - Built-in classes like Array, Map and others are extendable also.
 - Built-in methods like filter, map and others – return new objects of exactly the inherited type. They rely on the constructor property to do so.
 - `arr.constructor === PowerArray`
-```
+```js
 // here PowerArray inherits from the native Array:
 // add one more method to it (can do more)
 class PowerArray extends Array {
@@ -1938,7 +1943,7 @@ alert(filteredArr.isEmpty()); // false
 #### Class checking: "instanceof"
 - The instanceof operator allows to check whether an object belongs to a certain class. It also takes inheritance into account.
 
-```
+```js
 class Rabbit {}
 let rabbit = new Rabbit();
 
@@ -1963,7 +1968,7 @@ alert( arr instanceof Object ); // true
 - A mixin provides methods that implement a certain behavior, but we do not use it alone, we use it to add the behavior to other classes.
 - Mixins may become a point of conflict if they occasionally overwrite native class methods. So generally one should think well about the naming for a mixin, to minimize such possibility.
 
-```
+```js
 let sayMixin = {
   say(phrase) {
     alert(phrase);
@@ -1998,12 +2003,15 @@ new User("Dude").sayHi(); // Hello Dude!
 #### Error handling, "try..catch"
 - The try..catch construct has two main blocks: try, and then catch:
 - try..catch to work, the code must be runnable means javascript code required to be syntactically correct.
- ```
+- 
+
+ ```js
 try {
   // code...
 } catch (err) {
   // error handling
 }
+
 // ---- Example -----
 try {
   alert('Start of try runs');  // (1) <--
@@ -2011,8 +2019,10 @@ try {
   alert('End of try (never reached)');  // (2)
 } catch(err) {
   alert(`Error has occurred!`); // (3) <--
-
 	alert(err); // (4) <-- ReferenceError: lalala is not defined
+
+	// Error object
+	// have name, message, stack
 	alert(err.name); // ReferenceError
   alert(err.message); // lalala is not defined
   alert(err.stack); // ReferenceError: lalala is not defined at ...
@@ -2022,7 +2032,7 @@ alert("...Then the execution continues");
 
 - Real life example, If json is malformed, JSON.parse generates an error, so the script “dies”.
 
-```
+```js
 let json = "{ bad json }";
 
 try {
@@ -2039,8 +2049,16 @@ try {
 ```
 
 - Throw and Rethrowing
+	- JavaScript has many built-in constructors for standard errors: Error, SyntaxError, ReferenceError, TypeError and others. We can use them to create error objects as well.
 
-```
+```js
+// Creating your own error using Error constructor
+
+let error = new Error("Things happen o_O");
+alert(error.name); // Error
+alert(error.message); // Things happen o_O
+
+// Example
 let json = '{ "age": 30 }'; // incomplete data
 try {
   let user = JSON.parse(json);
@@ -2067,7 +2085,7 @@ try {
 		- If you say “No”, then try -> finally.
 	- The finally clause is often used when code start doing something before try..catch and want to finalize it in any case of outcome.
 
-		```
+		```js
 		try {
 			... try to execute the code ...
 		} catch(e) {
@@ -2077,7 +2095,6 @@ try {
 		}
 		```
 - Even if we don’t have try..catch, most environments allow to setup a “global” error handler to catch errors that “fall out”. In-browser that’s window.onerror.
-
 
 
 ### Topics
@@ -2092,7 +2109,7 @@ try {
 - JavaScript only hoists declarations, not initializations.
 - Hoisted : Use -> Initialize (Hoisted variable is initialised with a value of undefined)
 
-```
+```js
 var x = 1; // Initialize x
 console.log(x + " " + y); // '1 undefined'
 var y = 2; // Initialize y
@@ -2100,7 +2117,7 @@ var y = 2; // Initialize y
 
 - Hoisted : Declare -> Use -> Initialize (Hoisted variable is initialised with a value of undefined)
 
-```
+```js
 // The following code will behave the same as the previous code:
 var x = 1; // Initialize x
 var y; // Declare y
@@ -2110,7 +2127,7 @@ y = 2; // Initialize y
 
 - Avoid Hoisting pitfall : Initialize -> Use -> Declare
 
-```
+```js
 num = 6;
 num + 7;
 var num;
@@ -2119,7 +2136,7 @@ var num;
 
 - Avoid Hoisting pitfall : Declare -> Initialize -> Use
 
-```
+```js
 var x = 1; // Declare and Initialize x
 console.log(x); // '1'
 ```
@@ -2127,14 +2144,14 @@ console.log(x); // '1'
 - "use strict" : strict mode can help expose undeclared variables.
 - ES6 let : The interpreter throws an error if we use a constant before declaring and initialising it.
 
-```
+```js
 console.log(hoist); // Output: ReferenceError: hoist is not defined
 let hoist = 'The variable has been hoisted.';
 ```
 
 - ES6 const : The interpreter throws an error if we use a constant before declaring and initialising it.
 
-```
+```js
 const PI;
 console.log(PI); // Ouput: SyntaxError: Missing initializer in const declaration
 PI=3.142;
@@ -2151,7 +2168,7 @@ getCircumference(2) // ReferenceError: circumference is not defined
 
 - Function declarations are hoisted over variable declarations but not over variable assignments.
 
-```
+```js
 var double = 22;
 
 function double(num) {
@@ -2186,7 +2203,7 @@ console.log(typeof double); // Output: function
 - Control : One type of callback. Succeeded or Failed.
 - Promise : Pending/Fullfilled/Rejected
 
-```
+```js
 // promise syntax look like this
 new Promise(/* executor*/ function (resolve, reject) { ... } );
 ```
@@ -2218,7 +2235,7 @@ new Promise(/* executor*/ function (resolve, reject) { ... } );
 	- event.eventPhase – the current phase (capturing=1, bubbling=3).
 	- addEventListener without the 3rd argument or with the 3rd argument false.
 
-```
+```js
 el.addEventListener('click', listener, false) // listener doesn't capture
 el.addEventListener('click', listener) // listener doesn't capture
 ```
@@ -2233,7 +2250,7 @@ el.addEventListener('click', listener) // listener doesn't capture
 - Composition : Composing them together using higher order function.
 - **Map** : Higher Order Function, take callback function.
 
-```
+```js
 var names = animals.map(function(animal){
 	return animal.name;
 })
@@ -2254,14 +2271,14 @@ var names = animals.map(function(animal){
 - Use ' for internal strings and characters.
 - Convert a number to a string - Use number’s method (toString) - Use String function
 
-```
+```js
 str = num.toString();
 str = String(num);
 ```
 
 - Convert a string to a number - Use the Number function. - Use the + prefix operator. - Use the parseInt function.
 
-```
+```js
 		num = Number(str);
 		num = +str;
 ```
@@ -2272,7 +2289,7 @@ str = String(num);
 	- If there is no expression, then the return value is undefined.
 	- Except for constructors, whose default return value is this.
 
-```
+```js
 return expression; or return;
 ```
 
