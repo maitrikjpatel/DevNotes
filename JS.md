@@ -2022,7 +2022,9 @@ try {
 	alert(err); // (4) <-- ReferenceError: lalala is not defined
 
 	// Error object
-	// have name, message, stack
+	// message – the human-readable error message.
+	// name – the string with error name (error constructor name).
+	// stack (non-standard) – the stack at the moment of error creation.
 	alert(err.name); // ReferenceError
   alert(err.message); // lalala is not defined
   alert(err.stack); // ReferenceError: lalala is not defined at ...
@@ -2050,10 +2052,11 @@ try {
 
 - Throw and Rethrowing
 	- JavaScript has many built-in constructors for standard errors: Error, SyntaxError, ReferenceError, TypeError and others. We can use them to create error objects as well.
+	- We can also generate our own errors using the `throw` operator. Technically, the argument of throw can be anything, but usually it’s an error object inheriting from the built-in `Error` class. More on extending errors in the next chapter.
+	- Rethrowing is a basic pattern of error handling: a `catch` block usually expects and knows how to handle the particular error type, so it should rethrow errors it doesn’t know.
 
 ```js
 // Creating your own error using Error constructor
-
 let error = new Error("Things happen o_O");
 alert(error.name); // Error
 alert(error.message); // Things happen o_O
@@ -2095,6 +2098,266 @@ try {
 		}
 		```
 - Even if we don’t have try..catch, most environments allow to setup a “global” error handler to catch errors that “fall out”. In-browser that’s window.onerror.
+
+```js
+window.onerror = function(message, url, line, col, error) {
+  // ...
+};
+```
+
+#### Custom errors, extending Error
+
+- Error, SyntaxError, ReferenceError, TypeError, HttpError, DbError, NotFoundError
+- Our ValidationError class should inherit from the built-in Error class.
+- The `instanceof` version is much better, because in the future we are going to extend `ValidationError`, make subtypes of it, like `PropertyRequiredError`.
+
+```js
+
+// The "pseudocode" for the built-in Error class defined by JavaScript itself
+class Error {
+  constructor(message) {
+    this.message = message;
+    this.name = "Error"; // (different names for different built-in error classes)
+    this.stack = "<nested Calls>"; // non-standard, but most environments support it
+  }
+}
+
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
+
+// The ValidationError class is very generic. Many things may go wrong. 
+// The property may be absent or it may be in a wrong format (like a string value for age)
+class PropertyRequiredError extends ValidationError {
+  constructor(property) {
+    super("No property: " + property);
+    this.name = "PropertyRequiredError";
+    this.property = property;
+  }
+}
+
+// Usage of ValidationError
+function readUser(json) {
+  let user = JSON.parse(json);
+
+  if (!user.age) {
+    throw new ValidationError("No field: age");
+  }
+  if (!user.name) {
+    throw new ValidationError("No field: name");
+  }
+  return user;
+}
+
+// Working example with try..catch
+try {
+  let user = readUser('{ "age": 25 }');
+} catch (err) {
+  if (err instanceof ValidationError) {
+    alert("Invalid data: " + err.message); // Invalid data: No property: name
+    alert(err.name); // PropertyRequiredError
+    alert(err.property); // name
+  } else if (err instanceof SyntaxError) {
+    alert("JSON Syntax Error: " + err.message);
+  } else {
+    throw err; // unknown error, rethrow it
+  }
+}
+```
+
+### Callbacks
+
+- Many actions in JavaScript are asynchronous.
+
+```js
+loadScript('/my/script.js');
+// the code below loadScript doesn't wait for the script loading to finish
+// ...
+
+// Naturally, the browser probably didn’t have time to load the script. 
+// So the immediate call to the new function fails. 
+loadScript('/my/script.js'); // the script has "function newFunction() {…}"
+newFunction(); // no such function!
+
+//CallBack to Rescure
+loadScript('/my/script.js', function() {
+  // the callback runs after the script is loaded
+  newFunction(); // so now it works
+  ...
+});
+
+``` 
+
+##### CallBack Hell
+
+- [CallBack Hell](http://callbackhell.com/)
+- From the first look, it’s a viable way of asynchronous coding. And indeed it is. For one or maybe two nested calls it looks fine.
+- But for multiple asynchronous actions that become “callback hell” or “pyramid of doom.”
+
+```js
+// Pyramid of Doom , callback hell
+loadScript('1.js', function(error, script) {
+
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript('2.js', function(error, script) {
+      if (error) {
+        handleError(error);
+      } else {
+        // ...
+        loadScript('3.js', function(error, script) {
+          if (error) {
+            handleError(error);
+          } else {
+            // ...continue after all scripts are loaded (*)
+          }
+        });
+
+      }
+    })
+  }
+});
+```
+
+- Don't nest functions. Give them names and place them at the top level of your program
+- Use **function hoisting** to your advantage to move functions 'below the fold'
+- Handle **every single error** in every one of your callbacks. Use a linter like standard to help you with this.
+- Create reusable functions and place them in a module to reduce the cognitive load required to understand your code.
+- Splitting your code into small pieces like this also helps you handle errors, write tests, forces you to create a stable and documented public API for your code, and helps with refactoring.
+
+#### Promise
+
+- [Promise for dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
+- [Video with Code Example](http://plnkr.co/edit/1ArvFxI0gWmajTpDaOSB?p=preview)
+- A promise is a special JavaScript object that links the “producing code” and the “consuming code” together. 
+- In terms of our analogy: this is the “subscription list”. The “producing code” takes whatever time it needs to produce the promised result, and the “promise” makes that result available to all of the subscribed code when it’s ready.
+
+```js
+let promise = new Promise(function(resolve, reject) {
+  // executor (the producing code, "singer")
+});
+```
+
+- The function passed to new Promise is called the executor.
+- When the promise is created, this executor function runs automatically. It contains the producing code, that should eventually produce a result. 
+- The resulting promise object has internal properties:
+	- `state` — initially “pending”, then changes to either “fulfilled” or “rejected”,
+	- `result` — an arbitrary value, initially undefined.
+- When the executor finishes the job, it should call one of the functions that it gets as arguments:
+	- `resolve(value)` — to indicate that the job finished successfully:
+		-	sets state to "fulfilled",
+		- sets result to value.
+	- `reject(error)` — to indicate that an error occurred:
+		- sets state to "rejected",
+		- sets result to error.
+
+```js
+// reject
+let promise = new Promise(function(resolve, reject) {
+  // after 1 second signal that the job is finished with an error
+  setTimeout(() => reject(new Error("Whoops!")), 1000);
+});
+
+/ resolve
+let promise = new Promise(function(resolve, reject) {
+  // the function is executed automatically when the promise is constructed
+  // after 1 second signal that the job is done with the result "done"
+  setTimeout(() => resolve("done"), 1000);
+});
+```
+- The executor should call only one resolve or one reject. The promise’s state change is final.
+
+##### Consumers: then, catch, finally
+
+- The properties `state` and `result` of the Promise object are internal. 
+- We can’t directly access them from our “consuming code”. 
+- We can use the methods .then/.catch/.finally for that.
+- Promise object serves as a link between the executor (the “producing code” or “singer”) and the consuming functions (the “fans”), which will receive the result or error. 
+- Consuming functions can be registered (subscribed) using methods .then, .catch and .finally.
+
+- **then**
+- If `promise` is resolved receives result 
+- If `promise` is rejected receives error
+
+```js
+promise.then(
+  function(result) { /* handle a successful result */ },
+  function(error) { /* handle an error */ }
+);
+```
+
+- **catch**
+- Use `.catch(errorHandlingFunction)` if you’re interested only in errors.
+- The call .catch(f) is a complete analog of .then(null, f), it’s just a shorthand.
+
+- **finally**
+- finally is a good handler for performing cleanup, e.g. stopping our loading indicators, as they are not needed any more, no matter what the outcome is.
+
+```js
+new Promise((resolve, reject) => {
+  /* do something that takes time, and then call resolve/reject */
+})
+  // runs when the promise is settled, doesn't matter successfully or not
+  .finally(() => stop loading indicator)
+  .then(result => show result, err => show error)
+```
+- It’s not exactly an alias of then(f,f) though. There are several important differences:
+	- A finally handler has no arguments. In finally we don’t know whether the promise is successful or not. That’s all right, as our task is usually to perform “general” finalizing procedures.
+	- A finally handler passes through results and errors to the next handler.
+	- `.finally(f)` is a more convenient syntax than `.then(f, f)`: no need to duplicate the function f.
+
+
+##### Promises vs Callbacks
+
+```js
+// CallBack
+function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+
+  script.onload = () => callback(null, script);
+  script.onerror = () => callback(new Error(`Script load error for ${src}`));
+
+  document.head.append(script);
+}
+
+// Promise object that resolves when the loading is complete. The outer code can add handlers using .then
+// Declare Promise
+function loadScript(src) {
+  return new Promise(function(resolve, reject) {
+    let script = document.createElement('script');
+    script.src = src;
+
+    script.onload = () => resolve(script);
+    script.onerror = () => reject(new Error(`Script load error for ${src}`));
+
+    document.head.append(script);
+  });
+}
+
+// Usage
+let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
+
+promise.then(
+  script => alert(`${script.src} is loaded!`),
+  error => alert(`Error: ${error.message}`)
+);
+
+promise.then(script => alert('One more handler to do something else!'));
+```
+- **Promises**
+- Promises allow us to do things in the natural order. First, we run loadScript(script), and .then we write what to do with the result.
+- We can call .then on a Promise as many times as we want. Each time, we’re adding a new “fan”, a new subscribing function, to the “subscription list”.
+
+- **Callbacks**
+- We must have a callback function at our disposal when calling loadScript(script, callback). In other words, we must know what to do with the result before loadScript is called.
+- There can be only one callback.
+
 
 
 ### Topics
@@ -2185,34 +2448,6 @@ function double(num) {
 
 console.log(typeof double); // Output: function
 ```
-
-#### CallBack Hell
-
-- [CallBack Hell](http://callbackhell.com/)
-- Don't nest functions. Give them names and place them at the top level of your program
-- Use **function hoisting** to your advantage to move functions 'below the fold'
-- Handle **every single error** in every one of your callbacks. Use a linter like standard to help you with this.
-- Create reusable functions and place them in a module to reduce the cognitive load required to understand your code.
-- Splitting your code into small pieces like this also helps you handle errors, write tests, forces you to create a stable and documented public API for your code, and helps with refactoring.
-
-#### Promise
-
-- [Promise for dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
-- [Video with Code Example](http://plnkr.co/edit/1ArvFxI0gWmajTpDaOSB?p=preview)
-- Promise are made of two parts. Control/Promise
-- Control : One type of callback. Succeeded or Failed.
-- Promise : Pending/Fullfilled/Rejected
-
-```js
-// promise syntax look like this
-new Promise(/* executor*/ function (resolve, reject) { ... } );
-```
-
-- .then for go inside next chain.
-- .catch for find an error.
-- Promise.all to execute after all promises resolved.
-- Promise.race to execute after first promise resolved.
-- Use Generator to make async code more readable.
 
 #### Aync and Await
 
