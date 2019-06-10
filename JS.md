@@ -2842,18 +2842,18 @@ say.sayBye('John');
 ```
 
 - Named export 
-	- export class User {...}
-	- import {User} from ...
+	- `export class User {...}`
+	- `import {User} from ...`
 -	Default export
-	- export default class User {...}
-	- import User from ...
+	- `export default class User {...}`
+	- `import User from ...`
 - named exports must (naturally) have a name, while export default may be anonymous.
 - Please note that import/export statements don’t work if inside {...}.
 
 - Re-export:
-	- export {x [as y], ...} from "mod"
-	- export * from "mod" (doesn’t re-export default).
-	- export {default [as y]} from "mod" (re-export default).
+	- `export {x [as y], ...} from "mod"`
+	- `export * from "mod"` (doesn’t re-export default).
+	- `export {default [as y]} from "mod"` (re-export default).
 
 ```js
 import User from './user.js';
