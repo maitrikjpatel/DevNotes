@@ -74,53 +74,57 @@ source: 'Github'
 
 - Wrapping your code in curly braces between JSX tags, treat it like ordinary JavaScript and not like JSX.
 
-      var theBestString = 'tralalalala i am da best';
-      var judgmental = Math.random() < 0.5;
-      var math = (
-          <h1>
-          2 + 3 = {2 + 3}
-          </h1>
-      );
-      var JSKIf = (
-          <h1>
-              { if (purchase.complete) 'Thank you for placing an order!' }
-          </h1>
-      );
-      function myfunction (e) {
+```js
+var theBestString = 'tralalalala i am da best';
+var judgmental = Math.random() < 0.5;
+var math = (
+    <h1>
+    2 + 3 = {2 + 3}
+    </h1>
+);
+var JSKIf = (
+    <h1>
+        { if (purchase.complete) 'Thank you for placing an order!' }
+    </h1>
+);
+function myfunction (e) {
 
-      ReactDOM.render(
-          <h1>{2 + 3}</h1>,
-          <h1 className="big">{2 + 3}</h1>,
-          <h1>{theBestString}</h1>,
-          <h1 onClick={myfunction} >Click Here</h1>,
-          { !judgmental && <h1>Nacho Cheez Straight Out The Jar</h1> }
-          math,
-          document.getElementById('app')
-      );
+ReactDOM.render(
+  <h1>{2 + 3}</h1>,
+  <h1 className="big">{2 + 3}</h1>,
+  <h1>{theBestString}</h1>,
+  <h1 onClick={myfunction} >Click Here</h1>,
+  { !judgmental && <h1>Nacho Cheez Straight Out The Jar</h1> }
+  math,
+  document.getElementById('app')
+);
+```
 
 #### React Component
 
 - React.Component is an abstract base class, so it rarely makes sense to refer to React.Component directly.
 - Instead, you will typically subclass it, and define at least a render() method.
 
-      var React = require('react');
-      var ReactDOM = require('react-dom');
+```js
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-      var Button = React.createClass({
-      scream: function () {
-          alert('AAAAAAAAHHH!!!!!');
-      },
-      name : "Ths is button",
+var Button = React.createClass({
+scream: function () {
+    alert('AAAAAAAAHHH!!!!!');
+},
+name : "Ths is button",
 
-      render: function () {
-          return <button onClick={this.scream}>{this.name}</button>;
-      }
-      });
+render: function () {
+    return <button onClick={this.scream}>{this.name}</button>;
+}
+});
 
-      ReactDOM.render (
-      <Button />,
-      document.getElementById('app')
-      );
+ReactDOM.render (
+<Button />,
+document.getElementById('app')
+);
+```
 
 #### Props
 
@@ -138,40 +142,42 @@ source: 'Github'
 - Unlike props, a component's state is not passed in from the outside. A component decides its own state
 - you can't call "this.setState" from inside of the "render" function! "this.setState" automatically calls "render". If "render" calls "this.setState", you will create an infinite loop.
 
-      var React = require('react');
-      var ReactDOM = require('react-dom');
+```js
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-      var green = '#39D1B4';
-      var yellow = '#FFD712';
+var green = '#39D1B4';
+var yellow = '#FFD712';
 
-      var Toggle = React.createClass({
-      getInitialState: function () {
-          return { color: green };
-      },
+var Toggle = React.createClass({
+getInitialState: function () {
+    return { color: green };
+},
 
-      changeColor: function () {
-          var color = this.state.color == green ? yellow : green;
-          this.setState({ color: color });
-      },
+changeColor: function () {
+    var color = this.state.color == green ? yellow : green;
+    this.setState({ color: color });
+},
 
-      render: function () {
-          return (
-          <div style={{background: this.state.color}}>
-              <h1>
-              Change my color
-              </h1>
-              <button onClick={this.changeColor}>
-              Change color
-              </button>
-          </div>
-          );
-      }
-      });
+render: function () {
+    return (
+    <div style={{background: this.state.color}}>
+        <h1>
+        Change my color
+        </h1>
+        <button onClick={this.changeColor}>
+        Change color
+        </button>
+    </div>
+    );
+}
+});
 
-      ReactDOM.render(
-      <Toggle />,
-      document.getElementById('app')
-      );
+ReactDOM.render(
+<Toggle />,
+document.getElementById('app')
+);
+```
 
 #### Prop vs State
 
@@ -208,83 +214,88 @@ source: 'Github'
 
 - **`Stateful / Parent.js`**
 
+```js
       var React = require('react');
-      var ReactDOM = require('react-dom');
-      var Child = require('./Child');
-      var Sibling = require('./Sibling');
+var ReactDOM = require('react-dom');
+var Child = require('./Child');
+var Sibling = require('./Sibling');
 
-      var Parent = React.createClass({
-        getInitialState: function () {
-          return { name: 'Frarthur' };
-        },
+var Parent = React.createClass({
+  getInitialState: function () {
+    return { name: 'Frarthur' };
+  },
 
-        changeName: function (newName) {
-          this.setState({
-            name: newName
-          });
-        },
+  changeName: function (newName) {
+    this.setState({
+      name: newName
+    });
+  },
 
-        render: function () {
-          return (
-            <div>
-              <Child onChange={this.changeName} />
-              <Sibling name={this.state.name} />
-            </div>
-          );
-        }
-      });
+  render: function () {
+    return (
+      <div>
+        <Child onChange={this.changeName} />
+        <Sibling name={this.state.name} />
+      </div>
+    );
+  }
+});
 
-      ReactDOM.render(
-        <Parent />,
-        document.getElementById('app')
-      );
+ReactDOM.render(
+  <Parent />,
+  document.getElementById('app')
+);
+```
 
 - **`Stateless / Child.js`**
 
-      var React = require('react');
+```js
+var React = require('react');
+var Child = React.createClass({
+  handleChange: function (e) {
+    var name = e.target.value;
+    this.props.onChange(name);
+  },
 
-      var Child = React.createClass({
-        handleChange: function (e) {
-          var name = e.target.value;
-          this.props.onChange(name);
-        },
+  render: function () {
+    return (
+      <div>
+        <select
+          id="great-names"
+          onChange={this.handleChange}>
 
-        render: function () {
-          return (
-            <div>
-              <select
-                id="great-names"
-                onChange={this.handleChange}>
+          <option value="Frarthur">Frarthur</option>
+          <option value="Gromulus">Gromulus</option>
+          <option value="Thinkpiece">Thinkpiece</option>
+        </select>
+      </div>
+    );
+  }
+});
 
-                <option value="Frarthur">Frarthur</option>
-                <option value="Gromulus">Gromulus</option>
-                <option value="Thinkpiece">Thinkpiece</option>
-              </select>
-            </div>
-          );
-        }
-      });
-
-      module.exports = Child;
+module.exports = Child;
+```
 
 - **`Stateless / Sibling.js`**
 
-      var React = require('react');
+```js
+var React = require('react');
 
-      var Sibling = React.createClass({
-        render: function () {
-          var name = this.props.name;
-          return (
-            <div>
-              <h1>Hey, my name is {name}!</h1>
-              <h2>Don't you think {name} is the prettiest name ever?</h2>
-              <h2>Sure am glad that my parents picked {name}!</h2>
-            </div>
-          );
-        }
-      });
+var Sibling = React.createClass({
+  render: function () {
+    var name = this.props.name;
+    return (
+      <div>
+        <h1>Hey, my name is {name}!</h1>
+        <h2>Don't you think {name} is the prettiest name ever?</h2>
+        <h2>Sure am glad that my parents picked {name}!</h2>
+      </div>
+    );
+  }
+});
 
-      module.exports = Sibling;
+module.exports = Sibling;
+```
 
 ##### Pattern 4 :
 
@@ -298,48 +309,52 @@ source: 'Github'
 
 - `Style file / style.js`
 
-      var blue  = 'rgb(139, 157, 195)';
-      var darkBlue  = 'rgb(059, 089, 152)';
-      var lightBlue = 'rgb(223, 227, 238)';
-      var grey      = 'rgb(247, 247, 247)';
-      var white     = 'rgb(255, 255, 255)';
-      var fontSize   = '4em';
+```js
+var blue  = 'rgb(139, 157, 195)';
+var darkBlue  = 'rgb(059, 089, 152)';
+var lightBlue = 'rgb(223, 227, 238)';
+var grey      = 'rgb(247, 247, 247)';
+var white     = 'rgb(255, 255, 255)';
+var fontSize   = '4em';
 
-      module.exports = {
-        blue: blue,
-        darkBlue: darkBlue,
-        lightBlue: lightBlue,
-        grey: grey,
-        white: white,
-        fontSize:   fontSize
-      };
+module.exports = {
+  blue: blue,
+  darkBlue: darkBlue,
+  lightBlue: lightBlue,
+  grey: grey,
+  white: white,
+  fontSize:   fontSize
+};
+```
 
 - `Stateless / Sibling.js`
 
-      var React = require('react');
-      var ReactDOM = require('react-dom');
-      var styles = require('./facebookStyles');
+```js
+var React = require('react');
+var ReactDOM = require('react-dom');
+var styles = require('./facebookStyles');
 
-      var divStyle = {
-        backgroundColor: styles.darkBlue,
-        color:           styles.white,
-        fontSize:           styles.fontSize
-      };
+var divStyle = {
+  backgroundColor: styles.darkBlue,
+  color:           styles.white,
+  fontSize:           styles.fontSize
+};
 
-      var Wow = React.createClass({
-        render: function () {
-          return (
-            <div style={divStyle}>
-              Wow, I stole these colors from Facebook!
-            </div>
-          );
-        }
-      });
+var Wow = React.createClass({
+  render: function () {
+    return (
+      <div style={divStyle}>
+        Wow, I stole these colors from Facebook!
+      </div>
+    );
+  }
+});
 
-      ReactDOM.render(
-        <Wow />,
-        document.getElementById('app')
-      );
+ReactDOM.render(
+  <Wow />,
+  document.getElementById('app')
+);
+```
 
 ##### Pattern 5 :
 
@@ -357,17 +372,19 @@ source: 'Github'
   - If you have a component class with nothing but a render function, then you can rewrite that component class in a very different way.
   - Instead of using React.createClass, you can write it as JavaScript function!
 
-        // Normal way to display a prop:
-        var MyComponentClass = React.createClass({
-          render: function () {
-            return <h1>{this.props.title}</h1>;
-          }
-        });
+  ```js
+  // Normal way to display a prop:
+  var MyComponentClass = React.createClass({
+    render: function () {
+      return <h1>{this.props.title}</h1>;
+    }
+  });
 
-        // Stateless functional component way to display a prop:
-        function MyComponentClass (props) {
-          return <h1>{props.title}</h1>;
-        }
+  // Stateless functional component way to display a prop:
+  function MyComponentClass (props) {
+    return <h1>{props.title}</h1>;
+  }
+  ```
 
 #### propTypes
 
@@ -376,19 +393,21 @@ source: 'Github'
   - **Prop validation** : Validation can ensure that your props are doing what they're supposed to be doing. If props are missing, or if they're present but they aren't what you're expecting, then a warning will print in the console.
   - **Documentation** : Documenting props makes it easier to glance at a file and quickly understand the component class inside. When you have a lot of files, and you will, this can be a huge benefit.
 
-        var React = require('react');
+  ```js
+  var React = require('react');
 
-        var MessageDisplayer = React.createClass({
-          // This propTypes object should have
-          // one property for each expected prop:
-          propTypes: {
-            message: React.PropTypes.string
-          },
+  var MessageDisplayer = React.createClass({
+    // This propTypes object should have
+    // one property for each expected prop:
+    propTypes: {
+      message: React.PropTypes.string
+    },
 
-          render: function () {
-            return <h1>{this.props.message}</h1>;
-          }
-        });
+    render: function () {
+      return <h1>{this.props.message}</h1>;
+    }
+  });
+  ```
 
 #### Forms
 
@@ -396,41 +415,43 @@ source: 'Github'
 - **Controlled component** : An uncontrolled component is a component that maintains its own internal state.
 - **Uncontrolled component** : A controlled component is a component that does not maintain any internal state.
 
-      var React = require('react');
-      var ReactDOM = require('react-dom');
+```js
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-      var Input = React.createClass({
+var Input = React.createClass({
 
-        getInitialState: function () {
-          return {
-            userInput: ''
-          };
-        },
+  getInitialState: function () {
+    return {
+      userInput: ''
+    };
+  },
 
-        handleUserInput: function (e) {
-          this.setState({
-            userInput: e.target.value
-          });
-        },
+  handleUserInput: function (e) {
+    this.setState({
+      userInput: e.target.value
+    });
+  },
 
-        render: function () {
-          return (
-            <div>
-              <input
-                type="text"
-                onChange={this.handleUserInput}
-                value={this.state.userInput}
-              />
-              <h1>{this.state.userInput}</h1>
-            </div>
-          );
-        }
-      });
+  render: function () {
+    return (
+      <div>
+        <input
+          type="text"
+          onChange={this.handleUserInput}
+          value={this.state.userInput}
+        />
+        <h1>{this.state.userInput}</h1>
+      </div>
+    );
+  }
+});
 
-      ReactDOM.render(
-        <Input />,
-        document.getElementById('app')
-      );
+ReactDOM.render(
+  <Input />,
+  document.getElementById('app')
+);
+```
 
 #### Lifestyle methods
 
@@ -448,41 +469,43 @@ source: 'Github'
   3. ComponentDidMount
 - If you need to do something only the first time that a component renders, then it's probably a job for a mounting lifecycle method!
 
-      var React = require('react');
-      var ReactDOM = require('react-dom');
+```js
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-      var Flashy = React.createClass({
-        componentWillMount: function () {
-          alert('AND NOW, FOR THE FIRST TIME EVER...  FLASHY!!!!');
-        },
+var Flashy = React.createClass({
+  componentWillMount: function () {
+    alert('AND NOW, FOR THE FIRST TIME EVER...  FLASHY!!!!');
+  },
 
-        componentDidMount: function () {
-          alert('YOU JUST WITNESSED THE DEBUT OF...  FLASHY!!!!!!!');
-        },
+  componentDidMount: function () {
+    alert('YOU JUST WITNESSED THE DEBUT OF...  FLASHY!!!!!!!');
+  },
 
-        render: function () {
+  render: function () {
 
-          alert('Flashy is rendering!');
-          return (
-            <h1 style={{ color: this.props.color }}>
-              OOH LA LA LOOK AT ME I AM THE FLASHIEST
-            </h1>
-          );
-        }
+    alert('Flashy is rendering!');
+    return (
+      <h1 style={{ color: this.props.color }}>
+        OOH LA LA LOOK AT ME I AM THE FLASHIEST
+      </h1>
+    );
+  }
 
-      });
+});
 
-      ReactDOM.render(
-        <Flashy color='red' />,
-        document.getElementById('app')
-      );
+ReactDOM.render(
+  <Flashy color='red' />,
+  document.getElementById('app')
+);
 
-      setTimeout(function () {
-        ReactDOM.render(
-          <Flashy color='green' />,
-          document.getElementById('app')
-        );
-      }, 2000);
+setTimeout(function () {
+  ReactDOM.render(
+    <Flashy color='green' />,
+    document.getElementById('app')
+  );
+}, 2000);
+```
 
 ##### Updating lifecycle methods
 
@@ -499,26 +522,28 @@ source: 'Github'
 
 - componentWillUnmount gets called right before a component is removed from the DOM.
 
-      var React = require('react');
+```js
+var React = require('react');
 
-      var Enthused = React.createClass({
-        interval: null,
+var Enthused = React.createClass({
+  interval: null,
 
-        componentDidMount: function () {
-          this.interval = setInterval(function(){
-            this.props.addText('!');
-          }.bind(this), 15);
-        },
-        componentWillUnmount: function (prevProps, prevState) {
-          clearInterval(this.interval);
-        },
-        render: function () {
-          return (
-            <button onClick={this.props.toggle}>
-              Stop!
-            </button>
-          );
-        }
-      });
+  componentDidMount: function () {
+    this.interval = setInterval(function(){
+      this.props.addText('!');
+    }.bind(this), 15);
+  },
+  componentWillUnmount: function (prevProps, prevState) {
+    clearInterval(this.interval);
+  },
+  render: function () {
+    return (
+      <button onClick={this.props.toggle}>
+        Stop!
+      </button>
+    );
+  }
+});
 
-      module.exports = Enthused;
+module.exports = Enthused;
+```

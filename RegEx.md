@@ -1,17 +1,3 @@
----
-date: '2019-01-13'
-publish: 'true'
-category: 'note'
-author: 'Maitrik Patel'
-
-title: 'RegEx'
-description: 'You shall not parse.'
-
-topics: 'tools, development'
-
-source: 'Github'
----
-
 ### RegEx
 
 - [Undersrtand Regular Expression in hour](https://www.youtube.com/watch?v=ZfQFUJhPqMM)
@@ -95,7 +81,7 @@ let text = "<h1>Winter is coming</h1>";
 let myRegex = /<h.*>/;
 let result = text.match(myRegex); // <h1>Winter is coming</h1>
 
-let text = "<h1>Winter is coming</h1>"; <h1>
+let text = "<h1>Winter is coming</h1>";
 let myRegex = /<h.*?>/;
 let result = text.match(myRegex); // <h1>
 
