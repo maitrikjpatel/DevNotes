@@ -23,6 +23,7 @@ Following is list of notes which I use in day to day development work.
 - [CSS](CSS.md)
 - [GIT](Git.md)
 - [AR](AR.md)
+- [RegEx](RegEx.md)
 
 ## Design Notes
 

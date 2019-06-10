@@ -68,11 +68,6 @@ let quoteSample = "Beware of bugs in the above code; I have only proved it corre
 let vowelRegex = /[aeiou]/ig;
 let result = quoteSample.match(vowelRegex);
 
-//Match Letters of the Alphabet
-let quoteSample = "The quick brown fox jumps over the lazy dog.";
-let alphabetRegex = /change/;
-let result = alphabetRegex;
-
 // Match Numbers and Letters of the Alphabet
 let quoteSample = "Blueberry 3.141592653s are delicious.";
 let myRegex = /[2-6h-s]/ig;

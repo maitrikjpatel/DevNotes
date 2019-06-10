@@ -106,7 +106,8 @@ console.log( myObj.hasOwnProperty('nickname') );
 undefined	-> NaN
 null	-> 0
 true / false	-> 1 / 0
-string	-> The string is read “as is”, whitespaces from both sides are ignored. An empty string becomes 0. An error gives NaN
+string	-> The string is read “as is”, whitespaces from both sides are ignored ->
+An empty string becomes 0. An error gives NaN
 ```
 
 - ToBoolean, Boolean(value) – Occurs in logical operations. Can be performed with Boolean(value).
@@ -186,10 +187,9 @@ do{
 - Functions are values. They can be assigned, copied or declared in any place of the code.
 
 - **Function Declaration**
-
-	- If the function is declared as a separate statement in the main code flow, that’s called a “Function Declaration”.
-	- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
-	- a function, declared as a separate statement, in the main code flow.
+- If the function is declared as a separate statement in the main code flow, that’s called a “Function Declaration”.
+- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
+- a function, declared as a separate statement, in the main code flow.
 
 	```js
 	function sum(a, b) {
@@ -198,11 +198,10 @@ do{
 	```
 
 - **Function Expression**
+- If the function is created as a part of an expression, it’s called a “Function Expression”.
+- Function Expressions are created when the execution flow reaches them.
+-  A function, created inside an expression or inside another syntax construct. Here, the function is created at the right side of the “assignment expression”
 
-	- If the function is created as a part of an expression, it’s called a “Function Expression”.
-	- Function Expressions are created when the execution flow reaches them.
-	-  A function, created inside an expression or inside another syntax construct. Here, the function is created at the right side of the “assignment expression”
-	
 	```js
 	let sum = function(a, b) {
 		return a + b;
@@ -210,8 +209,7 @@ do{
 	```
 
 - **Callback functions**
-
-	- The arguments of ask are called callback functions or just callbacks.
+- The arguments of ask are called callback functions or just callbacks.
 
 	```js
 	// Without CallBack
@@ -239,27 +237,26 @@ do{
 	```
 
 - **Function Expression vs Function Declaration**
+- A Function Expression is created when the execution reaches it and is usable from then on.
+- Function Declaration is usable in the whole script/code block.
 
-	- A Function Expression is created when the execution reaches it and is usable from then on.
-	- Function Declaration is usable in the whole script/code block.
+```js
+// The Function Declaration sayHi is created when JavaScript is preparing 
+// to start the script and is visible everywhere in it.
+sayHi("John"); // Hello, John
 
-	```js
-	// The Function Declaration sayHi is created when JavaScript is preparing 
-	// to start the script and is visible everywhere in it.
-	sayHi("John"); // Hello, John
+function sayHi(name) {
+	alert( `Hello, ${name}` );
+}
 
-	function sayHi(name) {
-		alert( `Hello, ${name}` );
-	}
+// A Function Expression won't work
 
-	// A Function Expression won't work
+sayHi("John"); // error!
 
-	sayHi("John"); // error!
-
-	let sayHi = function(name) {  // (*) no magic any more
-		alert( `Hello, ${name}` );
-	};
-	```
+let sayHi = function(name) {  // (*) no magic any more
+	alert( `Hello, ${name}` );
+};
+```
 
 #### Object
 
@@ -270,7 +267,7 @@ do{
 
 - **Object literal:**
 	- Literal notation creates a single object. Literal notation uses **curly brackets { }** and the object's default properties are defined within the brackets using **property:value** notation.
-
+	
 	```js
 	var objectName = {};
 
@@ -320,19 +317,19 @@ do{
 
 	- An advantage of bracket notation is that we are not restricted to just using strings that is: no spaces and other limitations.
 	- Square brackets notation obj["property"]. Square brackets allow to take the key from a variable, like obj[varWithKey].
+	
+	```js
+	let user = {};
 
-```js
-let user = {};
+	// set
+	user["likes birds"] = true;
 
-// set
-user["likes birds"] = true;
+	// get
+	alert(user["likes birds"]); // true
 
-// get
-alert(user["likes birds"]); // true
-
-// delete
-delete user["likes birds"];
-```
+	// delete
+	delete user["likes birds"];
+	```
 
 - **Additional operators**
 
@@ -346,37 +343,36 @@ delete user["likes birds"];
 	- When an object variable is copied – the reference is copied, the object is not duplicated.
 	- If we imagine an object as a cabinet, then a variable is a key to it. Copying a variable duplicates the key, but not the cabinet itself.
 
-```js
-let user = {
-	name: "John",
-	age: 30
-};
+	```js
+	let user = {
+		name: "John",
+		age: 30
+	};
 
-//-----------Copying object---------
+	//-----------Copying object---------
 
-let admin = user; // copy the reference
-admin.name = "Pete" // Updated to user reference object
-alert( user.name ); // Pete as object reference changed
+	let admin = user; // copy the reference
+	admin.name = "Pete" // Updated to user reference object
+	alert( user.name ); // Pete as object reference changed
 
-//-----------Clone using loop---------
-// Cloning
-let user = {
-	name: "John",
-	age: 30
-};
+	//-----------Clone using loop---------
+	// Cloning
+	let user = {
+		name: "John",
+		age: 30
+	};
 
-let clone = {}; // the new empty object
-for (let key in user) {
-	clone[key] = user[key];
-}
+	let clone = {}; // the new empty object
+	for (let key in user) {
+		clone[key] = user[key];
+	}
 
-clone.name = "Pete"; // changed the data in it
-alert( user.name ); // John in original object as clone has its own object reference
+	clone.name = "Pete"; // changed the data in it
+	alert( user.name ); // John in original object as clone has its own object reference
 
-//---------Object.Assign------------
-let clone = Object.assign({}, user);
-
-```
+	//---------Object.Assign------------
+	let clone = Object.assign({}, user);
+	```
 
 #### Garbage collection
 
@@ -686,27 +682,27 @@ for (let entry of recipeMap) { // the same as of recipeMap.entries()
 		- set.clear() – removes everything from the set.
 		- set.size – is the elements count.
 
-```js
-let set = new Set();
+		```js
+		let set = new Set();
 
-let john = { name: "John" };
-let pete = { name: "Pete" };
-let mary = { name: "Mary" };
+		let john = { name: "John" };
+		let pete = { name: "Pete" };
+		let mary = { name: "Mary" };
 
-// visits, some users come multiple times
-set.add(john);
-set.add(pete);
-set.add(mary);
-set.add(john);
-set.add(mary);
+		// visits, some users come multiple times
+		set.add(john);
+		set.add(pete);
+		set.add(mary);
+		set.add(john);
+		set.add(mary);
 
-// set keeps only unique values
-alert( set.size ); // 3
+		// set keeps only unique values
+		alert( set.size ); // 3
 
-for (let user of set) {
-  alert(user.name); // John (then Pete and Mary)
-}
-```
+		for (let user of set) {
+			alert(user.name); // John (then Pete and Mary)
+		}
+		```
 
 - Iteration over Set
 
@@ -1076,19 +1072,19 @@ alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
 	- One call – one Lexical Environment : a new function Lexical Environment is created each time a function runs.
 	- Lexical Environment is cleaned up and deleted after the function run
 
-```js
-//----No Clousre----
-//----Access outer Lexical Envrionment Object variable---
-let name = "John";
+	```js
+	//----No Clousre----
+	//----Access outer Lexical Envrionment Object variable---
+	let name = "John";
 
-function sayHi() {
-  alert("Hi, " + name);
-}
+	function sayHi() {
+		alert("Hi, " + name);
+	}
 
-name = "Pete"; // (*)
+	name = "Pete"; // (*)
 
-sayHi(); // Pete
-```
+	sayHi(); // Pete
+	```
 
 - **Closures**
 	- A closure is a function that remembers its outer variables and can access them.
@@ -1309,20 +1305,20 @@ Modal
 	- Recursive setTimeout guarantees a delay between the executions, while setInterval – does not.
 	- The real delay between func calls for setInterval is less than in the code because the time taken by func's execution “consumes” a part of the interval.
 
-```js
-// he real delay between func calls for setInterval is less than in the code
-let i = 1;
-setInterval(function() {
-  func(i);
-}, 100);
+	```js
+	// he real delay between func calls for setInterval is less than in the code
+	let i = 1;
+	setInterval(function() {
+		func(i);
+	}, 100);
 
-// The recursive setTimeout guarantees the fixed delay (here 100ms).
-let i = 1;
-setTimeout(function run() {
-  func(i);
-  setTimeout(run, 100);
-}, 100);
-```
+	// The recursive setTimeout guarantees the fixed delay (here 100ms).
+	let i = 1;
+	setTimeout(function run() {
+		func(i);
+		setTimeout(run, 100);
+	}, 100);
+	```
 
 - Zero time scheduling
 	- Zero-timeout scheduling setTimeout(...,0) is used to schedule the call “as soon as possible, but after the current code is complete”.
@@ -2168,7 +2164,7 @@ try {
 }
 ```
 
-### Callbacks
+#### Callbacks
 
 - Many actions in JavaScript are asynchronous.
 
@@ -2326,7 +2322,8 @@ function loadScript(src, callback) {
   document.head.append(script);
 }
 
-// Promise object that resolves when the loading is complete. The outer code can add handlers using .then
+// Promise object that resolves when the loading is complete. 
+// The outer code can add handlers using .then
 // Declare Promise
 function loadScript(src) {
   return new Promise(function(resolve, reject) {
@@ -2358,7 +2355,532 @@ promise.then(script => alert('One more handler to do something else!'));
 - We must have a callback function at our disposal when calling loadScript(script, callback). In other words, we must know what to do with the result before loadScript is called.
 - There can be only one callback.
 
+##### Promises chaining
 
+- When you want sequence of asynchronous tasks to be done one after another
+- Promise -> .then -> .then -> .then 
+- We can have multiple handlers for one promise.
+	- Promise -> .then1,  Promise -> .then2, Promise -> .then3 ( Same Promise )
+
+```js
+new Promise(function(resolve, reject) {
+
+  setTimeout(() => resolve(1), 1000); // (*)
+
+}).then(function(result) { // (**)
+
+  alert(result); // 1
+  return result * 2;
+
+}).then(function(result) { // (***)
+
+  alert(result); // 2
+  return result * 2;
+
+}).then(function(result) {
+
+  alert(result); // 4
+  return result * 2;
+```
+
+- **example : Bigger example: fetch**
+- In frontend programming promises are often used for network requests.
+- We’ll use the fetch method to load the information about the user from the remote server.
+
+```js
+// Make a request for user.json
+fetch('/article/promise-chaining/user.json')
+  // Load it as json
+  .then(response => response.json())
+  // Make a request to GitHub
+  .then(user => fetch(`https://api.github.com/users/${user.name}`))
+  // Load the response as json
+  .then(response => response.json())
+  // Show the avatar image (githubUser.avatar_url) for 3 seconds (maybe animate it)
+  .then(githubUser => {
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+
+   setTimeout(() => {
+      img.remove();
+      resolve(githubUser);
+    }, 3000);
+  }))
+  // triggers after 3 seconds
+  .then(githubUser => alert(`Finished showing ${githubUser.name}`));
+
+// split the code into reusable functions
+function loadJson(url) {
+  return fetch(url)
+    .then(response => response.json());
+}
+
+function loadGithubUser(name) {
+  return fetch(`https://api.github.com/users/${name}`)
+    .then(response => response.json());
+}
+
+function showAvatar(githubUser) {
+  return new Promise(function(resolve, reject) {
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+
+    setTimeout(() => {
+      img.remove();
+      resolve(githubUser);
+    }, 3000);
+  });
+}
+
+// Use them:
+loadJson('/article/promise-chaining/user.json')
+  .then(user => loadGithubUser(user.name))
+  .then(showAvatar)
+  .then(githubUser => alert(`Finished showing ${githubUser.name}`));
+  // ...
+
+```
+
+##### Error handling with promises
+- Asynchronous actions may sometimes fail: in case of an error the corresponding promise becomes rejected. 
+- The final `.catch` not only catches explicit rejections, but also occasional errors in the handlers above.
+- .catch handles promise rejections of all kinds: be it a reject() call, or an error thrown in a handler.
+- We should place .catch exactly in places where we want to handle errors and know how to handle them. The handler should analyze errors (custom error classes help) and rethrow unknown ones.
+- It’s ok not to use .catch at all, if there’s no way to recover from an error.
+- In any case we should have the unhandledrejection event handler (for browsers, and analogs for other environments), to track unhandled errors and inform the user (and probably our server) about the them, so that our app never “just dies”.
+
+```js
+fetch('/') // fetch works fine now, the server responds with the HTML page
+  .then(response => response.json()) // rejects: the page is HTML, not a valid json
+  .catch(err => alert(err)) // SyntaxError: Unexpected token < in JSON at position 0
+
+//Example
+new Promise((resolve, reject) => {
+  resolve("ok");
+}).then((result) => {
+  blabla(); // no such function
+}).catch(alert); // ReferenceError: blabla is not defined
+```
+
+##### Promise API 
+
+- Promise.resolve(value) – makes a resolved promise with the given value.
+```js
+let promise = Promise.resolve(value);
+// Same as:
+let promise = new Promise(resolve => resolve(value));
+```
+
+- Promise.reject(error) – makes a rejected promise with the given error.
+```js
+let promise = Promise.reject(error);
+// Same as:
+let promise = new Promise((resolve, reject) => reject(error));
+```
+- Promise.all(promises) – waits for all promises to resolve and returns an array of their results. If any of the given promises rejects, then it becomes the error of Promise.all, and all other results are ignored.
+
+```js
+let promise = Promise.all([...promises...]);
+// Example:
+Promise.all([
+  new Promise(resolve => setTimeout(() => resolve(1), 3000)), // 1
+  new Promise(resolve => setTimeout(() => resolve(2), 2000)), // 2
+  new Promise(resolve => setTimeout(() => resolve(3), 1000))  // 3
+]).then(alert); // 1,2,3 when promises are ready: each promise contributes an array member
+```
+
+- Promise.race(promises) – waits for the first promise to settle, and its result/error becomes the outcome.
+```js
+let promise = Promise.race(iterable);
+// Example:
+Promise.race([
+  new Promise((resolve, reject) => setTimeout(() => resolve(1), 1000)),
+  new Promise((resolve, reject) => setTimeout(() => reject(new Error("Whoops!")), 2000)),
+  new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
+]).then(alert); // 1 as first settled promise “wins the race”, all further results/errors are ignored.
+```
+
+- Of these four, Promise.all is the most common in practice.
+
+##### Promification
+
+- Promisification is a great approach, especially when you use async/await (see the next chapter), but not a total replacement for callbacks.
+- Remember, a promise may have only one result, but a callback may technically be called many times.
+- So promisification is only meant for functions that call the callback once. Further calls will be ignored.
+
+##### Microtasks
+- Promise handlers .then/.catch/.finally are always asynchronous.
+- Why ? because of Microtask queue
+	- the queue is first-in-first-out: tasks enqueued first are run first.
+	- Execution of a task is initiated only when nothing else is running.
+- Promise handling is always asynchronous, as all promise actions pass through the internal “promise jobs” queue, also called “microtask queue” (v8 term).
+- So, .then/catch/finally handlers are called after the current code is finished.
+- If we need to guarantee that a piece of code is executed after .then/catch/finally, it’s best to add it into a chained .then call.
+
+```js
+let promise = Promise.resolve();
+promise.then(() => alert("promise done"));
+alert("code finished"); // this alert shows first
+```
+
+##### Event loop
+- “Event loop” is a process when the engine sleeps and waits for events. When they occur – handles them and sleeps again.
+- Events of Macrotask queue
+	- mousemove, a user moved their mouse.
+	- setTimeout handler is to be called.
+	- an external `<script src="...">` is loaded, ready to be executed.
+	- a network operation, e.g. fetch is complete.
+- Microtask queue has a higher priority than the macrotask queue.
+- Macrotasks run after the code is finished and after the microtask queue is empty.
+
+```js
+setTimeout(() => alert("timeout")); // third as MicroTask
+Promise.resolve()
+  .then(() => alert("promise")); // second as MicroTask
+alert("code"); // first
+```
+- "Unhandled rejection" is when a promise error is not handled at the end of the microtask queue.
+```js
+let promise = Promise.reject(new Error("Promise Failed!"));
+
+window.addEventListener('unhandledrejection', event => {
+  alert(event.reason); // Promise Failed!
+});
+```
+- regular code -> then promise handling(MicroTask) -> then everything else, like events (MacroTask)
+
+#### Async/await
+- A special syntax to work with promises in a more comfortable fashion, called “async/await”.
+- `async` ensures that the function returns a promise, and wraps non-promises in it.
+
+```js
+async function f() {
+  return 1;
+}
+f().then(alert); // 1
+
+// Equals to following
+async function f() {
+  return Promise.resolve(1);
+}
+f().then(alert); // 1
+```
+- **await**
+-	The keyword `await` makes JavaScript wait until that promise settles and returns its result.
+- `await` literally makes JavaScript wait until the promise settles, and then go on with the result.
+- `await` only works inside an `async` function.
+	- If it’s an error, the exception is generated, same as if throw error were called at that very place.
+	- Otherwise, it returns the result, so we can assign it to a value.
+
+```js
+async function f() {
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("done!"), 1000)
+  });
+  let result = await promise; // wait till the promise resolves (*)
+  alert(result); // "done!"
+}
+
+f();
+```
+- With async/await we rarely need to write promise.then/catch, but we still shouldn’t forget that they are based on promises, because sometimes (e.g. in the outermost scope) we have to use these methods. 
+- Also Promise.all is a nice thing to wait for many tasks simultaneously.
+
+```js
+// With Promise
+function loadJson(url) {
+  return fetch(url)
+    .then(response => {
+      if (response.status == 200) {
+        return response.json();
+      } else {
+        throw new Error(response.status);
+      }
+    })
+}
+
+loadJson('no-such-user.json') // (3)
+	.catch(alert); // Error: 404
+	
+// With async
+async function loadJson(url) { // (1)
+  let response = await fetch(url); // (2)
+  if (response.status == 200) {
+    let json = await response.json(); // (3)
+    return json;
+  }
+  throw new Error(response.status);
+}
+
+loadJson('no-such-user.json')
+  .catch(alert); // Error: 404 (4)
+```
+
+#### Generators
+- Regular functions return only one, single value (or nothing).
+- Generators can return (“yield”) multiple values, possibly an infinite number of values, one after another, on-demand.
+- The main method of a generator is `next()`. When called, it resumes execution till the nearest yield `<value>` statement
+
+```js
+// function* f(…) or function *f(…)
+// both correct
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+let generator = generateSequence();
+
+let one = generator.next();
+alert(JSON.stringify(one)); // {value: 1, done: false}
+
+let two = generator.next();
+alert(JSON.stringify(two)); // {value: 2, done: false}
+
+let three = generator.next();
+alert(JSON.stringify(three)); // {value: 3, done: true}
+
+//  iterable
+for(let value of generator) {
+  alert(value); // 1, then 2, then 3
+}
+// With spread operator '...'
+let sequence = [0, ...generateSequence()];
+alert(sequence); // 0, 1, 2, 3
+
+//In Function
+function* generateSequence(start, end) {
+  for (let i = start; i <= end; i++) {
+    yield i;
+  }
+}
+let sequence = [...generateSequence(1,5)];
+alert(sequence); // 1, 2, 3, 4, 5
+```
+
+- **“yield” is a two-way road**
+- generators were like “iterators on steroids”
+- yield is a two-way road: it not only returns the result outside, but also can pass the value inside the generator.
+
+```js
+function* gen() {
+  // Pass a question to the outer code and wait for an answer
+  let result = yield "2 + 2?"; // (*)
+  alert(result);
+}
+
+let generator = gen();
+let question = generator.next().value; // <-- yield returns the value
+generator.next(4); // --> pass the result into the generator
+```
+
+- **Async iterators and generators**
+- Regular iterators and generators work fine with the data that doesn’t take time to generate.
+- When we expect the data to come asynchronously, with delays, their async counterparts can be used, and for await..of instead of for..of.
+
+```js
+// Iterators
+Symbol.iterator // Object method to provide iteraterable
+any value // next() return value is
+
+// Generators
+function*  // Declaration
+{value:…, done: true/false}	// generator.next() returns
+
+//-----
+
+//Async iterators
+Symbol.asyncIterator // Object method to provide iteraterable
+Promise // next() return value is
+
+// Async generators
+async function* // Declaration
+Promise that resolves to {value:…, done: true/false} // // generator.next() returns
+```
+
+- In web-development we often meet streams of data, when it flows chunk-by-chunk. For instance, downloading or uploading a big file.
+- We can use async generators to process such data, but it’s worth to mention that there’s also another API called Streams, that provides special interfaces to transform the data and to pass it from one stream to another (e.g. download from one place and immediately send elsewhere).
+- Streams API not a part of JavaScript language standard. Streams and async generators complement each other, both are great ways to handle async data flows.
+
+#### Modules
+
+- As our application grows bigger, we want to split it into multiple files, so called ‘modules’.
+- A module usually contains a class or a library of useful functions.
+- A module is just a file, a single script, as simple as that.
+	- export keyword labels variables and functions that should be accessible from outside the current module.
+	- import allows to import functionality from other modules.
+- Modules always use strict, by default. E.g. assigning to an undeclared variable will give an error.
+
+```js
+<script type="module">
+  a = 5; // error
+</script>
+```
+- Each module has its own top-level scope. In other words, top-level variables and functions from a module are not seen in other scripts.
+
+- A module code is evaluated only the first time when imported
+
+```js
+// 📁 admin.js
+export let admin = { };
+export function sayHi() {
+  alert(`Ready to serve, ${admin.name}!`);
+}
+
+// 📁 init.js
+import {admin} from './admin.js';
+admin.name = "Pete";
+
+// 📁 other.js
+import {admin, sayHi} from './admin.js';
+alert(admin.name); // Pete
+sayHi(); // Ready to serve, Pete!
+```
+
+- **Top-level “this” is undefined**
+- In a module, top-level this is undefined, as opposed to a global object in non-module scripts:
+
+```js
+<script>
+  alert(this); // window
+</script>
+
+<script type="module">
+  alert(this); // undefined
+</script>
+```
+
+- **Module scripts are deferred**
+	- external module scripts `<script type="module" src="...">` don’t block HTML processing, they load in parallel with other resources.
+	- module scripts wait until the HTML document is fully ready (even if they are tiny and load faster than HTML), and then run.
+	- relative order of scripts is maintained: scripts that go first in the document, execute first.
+
+```js
+// 3rd 
+// object: the script can 'see' the button below
+// as modules are deferred, the script runs after the whole page is loaded
+<script type="module">
+  alert(typeof button);
+</script>
+
+// 2nd 
+// Compare to regular script below:
+// Error: button is undefined, the script can't see elements below
+// regular scripts run immediately, before the rest of the page is processed
+<script>
+  alert(typeof button); 
+</script>
+
+// 1st 
+<button id="button">Button</button>
+```
+
+- **async works on inline scripts**
+- Async attribute `<script async type="module">` is allowed on both inline and external scripts. Async scripts run immediately when imported modules are processed, independently of other scripts or the HTML document.
+
+```js
+// the script below has async, so it doesn’t wait for anyone.
+// all dependencies are fetched (analytics.js), and the script runs
+// doesn't wait for the document or other <script> tags
+<script async type="module">
+  import {counter} from './analytics.js';
+  counter.count();
+</script>
+```
+
+- No “bare” modules allowed and Compatibility, “nomodule”
+
+```js
+// the module must have a path, e.g. './sayHi.js' or wherever the module is
+import {sayHi} from 'sayHi'; // Error, "bare" module
+
+// nomodule
+<script type="module">
+  alert("Runs in modern browsers");
+</script>
+
+<script nomodule>
+  alert("Modern browsers know both type=module and nomodule, so skip this")
+  alert("Old browsers ignore script with unknown type=module, but execute this.");
+</script>
+```
+
+- **Build tools**
+- In real-life, browser modules are rarely used in their “raw” form. Usually, we bundle them together with a special tool such as `Webpack` and deploy to the production server.
+- Why ?
+	- Unreachable code removed.
+	- Unused exports removed (“tree-shaking”).
+	- Development-specific statements like console and debugger removed.
+	- Modern, bleeding-edge JavaScript syntax may be transformed to older one with similar functionality using Babel.
+	- The resulting file is minified (spaces removed, variables replaced with shorter named etc).
+
+##### Export/Import
+
+```js
+// 📁 say.js
+function sayHi(user) {
+  alert(`Hello, ${user}!`);
+}
+function sayBye(user) {
+  alert(`Bye, ${user}!`);
+}
+export {sayHi, sayBye}; // a list of exported variables
+
+// 📁 main.js
+import {sayHi, sayBye} from './say.js';
+sayHi('John'); // Hello, John!
+sayBye('John'); // Bye, John!
+
+// 📁 main.js with * and as 
+import * as say from './say.js';
+say.sayHi('John');
+say.sayBye('John');
+```
+
+- Named export 
+	- export class User {...}
+	- import {User} from ...
+-	Default export
+	- export default class User {...}
+	- import User from ...
+- named exports must (naturally) have a name, while export default may be anonymous.
+- Please note that import/export statements don’t work if inside {...}.
+
+- Re-export:
+	- export {x [as y], ...} from "mod"
+	- export * from "mod" (doesn’t re-export default).
+	- export {default [as y]} from "mod" (re-export default).
+
+```js
+import User from './user.js';
+export {User};
+// Re-Export
+export {default as User} from './user.js';
+```
+
+- **Dynamic imports**
+- First, we can’t dynamically generate any parameters of import.
+- The module path must be a primitive string, can’t be a function call.
+- we can’t import conditionally or at run-time:
+
+```js
+import ... from getModuleName(); // Error, only from "string" is allowed
+if(...) { import ...; // Error, not allowed! }
+{import ...; // Error, we can't put import in any block}
+```
+
+- **The import() function**
+- The `import(module)` function can be called from anywhere. It returns a promise that resolves into a module object.
+```js
+let modulePath = prompt("Module path?");
+import(modulePath)
+  .then(obj => <module object>)
+  .catch(err => <loading error, no such module?>)
+```
 
 ### Topics
 
