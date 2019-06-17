@@ -270,3 +270,354 @@ console.log(a); // undefined
 ```js
 console.log(NaN === NaN) // False
 ```
+
+```js
+function getElementsByClass(klass, node) { //
+  var node = node || document.body; //1
+  var found = []; //2
+  if (hasClass(node, klass)) { //
+    found.push(node);
+  }
+  for (var i=0; i<node.children.length; i++) {
+    found = found.concat(getElementsByClass(klass, node.children[i])); //
+  }
+  return found;
+}
+
+function hasClass(node, klass) {
+  for(var i=0; i<node.classList.length; i++) {
+    if (node.classList[i] === klass) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// root = document.body -> node.children returns a collection of child nodes of the given node
+// node.classList -> returns a token list of the class attribute of the node
+// div.classList = ['this-is-a-class', 'this-is-too']
+
+<div class='this-is-a-class this-is-too'> // div.classList = ['this-is-a-class', 'this-is-too']
+  <p>hello</p>
+</div>
+```
+
+```js
+let myMatrix = [
+  [1,1,1,1],
+  [1,1,1,1],
+  [1,1,1,1],
+  [1,1,1,1]
+]
+
+function matrixSum(matrix){
+  let sum = 0;
+  let rows = matrix.length;
+  let columns = matrix[0].length;
+  
+  // Brut force
+  for( let i = 0; i < columns; i++ ){
+    sum += matrix[0][i];
+  }
+  for( let i = 0; i < columns; i++ ){
+    sum += matrix[rows-1][i];
+  }
+  for( let i = 1; i < columns-1; i++ ){
+    sum += matrix[i][0];
+  }
+  for( let i = 1; i < columns-1; i++ ){
+    sum += matrix[i][columns-1];
+  }
+
+  // Optimized
+  for( let i = 0; i < rows; i++ ){
+    for( let j = 0; j < columns; j++ ){
+      if( i % (rows - 1) == 0 || j % (columns - 1) == 0) {
+        sum += matrix[i][j];
+      } 
+    }
+  }
+  
+  console.log(sum)
+}
+
+matrixSum(myMatrix)
+```
+
+```js
+// myReduce as per following
+// arr.reduce(function(previousValue, item, index, array) {}, initial);
+
+Array.prototype.myReduce = function(callbackFn, startingValue) {
+
+  let accumulator = startingValue || undefined;
+
+  for ( let index = 0; index < this.length; index++ ) {
+
+    if ( accumulator ) {
+      accumulator = callbackFn.call(accumulator, accumulator, this[index], index, this)
+    } else {
+      accumulator = this[index]
+    }
+  }
+  
+  return accumulator;
+}
+
+console.log([1,2,3].myReduce((c,v) => c + v, 0))
+```
+
+```js
+// myMap as per following
+// arr.map(function callback(currentValue, index, array))
+
+Array.prototype.myMap = function(callbackFn) {
+  const resultArray = [];
+  for ( let index = 0; index < this.length; index++ ) {
+    if( this.indexOf(this[index]) > -1 ){
+      resultArray[index] = callbackFn(this[index], index, this)
+    }
+  }
+  return resultArray;
+}
+
+console.log([1,2,3,'',9].myMap((item) => item * 2))
+```
+
+```js
+// myFilter as per following
+// arr.filter(function callback(currentValue, index, array))
+
+Array.prototype.myFilter = function(callbackFn) {
+  
+  const resultArray = [];  
+  for ( let index = 0; index < this.length; index++ ) {
+    
+    if(callbackFn(this[index], index, this)){
+      resultArray.push(this[index]);
+    }
+  }
+  return resultArray;
+}
+console.log([1,2,3,11,9,2,1,9].myFilter(item => item > 3));
+```
+
+```js
+function f(a,b,c){
+  if( a && b && c ){
+    return ( (a + b) * c )
+  } else if( a && b ){
+    return function(valC){
+      return ( (a + b) * valC )
+    }
+  } else if( a){
+    return function(valB){
+      return function(valC){
+          return ( (a + valB) * valC )
+      }
+    }
+  } else {
+    return 0;
+  }
+}
+
+console.log(f(1)(2)(3)); //9
+console.log(f(2)(2)(1)); //4
+console.log(f(2,2)(1)); //4
+console.log(f(2,2,1)); //4
+console.log(f()); // 0
+```
+
+```js
+let mergeFiles = function(array) {
+  let totalSum = 0;
+  let accumulator = 0;
+  let sortedArray = array.sort((a,b) => a - b);
+  for( let i = 1; i < sortedArray.length ; i++ ){
+    if( i == 1) {
+      totalSum = sortedArray[i] + sortedArray[i-1] + totalSum;
+      accumulator += totalSum;
+    } else if (  i > 1) {
+      totalSum = sortedArray[i] + totalSum;
+      accumulator += totalSum;
+    }
+  }
+  return accumulator;
+}
+
+let myArray = [8,4,6,12]
+console.log(mergeFiles(myArray))
+```
+
+
+```js
+// Explan This
+//---------------This of window----------------------
+this.table = "window table"
+const cleanTable = function(soap){
+  // this will come from window , global scope
+  console.log(`Please Clean ${this.table} using ${soap}`); 
+}
+
+console.log(this.table)
+
+// Won't work under 'use strict'
+// cleanTable(this.table)
+
+// call method 
+cleanTable.call(this, 'fancy soap')
+
+// bind
+// cleanTable.bind(this)('fancy soap')
+
+//---------------This of object----------------------
+console.log('---------------------------------------')
+let myRoom = {
+  table: "myRoom table",
+  cleanTable() {
+    console.log(`Please Clean ${this.table}`);
+  }
+}
+console.log(myRoom.table)
+myRoom.cleanTable()
+```
+
+```js
+// fix this, that, call, bind, arrow function
+this.table = "window table"
+const cleanTable = function(_soap){
+
+  // this will give error on this 
+  const innerFunction = function(_soap) {
+    console.log(`Please Clean ${this.table} using ${soap}`); 
+  }
+  innerFunction(soap)
+  
+  // Solution 1: store this in variable and pass in innerfunction 
+  let that = this
+  const innerFunction = function(_soap) {
+    console.log(`Please Clean ${that.table} using ${soap}`); 
+  }
+  innerFunction(soap)
+  
+  // Solution 2: Call/Bind 
+  const innerFunction = function(_soap) {
+    console.log(`Please Clean ${this.table} using ${soap}`); 
+  }
+  innerFunction.call(this,soap);
+  innerFunction.bind(this)(soap);
+  
+  // Solution 3: arrow function
+  // Arrow function don't have `this` so it take outterScope `this`
+  const innerFunction = (_soap) => {
+    console.log(`Please Clean ${this.table} using ${soap}`); 
+  }
+  innerFunction(soap);
+
+}
+cleanTable.call(this, 'fancy soap')
+
+```
+
+```js
+// ---------Prob 1--------------
+let x = {
+  a: 1,
+  b: 2
+}
+let maArray = Object.values(x)
+console.log(maArray);
+```
+
+```js
+// ---------Prob 2--------------
+// let x = 'hi' 
+let y = x.split('').reverse().join(''); // 'ih'
+console.log(y);
+```
+
+```js
+// ---------Prob 3--------------
+const obj = {
+  a: 1,
+  b: 2,
+  getA(){
+    console.log(this.a);
+    return this  // answer
+  },
+  getB(){
+    console.log(this.b);
+  }  
+}
+obj.getA().getB();
+// return this will return obj 
+// a.getB()
+```
+
+```js
+// ---------Prob 4--------------
+// [1,2].myPrint(); // 1,2
+
+Array.prototype.myPrint = function() {
+  const resultArray = [];
+  for ( let index = 0; index < this.length; index++ ) {
+    resultArray.push(`${this[index]}`)
+  }
+  return resultArray.join(',');
+  
+  // Object to Stringify
+  return this.toString();
+}
+console.log([1,2,3,9].myPrint())
+```
+
+```js
+// ---------Prob 5--------------
+// write Clone obj to kep Obj value as it is
+
+const obj = {
+  a: {
+    b:{
+      c: 1
+    }
+  }     
+}
+
+// Shallow cloning  -> 2 
+const clone = Object.assign({}, obj);
+
+// Deep cloning hack
+const clone = JSON.parse(JSON.stringify(obj))
+
+clone.a.b.c = 2
+console.log(obj.a.b.c);
+```
+
+```js
+// Add array and sort 
+const a = [1,2,3,4,5,5,6,9];
+const b = [2,5,6,12,100];
+  
+const c = [ ...a, ...b ].sort((a,b) => a-b)
+console.log(c)
+```
+
+```js
+// Write a parser for Javascript floating point numbers
+
+// Write a JSON parser
+
+// OOP design of a banking system: bank account, transactions and owner
+
+// Create a simple image gallery using HTML/CSS/JS that rotates through images once per second.  
+
+// How would you architect a chess app?  
+
+// How would you write the HTML for YouTube's landing page?  
+
+// Write an async forEach function with and without promises.  
+
+// Talk about one of Workday's actual UI components and explain how you would implement it.  
+
+// What is a technology that you are passionate about and why? 
+```
