@@ -1,7 +1,5 @@
 ## JS Questions
 
-## EASY
-
 ```js 
 conole.log([]+ []) // Empty
 conole.log({}+ []) // Empty
@@ -89,7 +87,7 @@ A.x().y().z();
 ```
 
 ```js
-console.log(2 + '2') // 2
+console.log(2 + '2') // 22
 // + work on string, number
 // convert both value to string and concat
 
@@ -130,7 +128,7 @@ myFunc()
 
 ```js
 console.log( 5 < 6 < 7) // True
-console.log( 5 > 6 > 7) // false (5<6)=true -> (True>7) = false
+console.log( 7 > 6 > 5) // false (7>6)=True -> (True>7) = false
 ```
 
 ```js
@@ -230,9 +228,9 @@ console.log(x[x.indexOf(1000)]) // -1
 ```
 
 ```js
-const myArray = [1,2,15,30,5,45,7]
-console.log(myArray.sort() // [1,15,2,30,45,5,7]
-console.log(myArray.sort((a,b) => a-b))
+let myArray = [2,3,4,3,4,11,8,-21,9,1, -10];
+myArray.sort((a,b) => (b-a)); // [ 11, 9, 8, 4, 4, 3, 3, 2, 1, -10, -21 ]
+myArray.sort((a,b) => (a-b)); // [ -21, -10, 1, 2, 3, 3, 4, 4, 8, 9, 11 ]
 ```
 
 ```js
@@ -347,8 +345,8 @@ matrixSum(myMatrix)
 ```js
 // myReduce as per following
 // arr.reduce(function(previousValue, item, index, array) {}, initial);
-
-Array.prototype.myReduce = function(callbackFn, startingValue) {
+// Add || to not override possible already defined functions.
+Array.prototype.myReduce = Array.prototype.myReduce || function(callbackFn, startingValue) {
 
   let accumulator = startingValue || undefined;
 
@@ -371,7 +369,7 @@ console.log([1,2,3].myReduce((c,v) => c + v, 0))
 // myMap as per following
 // arr.map(function callback(currentValue, index, array))
 
-Array.prototype.myMap = function(callbackFn) {
+Array.prototype.myMap = Array.prototype.myMap || function(callbackFn) {
   const resultArray = [];
   for ( let index = 0; index < this.length; index++ ) {
     if( this.indexOf(this[index]) > -1 ){
@@ -388,7 +386,7 @@ console.log([1,2,3,'',9].myMap((item) => item * 2))
 // myFilter as per following
 // arr.filter(function callback(currentValue, index, array))
 
-Array.prototype.myFilter = function(callbackFn) {
+Array.prototype.myFilter = Array.prototype.myFilter || function(callbackFn) {
   
   const resultArray = [];  
   for ( let index = 0; index < this.length; index++ ) {
@@ -520,30 +518,29 @@ cleanTable.call(this, 'fancy soap')
 ```
 
 ```js
-// ---------Prob 1--------------
+
 let x = {
   a: 1,
   b: 2
 }
 let maArray = Object.values(x)
-console.log(maArray);
+console.log(maArray); // [1,2]
 ```
 
 ```js
-// ---------Prob 2--------------
 // let x = 'hi' 
 let y = x.split('').reverse().join(''); // 'ih'
 console.log(y);
 ```
 
 ```js
-// ---------Prob 3--------------
 const obj = {
   a: 1,
   b: 2,
   getA(){
     console.log(this.a);
-    return this  // answer
+    return this  // return this
+    return obj  // return same obj
   },
   getB(){
     console.log(this.b);
@@ -572,9 +569,7 @@ console.log([1,2,3,9].myPrint())
 ```
 
 ```js
-// ---------Prob 5--------------
 // write Clone obj to kep Obj value as it is
-
 const obj = {
   a: {
     b:{
@@ -600,6 +595,293 @@ const b = [2,5,6,12,100];
   
 const c = [ ...a, ...b ].sort((a,b) => a-b)
 console.log(c)
+```
+
+```js
+// --------CAMELIZE String--------
+let camelize = (str) => {
+//  ------My Solution------
+  let myArray = str.split('-');
+  for(let i = 1; i < myArray.length; i++){
+    myArray[i] = myArray[i].charAt(0).toUpperCase() + myArray[i].slice(1);
+  }
+  return myArray.join('')
+
+  // ------Ideal Solution------
+  return str
+    .split('-')
+    .map(  (word, index) =>
+         index == 0
+         ?
+         word
+         :
+         word[0].toUpperCase() + word.slice(1))
+    .join('');
+}
+let result = camelize('background-color-best');
+```
+
+```js
+// --------FILTER RANGE--------
+let filterRange = (array, a, b) => {
+//  ------My Solution------
+  let filteredArray = [];
+  for(let item of array) {
+    if( item >= a && item <= b ) {
+      filteredArray.push(item);
+    }
+  }
+  return filteredArray;
+  
+  // ------Ideal Solution------ 
+return array.filter(item => (a <= item && item <= b));
+}
+```
+
+```js
+// --------FILTER RANGE IN SAME ARRAY--------
+let filterRangeInPlace = (array, a, b) => {
+  // ------Ideal Solution------ 
+  for (let i = 0; i < array.length; i++) {
+    let val = array[i];
+    console.log(`val:${val}`)
+    console.log(`i:${i}`)
+    console.log(`arrayBefor:${array}`)
+    if( val < a || val > b ) {
+      array.splice(i,1);
+      i--;
+    }
+    console.log(`arrayAfter:${array}`)
+    console.log(`------`)
+  }
+}
+
+```
+
+```js
+// --------COPY SORTED--------
+let copySorted = (array) => array.slice().sort()
+
+let myArray = ["HTML", "JavaScript", "CSS"];
+let sorted = copySorted(myArray);
+
+console.log(sorted);
+```
+
+```js
+// --------CALCULATOR--------
+function Calculator() {
+  let methods = {
+    '+': (a,b) => a+b,
+    '-': (a,b) => a-b
+  };
+  
+  this.calculate = (str) => {
+    let splitStr = str.split(' '),
+        valueA = +splitStr[0],
+        valueOp = splitStr[1],
+        valueB = +splitStr[2]
+    return methods[valueOp](valueA,valueB);
+  }
+
+  this.addMethod = (name, func) => {
+    methods[name] = func;
+  };
+}
+
+let calc = new Calculator;
+calc.addMethod("**", (a, b) => a ** b);
+console.log(calc.calculate("4 + 5"));
+console.log(calc.calculate("4 ** 5"));
+```
+
+```js
+// --------MAP NAMES--------
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = users.map(item => item.name);
+
+console.log( names ); // ["John", "Pete", "Mary"]
+```
+
+```js
+// --------MAP OBJECTS--------
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [ john, pete, mary ];
+
+let usersMapped = users.map(user => ({
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id
+}))
+
+/*
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
+
+console.log( usersMapped[0].id ) // 1
+console.log( usersMapped[0].fullName ) // John Smith
+```
+
+```js
+// --------SORT BY AGE--------
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ pete, john, mary ];
+
+let sortByAge = (array) => {
+  // ----mysolution----
+  array.sort((a,b) => a.age - b.age);
+  // ----idealsolution----
+  array.sort((a,b) => a.age > b.age ? 1 : -1);
+}
+
+sortByAge(users);
+
+// now: [john, mary, pete]
+console.log(users[0].name); // John
+console.log(users[1].name); // Mary
+console.log(users[2].name); // Pete
+```
+
+```js
+// -------SHUFFLE ARRAY--------
+let array = [2,3,4,3,4,11,8,-21,9,1, -10];
+
+let shuffleArray = (array) => {
+  //------Ideal shuffle-------
+  array.sort( () => { 
+    Math.random() - 0.5
+  });
+  
+  // ------Fisher Yates shuffle-------
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+    [array[i], array[j]] = [array[j], array[i]]; // swap elements
+  }
+}
+
+shuffleArray(array);
+console.log(array)
+```
+
+```js
+// -------GET AVARAGE--------
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let users = [ john, pete, mary ];
+
+let getAverageAge = (array) => {
+  return array.reduce((prev, arrayItem) => prev + arrayItem.age, 0) / array.length;
+}
+
+console.log( getAverageAge(users) ); 
+```
+
+```js
+// --------UNIQUE IN ARRAY----------
+function unique(array) {
+  let tempValue = [];
+  for ( let str of array) {
+    // if (!tempValue.includes(str)) {
+    if(tempValue.indexOf(str) == -1){
+      tempValue.push(str);
+    }
+  }
+  return tempValue;
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log(`unique:${unique(strings)}`); // Hare, Krishna, :-O
+```
+
+```js
+// Flat array
+let myArray = ["1","2",["3","4",["5",["6"],"7"],"8"],"9"]
+// let myArray = [1,2,3,[1,2,3,4, [2,3,4]]]
+
+function flatIt(array) {
+  
+  // -------FAIL : Solution concat/Apply 
+  let flatArray' = [].concat.apply([], array);
+  
+  // -------FAIL : Solution reduce 
+  let flatArray = myArray.reduce(function(prev, curr) {
+    return prev.concat(curr);
+  });
+  
+  // -------FAIL : Solution for
+  let flatArray = [];
+  for (var i = 0; i < myArray.length; ++i) {
+    for (var j = 0; j < myArray[i].length; ++j)
+      flatArray.push(myArray[i][j]);
+  }
+  
+  // -------FAIL : Concat ES6
+  let flatArray = [].concat(...myArray);
+  
+  // -------Solution Recursion45
+  let flatArray = [];
+  for(let item of array) {
+    Array.isArray(item) ? flatArray.push(...flatIt(item)) : flatArray.push(item);
+  }
+  return flatArray;
+  
+  // -------Recusion Without ES6
+  return array.reduce((acc, item) => Array.isArray(item) ? acc.concat(flatIt(item)) : acc.concat(item), []);
+  
+  // -------ES6 Small Recusion
+  return flatArray = Array.isArray(array) ? [].concat(...array.map(flatIt)) : array;
+
+}
+
+console.log(flatIt(myArray));
+```
+
+```js
+// Given string contains the word `hackerrank`
+// hereiamstackerrank -> YES
+// hackerworld -> NO
+// hhaacckkekraraannk -> YES
+// rhbaasdndfsdskgbfefdbrsdfhuyatrjtcrtyytktjjt -> NO
+
+function hackerrankInString(s) {
+    let sArray = s.split('');
+    let ss = 'hackerrank';
+    let ssArray = ss.split('');
+    let next, foundAt = 0;
+
+    for (let i = 0; i < ssArray.length; i++){
+        next = sArray.slice(foundAt).indexOf(ssArray[i])
+        if(next == -1) {
+            return 'NO';
+        }
+        foundAt += next + 1;
+    }
+    return 'YES';
+}
+
+// Optimised 
+function hackerrankInString(s) {
+    return /.*h.*a.*c.*k.*e.*r.*r.*a.*n.*k/.test(s) ? 'YES' : 'NO'
+}
 ```
 
 ```js

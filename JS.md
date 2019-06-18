@@ -3013,9 +3013,16 @@ var names = animals.map(function(animal){
 })
 ```
 
-- Reduce
-- **Currying** : Currying is a way of constructing functions that allows partial application of a function’s arguments. - What this means is that you can pass all of the arguments a function is expecting and get the result, or pass a subset of those arguments and get a function back that’s waiting for the rest of the arguments. - Use external library like lodash to get currying funcitonlity.
-- Recursion
+#### Functional vs OOP
+
+- Functional: You pass an object to the function and do stuff
+- `_.map([1, 2, 3], function(n){ return n * 2; });`
+
+- OOP: You call function on the object and do stuff
+-	`_([1, 2, 3]).map(function(n){ return n * 2; });`
+
+- In both examples `[1,2,3]` (array) is an object.
+
 
 ### JS Good Parts [Book]
 
