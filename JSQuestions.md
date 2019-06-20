@@ -5,6 +5,16 @@ conole.log([]+ []) // Empty
 conole.log({}+ []) // Empty
 ```
 
+```js
+var ninja = function myNinja(){ 
+  console.log('This function is named two things')
+};
+ninja(); // works
+
+// myNinja isn't defined outside of the function.
+myNinja(); // undefined
+```
+
 ```js 
 function a() {
   return 'hello';
@@ -882,6 +892,25 @@ function hackerrankInString(s) {
 function hackerrankInString(s) {
     return /.*h.*a.*c.*k.*e.*r.*r.*a.*n.*k/.test(s) ? 'YES' : 'NO'
 }
+```
+
+```js
+// 1 1 3 1 2 1 3 3 3 3 -> 4
+// 10 20 20 10 10 30 50 10 20 -> 3
+
+function sockMerchant(n, ar) {
+    ar.sort((a,b) => a-b);
+    let pairs = 0;
+    for (let i = 0; i < n - 1; i++) {
+        if (ar[i] === ar[i + 1]) {
+            pairs++;
+            //incrementing i again to avoid double counting the pair
+            i++;
+        }
+    }
+    return pairs;
+}
+
 ```
 
 ```js
