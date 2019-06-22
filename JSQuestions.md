@@ -470,13 +470,13 @@ const cleanTable = function(soap){
 console.log(this.table)
 
 // Won't work under 'use strict'
-// cleanTable(this.table)
+cleanTable(this.table)
 
 // call method 
 cleanTable.call(this, 'fancy soap')
 
 // bind
-// cleanTable.bind(this)('fancy soap')
+cleanTable.bind(this)('fancy soap') // Please Clean window table using fancy soap
 
 //---------------This of object----------------------
 console.log('---------------------------------------')
@@ -487,30 +487,30 @@ let myRoom = {
   }
 }
 console.log(myRoom.table)
-myRoom.cleanTable()
+myRoom.cleanTable() // Please Clean myRoom table
 ```
 
 ```js
 // fix this, that, call, bind, arrow function
 this.table = "window table"
-const cleanTable = function(_soap){
+const cleanTable = function(soap){
 
   // this will give error on this 
   const innerFunction = function(_soap) {
-    console.log(`Please Clean ${this.table} using ${soap}`); 
+    console.log(`Please Clean ${this.table} using ${_soap}`); 
   }
   innerFunction(soap)
   
   // Solution 1: store this in variable and pass in innerfunction 
   let that = this
   const innerFunction = function(_soap) {
-    console.log(`Please Clean ${that.table} using ${soap}`); 
+    console.log(`Please Clean ${that.table} using ${_soap}`); 
   }
   innerFunction(soap)
   
   // Solution 2: Call/Bind 
   const innerFunction = function(_soap) {
-    console.log(`Please Clean ${this.table} using ${soap}`); 
+    console.log(`Please Clean ${this.table} using ${_soap}`); 
   }
   innerFunction.call(this,soap);
   innerFunction.bind(this)(soap);
@@ -518,7 +518,7 @@ const cleanTable = function(_soap){
   // Solution 3: arrow function
   // Arrow function don't have `this` so it take outterScope `this`
   const innerFunction = (_soap) => {
-    console.log(`Please Clean ${this.table} using ${soap}`); 
+    console.log(`Please Clean ${this.table} using ${_soap}`); 
   }
   innerFunction(soap);
 
@@ -829,35 +829,35 @@ let myArray = ["1","2",["3","4",["5",["6"],"7"],"8"],"9"]
 
 function flatIt(array) {
   
-  // -------FAIL : Solution concat/Apply 
+  // -------FAIL : Solution concat/Apply-------
   let flatArray' = [].concat.apply([], array);
   
-  // -------FAIL : Solution reduce 
+  // -------FAIL : Solution reduce-------
   let flatArray = myArray.reduce(function(prev, curr) {
     return prev.concat(curr);
   });
   
-  // -------FAIL : Solution for
+  // -------FAIL : Solution for-------
   let flatArray = [];
   for (var i = 0; i < myArray.length; ++i) {
     for (var j = 0; j < myArray[i].length; ++j)
       flatArray.push(myArray[i][j]);
   }
   
-  // -------FAIL : Concat ES6
+  // -------FAIL : Concat ES6-------
   let flatArray = [].concat(...myArray);
   
-  // -------Solution Recursion45
+  // -------Solution Recursion45-------
   let flatArray = [];
   for(let item of array) {
     Array.isArray(item) ? flatArray.push(...flatIt(item)) : flatArray.push(item);
   }
   return flatArray;
   
-  // -------Recusion Without ES6
+  // -------Recusion Without ES6-------
   return array.reduce((acc, item) => Array.isArray(item) ? acc.concat(flatIt(item)) : acc.concat(item), []);
   
-  // -------ES6 Small Recusion
+  // -------ES6 Small Recusion-------
   return flatArray = Array.isArray(array) ? [].concat(...array.map(flatIt)) : array;
 
 }
@@ -911,6 +911,27 @@ function sockMerchant(n, ar) {
     return pairs;
 }
 
+```
+
+```js
+// Write your own throttle
+const throttle = (func, limit) => {
+  let lastFunc
+  let lastRan
+  return function() {
+    const context = this
+    const args = arguments
+    if (!lastRan) {
+      func.apply(context, args)
+      lastRan = Date.now()
+    } else {
+      if ((Date.now() - lastRan) >= limit) {
+        func.apply(context, args)
+        lastRan = Date.now()
+      }
+    }
+  }
+}
 ```
 
 ```js
