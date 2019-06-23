@@ -865,7 +865,7 @@ let myArray = ["1","2",["3","4",["5",["6"],"7"],"8"],"9"]
 function flatIt(array) {
   
   // -------FAIL : Solution concat/Apply-------
-  let flatArray' = [].concat.apply([], array);
+  let flatArray = [].concat.apply([], array);
   
   // -------FAIL : Solution reduce-------
   let flatArray = myArray.reduce(function(prev, curr) {
