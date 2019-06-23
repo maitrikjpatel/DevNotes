@@ -1,5 +1,7 @@
 ## JS Questions
 
+### JS Basics
+
 ```js 
 conole.log([]+ []) // Empty
 conole.log({}+ []) // Empty
@@ -13,6 +15,22 @@ ninja(); // works
 
 // myNinja isn't defined outside of the function.
 myNinja(); // undefined
+```
+
+```js
+
+let x = {
+  a: 1,
+  b: 2
+}
+let maArray = Object.values(x)
+console.log(maArray); // [1,2]
+```
+
+```js
+// let x = 'hi' 
+let y = x.split('').reverse().join(''); // 'ih'
+console.log(y);
 ```
 
 ```js 
@@ -40,7 +58,6 @@ let x = {
 x.method(y,1); // 2 not 5
 // Argument length is going to be length
 ```
-
 
 ```js
 const x = 'constructor'
@@ -79,10 +96,12 @@ x(1,2,3,4,5) // 5, output length of arguments
 var A = {
   x: function(){
     console.log('x');
+    return this  // return this
     return A // This is answer/trick
   },
   y: function(){
     console.log('y')
+    return this  // return this
     return A; // This is answer/trick
   },
   z: function(){
@@ -165,6 +184,30 @@ Object.seal(profile)
 ```
 
 ```js
+// write Clone obj to kep Obj value as it is
+const obj = {
+  a: {
+    b:{
+      c: 1
+    }
+  }     
+}
+
+// Fail
+// Shallow cloning  -> 2 
+const clone = obj;
+const clone = Object.assign({}, obj);
+
+// Success
+// Shallow cloning  -> 1
+const clone = JSON.parse(JSON.stringify(obj))
+
+clone.a.b.c = 2
+console.log(obj.a.b.c); // 1
+```
+
+
+```js
 // make age readable
 let profile = {
   name: 'maitrik'
@@ -181,40 +224,6 @@ pro
 
 ```js
 console.log(Math.max()) // -infinity
-```
-
-```js
-// Remove duplicates from array
-let a = [1, 2, 5, 2, 1, 8] // [1,2,5,8]
-
-let b = []
-let len = a.length
-
-for ( let i = 0; i < len, i++) {
-  if(b.indexOf(a[i]) === -1 ){
-    b.push(a[i]);
-  }
-}
-
-// After sorting
-a.sort()
-let _temp;
-for ( let i = 0; i < len, i++) {
-  if(a[i] !== _temp){
-    b.push(a[i]);
-    _temp = a[i];
-  }
-}
-
-// Object way
-obj = {};
-for(let i of a) {
-  obj[i] = true;
-}
-let b = Object.keys(obj);
-
-//Object
-let b = [...new Set(a)];
 ```
 
 ```js
@@ -278,185 +287,6 @@ console.log(a); // undefined
 ```js
 console.log(NaN === NaN) // False
 ```
-
-```js
-function getElementsByClass(klass, node) { //
-  var node = node || document.body; //1
-  var found = []; //2
-  if (hasClass(node, klass)) { //
-    found.push(node);
-  }
-  for (var i=0; i<node.children.length; i++) {
-    found = found.concat(getElementsByClass(klass, node.children[i])); //
-  }
-  return found;
-}
-
-function hasClass(node, klass) {
-  for(var i=0; i<node.classList.length; i++) {
-    if (node.classList[i] === klass) {
-      return true;
-    }
-  }
-  return false;
-}
-
-// root = document.body -> node.children returns a collection of child nodes of the given node
-// node.classList -> returns a token list of the class attribute of the node
-// div.classList = ['this-is-a-class', 'this-is-too']
-
-<div class='this-is-a-class this-is-too'> // div.classList = ['this-is-a-class', 'this-is-too']
-  <p>hello</p>
-</div>
-```
-
-```js
-let myMatrix = [
-  [1,1,1,1],
-  [1,1,1,1],
-  [1,1,1,1],
-  [1,1,1,1]
-]
-
-function matrixSum(matrix){
-  let sum = 0;
-  let rows = matrix.length;
-  let columns = matrix[0].length;
-  
-  // Brut force
-  for( let i = 0; i < columns; i++ ){
-    sum += matrix[0][i];
-  }
-  for( let i = 0; i < columns; i++ ){
-    sum += matrix[rows-1][i];
-  }
-  for( let i = 1; i < columns-1; i++ ){
-    sum += matrix[i][0];
-  }
-  for( let i = 1; i < columns-1; i++ ){
-    sum += matrix[i][columns-1];
-  }
-
-  // Optimized
-  for( let i = 0; i < rows; i++ ){
-    for( let j = 0; j < columns; j++ ){
-      if( i % (rows - 1) == 0 || j % (columns - 1) == 0) {
-        sum += matrix[i][j];
-      } 
-    }
-  }
-  
-  console.log(sum)
-}
-
-matrixSum(myMatrix)
-```
-
-```js
-// myReduce as per following
-// arr.reduce(function(previousValue, item, index, array) {}, initial);
-// Add || to not override possible already defined functions.
-Array.prototype.myReduce = Array.prototype.myReduce || function(callbackFn, startingValue) {
-
-  let accumulator = startingValue || undefined;
-
-  for ( let index = 0; index < this.length; index++ ) {
-
-    if ( accumulator ) {
-      accumulator = callbackFn.call(accumulator, accumulator, this[index], index, this)
-    } else {
-      accumulator = this[index]
-    }
-  }
-  
-  return accumulator;
-}
-
-console.log([1,2,3].myReduce((c,v) => c + v, 0))
-```
-
-```js
-// myMap as per following
-// arr.map(function callback(currentValue, index, array))
-
-Array.prototype.myMap = Array.prototype.myMap || function(callbackFn) {
-  const resultArray = [];
-  for ( let index = 0; index < this.length; index++ ) {
-    if( this.indexOf(this[index]) > -1 ){
-      resultArray[index] = callbackFn(this[index], index, this)
-    }
-  }
-  return resultArray;
-}
-
-console.log([1,2,3,'',9].myMap((item) => item * 2))
-```
-
-```js
-// myFilter as per following
-// arr.filter(function callback(currentValue, index, array))
-
-Array.prototype.myFilter = Array.prototype.myFilter || function(callbackFn) {
-  
-  const resultArray = [];  
-  for ( let index = 0; index < this.length; index++ ) {
-    
-    if(callbackFn(this[index], index, this)){
-      resultArray.push(this[index]);
-    }
-  }
-  return resultArray;
-}
-console.log([1,2,3,11,9,2,1,9].myFilter(item => item > 3));
-```
-
-```js
-function f(a,b,c){
-  if( a && b && c ){
-    return ( (a + b) * c )
-  } else if( a && b ){
-    return function(valC){
-      return ( (a + b) * valC )
-    }
-  } else if( a){
-    return function(valB){
-      return function(valC){
-          return ( (a + valB) * valC )
-      }
-    }
-  } else {
-    return 0;
-  }
-}
-
-console.log(f(1)(2)(3)); //9
-console.log(f(2)(2)(1)); //4
-console.log(f(2,2)(1)); //4
-console.log(f(2,2,1)); //4
-console.log(f()); // 0
-```
-
-```js
-let mergeFiles = function(array) {
-  let totalSum = 0;
-  let accumulator = 0;
-  let sortedArray = array.sort((a,b) => a - b);
-  for( let i = 1; i < sortedArray.length ; i++ ){
-    if( i == 1) {
-      totalSum = sortedArray[i] + sortedArray[i-1] + totalSum;
-      accumulator += totalSum;
-    } else if (  i > 1) {
-      totalSum = sortedArray[i] + totalSum;
-      accumulator += totalSum;
-    }
-  }
-  return accumulator;
-}
-
-let myArray = [8,4,6,12]
-console.log(mergeFiles(myArray))
-```
-
 
 ```js
 // Explan This
@@ -527,38 +357,137 @@ cleanTable.call(this, 'fancy soap')
 
 ```
 
-```js
+### JS Native Methods
 
-let x = {
-  a: 1,
-  b: 2
+```js
+// make your own forEach
+Array.prototype.newForEach = function (callback, context) {
+  for (let index = 0; index < this.length; index++) {
+    // This is primarily to check if the item
+    // exists in the array, 
+    if (this.indexOf(this[index]) > -1) {
+      callback.call(context, this[index], index, this)
+    }
+  }
 }
-let maArray = Object.values(x)
-console.log(maArray); // [1,2]
+// example
+const words = ["adam", "ate", "an", "apple"]
+const upperCaseList = []
+words.newForEach((word, index, context) => {
+  upperCaseList.push(word.toUpperCase())
+})
+console.log(upperCaseList)
+
 ```
 
 ```js
-// let x = 'hi' 
-let y = x.split('').reverse().join(''); // 'ih'
-console.log(y);
+function getElementsByClass(klass, node) { //
+  var node = node || document.body; //1
+  var found = []; //2
+  if (hasClass(node, klass)) { //
+    found.push(node);
+  }
+  for (var i=0; i<node.children.length; i++) {
+    found = found.concat(getElementsByClass(klass, node.children[i])); //
+  }
+  return found;
+}
+
+function hasClass(node, klass) {
+  for(var i=0; i<node.classList.length; i++) {
+    if (node.classList[i] === klass) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// root = document.body -> node.children returns a collection of child nodes of the given node
+// node.classList -> returns a token list of the class attribute of the node
+// div.classList = ['this-is-a-class', 'this-is-too']
+
+<div class='this-is-a-class this-is-too'> // div.classList = ['this-is-a-class', 'this-is-too']
+  <p>hello</p>
+</div>
 ```
 
 ```js
-const obj = {
-  a: 1,
-  b: 2,
-  getA(){
-    console.log(this.a);
-    return this  // return this
-    return obj  // return same obj
-  },
-  getB(){
-    console.log(this.b);
-  }  
+// myReduce as per following
+// arr.reduce(function(previousValue, item, index, array) {}, initial);
+// Add || to not override possible already defined functions.
+Array.prototype.myReduce = Array.prototype.myReduce || function(callbackFn, startingValue) {
+
+  let accumulator = startingValue || undefined;
+
+  for ( let index = 0; index < this.length; index++ ) {
+
+    if ( accumulator ) {
+      accumulator = callbackFn.call(accumulator, accumulator, this[index], index, this)
+    } else {
+      accumulator = this[index]
+    }
+  }
+  
+  return accumulator;
 }
-obj.getA().getB();
-// return this will return obj 
-// a.getB()
+
+console.log([1,2,3].myReduce((c,v) => c + v, 0))
+```
+
+```js
+// myMap as per following
+// arr.map(function callback(currentValue, index, array))
+
+Array.prototype.myMap = Array.prototype.myMap || function(callbackFn) {
+  const resultArray = [];
+  for ( let index = 0; index < this.length; index++ ) {
+    if( this.indexOf(this[index]) > -1 ){
+      resultArray[index] = callbackFn(this[index], index, this)
+    }
+  }
+  return resultArray;
+}
+
+console.log([1,2,3,'',9].myMap((item) => item * 2))
+```
+
+```js
+// myFilter as per following
+// arr.filter(function callback(currentValue, index, array))
+
+Array.prototype.myFilter = Array.prototype.myFilter || function(callbackFn) {
+  
+  const resultArray = [];  
+  for ( let index = 0; index < this.length; index++ ) {
+    
+    if(callbackFn(this[index], index, this)){
+      resultArray.push(this[index]);
+    }
+  }
+  return resultArray;
+}
+console.log([1,2,3,11,9,2,1,9].myFilter(item => item > 3));
+```
+
+```js
+// Write your own throttle
+const throttle = (func, limit) => {
+  let lastFunc
+  let lastRan
+  return function() {
+    const context = this
+    const args = arguments
+    if (!lastRan) {
+      func.apply(context, args)
+      lastRan = Date.now()
+    } else {
+      if ((Date.now() - lastRan) >= limit) {
+        func.apply(context, args)
+        lastRan = Date.now()
+      }
+    }
+  }
+}
 ```
 
 ```js
@@ -578,25 +507,8 @@ Array.prototype.myPrint = function() {
 console.log([1,2,3,9].myPrint())
 ```
 
-```js
-// write Clone obj to kep Obj value as it is
-const obj = {
-  a: {
-    b:{
-      c: 1
-    }
-  }     
-}
 
-// Shallow cloning  -> 2 
-const clone = Object.assign({}, obj);
-
-// Deep cloning hack
-const clone = JSON.parse(JSON.stringify(obj))
-
-clone.a.b.c = 2
-console.log(obj.a.b.c);
-```
+### JS Problem Solving
 
 ```js
 // Add array and sort 
@@ -605,6 +517,139 @@ const b = [2,5,6,12,100];
   
 const c = [ ...a, ...b ].sort((a,b) => a-b)
 console.log(c)
+```
+
+```js
+// --------COPY SORTED--------
+let copySorted = (array) => array.slice().sort()
+
+let myArray = ["HTML", "JavaScript", "CSS"];
+let sorted = copySorted(myArray);
+
+console.log(sorted);
+```
+
+```js
+// Remove duplicates from array
+let a = [1, 2, 5, 2, 1, 8] // [1,2,5,8]
+
+let b = []
+let len = a.length
+
+for ( let i = 0; i < len, i++) {
+  if(b.indexOf(a[i]) === -1 ){
+    b.push(a[i]);
+  }
+}
+
+// After sorting
+a.sort()
+let _temp;
+for ( let i = 0; i < len, i++) {
+  if(a[i] !== _temp){
+    b.push(a[i]);
+    _temp = a[i];
+  }
+}
+
+// Object way
+obj = {};
+for(let i of a) {
+  obj[i] = true;
+}
+let b = Object.keys(obj);
+
+//Object
+let b = [...new Set(a)];
+```
+
+```js
+let myMatrix = [
+  [1,1,1,1],
+  [1,1,1,1],
+  [1,1,1,1],
+  [1,1,1,1]
+]
+
+function matrixSum(matrix){
+  let sum = 0;
+  let rows = matrix.length;
+  let columns = matrix[0].length;
+  
+  // Brut force
+  for( let i = 0; i < columns; i++ ){
+    sum += matrix[0][i];
+  }
+  for( let i = 0; i < columns; i++ ){
+    sum += matrix[rows-1][i];
+  }
+  for( let i = 1; i < columns-1; i++ ){
+    sum += matrix[i][0];
+  }
+  for( let i = 1; i < columns-1; i++ ){
+    sum += matrix[i][columns-1];
+  }
+
+  // Optimized
+  for( let i = 0; i < rows; i++ ){
+    for( let j = 0; j < columns; j++ ){
+      if( i % (rows - 1) == 0 || j % (columns - 1) == 0) {
+        sum += matrix[i][j];
+      } 
+    }
+  }
+  
+  console.log(sum)
+}
+
+matrixSum(myMatrix)
+```
+
+```js
+function f(a,b,c){
+  if( a && b && c ){
+    return ( (a + b) * c )
+  } else if( a && b ){
+    return function(valC){
+      return ( (a + b) * valC )
+    }
+  } else if( a){
+    return function(valB){
+      return function(valC){
+          return ( (a + valB) * valC )
+      }
+    }
+  } else {
+    return 0;
+  }
+}
+
+console.log(f(1)(2)(3)); //9
+console.log(f(2)(2)(1)); //4
+console.log(f(2,2)(1)); //4
+console.log(f(2,2,1)); //4
+console.log(f()); // 0
+```
+
+```js
+let mergeFiles = function(array) {
+  let totalSum = 0;
+  let accumulator = 0;
+  let sortedArray = array.sort((a,b) => a - b);
+  for( let i = 1; i < sortedArray.length ; i++ ){
+    if( i == 1) {
+      totalSum = sortedArray[i] + sortedArray[i-1] + totalSum;
+      accumulator += totalSum;
+    } else if (  i > 1) {
+      totalSum = sortedArray[i] + totalSum;
+      accumulator += totalSum;
+    }
+  }
+  return accumulator;
+}
+
+let myArray = [8,4,6,12]
+console.log(mergeFiles(myArray))
 ```
 
 ```js
@@ -666,16 +711,6 @@ let filterRangeInPlace = (array, a, b) => {
   }
 }
 
-```
-
-```js
-// --------COPY SORTED--------
-let copySorted = (array) => array.slice().sort()
-
-let myArray = ["HTML", "JavaScript", "CSS"];
-let sorted = copySorted(myArray);
-
-console.log(sorted);
 ```
 
 ```js
@@ -913,26 +948,7 @@ function sockMerchant(n, ar) {
 
 ```
 
-```js
-// Write your own throttle
-const throttle = (func, limit) => {
-  let lastFunc
-  let lastRan
-  return function() {
-    const context = this
-    const args = arguments
-    if (!lastRan) {
-      func.apply(context, args)
-      lastRan = Date.now()
-    } else {
-      if ((Date.now() - lastRan) >= limit) {
-        func.apply(context, args)
-        lastRan = Date.now()
-      }
-    }
-  }
-}
-```
+### Others
 
 ```js
 // Write a parser for Javascript floating point numbers
