@@ -638,9 +638,11 @@ let mergeFiles = function(array) {
   let sortedArray = array.sort((a,b) => a - b);
   for( let i = 1; i < sortedArray.length ; i++ ){
     if( i == 1) {
-      totalSum = sortedArray[i] + sortedArray[i-1] + totalSum;
+      // 4 + 6
+      totalSum = sortedArray[i-1] + sortedArray[i];
       accumulator += totalSum;
     } else if (  i > 1) {
+      // 8 + 10 -> 12 + 18 -> 28 + 30 
       totalSum = sortedArray[i] + totalSum;
       accumulator += totalSum;
     }
@@ -650,6 +652,7 @@ let mergeFiles = function(array) {
 
 let myArray = [8,4,6,12]
 console.log(mergeFiles(myArray))
+
 ```
 
 ```js
@@ -946,6 +949,97 @@ function sockMerchant(n, ar) {
     return pairs;
 }
 
+```
+
+```js
+// Given a square matrix, calculate the absolute difference between the sums of its diagonals.
+// 1 2 3
+// 4 5 6
+// 9 8 9  
+// The left-to-right diagonal = 1+5+9 = 15
+// The right to left diagonal = 3+5+9 + 17
+// 17-15 = 2 , always give positive answer
+
+function diagonalDifference(arr) {
+    var LtR = 0;
+    var RtL = 0;
+    for (var i = 0; i < arr.length; i++) {
+        LtR += arr[i][i]; // arr[0][0] + arr[1][1] + arr[2][2]
+        RtL += arr[i][Math.abs((arr.length - 1) - i)]; // arr[0][2] + arr[1][1] + arr[2][0]
+    }
+    return Math.abs(LtR - RtL);
+}
+```
+
+```js
+// n = 4
+//    #
+//   ##
+//  ###
+// ####
+function staircase(n) {
+    // mySolution
+    let result = ''
+    for (let i = 1; i < n+1; i++){
+        for (let j = 0; j < n - i; j++) {
+            result += ' '
+        }
+        for (let k = 0; k < i; k++) {
+            result += '#'
+        }
+        result += `\n`
+    }
+    console.log(result);
+
+    // optimized 
+    for (let i = 1; i < n+1; i++) {
+        console.log(" ".repeat(n - i) + "#".repeat(i))
+    }   
+}
+```
+
+```js
+// [1,2,3,4,5]
+// minSum = 1+2+3+4 -> (0, sortedLen-1)
+// maxSum = 2+3+4+5 -> (1, sortedLen)
+function miniMaxSum(arr) {
+    let sortedArray = arr.sort();
+    let sortedLen = arr.length;
+    let minSum = sortedArray.slice(0, sortedLen-1).reduce((a,b) => a + b);
+    let maxSum = sortedArray.slice(1, sortedLen).reduce((a, b) => a + b);
+    console.log(`${minSum} ${maxSum}`)
+}
+// 10 14
+```
+
+```js
+// number of times highest number in array repeat
+function highestNumberInArray(ar) {
+    let max = Math.max(...ar);
+    return ar.filter(c => c === max).length;
+}
+highestNumberInArray([3,2,1,3])
+// 2
+```
+
+```js
+// Animate function for JS 
+
+function animate(element, direction){
+  let pos = 0;
+  let frameId = setInterval(frame, 1);
+  function frame(){
+    if( pos > 500) {
+      clearInterval(frameId);
+    } else {
+      pos++
+      console.log(pos)
+      element.style[direction] = `${pos}px`;
+    } 
+  }
+}
+var elem = document.getElementById("myID");
+animate(elem, 'right')
 ```
 
 ### Others
