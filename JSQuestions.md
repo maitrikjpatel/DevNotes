@@ -507,6 +507,16 @@ Array.prototype.myPrint = function() {
 console.log([1,2,3,9].myPrint())
 ```
 
+```js
+// sort array without sort
+let array = [10,230,34,123,123,1,3,4]
+for( let i = 0; i <array.lengh; i++){
+  setTimeout(() => {
+    console.log(array[i]);
+  }, array[i])
+}
+// 1,3,4,10....
+```
 
 ### JS Problem Solving
 
@@ -1015,7 +1025,7 @@ function miniMaxSum(arr) {
 ```js
 // number of times highest number in array repeat
 function highestNumberInArray(ar) {
-    let max = Math.max(...ar);
+    let max = Math.max(...ar);$$
     return ar.filter(c => c === max).length;
 }
 highestNumberInArray([3,2,1,3])
@@ -1023,7 +1033,7 @@ highestNumberInArray([3,2,1,3])
 ```
 
 ```js
-// Animate function for JS 
+// Animate function for JS  
 
 function animate(element, direction){
   let pos = 0;
@@ -1040,6 +1050,289 @@ function animate(element, direction){
 }
 var elem = document.getElementById("myID");
 animate(elem, 'right')
+```
+
+```js
+// time = '09:30' to 24 hour time format
+
+function timeConversion(s) {
+    let time = s.split(':');
+    let typeOfDay = time[2].slice(2, 4)
+
+    let hours = (typeOfDay == 'AM') ? (time[0] == 12) ? '00' : time[0] : (time[0] == 12) ? '12' : +time[0] + 12
+    let mins = time[1]
+    let secs = time[2].slice(0, 2)
+
+    let result = `${hours}:${mins}:${secs}`
+    return result
+}
+```
+
+```js
+//Greatest common divisor
+function gcd_two_numbers(x, y) {
+  
+  if ((typeof x !== 'number') || (typeof y !== 'number')) {
+    return false;
+  }
+  
+  x = Math.abs(x);
+  y = Math.abs(y);
+
+  while(y) {
+    var t = y;
+    y = x % y;
+    x = t;
+  }
+  return x;
+}
+```
+
+```js
+// n kids are sitting in a circle
+// k toys available to distribute
+// i position to start from
+// 3.4.1 => 2
+
+function getLastKis(n, k, i) {
+  if(k>n){
+    return i+(k%n) - 1;
+  }else {
+    return i+n - 1;
+  }
+}
+```
+
+```js
+function power(x,y){
+  if(y===0){
+    return 1
+  } else if (y%2 ===0){
+    return power(x,parseInt(y/2))*power(x,parseInt(y/2))
+  } else{
+    return x*power(x,parseInt(y/2))*power(x,parseInt(y/2))
+  }
+}
+
+console.log(power(3,2))
+```
+
+```js
+/*
+  find(collection, predicate) { ... }
+  --
+  collection (Array): The collection to inspect.
+  predicate (Function|Object|Array|String): The function invoked per iteration.
+    format - function (currentElement, i, collection) { ... }
+*/
+
+// returns the first object with the property 'active' which has a truthy value
+// find(loans, 'active');
+// => object for 'ABC123'
+
+// find(loans, ['active', false]);
+// => object for 'DEF456'
+
+// find(loans, function(loan) { return loan.amount < 20000; });
+// => object for 'ABC123'
+
+// find(loans, { 'amount': 30401, 'active': true });
+// => object for 'GHI789'
+
+let loans = [
+  { 'id': 'ABC123', 'amount': 10036, 'active': true },
+  { 'id': 'DEF456', 'amount': 20040, 'active': false },
+  { 'id': 'GHI789', 'amount': 30401, 'active': true }
+];
+
+
+let find = function(collection, predicate){
+  let collectionLength = collection.length;
+
+  for( let i = 0; i < collectionLength ; i++) {
+    
+    if( typeof predicate === "string" ) {   
+      
+      return (predicate in collection[i]) ? collection[i] : false;
+    } else if ( Array.isArray(predicate) ) {
+      
+        if (predicate[0] in collection[i]) {
+          let valuesArray = Object.values(collection[i])
+          for(let item of valuesArray) {
+            if(predicate[1] === item) {
+              return collection[i];
+            }
+          }
+        }
+    } else if( typeof predicate === "function" ) {
+      
+      function isFunction(predicate, loan){
+        return predicate(loan);
+      }
+      if(isFunction(predicate,collection[i])) {
+        return collection[i];
+      }
+    } else if ( typeof predicate === "object" ) {
+
+      let tempArray = [];
+      for ( let pre in predicate) {
+        for ( let col in collection[i]) {        
+          if( pre == col && collection[i][col] == predicate[pre]) { 
+            tempArray.push(`${collection[i][col]}`);
+          }
+          if(tempArray.length == 2){
+            return collection[i];
+          }
+        }
+      }
+    }
+  }
+}
+
+console.log(find(loans, 'active'));
+console.log(find(loans, ['active', false]));
+console.log(find(loans, function(loan) { return loan.amount < 20000; }))
+console.log(find(loans, { 'amount': 30401, 'active': true }))
+```
+
+```js
+// result = change(76, [5, 10, 1, 25])
+// print "Result: {}".format(result)
+
+// Result: {1:1, 10:0, 25:3, 5:0}
+// aka: 1 Penny, 0 Dimes, 3 Quarters, 0 Nickels
+
+let change = function (value, coinsArray) {
+  value = (value % 1) ? value*100 : value;
+  
+  let sortedCA = coinsArray.sort((a,b) => b-a);
+  let result = [];
+  let coins = 0;
+
+  if(value < sortedCA[sortedCA.length-1]){
+     return "dont have change for this amount"
+  }
+  
+  for ( let i = 0; i < sortedCA.length; i++) {
+    coins = Math.floor(value / sortedCA[i])
+    result.push(`${sortedCA[i]}: ${coins}`);
+    value = value - coins*sortedCA[i]; 
+  }
+  return result;
+}
+    
+console.log(`result : ${change(76, [5, 10, 1, 25])}`)
+console.log(`result : ${change(20.12, [5, 10, 1, 25])}`)
+console.log(`result : ${change(5, [10, 25])}`)
+```
+
+```js
+// Emmiter
+const Emitter = function() {
+  this.events = {}
+};
+
+Emitter.prototype.subscribe = function( eName, cb ) {
+  this.events[eName] = this.events[eName] || [];
+  this.events[eName].push(cb);
+
+  return {
+    release: () => {
+      let i = this.events[eName].indexOf(cb);
+      this.events[eName].splice(i, 1);
+      if (!this.events[eName].length) delete this.events[eName];
+    }
+  }
+};
+
+Emitter.prototype.emit = function( eName, ...args ) {
+  if ( !this.events[eName] ) throw new Error(`Event ${eName} doesn't exist`);
+  this.events[eName].forEach(el =&gt; el.call(this, ...args));
+};
+```
+
+```js
+// Searching for a Symmetric Node
+
+// This function returns a real array of Nodes, so we can use methonds like "indexOf"
+function getChildren(node) {
+    // or you can use Array.from(node.childNodes);
+    return Array.prototype.slice.call(node.childNodes);
+}
+
+// This function returns an array of indices from given node to the root
+function getPath(root, node) {
+    const path = [];
+    let curElement = node;
+
+    // This is important as if a node is null or doesn't have a parent
+    // there is no need of searching further
+    while(curElement !== root && curElement && curElement.parentNode) {
+     const index = getChildren(curElement.parentNode).indexOf(curElement);
+     path.push(index);
+        curElement = curElement.parentNode;
+    }
+
+    return path;
+}
+
+// Popping all values from the array of indices we go to the symmetrical node
+function getNodeByPath(root, originalPath) {
+    const path = [].concat(originalPath);
+    let element = root;
+    while (path.length) {
+       element = getChildren(element)[path.pop()];
+    }
+    return element;
+}
+
+// For convenience
+function getSymmetricNode(root1, root2, node) {
+ const path = getPath(root1, node);
+ return getNodeByPath(root2, path);
+}
+
+const root1 = document.getElementById('root1');
+const root2 = document.getElementById('root2');
+const node1 = document.getElementById('node1');
+const node2 = document.getElementById('node2');
+
+const nodeX = getSymmetricNode(root1, root2, node1);
+
+console.log(nodeX === node2); // true
+```
+
+```js
+var arr = [
+  ['I','B','C','A','K','E','A'],
+  ['D','R','F','C','A','E','A'],
+  ['G','H','O','E','L','A','D']
+];
+
+var row = 0, col = 0;
+var totalCols = arr[0].length;
+var totalRows = arr.length;
+var goingDown = false;
+var msg = '';
+
+while (col &lt; totalCols) {
+  msg += arr[row][col];
+  // row++ if less than total rows
+  // row-- if back at row 0
+
+  if (row === 0 || (row &lt; totalRows - 1 &amp;&amp; goingDown)) {
+    row += 1;
+    goingDown = true;
+  } else {
+    row -= 1;
+    goingDown = false;
+  }
+
+  // always go forward in column
+  col++;
+}
+
+console.log(msg) // IROCKED
 ```
 
 ### Others
@@ -1059,7 +1352,7 @@ animate(elem, 'right')
 
 // Write an async forEach function with and without promises.  
 
-// Talk about one of Workday's actual UI components and explain how you would implement it.  
+// Talk about one of WorktypeOfDay's actual UI components and explain how you would implement it.  
 
 // What is a technology that you are passionate about and why? 
 ```
