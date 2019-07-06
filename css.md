@@ -88,26 +88,17 @@ source: 'Github'
 - [BEM Problem and how to avoid them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them)
 - [BEM vs SMACSS](http://www.sitepoint.com/bem-smacss-advice-from-developers/)
 - [Inverted Triangle CSS - ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
-
-```
-## Inverted Triangle CSS
-
-- Settings – used with preprocessors and contain font, colors definitions, etc.
-
-- Tools – globally used mixins and functions. It’s important not to output any CSS in the first 2 layers.
-
-- Generic – reset and/or normalize styles, box-sizing definition, etc. This is the first layer which generates actual CSS.
-
-- Elements – styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we 
-can redefine them here.
-- Objects – class-based selectors which define undecorated design patterns, for example media object known from OOCSS
-
-- Components – specific UI components. This is where majority of our work takes place and our UI components are often 
-composed of Objects and Components
-
-- Utilities – utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide 
-helper class
-```
+- **Inverted Triangle architecture**
+  - Settings – used with preprocessors and contain font, colors definitions, etc.
+  - Tools – globally used mixins and functions. It’s important not to output any CSS in the first 2 layers.
+  - Generic – reset and/or normalize styles, box-sizing definition, etc. This is the first layer which generates actual CSS.
+  - Elements – styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we 
+  can redefine them here.
+  - Objects – class-based selectors which define undecorated design patterns, for example media object known from OOCSS
+  - Components – specific UI components. This is where majority of our work takes place and our UI components are often 
+  composed of Objects and Components
+  - Utilities – utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide 
+  helper class
 
 #### CSS Animation & Transitions
 
@@ -116,6 +107,32 @@ helper class
 - [A Beginner’s Introduction to CSS Animation](https://webdesign.tutsplus.com/tutorials/a-beginners-introduction-to-css-animation--cms-21068)
 - [CSS Transitions](http://css3.bradshawenterprises.com/transitions/)
 - [CSS3: Animations vs. Transitions](https://www.kirupa.com/html5/css3_animations_vs_transitions.htm)
+
+```css
+@keyframes tutsFade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.element {
+  animation-name: tutsFade;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+/* Short version */
+.element {
+  animation: tutsFade 4s 1s infinite linear alternate;
+}
+```
+
 
 #### Responsive design
 
@@ -196,21 +213,29 @@ $primary-color: #333;
 - E[attr="val"] : Element E that has the attribute attr with the exact, case-sensitive if attribute is case sensitive, value val.
 - E[attr|=val] : Element E whose attribute attr has a value val or begins with val- ("val" plus "-").
 
-      		p[lang|="en"]{ <-- p[lang|="en"]{ <--    <p lang="en-us">  <p lang="en-uk"> --> }
+```
+p[lang|="en"]{ <-- p[lang|="en"]{ <--    <p lang="en-us">  <p lang="en-uk"> --> }
+```
 
 - E[attr~=val] : Sibling / Element E whose attribute attr has within its value the space-separated full word val.
 
-      		a[title~=more] { <-- a[title~=more] { <-- <a title="want more info about this?">}
+```
+a[title~=more] { <-- a[title~=more] { <-- <a title="want more info about this?">}
+```
 
 - E[attr^=val] : Element E whose attribute attr starts with the value val.
 
-      		a[href^=mailto] {background- a[href^=mailto] {background-image: url(emailicon.gif);}
-      		a[href^=http]:after {content: " (" attr(href) ")";}
+```
+a[href^=mailto] {background- a[href^=mailto] {background-image: url(emailicon.gif);}
+a[href^=http]:after {content: " (" attr(href) ")";}
+```
 
 - E[attr$=val] : Element E whose attribute attr ends in val .
 
-      		a[href$=pdf] {background-image: url(pdficon.gif);}
-      		a[href$=pdf]:after {content: " (PDF)";}
+```
+a[href$=pdf] {background-image: url(pdficon.gif);}
+a[href$=pdf]:after {content: " (PDF)";}
+```
 
 - E[attr*=val] : Element E whose attribute attr matches val anywhere within the attribute. Similar to E[attr~=val] above, except the val can be part of a word.
 

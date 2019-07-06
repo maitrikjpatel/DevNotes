@@ -1216,7 +1216,7 @@ let change = function (value, coinsArray) {
   for ( let i = 0; i < sortedCA.length; i++) {
     coins = Math.floor(value / sortedCA[i])
     result.push(`${sortedCA[i]}: ${coins}`);
-    value = value - coins*sortedCA[i]; 
+    value = value - coins*sortedCA[i];
   }
   return result;
 }
@@ -1335,8 +1335,8 @@ while (col &lt; totalCols) {
 console.log(msg) // IROCKED
 ```
 
-### Others
 
+### Others
 ```js
 // Write a parser for Javascript floating point numbers
 
@@ -1355,4 +1355,8 @@ console.log(msg) // IROCKED
 // Talk about one of WorktypeOfDay's actual UI components and explain how you would implement it.  
 
 // What is a technology that you are passionate about and why? 
+
+// Promise
+
+// Observer
 ```

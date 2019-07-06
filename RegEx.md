@@ -87,47 +87,47 @@ let result = text.match(myRegex); // <h1>
 
 // Match Beginning String Patterns
 let rickyAndCal = "Cal and Ricky both like racing.";
-let calRegex = /^Cal/; // Change this line
+let calRegex = /^Cal/; 
 let result = calRegex.test(rickyAndCal);
 
 // Match Ending String Patterns
 let caboose = "The last car on a train is the caboose";
-let lastRegex = /caboose$/; // Change this line
+let lastRegex = /caboose$/; 
 let result = lastRegex.test(caboose);
 
 // Match All Letters, Numbers and underscore
 let quoteSample = "The five boxing wizards jump quickly.";
-let alphabetRegexV2 = /\w/g; // Change this line
+let alphabetRegexV2 = /\w/g; 
 let result = quoteSample.match(alphabetRegexV2).length;
 
 // Match Everything But Letters, Numbers and underscore
 let quoteSample = "The five boxing wizards jump quickly.";
-let nonAlphabetRegex = /\W/g; // Change this line
+let nonAlphabetRegex = /\W/g; 
 let result = quoteSample.match(nonAlphabetRegex).length;
 
 // Match All Numbers
 let numString = "Your sandwich will be $5.00";
-let numRegex = /\d/g; // Change this line
+let numRegex = /\d/g; 
 let result = numString.match(numRegex).length;
 
 // Match All Non-Numbers
 let numString = "Your sandwich will be $5.00";
-let noNumRegex = /\D/g; // Change this line
+let noNumRegex = /\D/g; 
 let result = numString.match(noNumRegex).length;
 
 // Match Whitespace
 let sample = "Whitespace is important in separating words";
-let countWhiteSpace = /\s/g; // Change this line
+let countWhiteSpace = /\s/g; 
 let result = sample.match(countWhiteSpace);
 
 //  Match Non-Whitespace Characters
 let sample = "Whitespace is important in separating words";
-let countNonWhiteSpace = /\S/g; // Change this line
+let countNonWhiteSpace = /\S/g; 
 let result = sample.match(countNonWhiteSpace);
 
 // Restrict Possible Usernames 
 let username = "JackOfAllTrades";
-let userCheck = /^[A-Za-z]{2,}\d*$/; // Change this line
+let userCheck = /^[A-Za-z]{2,}\d*$/; 
 let result = userCheck.test(username);
 
 // quantity specifiers can specify the lower and upper number of patterns 
@@ -139,7 +139,7 @@ multipleA.test(A2); // Returns false
 
 // Check for All or None
 let favWord = "favorite";
-let favRegex = /favou?rite/; // Change this line
+let favRegex = /favou?rite/; 
 let result = favRegex.test(favWord);
 
 // Positive and Negative Lookahead
