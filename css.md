@@ -108,32 +108,6 @@ source: 'Github'
 - [CSS Transitions](http://css3.bradshawenterprises.com/transitions/)
 - [CSS3: Animations vs. Transitions](https://www.kirupa.com/html5/css3_animations_vs_transitions.htm)
 
-```css
-@keyframes tutsFade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.element {
-  animation-name: tutsFade;
-  animation-duration: 4s;
-  animation-delay: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-direction: alternate;
-}
-
-/* Short version */
-.element {
-  animation: tutsFade 4s 1s infinite linear alternate;
-}
-```
-
-
 #### Responsive design
 
 - [Responsive CSS Tricks](https://css-tricks.com/video-screencasts/133-figuring-responsive-images/)
@@ -384,7 +358,7 @@ ul li { color : blue } // 0-0-2 : will apply due to order
 
 - Example
 
-  - - { } ----- 0
+  - { } ----- 0
   - li { } ----- 1 (one element)
   - li:first-line { } ----- 2 (one element, one pseudo-element)
   - ul li { } ----- 2 (two elements)
@@ -584,19 +558,28 @@ border-left: width style color;
 - transition-delay: s or ms before transition starts
 - transition: shorthand for 4 transition properties
 
-- Animation properties
+```css
+@keyframes tutsFade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
-  - animation-name: drawALine;
-  - animation-duration: 3s;
-  - animation-timing-function: linear | ease-in | ease-out | ease-in-out | cubic-bezier(x1, - y1, x2, y2) | step-start | step-end | steps( X, start|end);
-  - animation-iteration-count: 3;
-  - animation-direction: normal | alternate | reverse | alternate-reverse;
-  - animation-fill-mode: none | forwards | backwards | both;
+.element {
+  animation-name: tutsFade;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
 
-- Animation Shorthand
-
-```
-.pencil{
-    animation: drawALine 5s ease-in-out 100ms 5;
+/* Short version */
+.element {
+  animation: tutsFade 4s 1s infinite linear alternate;
 }
 ```
+
