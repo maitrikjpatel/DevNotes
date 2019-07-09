@@ -1098,7 +1098,7 @@ function miniMaxSum(arr) {
 ```js
 // number of times highest number in array repeat
 function highestNumberInArray(ar) {
-    let max = Math.max(...ar);$$
+    let max = Math.max(...ar);
     return ar.filter(c => c === max).length;
 }
 highestNumberInArray([3,2,1,3])
@@ -1159,6 +1159,19 @@ function gcd_two_numbers(x, y) {
   }
   return x;
 }
+
+// Array
+
+// greatestCommonFactor([46, 14, 20, 88]); // --> 2
+function gcd(a,b) {
+    return (!b) ? a : gcd(b, a%b);
+}
+
+function greatestCommonFactor(arr) {
+    return arr.reduce((a,b) => gcd(a,b));
+}
+
+greatestCommonFactor([46, 14, 20, 88])
 ```
 
 ```js
@@ -1300,6 +1313,39 @@ console.log(`result : ${change(5, [10, 25])}`)
 ```
 
 ```js
+var arr = [
+  ['I','B','C','A','K','E','A'],
+  ['D','R','F','C','A','E','A'],
+  ['G','H','O','E','L','A','D']
+];
+
+var row = 0, col = 0;
+var totalCols = arr[0].length;
+var totalRows = arr.length;
+var goingDown = false;
+var msg = '';
+
+while (col < totalCols) {
+  msg += arr[row][col];
+  // row++ if less than total rows
+  // row-- if back at row 0
+
+  if (row === 0 || (row < totalRows - 1 && goingDown)) {
+    row += 1;
+    goingDown = true;
+  } else {
+    row -= 1;
+    goingDown = false;
+  }
+
+  // always go forward in column
+  col++;
+}
+
+console.log(msg) // IROCKED
+```
+
+```js
 // Emmiter
 const Emitter = function() {
   this.events = {}
@@ -1376,36 +1422,218 @@ console.log(nodeX === node2); // true
 ```
 
 ```js
-var arr = [
-  ['I','B','C','A','K','E','A'],
-  ['D','R','F','C','A','E','A'],
-  ['G','H','O','E','L','A','D']
-];
+// Promise 
+// Function Solution
+const states = {
+  0: 'pending',
+  1: 'fulfilled',
+  2: 'rejected'
+}
+function MyPromise (cb) {
+  if (typeof cb!== 'function') {
+    throw new TypeError('callback must be a function')
+  }
+  let state = states[0]
+  let value = null
+  let handlers = []
+function fulfill (result) {
+    state = states[1]
+    value = result
+    handlers.forEach(handle)
+    handlers = null
+}
+function reject (error) {
+    state = states[2]
+    value = error
+    handlers.forEach(handle)
+    handlers = null
+}
+function resolve (value) {
+    try {
+      let then = getThen(value)
+      if (then) {
+        resolveAnotherPromise(then.bind(value), resolve, reject)
+        return
+      }
+      fulfill(value)
+    } catch (err) {
+      reject(err) 
+    }
+}
+function handle (handler) {
+  if (state === states[0]) handlers.push(handler)
+  else {
+    if (state === states[1] && 
+       typeof handler.onFulfill === 'function') {
+       handler.onFulfill(value)
+    }
+    if (state === states[2] && 
+       typeof handler.onReject === 'function') {
+       handler.onReject(value)
+    }
+  }
+}
+this.done = function (onFulfill, onReject) {
+  setTimeout(() => handle(onFulfill, onReject), 0)
+}
+this.then = function (onFulfill, onReject) {
+  let self = this
+  return new Promise((resolve, reject) => {
+    return self.done(result => {
+      if (typeof onFulfill === 'function') {
+        try {
+          return resolve(onFulfill(result))
+        } catch (err) {
+          return reject(err)
+        }
+      } else {
+        return resolve(result)
+      }
+   }, error => {
+      if (typeof onReject === 'function') {
+        try {
+          return resolve(onReject(error))
+        } catch (err) {
+          return reject(err)
+        }
+      } else {
+        return reject(error)
+      }
+   })
+  })
+ }
+}  
+function getThen (value) {
+    if (typeof(value) === 'object' 
+        || typeof(value) === 'function') {
+      let then = value.then
+      if (typeof(then) === 'function') return then
+    }
+    return null
+  }
+    
+function resolveAnotherPromise (cb, Onfulfill, Onreject) {
+    let finished = false
+    try {
+      cb(value => {
+        if (finished) return
+        finished = true
+        Onfulfill(value)
+      }, reason => {
+        if (finished) return
+        finished = true
+        Onreject(reason)
+      })
+    } catch (err) {
+      if (finished) return
+      finished = true
+      Onreject(err)
+    }
+  }
+}
+// Class Solution
+class PromiseSimple {
+  constructor(executionFunction) {
+    this.promiseChain = [];
+    this.handleError = () => {};
 
-var row = 0, col = 0;
-var totalCols = arr[0].length;
-var totalRows = arr.length;
-var goingDown = false;
-var msg = '';
+    this.onResolve = this.onResolve.bind(this);
+    this.onReject = this.onReject.bind(this);
 
-while (col &lt; totalCols) {
-  msg += arr[row][col];
-  // row++ if less than total rows
-  // row-- if back at row 0
-
-  if (row === 0 || (row &lt; totalRows - 1 &amp;&amp; goingDown)) {
-    row += 1;
-    goingDown = true;
-  } else {
-    row -= 1;
-    goingDown = false;
+    executionFunction(this.onResolve, this.onReject);
   }
 
-  // always go forward in column
-  col++;
-}
+  then(onResolve) {
+    this.promiseChain.push(onResolve);
 
-console.log(msg) // IROCKED
+    return this;
+  }
+
+  catch(handleError) {
+    this.handleError = handleError;
+
+    return this;
+  }
+
+  onResolve(value) {
+    let storedValue = value;
+
+    try {
+      this.promiseChain.forEach((nextFunction) => {
+         storedValue = nextFunction(storedValue);
+      });
+    } catch (error) {
+      this.promiseChain = [];
+
+      this.onReject(error);
+    }
+  }
+
+  onReject(error) {
+    this.handleError(error);
+  }
+}
+```
+
+```js
+// Observer
+
+function Click() {
+    this.handlers = [];  // observers
+}
+ 
+Click.prototype = {
+ 
+    subscribe: function(fn) {
+        this.handlers.push(fn);
+    },
+ 
+    unsubscribe: function(fn) {
+        this.handlers = this.handlers.filter(
+            function(item) {
+                if (item !== fn) {
+                    return item;
+                }
+            }
+        );
+    },
+ 
+    fire: function(o, thisObj) {
+        var scope = thisObj || window;
+        this.handlers.forEach(function(item) {
+            item.call(scope, o);
+        });
+    }
+}
+ 
+// log helper
+ 
+var log = (function() {
+    var log = "";
+ 
+    return {
+        add: function(msg) { log += msg + "\n"; },
+        show: function() { alert(log); log = ""; }
+    }
+})();
+ 
+function run() {
+ 
+    var clickHandler = function(item) { 
+        log.add("fired: " + item); 
+    };
+ 
+    var click = new Click();
+ 
+    click.subscribe(clickHandler);
+    click.fire('event #1');
+    click.unsubscribe(clickHandler);
+    click.fire('event #2');
+    click.subscribe(clickHandler);
+    click.fire('event #3');
+ 
+    log.show();
+}
 ```
 
 
