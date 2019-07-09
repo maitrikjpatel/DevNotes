@@ -552,8 +552,8 @@ for (let i in arr) – never use.
 ```
 
 - We can use an array as a deque with the following operations:
-- sort(), reverse() and splice() modify the array itself.
-- slice(), concat() and map() create a new array.
+> sort(), reverse() and splice() modify the array itself.
+> slice(), concat() and map() create a new array.
 
 -	**To add/remove elements:**
 	- push(...items) adds items to the end.
@@ -3023,6 +3023,38 @@ var names = animals.map(function(animal){
 
 - In both examples `[1,2,3]` (array) is an object.
 
+#### Mutability & Immutability In Javascript
+
+- Mutable
+
+```js
+let arr = [1];
+let new_arr = arr.push(2);
+// ------
+let a = {
+    foo: 'bar'
+};
+let b = a;
+b.foo =  'test2'
+
+console.log(b.foo); // test2
+console.log(a === b) // true
+```
+
+- Immitable
+
+```js
+let name = ‘Bill’;
+let full_name = name.concat(‘ Gates’);
+// ------
+let a = {foo: "bar"};
+let b = Object.assign({},a);
+b.foo = "bar2"
+
+console.log(a); // {foo: "bar"}
+console.log(b);// {foo: "bar2"}
+console.log(b === a) // false
+```
 
 ### JS Good Parts [Book]
 

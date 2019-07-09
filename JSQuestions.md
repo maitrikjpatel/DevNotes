@@ -616,6 +616,7 @@ matrixSum(myMatrix)
 ```
 
 ```js
+//Currying$$
 function f(a,b,c){
   if( a && b && c ){
     return ( (a + b) * c )
@@ -958,7 +959,79 @@ function sockMerchant(n, ar) {
     }
     return pairs;
 }
+```
 
+```js
+var input = [[1,  2,   3,  4],
+             [5,  6,   7,  8],
+             [9,  10, 11, 12],
+             [13, 14, 15, 16]];
+
+function spiral(array){
+  if (!array || array.length === 0) {
+    return [];
+  }
+  
+  let result = [];
+  let arrLength = array.length;
+  
+  let startRow = 0;
+  let startCol = 0;
+
+  let endCol = arrLength - 1;
+  let endRow = arrLength - 1;
+  
+  while (startRow <= endRow && startCol <= endCol) {
+    for (let i = startCol; i <= endCol; i++) {
+      result.push(array[startRow][i]);
+    }
+
+    startRow++;
+
+    for (let i = startRow; i <= endRow; i++) {
+      result.push(array[i][endCol]);
+    }
+    endCol--;
+
+    if (startRow <= endRow) {
+      for (let i = endCol; i >= startCol; i--) {
+        result.push(array[endRow][i]);
+      }
+      endRow--;
+    }
+
+    if (startCol <= endCol) {
+      for (let i = endRow; i >= startRow; i--) {
+        result.push(array[i][startCol]);
+      }
+      startCol++;
+    }
+  }
+  return result;
+}
+
+function spiralES6(array) {
+    const result = [];
+
+    while (array.length) {
+        result.push(
+            // Shift -> [ 1  2  3  4 ]
+            ...array.shift(),
+            // Pop each -> [ 8  12  16  ]
+            ...array.map(a => a.pop()),
+            // Pop -> [13, 14, 15, 16] => Reverse [16, 15, 14, 13]
+            ...array.pop().reverse(),
+            // Shift each -> [5, 9] => Reverse [9, 5]
+            ...array.map(a => a.shift()).reverse()
+        );
+    }
+  
+    return result;
+}
+
+
+console.log( spiral(input) )
+console.log( spiralES6(input) )
 ```
 
 ```js
@@ -1001,7 +1074,7 @@ function staircase(n) {
     }
     console.log(result);
 
-    // optimized 
+    // optimized
     for (let i = 1; i < n+1; i++) {
         console.log(" ".repeat(n - i) + "#".repeat(i))
     }   
