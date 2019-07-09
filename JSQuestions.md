@@ -1424,6 +1424,7 @@ console.log(nodeX === node2); // true
 ```js
 // Promise 
 // Function Solution
+// https://medium.com/@cmakyr12/understanding-promises-by-writing-your-own-promise-library-14c739eb9a42
 const states = {
   0: 'pending',
   1: 'fulfilled',
@@ -1532,6 +1533,7 @@ function resolveAnotherPromise (cb, Onfulfill, Onreject) {
   }
 }
 // Class Solution
+// https://www.promisejs.org/implementing/
 class PromiseSimple {
   constructor(executionFunction) {
     this.promiseChain = [];
