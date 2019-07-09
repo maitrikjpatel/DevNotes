@@ -552,8 +552,7 @@ for (let i in arr) – never use.
 ```
 
 - We can use an array as a deque with the following operations:
-> sort(), reverse() and splice() modify the array itself.
-> slice(), concat() and map() create a new array.
+> sort(), reverse() and splice() modify the array but slice(), concat() and map() create a new array.
 
 -	**To add/remove elements:**
 	- push(...items) adds items to the end.
