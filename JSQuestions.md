@@ -1639,7 +1639,12 @@ while (col < totalCols) {
 console.log(msg) // IROCKED
 ```
 
+```js
+// https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_850,f_auto,q_auto/v1497692795/stagger_bjqqml.gif
+```
+
 ### Others
+
 ```js
 // Write a parser for Javascript floating point numbers
 
