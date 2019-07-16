@@ -161,8 +161,101 @@ function highlight(td) {
   - mousedown/mouseup : Mouse button is clicked/released over an element.
   - mouseover/mouseout : Mouse pointer comes over/out from an element.
   - mousemove : Every mouse move over an element triggers that event.
+    - Events flow: ball.mousedown → document.mousemove → ball.mouseup
+    - At the drag start – remember the initial shift of the pointer relative to the element: shiftX/shiftY and keep it during the dragging.
+    - Detect droppable elements under the pointer using document.elementFromPoint.
 
 - Complex events
   - click : Triggers after mousedown and then mouseup over the same element if the left mouse button was used.
   - contextmenu : Triggers after mousedown if the right mouse button was used.
   - dblclick : Triggers after a double click over an element.
+  - Moving: mouseover/out, mouseenter/leave
+    - mouseenter/leave Transitions inside the element are not counted.
+    - mouseenter/leave Events mouseenter/mouseleave do not bubble.
+
+### Drag Algo
+
+- The basic Drag’n’Drop algorithm looks like this:
+  - Catch mousedown on a draggable element.
+  - Prepare the element for moving (maybe create a copy of it or whatever).
+  - Then on mousemove move it by changing left/top and position:absolute.
+  - On mouseup (button release) – perform all actions related to a finished Drag’n’Drop.
+
+```js
+// onmousedown
+// remember the distance from the cursor to the left-upper corner of the ball in variables shiftX/shiftY
+let shiftX = event.clientX - ball.getBoundingClientRect().left;
+let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+// onmousemove
+// ball has position:absoute
+// position the ball on the same shift relative to the pointer
+ball.style.left = event.pageX - shiftX + 'px';
+ball.style.top = event.pageY - shiftY + 'px';
+```
+
+### Key Events
+
+- Keyboard events:
+  - keydown – on pressing the key (auto-repeats if the key is pressed for long),
+  - keyup – on releasing the key.
+
+- Main keyboard event properties:
+  - code – the “key code” ("KeyA", "ArrowLeft" and so on), specific to the physical location of the key on keyboard.
+  - key – the character ("A", "a" and so on), for non-character keys, such as Esc, usually has the same value as code.
+
+
+### Scroll 
+
+- Scroll events allow to react on a page or element scrolling. 
+
+```js
+window.addEventListener('scroll', function() {
+  document.getElementById('showScroll').innerHTML = pageYOffset + 'px';
+});
+```
+
+### Form properties and methods
+
+- document.forms : A form is available as document.forms[name/index].
+- form.elements : Form elements are available as form.elements[name/index], or can use just form[name/index]. The elements property also works for <fieldset>.
+- element.form : Elements reference their form in the form property.
+- Value is available as input.value, textarea.value, select.value etc, or input.checked for checkboxes and radio buttons.
+- onchange : The change event triggers when the element has finished changing.
+- oninput : The input event occurs after the value is modified.
+- onsubmit : The submit event triggers when the form is submitted, it is usually used to validate the form before sending it to the server or to abort the submission and process it in JavaScript.
+
+### Focusing: focus/blur
+
+- An element receives a focus when the user either clicks on it or uses the Tab key on the keyboard. 
+- The moment of losing the focus (“blur”) when a user clicks somewhere else or presses Tab to go to the next form field, or there are other means as well.
+
+### PageLoad 
+
+- DOMContentLoaded event – DOM is ready, so the handler can lookup DOM nodes, initialize the interface.
+- load event – external resources are loaded, so styles are applied, image sizes are known etc.
+- beforeunload event – the user is leaving: we can check if the user saved the changes and ask them whether they really want to leave.
+- unload – the user almost left, but we still can initiate some operations, such as sending out statistics.
+- document.readyState is the current state of the document, changes can be tracked in the readystatechange event:
+  - loading – the document is loading.
+  - interactive – the document is parsed, happens at about the same time as DOMContentLoaded, but before it.
+  - complete – the document and resources are loaded, happens at about the same time as window.onload, but before it.
+
+## Extra
+
+- MutationObserver is a built-in object that observes a DOM element and fires a callback in case of changes.
+- EventLoop
+  - The concept of event loop is very simple. There’s an endless loop, when JavaScript engine waits for tasks, executes them and then sleeps waiting for more tasks.
+- The tasks form a queue, so-called “macrotask queue”
+- Microtask queue has a higher priority than the macrotask queue.
+- After every macrotask, the engine executes all tasks from microtask queue, prior to running any other macrotasks.
+- Code -> Promise -> Timeout
+
+- The more detailed algorithm of the event loop (though still simplified compare to the specification):
+  - Dequeue and run the oldest task from the macrotask queue (e.g. “script”).
+  - Execute all microtasks:
+  - While the microtask queue is not empty:
+  - Dequeue and run the oldest microtask.
+  - Render changes if any.
+  - Wait until the macrotask queue is not empty (if needed).
+  - Go to step 1.
