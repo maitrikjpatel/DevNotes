@@ -1,3 +1,17 @@
+---
+date: '2019-01-13'
+publish: 'false'
+category: 'note'
+author: 'Maitrik Patel'
+
+title: 'JS Questions'
+description: 'Javascript is taking over the world'
+
+topics: 'tools, development'
+
+source: 'Github'
+---
+
 ## JS Questions
 
 ### JS Basics
@@ -1640,6 +1654,47 @@ console.log(msg) // IROCKED
 ```
 
 ```js
+let entry = [1, 2, 9, 5, 5]
+let exit = [4, 5, 12, 9, 12]
+
+function findMaxGuests(entry, exit) {
+  let guestsIn = 1;
+  let maxGuests = 1;  
+  let time = entry[0];
+  let times = [...entry, ...exit];
+  let i = 1;
+  let j = 0;
+  
+  while( i < entry.length &&  j < entry.length ) {
+    // If next event in sorted
+    // order is arrival,
+    // increment count of guests
+    if (entry[i] <= exit[j]) {
+      guestsIn++;
+   
+      // Update max_guests if needed
+      if (guestsIn > maxGuests) {
+        maxGuests = guestsIn; 
+        time = entry[i]; 
+      }
+      
+      // increment index of  
+      // arrival array 
+      i++;
+    } else {
+      // If event is exit, decrement 
+      // count of guests. 
+      guestsIn--;
+      j++; 
+    }
+  }
+  return `Maximum Number of Guests = ${maxGuests} at ${time}`;
+}
+
+console.log(findMaxGuests(entry, exit))
+```
+
+```js
 // https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_850,f_auto,q_auto/v1497692795/stagger_bjqqml.gif
 ```
 
@@ -1667,4 +1722,11 @@ console.log(msg) // IROCKED
 // Promise
 
 // Observer
+
+// - Implement the tabs in vanilla JS and css
+// - Stream/Observer API
+// - Build Amazon's Marketplace system design
+// - https://www.geeksforgeeks.org/find-the-point-where-maximum-intervals-overlap/
+// - https://leetcode.com/problems/maximum-subarray/
+// - https://leetcode.com/problems/linked-list-cycle-ii/
 ```

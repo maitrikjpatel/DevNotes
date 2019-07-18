@@ -1,3 +1,17 @@
+---
+date: '2019-01-13'
+publish: 'false'
+category: 'note'
+author: 'Maitrik Patel'
+
+title: 'DOM'
+description: 'Javascript is taking over the world'
+
+topics: 'tools, development'
+
+source: 'Github'
+---
+
 #DOM
 
 ## Resources
