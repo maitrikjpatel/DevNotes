@@ -231,8 +231,8 @@ window.addEventListener('scroll', function() {
 
 ### Form properties and methods
 
-- document.forms : A form is available as document.forms[name/index].
-- form.elements : Form elements are available as form.elements[name/index], or can use just form[name/index]. The elements property also works for <fieldset>.
+- document.forms : A form is available as `document.forms[name/index]`.
+- form.elements : Form elements are available as `form.elements[name/index]`, or can use just `form[name/index]`. The elements property also works for `<fieldset>`.
 - element.form : Elements reference their form in the form property.
 - Value is available as input.value, textarea.value, select.value etc, or input.checked for checkboxes and radio buttons.
 - onchange : The change event triggers when the element has finished changing.
