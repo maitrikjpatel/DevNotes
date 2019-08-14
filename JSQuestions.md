@@ -1695,38 +1695,209 @@ console.log(findMaxGuests(entry, exit))
 ```
 
 ```js
+// If given an empty string, countAllCharacters should return an empty object.
+// var output = countAllCharacters('banana');
+// console.log(output); // --> {b: 1, a: 3, n: 2}
+
+function countAllCharacters(str) {
+    let opObj = {};
+    let strArray =  [...str];
+    let strArrayKeys = [...new Set(str)];
+    
+    for(let item in strArrayKeys) {
+        opObj[strArrayKeys[item]] = countChar(strArray, strArrayKeys[item]);
+    }
+    
+    return opObj;
+}
+
+function countChar(array, key) {
+    let totalNumber = 0;
+    for(let i = 0; i < array.length ; i++) {
+        if(array[i] === key) {
+            totalNumber++;
+        }
+    }
+    return totalNumber;
+}
+
+// Better Solution using Reduce
+function countAllCharacters(str) {
+  return str.split("").reduce(function(obj, s){
+    obj[s] = (obj[s] || 0) + 1;
+    return obj;
+  }, {});
+}
+console.log(countAllCharacters('banana'));
+```
+
+```js
+// Complex Array to Object
+// var input = [
+//     [
+//         ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
+//     ],
+//     [
+//         ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
+//     ]
+// ];
+// Result should look like this
+// var result = [
+//     {firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk'},
+//     {firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager'}
+// ]
+
+// Two Loop solution
+function transformEmployeeData(employeeData) {
+  var obj = {};
+  var arr = [];
+  
+  for (var i = 0; i < employeeData.length; i ++) {
+      
+    for (var j = 0; j < employeeData[i].length; j ++) {
+        
+      var key = employeeData[i][j][0];
+      var value = employeeData[i][j][1];
+      obj[key] = value;
+      
+    }
+    
+    arr.push(obj);
+  }
+  
+  return arr;
+}
+
+// Array Map/Reduce solution 
+function transformEmployeeData(employeeData) {
+    let result = employeeData.map(item => {
+      return item.reduce((acc, item) => {
+        acc[item[0]] = item[1];
+        return acc;
+      }, {});
+    });
+    
+    return result;
+}
+```
+
+```js
+// Complex Object to Array
+// var input = {
+//   name: 'Holly',
+//   age: 35,
+//   role: 'producer'
+// }
+
+function convertObjectToArray(obj) {
+    let myArray = [];
+    
+    // myArray = Object.entries(obj);
+    myArray = Object.keys(obj).map(v => new Array(v, obj[v]));
+    
+    return myArray
+}
+
+console.log(convertObjectToArray(input))
+
+// Output : [ [ 'name', 'Holly' ], [ 'age', 35 ], [ 'role', 'producer' ] ]
+```
+
+```js
 // https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_850,f_auto,q_auto/v1497692795/stagger_bjqqml.gif
+```
+
+```js
+Please use this Google doc during your interview (your interviewer will see what you write here). To free your hands for typing, we recommend using a headset or speakerphone.
+
+// No HTML
+// 4 Colors and repeat itSelf, Arry of any number
+// Input will be string
+
+const myColors = ["4285F4", "EA4335", "FBBC04", "34A853"];
+const myStr = "Lorem ipsum dolor sit amet";
+
+const printColoredLetter = (hexString, letter) => {
+    // Implementation not required
+}
+
+// param {array}
+// param {string}
+const myColors = ["4285F4", "EA4335", "FBBC04", "34A853"];
+const myStr = "Lorem ipsum dolor sit amet";
+// param {array}
+// param {string}
+
+function colorString( colorArray, string) {
+
+  // stringArray = [L,o,r,e,m, ,i,p,s,u,m, ,d,l,o,r, s,i,t, a,m,e,t];
+  let stringArray = string.split('');
+  let isSpace = 0;
+  
+// Color a String
+  for(let i = 0; i < stringArray.length; i++) {
+    
+    // compare if its not space
+    if(stringArray[i] !== ' '){
+      // Color L with myColors[0]
+      // L o r e m[5] i[7] …
+      let colorIndex = ((i-isSpace) % (myColors.length));
+      printColoredLetter(colorIndex,stringArray[i])
+    }
+    else {
+      // _[6] … 
+      isSpace++;
+      console.log(`${stringArray[i]}`);
+      printColoredLetter(stringArray[i])
+
+    }
+  }
+}
+
+colorString(myColors, myStr)
 ```
 
 ### Others
 
 ```js
 // Write a parser for Javascript floating point numbers
-
 // Write a JSON parser
-
 // OOP design of a banking system: bank account, transactions and owner
-
 // Create a simple image gallery using HTML/CSS/JS that rotates through images once per second.  
-
 // How would you architect a chess app?  
-
 // How would you write the HTML for YouTube's landing page?  
-
 // Write an async forEach function with and without promises.  
-
 // Talk about one of WorktypeOfDay's actual UI components and explain how you would implement it.  
-
 // What is a technology that you are passionate about and why? 
-
 // Promise
-
 // Observer
-
 // - Implement the tabs in vanilla JS and css
 // - Stream/Observer API
 // - Build Amazon's Marketplace system design
 // - https://www.geeksforgeeks.org/find-the-point-where-maximum-intervals-overlap/
 // - https://leetcode.com/problems/maximum-subarray/
 // - https://leetcode.com/problems/linked-list-cycle-ii/
+// - arrays, maps, sets, and DOM trees 
+// - Big O notation and tree traversal
+// - iteration, closures, scope, and writing asynchronous code
+// - Given two identical DOM tree structures, A and B, and a node from A, find the corresponding node in B.  
+// - Given two identical DOM trees (but not equal) and one element of the first DOM tree, how would you find this element in the second DOM tree?
+// - DONE - Can you write a function that deeply flattens an array? 
+// - What are the advantages of using ES6 maps over objects? What about using ES6 sets over arrays? 
+// - MAP vs ForEach
+// - Array vs Object
+// - call vs Apply
+// -------
+// @keyframes scale-in-tl {
+//   0% {
+//     transform: scale(0);
+//     transform-origin: 0% 0%;
+//     opacity: 1;
+//   }
+//   100% {
+//     transform: scale(1);
+//     transform-origin: 0% 0%;
+//     opacity: 1;
+//   }
+// }
 ```

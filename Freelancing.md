@@ -25,24 +25,18 @@ source: 'Github'
 
 ### Work search boards
 
-- [Meeet](http://meeet.co/)
 - [Top Coder](http://www.topcoder.com/)
 - [Hire Freelancers & Find Freelance Jobs Online - Freelancer.com](https://www.freelancer.com/)
 - [YunoJuno - The Freelancer Elite](https://www.yunojuno.com/)
-- [OpenHatch - Community tools for free and open source software](https://openhatch.org/)
 - [Fiverr: The marketplace for creative & professional services](https://www.fiverr.com/)
-- [Hirable](http://wearehirable.com/)
 - [YunoJuno - Making Freelance Work](https://www.yunojuno.com/)
 - [Gun.io - Meet Verified Freelance Developers](https://gun.io/)
 - [Gigster - Hire a quality developer](http://www.trygigster.com/)
 - [UpWork](https://www.upwork.com/)
-- [Design Jobs](http://weeklydesignjobs.com/)
-- [RemoteJob](http://talentboard.me/)
 - [99Designs](http://99designs.com/how-it-works)
 - [Freelancing Union](https://www.freelancersunion.org/)
 - [Freelancing in Data](https://www.experfy.com/projects/category)
 - [SideProjectors | Marketplace to buy and sell side projects.](http://www.sideprojectors.com/project/home)
-- [Crew certified Freelancer](https://crew.co/)
 - [Moonlight work ](https://www.moonlightwork.com/)
 
 ### Learning and Tools

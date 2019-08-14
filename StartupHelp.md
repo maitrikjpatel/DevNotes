@@ -76,9 +76,9 @@ source: 'Github'
 ### Inspiring Leaders
 
 - [The stories behind the startups - Beta List](http://betali.st/interviews)
-- [Foundation — Episode 32 w/ Phil Libin](http://foundation.bz/)
+- [Foundation](http://foundation.bz/)
+- [Unfiltered - founders interviews](https://unfiltered.tv/)
 - [15 TED Talks That Will Change Your Life](http://mashable.com/2013/07/08/ted-talks-change-your-life/)
-- [Forbes: 30 Under 30 2015](http://www.forbes.com/30under30/#/)
 - [12 Startups in 12 Months](https://levels.io/)
 - [How to become Angel Investor](http://futureinvestor.co/p/angel)
 - [Startup School](https://www.startupschool.org/)
