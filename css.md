@@ -21,7 +21,7 @@ source: 'Github'
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
 - [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
 - [7 CSS Units You Might Not Know About - Tuts+ Web Design Article](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
-- [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892)
+- [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892
 
 ### Tools and playground 
 
@@ -129,6 +129,11 @@ source: 'Github'
 - [SVG Sprite Techniques](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/)
 - [Stack Icons](http://stackicons.com/)
 - [SVG Styling](http://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css)
+
+#### CSS Clip/Mark
+
+- [CSS Clip/Mask](https://css-tricks.com/clipping-masking-css/)
+- [CSS Clip Path](https://css-tricks.com/almanac/properties/c/clip-path/)
 
 #### Web-Components
 
