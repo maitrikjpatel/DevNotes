@@ -16,6 +16,47 @@ source: 'Github'
 
 ### JS Basics
 
+```js
+var text = 'outside';
+function logIt(){
+    console.log(text);
+    var text = 'inside';
+};
+logIt(); // undefined
+```
+
+```js
+let threatLevel = 1;
+
+function inspireFear(threatLevel){
+  threatLevel += 100;
+}
+
+inspireFear(threatLevel);
+console.log(threatLevel); // Whoops! It's still 1!
+```
+
+```js
+<button id="btn-0">Button 1</button>
+<button id="btn-1">Button 2</button>
+<button id="btn-2">Button 3</button>
+
+<script type="text/javascript">
+  const prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
+  for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
+
+    // For each of our buttons, when the user clicks it...
+    document.getElementById(`btn-${btnNum}`).onclick = () => {
+
+      // Tell her what she's won!
+      alert(prizes[btnNum]);
+    };
+  }
+</script>
+
+// fix it, change var to let in for loop
+```
+
 ```js 
 conole.log([]+ []) // Empty
 conole.log({}+ []) // Empty
