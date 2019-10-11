@@ -33,6 +33,7 @@ source: 'Github'
 
 ### Tools / Kits
 
+- [Equity Calculator](https://ledgy.com/calculator/)
 - [Shape Factory Basic tools](httpshttps://hatchful.shopify.com/)
 - [Index Ventures OptionPlan](https://www.indexventures.com/optionplan)
 - [Startup Idea](https://oduta.com/)

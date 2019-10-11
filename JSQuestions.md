@@ -17,6 +17,14 @@ source: 'Github'
 ### JS Basics
 
 ```js
+// Index of Max in array
+
+array.indexOf(Math.max(...array))
+```
+
+
+
+```js
 var text = 'outside';
 function logIt(){
     console.log(text);
@@ -57,7 +65,7 @@ console.log(threatLevel); // Whoops! It's still 1!
 // fix it, change var to let in for loop
 ```
 
-```js 
+```js
 conole.log([]+ []) // Empty
 conole.log({}+ []) // Empty
 ```
@@ -1896,6 +1904,87 @@ function colorString( colorArray, string) {
 }
 
 colorString(myColors, myStr)
+```
+
+```js
+let d = {
+  'a': 5,
+  'b': 6,
+  'c': {
+    'f': 9,
+    'g': {
+      'm': 17,
+      'n': 3
+    }
+  }
+}
+
+// Output
+// flatten(d) = {
+//   'a': 5,
+//   'b': 6,
+//   'c.f': 9,
+//   'c.g.m': 17,
+//   'c.g.n': 3,
+// }
+
+let tempKey
+let flatData = {};
+
+function flatten(data) {
+  
+  for( let key in data) {
+    if(typeof data[key] === "object") {
+      tempKey = tempKey ? `${tempKey}.${key}` : key
+      flatten(data[key])
+    } else {
+      if(tempKey){ 
+        flatData[`${tempKey}.${key}`] = data[key]
+      } else {
+        flatData[key] = data[key]
+      }
+    }
+  }  
+
+  return flatData;
+}
+
+
+console.log(flatten(d))
+```
+
+```js
+// Given a 2D board and a word, find if the word exists in the grid.
+function exist(board, word) {
+  if (board.length === 0) return false;
+
+  const h = board.length;
+  const w = board[0].length;
+
+  function go(i, j, k) {
+    if (i < 0 || j < 0 || i >= h || j >= w) return false;
+    if (board[i][j] !== word[k]) return false;
+    if (k === word.length - 1) return true;
+
+    board[i][j] = '*';      // mark as visited
+
+    if (go(i - 1, j, k + 1)) return true;  // up
+    if (go(i + 1, j, k + 1)) return true;  // down
+    if (go(i, j - 1, k + 1)) return true;  // left
+    if (go(i, j + 1, k + 1)) return true;  // right
+
+    board[i][j] = word[k];  // reset
+    return false;
+  }
+
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < w; j++) {
+      if (go(i, j, 0)) return true;
+    }
+  }
+
+  return false;
+}
 ```
 
 ### Others
