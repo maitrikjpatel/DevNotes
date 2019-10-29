@@ -22,6 +22,7 @@ source: 'Github'
 - [desksurfing.net - Coworking spaces around the world](http://www.desksurfing.net/)
 - [How Copass works for a Copasser - Copass](https://copass.org/how_it_works)
 - [Nomadic Designer Toolbox: Tips, Services & Hacks - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/nomadic-designer-toolbox-tips-services-hacks--cms-23078)
+- [Remote work statistics](https://usefyi.com/remote-work-statistics/)
 
 ### Work search boards
 

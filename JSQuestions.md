@@ -105,7 +105,7 @@ conole.log(sentence) // hello
 ```
 
 ```js 
-<div contentEditable="tue">Hello</div> // make content editable
+<div contentEditable="true">Hello</div> // make content editable
 ```
 
 ```js
@@ -1985,6 +1985,312 @@ function exist(board, word) {
 
   return false;
 }
+```
+
+```js
+/*
+* Code a function in JavaScript that receives a variable
+* containing any valid number and returns that
+* number as a string with comma thousand separators. For example:
+*     Input: 3450272 will return  “3,450,272”
+*     Input: 3450272.323 will return  “3,450,272.323”
+*/
+
+function convertNumber(num) {
+  // split number
+  let splitNum = num.toString().split(".");
+  
+  // splitNum[0]
+  let newPattern = /(\d)(?=(\d{3})+(?!\d))/g
+  splitNum[0] = splitNum[0].replace(newPattern, '$1,');
+  
+  // splitNum[1]
+  return splitNum.join('.');
+}
+
+function test(num, expectedValue) {
+  var result = convertNumber(num);
+  console.log('Test[' + (result === expectedValue ? '✓' : '☓') + '] ' + num + ' -> ' + result);
+}
+
+test(306567, '306,567');
+test(1003567, '1,003,567');
+test(3567, '3,567');
+test(3567.2345, '3,567.2345');
+test(-35672345, '-35,672,345');
+test(-135672345, '-135,672,345');
+test(0.0003, '0.0003');
+test(2e5, '200,000');
+test(0x1234, '4,660');
+test(Infinity, 'Infinity');
+```
+
+```js
+function maxRecurringChar(str) {
+  let charMap = {};
+  let charArray;
+  let valueArray;
+  let maxCharValue;
+  
+  for(let letter of str) {
+    if(charMap.hasOwnProperty(letter)){
+      charMap[letter]++;
+    } else {
+      charMap[letter] = 1
+    }
+  }
+  
+  charArray = Object.keys(charMap)
+  valueArray = Object.values(charMap)
+  maxCharValue = Math.max(...valueArray)
+  
+  console.log(charArray[valueArray.indexOf(maxCharValue)])
+  console.log(maxCharValue)
+}
+
+
+console.log(maxRecurringChar('aabacada')) // a
+console.log(maxRecurringChar('aabbcadbdocbbbbsfdicbacada')) // b
+console.log(maxRecurringChar('aabaclpdfjcpdjjccccpaofjecpaklsdkccccada')) // c
+```
+
+```js
+// Sentence Capitalization
+function capSentence(text) {
+  let charArray = text.split(' ');
+  
+  let capArray = charArray.map((item) => {
+    return item = item.charAt(0).toUpperCase() + item.slice(1);
+  })
+  
+  return capArray.join(' ')
+  
+}
+
+console.log(capSentence('the tales of scotch!'))
+```
+
+```js
+// Palindrome
+function palindromeChecker(text){
+  return (text === text.split('').reverse().join('')) ? true : false
+}
+
+// Palindrome with Permutation
+function hasPalindromePermutation(theString) {
+
+  // Track characters we've seen an odd number of times
+  const unpairedCharacters = new Set();
+
+  for (let char of theString) {
+    if (unpairedCharacters.has(char)) {
+      console.log(`delete: ${char}`)
+      unpairedCharacters.delete(char);
+    } else {
+      console.log(`add: ${char}`)
+      unpairedCharacters.add(char);
+    }
+  }
+
+  // The string has a palindrome permutation if it
+  // has one or zero characters without a pair
+  return unpairedCharacters.size <= 1;
+}
+
+console.log(palindromeChecker('dracecar')) // false
+console.log(hasPalindromePermutation('naman')) // true
+console.log(hasPalindromePermutation('nnaam')) // true
+```
+
+```js
+function hammingDistance(str1, str2) {
+  let result = 0;
+  if(str1.length === str2.length) {
+    for( let i = 0; i < str1.length; i++) {
+      if(str1[i] !== str2[i]) { result++ }
+    }
+  } else {
+    return "Not same sime size string"
+  }
+  
+}
+
+console.log(hammingDistance('rokklver', 'rillkver')) // should return 1
+```
+
+```js
+// Longest word in sentence
+function longestWord(str) {
+  let strArray = str.split(' ');
+  let maxChar = '';
+  strArray.map((char) => {
+    maxChar = (char.length > maxChar.length) ? char : maxChar
+  })
+  return maxChar
+  
+  // Sort
+  return str.split(' ').sort((wa, wb) => wa.length < wb.length)[0]
+}
+
+console.log(longestWord('Top Shelf Web Development Training on Scotch')) // Development
+```
+
+```js
+// Anagrams
+function isAnagram(str1, str2) {
+  const sanitizeString = function (str) {
+    return str.toLowerCase().replace(/[^a-z\d]/g, '').split('').sort().join('');
+  }
+  
+  if(str1.length === str2.length) {
+    return sanitizeString(str1) === sanitizeString(str2) 
+  } else {
+    console.log("Strings are not same size")
+  }
+}
+
+console.log(isAnagram('silent', 'listen'))
+```
+
+```js
+// Pig Latin
+
+function pigLatin(str) {
+  const vowels = ["a","e","i","o","u"];
+  
+  if(vowels.includes(str[0])) {
+    return `${str}way`
+  } else {
+    let charIndex;
+    for( let char of str) {
+      if (vowels.includes(char)) {
+        charIndex = str.indexOf(char)
+        break
+      }
+    }
+    return str.slice(charIndex) + str.slice(0, charIndex) + 'ay'
+  }
+}
+
+console.log(pigLatin("explain")) // explainway
+console.log(pigLatin("glove")) // oveglay
+console.log(pigLatin("pig")) // igpay
+```
+
+```js
+function chunkArray(array, size) {
+  
+  if(array.length < size) {
+   return [array]
+  } 
+  
+  return [array.slice(0,size), ...chunkArray(array.slice(size), size)]
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 5))
+// should return [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13]]
+
+```
+
+```js
+// frequencySort
+
+function customSort(arr) {
+    // Write your code here
+    let customSortArray = [];
+    let sortedArray = [];
+    let countObj = {};
+    
+    // create countObj with key repeat value
+    for(let key of arr) {
+        if(key in countObj){
+            countObj[key] = countObj[key] + 1;
+        } else {
+            countObj[key] = 1;
+        }
+    }
+
+    for(let key in countObj) {
+        sortedArray.push([key, countObj[key]])
+    }
+
+    sortedArray.sort((a,b) => a[1] - b[1])
+
+    sortedArray.forEach((obj) => {
+        for(let i=0; i < obj[1]; i++) {
+            customSortArray.push(obj[0]);
+        }
+    })
+
+    return customSortArray;
+}
+
+customSort([1,3,2,4,2])
+customSort([1,2,3,3,4,4,2,2,3,1,3,9,2,4,11])
+```
+
+```js
+ // falsyBouncer([1, 0, null, NaN, '', 5]) // should return [1,5]
+
+ function falsyBouncer(array) {
+  // use loop
+  let result = [];
+  for(let value of array){
+    if(value) {
+      result.push(value)
+    }
+  }
+  return result
+  
+  // Optomized version
+  return array.filter((value) => {
+      return Boolean(value)
+  })
+}
+
+console.log(falsyBouncer([1, 0, null, NaN, '', 5])) // should return [1,5]
+```
+
+```js
+function reverseInteger(str) {  
+  let reverseStr = []
+  let strArray = str.toString().split('')
+  
+  
+  for(let elem of strArray) {
+    reverseStr.unshift(elem);
+  }
+  
+  return (parseInt(reverseStr.join(''))) * Math.sign(str)
+}
+
+
+console.log(reverseInteger(-123))
+```
+
+```js
+// Range Sum
+function rangeSum(arr) {
+  // Best
+  return ((arr[1] - arr[0] +1) * (arr[0] + arr[1])) / 2;
+
+  // Forloop
+  let sum = 0;
+  for (i = arr[0]; i <= arr[1]; i++) {
+    sum += i;
+  }
+  return sum;
+
+  // Recursion
+  if (arr[0] == arr[1]) {
+    return arr[0];
+  } else {
+    return rangeSum([arr[0], arr[1] - 1]) + arr[1];
+  }
+}
+
+rangeSum([1,9]) 
+// Should return 45 i.e 1+2+3+4+5+6+7+8+9
 ```
 
 ### Others
