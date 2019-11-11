@@ -20,7 +20,7 @@ Following is list of notes which I use in day to day development work.
 - [Javascript](JS.md)
 - [Javascript ES6](ES6.md)
 - [React](React.md)
-- [CSS](CSS.md)
+- [CSS](css.md)
 - [GIT](Git.md)
 - [AR](AR.md)
 - [RegEx](RegEx.md)
