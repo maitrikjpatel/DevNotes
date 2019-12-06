@@ -28,7 +28,7 @@ Following is list of notes which I use in day to day development work.
 ## Design Notes
 
 - [User Experience and Design](UX.md)
-- [Data Visualization](DataViz.md)
+- [Data Visualization](DataVisualization.md)
 - [Design System](DesignSystem.md)
 
 ## Dev Environment Setup Notes
