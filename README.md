@@ -20,10 +20,10 @@ Following is list of notes which I use in day to day development work.
 - [Javascript](JS.md)
 - [Javascript ES6](ES6.md)
 - [React](React.md)
+- [DOM](DOM.md)
 - [CSS](CSS.md)
-- [GIT](Git.md)
-- [AR](AR.md)
 - [RegEx](RegEx.md)
+- [AR](AR.md)
 
 ## Design Notes
 
@@ -35,6 +35,7 @@ Following is list of notes which I use in day to day development work.
 
 - [Tools and Development](Tools.md)
 - [Bash vs Zsh](BashZsh.md)
+- [GIT](Git.md)
 
 ## General Notes
 
