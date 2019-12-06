@@ -1,34 +1,32 @@
 ---
 date: '2019-01-13'
-publish: 'false'
+publish: 'true'
 category: 'note'
 author: 'Maitrik Patel'
 
 title: 'DOM'
-description: 'Javascript is taking over the world'
+description: ' -Document Object Model'
 
 topics: 'tools, development'
 
 source: 'Github'
 ---
 
-#DOM
-
-## Resources
+### Resources
 
 - DOM specification : Describes the document structure, manipulations and events, see https://dom.spec.whatwg.org.
 - CSSOM specification : Describes stylesheets and style rules, manipulations with them and their binding to documents, see https://www.w3.org/TR/cssom-1/.
 
-## Notes
+### Notes
 
-### DOM Treee
+#### DOM Treee
 
 - An HTML/XML document is represented inside the browser as the DOM tree.
   - Tags become element nodes and form the structure.
   - Text becomes text nodes.
   - …etc, everything in HTML has its place in DOM, even comments.
 
-### Walking the DOM
+#### Walking the DOM
 
 - For all nodes: parentNode, childNodes, firstChild, lastChild, previousSibling, nextSibling.
 - For element nodes only: parentElement, children, firstElementChild, lastElementChild, previousElementSibling, nextElementSibling.
@@ -45,7 +43,7 @@ source: 'Github'
 - hidden : When set to true, does the same as CSS display:none
 
 
-### Attribute vs Properties
+#### Attribute vs Properties
 
 - Attribute - HTML, String, Name is not case-sensitive.
 - Properties - DOM, Any value, Name is case-sensitive.
@@ -55,13 +53,13 @@ source: 'Github'
 - elem.removeAttribute(name) – to remove the attribute.
 - elem.attributes is a collection of all attributes.
 
-### Create New Nodes
+#### Create New Nodes
 
 - document.createElement(tag) – creates an element with the given tag,
 - document.createTextNode(value) – creates a text node (rarely used),
 - elem.cloneNode(deep) – clones the element, if deep==true then with all descendants.
 
-### Insertion and removal of nodes
+#### Insertion and removal of nodes
 
 - parent.appendChild(node)
 - parent.insertBefore(node, nextSibling)
@@ -79,7 +77,7 @@ source: 'Github'
   - "beforeend" – insert html into elem, at the end,
   - "afterend" – insert html right after elem.
 
-### Style and Class
+#### Style and Class
 
 - className – the string value, good to manage the whole set of classes.
 - classList – the object with methods add/remove/toggle/contains, good for individual classes.
@@ -89,11 +87,11 @@ source: 'Github'
 - The style.cssText property corresponds to the whole "style" attribute, the full string of styles.
 - The getComputedStyle(elem[, pseudo]) returns the style-like object with them. Read-only.
 
-### Element size and scrolling
+#### Element size and scrolling
 
 - [Geometry](https://javascript.info/size-and-scroll#geometry)
 
-### Coordinates
+#### Coordinates
 
 - document.elementFromPoint(x, y) returns the most nested element at window coordinates (x, y)
 - clientX,clientY : When you scroll, clientX,clientY change, because they are relative to the window, but (pageX,pageY) remain the same.
@@ -101,7 +99,7 @@ source: 'Github'
 - pageX = clientX + width of the scrolled-out horizontal part of the document.
 
 
-### Browser events
+#### Browser events
 
 - Mouse events:
   click – when the mouse clicks on an element (touchscreen devices generate it on a tap).
@@ -123,7 +121,7 @@ source: 'Github'
 - CSS events:
   - transitionend – when a CSS-animation finishes.
 
-### Bubbling and capturing
+#### Bubbling and capturing
 
 - Bubbling : The bubbling principle is simple.
 - When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
@@ -133,7 +131,7 @@ source: 'Github'
   - event.currentTarget (=this) – the current element that handles the event (the one that has the handler on it)
   - event.eventPhase – the current phase (capturing=1, target=2, bubbling=3).
 
-### Event delegation
+#### Event delegation
 
 - Capturing and bubbling allow us to implement one of most powerful event handling patterns called event delegation.
 - The idea is that if we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them – we put a single handler on their common ancestor.
@@ -160,7 +158,7 @@ function highlight(td) {
 }
 ```
 
-### Browser actions:
+#### Browser actions:
 
 - mousedown – starts the selection (move the mouse to select).
 - click on `<input type="checkbox">` – checks/unchecks the input.
@@ -169,7 +167,7 @@ function highlight(td) {
 - keydown – pressing a key may lead to adding a character into a field, or other actions.
 - contextmenu – the event happens on a right-click, the action is to show the browser context menu.
 
-### Mouse Events: 
+#### Mouse Events: 
 
 - The most used simple events are:
   - mousedown/mouseup : Mouse button is clicked/released over an element.
@@ -187,7 +185,7 @@ function highlight(td) {
     - mouseenter/leave Transitions inside the element are not counted.
     - mouseenter/leave Events mouseenter/mouseleave do not bubble.
 
-### Drag Algo
+#### Drag Algo
 
 - The basic Drag’n’Drop algorithm looks like this:
   - Catch mousedown on a draggable element.
@@ -208,7 +206,7 @@ ball.style.left = event.pageX - shiftX + 'px';
 ball.style.top = event.pageY - shiftY + 'px';
 ```
 
-### Key Events
+#### Key Events
 
 - Keyboard events:
   - keydown – on pressing the key (auto-repeats if the key is pressed for long),
@@ -219,7 +217,7 @@ ball.style.top = event.pageY - shiftY + 'px';
   - key – the character ("A", "a" and so on), for non-character keys, such as Esc, usually has the same value as code.
 
 
-### Scroll 
+#### Scroll 
 
 - Scroll events allow to react on a page or element scrolling. 
 
@@ -229,7 +227,7 @@ window.addEventListener('scroll', function() {
 });
 ```
 
-### Form properties and methods
+#### Form properties and methods
 
 - document.forms : A form is available as `document.forms[name/index]`.
 - form.elements : Form elements are available as `form.elements[name/index]`, or can use just `form[name/index]`. The elements property also works for `<fieldset>`.
@@ -239,12 +237,12 @@ window.addEventListener('scroll', function() {
 - oninput : The input event occurs after the value is modified.
 - onsubmit : The submit event triggers when the form is submitted, it is usually used to validate the form before sending it to the server or to abort the submission and process it in JavaScript.
 
-### Focusing: focus/blur
+#### Focusing: focus/blur
 
 - An element receives a focus when the user either clicks on it or uses the Tab key on the keyboard. 
 - The moment of losing the focus (“blur”) when a user clicks somewhere else or presses Tab to go to the next form field, or there are other means as well.
 
-### PageLoad 
+#### PageLoad 
 
 - DOMContentLoaded event – DOM is ready, so the handler can lookup DOM nodes, initialize the interface.
 - load event – external resources are loaded, so styles are applied, image sizes are known etc.
@@ -255,7 +253,7 @@ window.addEventListener('scroll', function() {
   - interactive – the document is parsed, happens at about the same time as DOMContentLoaded, but before it.
   - complete – the document and resources are loaded, happens at about the same time as window.onload, but before it.
 
-## Extra
+### Extra
 
 - MutationObserver is a built-in object that observes a DOM element and fires a callback in case of changes.
 - EventLoop

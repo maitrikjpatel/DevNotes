@@ -1,3 +1,17 @@
+---
+date: '2019-01-17'
+publish: 'true'
+category: 'note'
+author: 'Maitrik Patel'
+
+title: 'RegEx'
+description: 'I will make this RegEx work first time.'
+
+topics: 'tools, development'
+
+source: 'Github'
+---
+
 ### RegEx
 
 - [Undersrtand Regular Expression in hour](https://www.youtube.com/watch?v=ZfQFUJhPqMM)

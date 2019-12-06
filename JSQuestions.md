@@ -22,8 +22,6 @@ source: 'Github'
 array.indexOf(Math.max(...array))
 ```
 
-
-
 ```js
 var text = 'outside';
 function logIt(){
@@ -2291,6 +2289,52 @@ function rangeSum(arr) {
 
 rangeSum([1,9]) 
 // Should return 45 i.e 1+2+3+4+5+6+7+8+9
+```
+
+```js
+let d = {
+  'a': 5,
+  'b': 6,
+  'c': {
+    'f': 9,
+    'g': {
+      'm': 17,
+      'n': 3
+    }
+  }
+}
+
+flatten(d) = {
+  'a': 5,
+  'b': 6,
+  'c.f': 9,
+  'c.g.m': 17,
+  'c.g.n': 3,
+}
+
+let tempKey
+let flatData = {};
+
+function flatten(data) {
+  
+  for( let key in data) {
+    if(typeof data[key] === "object") {
+      tempKey = tempKey ? `${tempKey}.${key}` : key
+      flatten(data[key])
+    } else {
+      if(tempKey){ 
+        flatData[`${tempKey}.${key}`] = data[key]
+      } else {
+        flatData[key] = data[key]
+      }
+    }
+  }  
+
+  return flatData;
+}
+
+
+console.log(flatten(d))
 ```
 
 ### Others
