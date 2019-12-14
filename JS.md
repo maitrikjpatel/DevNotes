@@ -1203,7 +1203,7 @@ alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
 - “window” object
 	- "let/const" doesn't create a window property
 	- The value of this in the global scope is window.
-	-  All scripts share the same global scope, so variables declared in one "<script/>" become visible in another ones:
+	-  All scripts share the same global scope, so variables declared in one script.js file become visible in another ones:
 
 	```js
 	// Window 1
@@ -1218,11 +1218,11 @@ alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
 		alert(b); // 2
 	</script>
 	```
-	
+
 	- Different scripts (possibly from different sources) see variables of each other.
 	- The idea to merge multiple aspects into a single window object was to “make things simple", but the multi-purpose window is considered a design mistake in the language.
 	- Solution:
-		- Using <script type="module"> fixes the design flaw of the language by separating top-level scope from window.
+		- Using "script type='module'" fixes the design flaw of the language by separating top-level scope from window.
 		- Such script is considered a separate “module” with its own top-level scope (lexical environment).
 
 		```js
