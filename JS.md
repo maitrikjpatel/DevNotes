@@ -1218,9 +1218,10 @@ alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
 		alert(b); // 2
 	</script>
 	```
+	
 	- Different scripts (possibly from different sources) see variables of each other.
 	- The idea to merge multiple aspects into a single window object was to “make things simple", but the multi-purpose window is considered a design mistake in the language.
-	- Solution: 
+	- Solution:
 		- Using <script type="module"> fixes the design flaw of the language by separating top-level scope from window.
 		- Such script is considered a separate “module” with its own top-level scope (lexical environment).
 
@@ -1239,14 +1240,15 @@ alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
 			alert(x); // Error: undeclared variable
 		</script>
 		```
+
 	- Valid uses of the global object
 		- create “polyfills”: add functions that are not supported by the environment (say, an old browser), but exist in the modern standard.
+
 		```js
 		if (!window.Promise) {
 			window.Promise = ... // custom implementation of the modern language feature
 		}
 		```
-
 
 #### Functional Object
 

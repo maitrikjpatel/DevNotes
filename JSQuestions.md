@@ -887,7 +887,7 @@ console.log(c)
 ```js
 // --------COPY SORTED--------
 let copySorted = (array) => array.slice().sort()
-
+qq
 let myArray = ["HTML", "JavaScript", "CSS"];
 let sorted = copySorted(myArray);
 
