@@ -17,9 +17,19 @@ source: 'Github'
 ### JS Basics
 
 ```js
-// Index of Max in array
+// Value/Index of Max in array
+let findArrayMax = (array) => {
+  let maxValue = 0;
+  for(let i = 0; i < array.length; i++) {
+    if(maxValue < array[i]) {
+      maxValue = array[i];
+    }
+  }
+  return maxValue
 
-array.indexOf(Math.max(...array))
+  // One liner solution
+  return array[array.indexOf(Math.max(...array))]
+}
 ```
 
 ```js
@@ -61,11 +71,13 @@ console.log(threatLevel); // Whoops! It's still 1!
 </script>
 
 // fix it, change var to let in for loop
+// Answer 1, use let in for loop
+// Answer 2, use immediate invoked function
 ```
 
 ```js
-conole.log([]+ []) // Empty
-conole.log({}+ []) // Empty
+console.log([]+ []) // Empty
+console.log({}+ []) // Empty
 ```
 
 ```js
@@ -79,30 +91,30 @@ myNinja(); // undefined
 ```
 
 ```js
-
-let x = {
+let myObject = {
   a: 1,
   b: 2
 }
-let maArray = Object.values(x)
-console.log(maArray); // [1,2]
+
+let objectValueArray = Object.values(myObject)
+console.log(objectValueArray); // [1,2]
 ```
 
 ```js
-// let x = 'hi' 
+let x = 'hi'
 let y = x.split('').reverse().join(''); // 'ih'
 console.log(y);
 ```
 
-```js 
+```js
 function a() {
   return 'hello';
 }
-const sentence = a `hi` // simmilar to a('hi') 
-conole.log(sentence) // hello 
+const sentence = a `hi` // simmilar to a('hi')
+conole.log(sentence) // hello
 ```
 
-```js 
+```js
 <div contentEditable="true">Hello</div> // make content editable
 ```
 
@@ -113,7 +125,7 @@ function y(){
 let x = {
   length: 5,
   method: function(y){
-    argument[0]()'
+    argument[0]()
   }
 };
 x.method(y,1); // 2 not 5
@@ -122,7 +134,7 @@ x.method(y,1); // 2 not 5
 
 ```js
 const x = 'constructor'
-console.log(x[x])(01)); // 1
+console.log(x[x])(01); // 1
 // x is string
 // x[x] = x['constructor'] = x.constructor
 // x[x] will convert 01 to string means 1 answer
@@ -130,7 +142,7 @@ console.log(x[x])(01)); // 1
 
 ```js
 console.log(0.1 + 0.2) // 0.30000000000004
-// Decimal in base 10 
+// Decimal in base 10
 // Computer only understand base 2
 // Need conversion
 ```
@@ -138,7 +150,7 @@ console.log(0.1 + 0.2) // 0.30000000000004
 ```js
 console.log('hi') // hi
 console.log(('hi').__proto__) // String as "hi" is created using String 
-console.log(('hi').__proto__.__proto__.__proto__) // Constructor as String is created using Object which is Constructor
+console.log(('hi').__proto__.__proto__) // Constructor as String is created using Object which is Constructor
 console.log(('hi').__proto__.__proto__.__proto__) // null as there is nothing beyond Object so null
 ```
 
@@ -217,8 +229,8 @@ myFunc()
 ```
 
 ```js
-console.log( 5 < 6 < 7) // True
-console.log( 7 > 6 > 5) // false (7>6)=True -> (True>7) = false
+console.log( 5 < 6 < 7) // (5 < 6) = True -> (True < 7) = true
+console.log( 7 > 6 > 5) // (7 > 6) = True -> (True > 7) = false
 ```
 
 ```js
@@ -227,6 +239,7 @@ console.log(a('hi'))
 // Argument don't bind to arrow function 
 // Use spread operator
 let a = (...n) => {return n};
+console.log(a('hi'))
 ```
 
 ```js
@@ -238,10 +251,10 @@ let profile = {
 profile.age = 3;
 profile.name = 'matt'
 
-// No update to name or age. 
+// No update to name or age.
 Object.freeze(profile)
 // Update name but not allow to add age
-Object.seal(profile) 
+Object.seal(profile)
 ```
 
 ```js
@@ -251,22 +264,20 @@ const obj = {
     b:{
       c: 1
     }
-  }     
+  }
 }
 
 // Fail
-// Shallow cloning  -> 2 
+// Shallow cloning  ->
 const clone = obj;
 const clone = Object.assign({}, obj);
 
-// Success
-// Shallow cloning  -> 1
+// Deep Cloning -> Success
 const clone = JSON.parse(JSON.stringify(obj))
 
 clone.a.b.c = 2
-console.log(obj.a.b.c); // 1
+console.log(obj.a.b.c); // 1 [Deep Cloning] , 2 [Shallow cloning]
 ```
-
 
 ```js
 // make age readable
@@ -275,12 +286,12 @@ let profile = {
 }
 
 Object.defineProperty( profile, 'age', {
-  value: 3;
+  value: 30;
   writable: false
 })
 
-profile.name = "matt" // change 
-pro
+profile.name = "matt" // change
+profile.age = 33 // won't change
 ```
 
 ```js
@@ -294,7 +305,7 @@ for ( var i = 0; i < 3; i++){
     console.log(i)
   },1000)
 }
-// 3, 3, 3 
+// 3, 3, 3
 // Why ? , Fix it
 // Answer 1, use let in for loop
 // Answer 2, use immediate invoked function
@@ -308,7 +319,7 @@ console.log(x[x.indexOf(1000)]) // -1
 ```
 
 ```js
-let myArray = [2,3,4,3,4,11,8,-21,9,1, -10];
+let myArray = [2,3,4,3,4,11,8,-21,9,1,-10];
 myArray.sort((a,b) => (b-a)); // [ 11, 9, 8, 4, 4, 3, 3, 2, 1, -10, -21 ]
 myArray.sort((a,b) => (a-b)); // [ -21, -10, 1, 2, 3, 3, 4, 4, 8, 9, 11 ]
 ```
@@ -887,7 +898,7 @@ console.log(c)
 ```js
 // --------COPY SORTED--------
 let copySorted = (array) => array.slice().sort()
-qq
+
 let myArray = ["HTML", "JavaScript", "CSS"];
 let sorted = copySorted(myArray);
 
@@ -895,6 +906,8 @@ console.log(sorted);
 ```
 
 ```js
+// --------UNIQUE IN ARRAY----------
+
 // Remove duplicates from array
 let a = [1, 2, 5, 2, 1, 8] // [1,2,5,8]
 
@@ -926,6 +939,24 @@ let b = Object.keys(obj);
 
 //Object
 let b = [...new Set(a)];
+
+// ForString
+function unique(array) {
+  let tempValue = [];
+  for ( let str of array) {
+    // if (!tempValue.includes(str)) {
+    if(tempValue.indexOf(str) == -1){
+      tempValue.push(str);
+    }
+  }
+  return tempValue;
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log(`unique:${unique(strings)}`); // Hare, Krishna, :-O
 ```
 
 ```js
@@ -998,30 +1029,6 @@ console.log(f()); // 0
 ```
 
 ```js
-let mergeFiles = function(array) {
-  let totalSum = 0;
-  let accumulator = 0;
-  let sortedArray = array.sort((a,b) => a - b);
-  for( let i = 1; i < sortedArray.length ; i++ ){
-    if( i == 1) {
-      // 4 + 6
-      totalSum = sortedArray[i-1] + sortedArray[i];
-      accumulator += totalSum;
-    } else if (  i > 1) {
-      // 8 + 10 -> 12 + 18 -> 28 + 30 
-      totalSum = sortedArray[i] + totalSum;
-      accumulator += totalSum;
-    }
-  }
-  return accumulator;
-}
-
-let myArray = [8,4,6,12]
-console.log(mergeFiles(myArray))
-
-```
-
-```js
 // --------CAMELIZE String--------
 let camelize = (str) => {
 //  ------My Solution------
@@ -1057,7 +1064,7 @@ let filterRange = (array, a, b) => {
   }
   return filteredArray;
   
-  // ------Ideal Solution------ 
+  // ------Ideal Solution------
 return array.filter(item => (a <= item && item <= b));
 }
 ```
@@ -1065,7 +1072,7 @@ return array.filter(item => (a <= item && item <= b));
 ```js
 // --------FILTER RANGE IN SAME ARRAY--------
 let filterRangeInPlace = (array, a, b) => {
-  // ------Ideal Solution------ 
+  // ------Ideal Solution------
   for (let i = 0; i < array.length; i++) {
     let val = array[i];
     console.log(`val:${val}`)
@@ -1176,7 +1183,7 @@ let array = [2,3,4,3,4,11,8,-21,9,1, -10];
 
 let shuffleArray = (array) => {
   //------Ideal shuffle-------
-  array.sort( () => { 
+  array.sort( () => {
     Math.random() - 0.5
   });
   
@@ -1203,27 +1210,7 @@ let getAverageAge = (array) => {
   return array.reduce((prev, arrayItem) => prev + arrayItem.age, 0) / array.length;
 }
 
-console.log( getAverageAge(users) ); 
-```
-
-```js
-// --------UNIQUE IN ARRAY----------
-function unique(array) {
-  let tempValue = [];
-  for ( let str of array) {
-    // if (!tempValue.includes(str)) {
-    if(tempValue.indexOf(str) == -1){
-      tempValue.push(str);
-    }
-  }
-  return tempValue;
-}
-
-let strings = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare", ":-O"
-];
-
-console.log(`unique:${unique(strings)}`); // Hare, Krishna, :-O
+console.log( getAverageAge(users) )
 ```
 
 ```js
@@ -1461,8 +1448,7 @@ highestNumberInArray([3,2,1,3])
 ```
 
 ```js
-// Animate function for JS  
-
+// Animate function for JS
 function animate(element, direction){
   let pos = 0;
   let frameId = setInterval(frame, 1);
@@ -1482,17 +1468,16 @@ animate(elem, 'right')
 
 ```js
 // time = '09:30' to 24 hour time format
-
 function timeConversion(s) {
-    let time = s.split(':');
-    let typeOfDay = time[2].slice(2, 4)
+  let time = s.split(':');
+  let typeOfDay = time[2].slice(2, 4)
 
-    let hours = (typeOfDay == 'AM') ? (time[0] == 12) ? '00' : time[0] : (time[0] == 12) ? '12' : +time[0] + 12
-    let mins = time[1]
-    let secs = time[2].slice(0, 2)
+  let hours = (typeOfDay == 'AM') ? (time[0] == 12) ? '00' : time[0] : (time[0] == 12) ? '12' : +time[0] + 12
+  let mins = time[1]
+  let secs = time[2].slice(0, 2)
 
-    let result = `${hours}:${mins}:${secs}`
-    return result
+  let result = `${hours}:${mins}:${secs}`
+  return result
 }
 ```
 
@@ -2361,7 +2346,7 @@ console.log(flatten(d))
 // - Big O notation and tree traversal
 // - iteration, closures, scope, and writing asynchronous code
 // - Given two identical DOM tree structures, A and B, and a node from A, find the corresponding node in B.  
-// - Given two identical DOM trees (but not equal) and one element of the first DOM tree, how would you find this element in the second DOM tree?
+// - Given two identical DOM trees (but not equal) and one element of the first DOM tree, how would you find this element in the second /// - DOM tree?
 // - DONE - Can you write a function that deeply flattens an array? 
 // - What are the advantages of using ES6 maps over objects? What about using ES6 sets over arrays? 
 // - MAP vs ForEach

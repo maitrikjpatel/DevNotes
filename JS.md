@@ -1157,7 +1157,7 @@ alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
 	<a href="#" id="size-16">16</a>						
 	```
 
-- **Immediately-invoked function expressions - IIFE**
+- **Immediately invoked function expressions - IIFE**
 	- The Function Expression is wrapped with parenthesis (function {...})
 	- Parentheses around the function is a trick to show JavaScript that the function is created in the context of another expression, and hence it’s a Function Expression: it needs no name and can be called immediately.
 	
