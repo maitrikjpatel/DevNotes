@@ -53,29 +53,6 @@ console.log(threatLevel); // Whoops! It's still 1!
 ```
 
 ```js
-<button id="btn-0">Button 1</button>
-<button id="btn-1">Button 2</button>
-<button id="btn-2">Button 3</button>
-
-<script type="text/javascript">
-  const prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
-  for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
-
-    // For each of our buttons, when the user clicks it...
-    document.getElementById(`btn-${btnNum}`).onclick = () => {
-
-      // Tell her what she's won!
-      alert(prizes[btnNum]);
-    };
-  }
-</script>
-
-// fix it, change var to let in for loop
-// Answer 1, use let in for loop
-// Answer 2, use immediate invoked function
-```
-
-```js
 console.log([]+ []) // Empty
 console.log({}+ []) // Empty
 ```
@@ -101,6 +78,10 @@ console.log(objectValueArray); // [1,2]
 ```
 
 ```js
+<div contentEditable="true">Hello</div> // make content editable
+```
+
+```js
 let x = 'hi'
 let y = x.split('').reverse().join(''); // 'ih'
 console.log(y);
@@ -112,10 +93,6 @@ function a() {
 }
 const sentence = a `hi` // simmilar to a('hi')
 conole.log(sentence) // hello
-```
-
-```js
-<div contentEditable="true">Hello</div> // make content editable
 ```
 
 ```js
@@ -155,17 +132,6 @@ console.log(('hi').__proto__.__proto__.__proto__) // null as there is nothing be
 ```
 
 ```js
-let x = function(){
-  return [].slice.call(arguments).length
-  return arguments.length // easy way
-}
-
-x(1,2,3) // 3, output length of arguments 
-x(1,2,3,4) // 4, output length of arguments 
-x(1,2,3,4,5) // 5, output length of arguments 
-```
-
-```js
 var A = {
   x: function(){
     console.log('x');
@@ -200,7 +166,6 @@ console.log(2 - '2') // 0
 
 ```js
 let nums = [1,2,2,3]; // [1,2,3]
-console.log(new Set(nums)); // Set{1,2,3}
 console.log([...new Set(nums)]); // [1,2,3]
 ```
 
@@ -235,7 +200,7 @@ console.log( 7 > 6 > 5) // (7 > 6) = True -> (True > 7) = false
 
 ```js
 let a = () => arguments;
-console.log(a('hi')) 
+console.log(a('hi'))
 // Argument don't bind to arrow function 
 // Use spread operator
 let a = (...n) => {return n};
@@ -589,7 +554,6 @@ for( let i = 0; i <array.lengh; i++){
 }
 // 1,3,4,10....
 ```
-
 
 ```js
 // Emmiter
@@ -2322,6 +2286,30 @@ function flatten(data) {
 console.log(flatten(d))
 ```
 
+```js
+// all permutations of string
+
+function permutations(str) {
+  let results = [];
+
+  if (str.length == 1) {
+    return [ str ];
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    const first = str[i];
+    const charsRemaining = str.substring(0, i) + str.substring(i + 1);
+    const remainingPerms = permutations(charsRemaining);
+    for (let j = 0; j < remainingPerms.length; j++) {
+      results.push(first + remainingPerms[j]);
+    }
+  }
+  return results;
+}
+
+console.log(permutations('abc'));
+```
+
 ### Others
 
 ```js
@@ -2365,4 +2353,30 @@ console.log(flatten(d))
 //     opacity: 1;
 //   }
 // }
+```
+
+
+### Remain 
+
+```js
+<button id="btn-0">Button 1</button>
+<button id="btn-1">Button 2</button>
+<button id="btn-2">Button 3</button>
+
+<script type="text/javascript">
+  const prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
+  for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
+
+    // For each of our buttons, when the user clicks it...
+    document.getElementById(`btn-${btnNum}`).onclick = () => {
+
+      // Tell her what she's won!
+      alert(prizes[btnNum]);
+    };
+  }
+</script>
+
+// fix it, change var to let in for loop
+// Answer 1, use let in for loop
+// Answer 2, use immediate invoked function
 ```

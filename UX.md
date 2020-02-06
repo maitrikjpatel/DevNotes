@@ -26,6 +26,7 @@ source: 'Github'
 
 ### Resources
 
+- [Awesome Design Tools](https://github.com/LisaDziuba/Awesome-Design-Tools)
 - [Product Design tips](https://productdesign.tips)
 - [UX Tools/](https://uxtools.co/)
 - [UX Career Guide](http://thenextweb.com/dd/2015/06/17/the-ultimate-guide-to-launching-your-ux-career/)
