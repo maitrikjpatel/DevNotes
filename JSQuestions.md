@@ -14,844 +14,103 @@ source: 'Github'
 
 ## JS Questions
 
-### JS Basics
-
-```js
-// Value/Index of Max in array
-let findArrayMax = (array) => {
-  let maxValue = 0;
-  for(let i = 0; i < array.length; i++) {
-    if(maxValue < array[i]) {
-      maxValue = array[i];
-    }
-  }
-  return maxValue
-
-  // One liner solution
-  return array[array.indexOf(Math.max(...array))]
-}
-```
-
-```js
-var text = 'outside';
-function logIt(){
-    console.log(text);
-    var text = 'inside';
-};
-logIt(); // undefined
-```
-
-```js
-let threatLevel = 1;
-
-function inspireFear(threatLevel){
-  threatLevel += 100;
-}
-
-inspireFear(threatLevel);
-console.log(threatLevel); // Whoops! It's still 1!
-```
-
-```js
-console.log([]+ []) // Empty
-console.log({}+ []) // Empty
-```
-
-```js
-var ninja = function myNinja(){ 
-  console.log('This function is named two things')
-};
-ninja(); // works
-
-// myNinja isn't defined outside of the function.
-myNinja(); // undefined
-```
-
-```js
-let myObject = {
-  a: 1,
-  b: 2
-}
-
-let objectValueArray = Object.values(myObject)
-console.log(objectValueArray); // [1,2]
-```
-
-```js
-<div contentEditable="true">Hello</div> // make content editable
-```
-
-```js
-let x = 'hi'
-let y = x.split('').reverse().join(''); // 'ih'
-console.log(y);
-```
-
-```js
-function a() {
-  return 'hello';
-}
-const sentence = a `hi` // simmilar to a('hi')
-conole.log(sentence) // hello
-```
-
-```js
-function y(){
-  console.log(this.length);
-}
-let x = {
-  length: 5,
-  method: function(y){
-    argument[0]()
-  }
-};
-x.method(y,1); // 2 not 5
-// Argument length is going to be length
-```
-
-```js
-const x = 'constructor'
-console.log(x[x])(01); // 1
-// x is string
-// x[x] = x['constructor'] = x.constructor
-// x[x] will convert 01 to string means 1 answer
-```
-
-```js
-console.log(0.1 + 0.2) // 0.30000000000004
-// Decimal in base 10
-// Computer only understand base 2
-// Need conversion
-```
-
-```js
-console.log('hi') // hi
-console.log(('hi').__proto__) // String as "hi" is created using String 
-console.log(('hi').__proto__.__proto__) // Constructor as String is created using Object which is Constructor
-console.log(('hi').__proto__.__proto__.__proto__) // null as there is nothing beyond Object so null
-```
-
-```js
-var A = {
-  x: function(){
-    console.log('x');
-    return this  // return this
-    return A // This is answer/trick
-  },
-  y: function(){
-    console.log('y')
-    return this  // return this
-    return A; // This is answer/trick
-  },
-  z: function(){
-    console.log('z')
-  }
-}
-
-A.x().y().z();
-// Question. Want to do method chaining.
-// First Return : A.y().z();
-// Second Return : A.z();
-```
-
-```js
-console.log(2 + '2') // 22
-// + work on string, number
-// convert both value to string and concat
-
-console.log(2 - '2') // 0
-// - is number operator
-// concert both value to number
-```
-
-```js
-let nums = [1,2,2,3]; // [1,2,3]
-console.log([...new Set(nums)]); // [1,2,3]
-```
-
-```js
-let myFunc = function(){
-  {
- 		let lt = "let";
-		var vr = 'var';
-	}   
-	console.log(vr)
-	console.log(lt)
-}
-myFunc()
-// vr have function scop, fix it to have block scope.
-let myFunc = function(){
-  {
-    (function() {
-      let lt = "let";
-      var vr = 'var';
-    })();
-	}   
-	console.log(vr)
-	console.log(lt)
-}
-myFunc()
-```
-
-```js
-console.log( 5 < 6 < 7) // (5 < 6) = True -> (True < 7) = true
-console.log( 7 > 6 > 5) // (7 > 6) = True -> (True > 7) = false
-```
-
-```js
-let a = () => arguments;
-console.log(a('hi'))
-// Argument don't bind to arrow function 
-// Use spread operator
-let a = (...n) => {return n};
-console.log(a('hi'))
-```
-
-```js
-let profile = {
-  name: 'maitrik'
-}
-
-// Prevent new property and update
-profile.age = 3;
-profile.name = 'matt'
-
-// No update to name or age.
-Object.freeze(profile)
-// Update name but not allow to add age
-Object.seal(profile)
-```
-
-```js
-// write Clone obj to kep Obj value as it is
-const obj = {
-  a: {
-    b:{
-      c: 1
-    }
-  }
-}
-
-// Fail
-// Shallow cloning  ->
-const clone = obj;
-const clone = Object.assign({}, obj);
-
-// Deep Cloning -> Success
-const clone = JSON.parse(JSON.stringify(obj))
-
-clone.a.b.c = 2
-console.log(obj.a.b.c); // 1 [Deep Cloning] , 2 [Shallow cloning]
-```
-
-```js
-// make age readable
-let profile = {
-  name: 'maitrik'
-}
-
-Object.defineProperty( profile, 'age', {
-  value: 30;
-  writable: false
-})
-
-profile.name = "matt" // change
-profile.age = 33 // won't change
-```
-
-```js
-console.log(Math.max()) // -infinity
-```
-
-```js
-// Closures in for loop
-for ( var i = 0; i < 3; i++){
-  setTimeout(() =>{
-    console.log(i)
-  },1000)
-}
-// 3, 3, 3
-// Why ? , Fix it
-// Answer 1, use let in for loop
-// Answer 2, use immediate invoked function
-```
-
-```js
-const x = [1,2,3]
-x[-1] = -1;
-console.log(x[x.indexOf(1000)]) // -1 
-// x[x.indexOf(1000)] -> x[-1] -> -1
-```
-
-```js
-let myArray = [2,3,4,3,4,11,8,-21,9,1,-10];
-myArray.sort((a,b) => (b-a)); // [ 11, 9, 8, 4, 4, 3, 3, 2, 1, -10, -21 ]
-myArray.sort((a,b) => (a-b)); // [ -21, -10, 1, 2, 3, 3, 4, 4, 8, 9, 11 ]
-```
-
-```js
-// let i = ?
-let i = Number.MIN_VALUE;
-console.log(i * i) // 0
-console.log(i + 1) // 1
-console.log(i - 1) // -1
-console.log(i / i) // 1
-```
-
-```js
-let x = [1,2,3] + [4,5,6]
-console.log(x) // 1,2,34,5,6, fix it
-// Use spread operator
-let x = [...[1,2,3], ...[4,5,6]]
-```
-
-```js
-console.log(555555555555555555) // 555555555555555600
-// console.log(Number.MAX_SAFE_INTEGER)
-// 9007199254740991
-// 00 after max number 
-```
-
-```js
-(function(){
-  let a = b = 100 ; // b becomes global
-})();
-
-console.log(b); // 100
-console.log(a); // undefined
-```
-
-```js
-console.log(NaN === NaN) // False
-```
-
-```js
-// Explan This
-//---------------This of window----------------------
-this.table = "window table"
-const cleanTable = function(soap){
-  // this will come from window , global scope
-  console.log(`Please Clean ${this.table} using ${soap}`); 
-}
-
-console.log(this.table)
-
-// Won't work under 'use strict'
-cleanTable(this.table)
-
-// call method 
-cleanTable.call(this, 'fancy soap')
-
-// bind
-cleanTable.bind(this)('fancy soap') // Please Clean window table using fancy soap
-
-//---------------This of object----------------------
-console.log('---------------------------------------')
-let myRoom = {
-  table: "myRoom table",
-  cleanTable() {
-    console.log(`Please Clean ${this.table}`);
-  }
-}
-console.log(myRoom.table)
-myRoom.cleanTable() // Please Clean myRoom table
-```
-
-```js
-// fix this, that, call, bind, arrow function
-this.table = "window table"
-const cleanTable = function(soap){
-
-  // this will give error on this 
-  const innerFunction = function(_soap) {
-    console.log(`Please Clean ${this.table} using ${_soap}`); 
-  }
-  innerFunction(soap)
-  
-  // Solution 1: store this in variable and pass in innerfunction 
-  let that = this
-  const innerFunction = function(_soap) {
-    console.log(`Please Clean ${that.table} using ${_soap}`); 
-  }
-  innerFunction(soap)
-  
-  // Solution 2: Call/Bind 
-  const innerFunction = function(_soap) {
-    console.log(`Please Clean ${this.table} using ${_soap}`); 
-  }
-  innerFunction.call(this,soap);
-  innerFunction.bind(this)(soap);
-  
-  // Solution 3: arrow function
-  // Arrow function don't have `this` so it take outterScope `this`
-  const innerFunction = (_soap) => {
-    console.log(`Please Clean ${this.table} using ${_soap}`); 
-  }
-  innerFunction(soap);
-
-}
-cleanTable.call(this, 'fancy soap')
-
-```
-
-### JS Native Methods
-
-```js
-// make your own forEach
-Array.prototype.newForEach = function (callback, context) {
-  for (let index = 0; index < this.length; index++) {
-    // This is primarily to check if the item
-    // exists in the array, 
-    if (this.indexOf(this[index]) > -1) {
-      callback.call(context, this[index], index, this)
-    }
-  }
-}
-// example
-const words = ["adam", "ate", "an", "apple"]
-const upperCaseList = []
-words.newForEach((word, index, context) => {
-  upperCaseList.push(word.toUpperCase())
-})
-console.log(upperCaseList)
-
-```
-
-```js
-function getElementsByClass(klass, node) { //
-  var node = node || document.body; //1
-  var found = []; //2
-  if (hasClass(node, klass)) { //
-    found.push(node);
-  }
-  for (var i=0; i<node.children.length; i++) {
-    found = found.concat(getElementsByClass(klass, node.children[i])); //
-  }
-  return found;
-}
-
-function hasClass(node, klass) {
-  for(var i=0; i<node.classList.length; i++) {
-    if (node.classList[i] === klass) {
-      return true;
-    }
-  }
-  return false;
-}
-
-// root = document.body -> node.children returns a collection of child nodes of the given node
-// node.classList -> returns a token list of the class attribute of the node
-// div.classList = ['this-is-a-class', 'this-is-too']
-
-<div class='this-is-a-class this-is-too'> // div.classList = ['this-is-a-class', 'this-is-too']
-  <p>hello</p>
-</div>
-```
-
-```js
-// myReduce as per following
-// arr.reduce(function(previousValue, item, index, array) {}, initial);
-// Add || to not override possible already defined functions.
-Array.prototype.myReduce = Array.prototype.myReduce || function(callbackFn, startingValue) {
-
-  let accumulator = startingValue || undefined;
-
-  for ( let index = 0; index < this.length; index++ ) {
-
-    if ( accumulator ) {
-      accumulator = callbackFn.call(accumulator, accumulator, this[index], index, this)
-    } else {
-      accumulator = this[index]
-    }
-  }
-  
-  return accumulator;
-}
-
-console.log([1,2,3].myReduce((c,v) => c + v, 0))
-```
-
-```js
-// myMap as per following
-// arr.map(function callback(currentValue, index, array))
-
-Array.prototype.myMap = Array.prototype.myMap || function(callbackFn) {
-  const resultArray = [];
-  for ( let index = 0; index < this.length; index++ ) {
-    if( this.indexOf(this[index]) > -1 ){
-      resultArray[index] = callbackFn(this[index], index, this)
-    }
-  }
-  return resultArray;
-}
-
-console.log([1,2,3,'',9].myMap((item) => item * 2))
-```
-
-```js
-// myFilter as per following
-// arr.filter(function callback(currentValue, index, array))
-
-Array.prototype.myFilter = Array.prototype.myFilter || function(callbackFn) {
-  
-  const resultArray = [];  
-  for ( let index = 0; index < this.length; index++ ) {
-    
-    if(callbackFn(this[index], index, this)){
-      resultArray.push(this[index]);
-    }
-  }
-  return resultArray;
-}
-console.log([1,2,3,11,9,2,1,9].myFilter(item => item > 3));
-```
-
-```js
-// Write your own throttle
-const throttle = (func, limit) => {
-  let lastFunc
-  let lastRan
-  return function() {
-    const context = this
-    const args = arguments
-    if (!lastRan) {
-      func.apply(context, args)
-      lastRan = Date.now()
-    } else {
-      if ((Date.now() - lastRan) >= limit) {
-        func.apply(context, args)
-        lastRan = Date.now()
-      }
-    }
-  }
-}
-```
-
-```js
-// ---------Prob 4--------------
-// [1,2].myPrint(); // 1,2
-
-Array.prototype.myPrint = function() {
-  const resultArray = [];
-  for ( let index = 0; index < this.length; index++ ) {
-    resultArray.push(`${this[index]}`)
-  }
-  return resultArray.join(',');
-  
-  // Object to Stringify
-  return this.toString();
-}
-console.log([1,2,3,9].myPrint())
-```
-
-```js
-// sort array without sort
-let array = [10,230,34,123,123,1,3,4]
-for( let i = 0; i <array.lengh; i++){
-  setTimeout(() => {
-    console.log(array[i]);
-  }, array[i])
-}
-// 1,3,4,10....
-```
-
-```js
-// Emmiter
-const Emitter = function() {
-  this.events = {}
-};
-
-Emitter.prototype.subscribe = function( eName, cb ) {
-  this.events[eName] = this.events[eName] || [];
-  this.events[eName].push(cb);
-
-  return {
-    release: () => {
-      let i = this.events[eName].indexOf(cb);
-      this.events[eName].splice(i, 1);
-      if (!this.events[eName].length) delete this.events[eName];
-    }
-  }
-};
-
-Emitter.prototype.emit = function( eName, ...args ) {
-  if ( !this.events[eName] ) throw new Error(`Event ${eName} doesn't exist`);
-  this.events[eName].forEach(el =&gt; el.call(this, ...args));
-};
-```
-
-```js
-// Searching for a Symmetric Node
-
-// This function returns a real array of Nodes, so we can use methonds like "indexOf"
-function getChildren(node) {
-    // or you can use Array.from(node.childNodes);
-    return Array.prototype.slice.call(node.childNodes);
-}
-
-// This function returns an array of indices from given node to the root
-function getPath(root, node) {
-    const path = [];
-    let curElement = node;
-
-    // This is important as if a node is null or doesn't have a parent
-    // there is no need of searching further
-    while(curElement !== root && curElement && curElement.parentNode) {
-     const index = getChildren(curElement.parentNode).indexOf(curElement);
-     path.push(index);
-        curElement = curElement.parentNode;
-    }
-
-    return path;
-}
-
-// Popping all values from the array of indices we go to the symmetrical node
-function getNodeByPath(root, originalPath) {
-    const path = [].concat(originalPath);
-    let element = root;
-    while (path.length) {
-       element = getChildren(element)[path.pop()];
-    }
-    return element;
-}
-
-// For convenience
-function getSymmetricNode(root1, root2, node) {
- const path = getPath(root1, node);
- return getNodeByPath(root2, path);
-}
-
-const root1 = document.getElementById('root1');
-const root2 = document.getElementById('root2');
-const node1 = document.getElementById('node1');
-const node2 = document.getElementById('node2');
-
-const nodeX = getSymmetricNode(root1, root2, node1);
-
-console.log(nodeX === node2); // true
-```
-
-```js
-// Promise 
-// Function Solution
-// https://medium.com/@cmakyr12/understanding-promises-by-writing-your-own-promise-library-14c739eb9a42
-const states = {
-  0: 'pending',
-  1: 'fulfilled',
-  2: 'rejected'
-}
-function MyPromise (cb) {
-  if (typeof cb!== 'function') {
-    throw new TypeError('callback must be a function')
-  }
-  let state = states[0]
-  let value = null
-  let handlers = []
-function fulfill (result) {
-    state = states[1]
-    value = result
-    handlers.forEach(handle)
-    handlers = null
-}
-function reject (error) {
-    state = states[2]
-    value = error
-    handlers.forEach(handle)
-    handlers = null
-}
-function resolve (value) {
-    try {
-      let then = getThen(value)
-      if (then) {
-        resolveAnotherPromise(then.bind(value), resolve, reject)
-        return
-      }
-      fulfill(value)
-    } catch (err) {
-      reject(err) 
-    }
-}
-function handle (handler) {
-  if (state === states[0]) handlers.push(handler)
-  else {
-    if (state === states[1] && 
-       typeof handler.onFulfill === 'function') {
-       handler.onFulfill(value)
-    }
-    if (state === states[2] && 
-       typeof handler.onReject === 'function') {
-       handler.onReject(value)
-    }
-  }
-}
-this.done = function (onFulfill, onReject) {
-  setTimeout(() => handle(onFulfill, onReject), 0)
-}
-this.then = function (onFulfill, onReject) {
-  let self = this
-  return new Promise((resolve, reject) => {
-    return self.done(result => {
-      if (typeof onFulfill === 'function') {
-        try {
-          return resolve(onFulfill(result))
-        } catch (err) {
-          return reject(err)
-        }
-      } else {
-        return resolve(result)
-      }
-   }, error => {
-      if (typeof onReject === 'function') {
-        try {
-          return resolve(onReject(error))
-        } catch (err) {
-          return reject(err)
-        }
-      } else {
-        return reject(error)
-      }
-   })
-  })
- }
-}  
-function getThen (value) {
-    if (typeof(value) === 'object' 
-        || typeof(value) === 'function') {
-      let then = value.then
-      if (typeof(then) === 'function') return then
-    }
-    return null
-  }
-    
-function resolveAnotherPromise (cb, Onfulfill, Onreject) {
-    let finished = false
-    try {
-      cb(value => {
-        if (finished) return
-        finished = true
-        Onfulfill(value)
-      }, reason => {
-        if (finished) return
-        finished = true
-        Onreject(reason)
-      })
-    } catch (err) {
-      if (finished) return
-      finished = true
-      Onreject(err)
-    }
-  }
-}
-// Class Solution
-// https://www.promisejs.org/implementing/
-class PromiseSimple {
-  constructor(executionFunction) {
-    this.promiseChain = [];
-    this.handleError = () => {};
-
-    this.onResolve = this.onResolve.bind(this);
-    this.onReject = this.onReject.bind(this);
-
-    executionFunction(this.onResolve, this.onReject);
-  }
-
-  then(onResolve) {
-    this.promiseChain.push(onResolve);
-
-    return this;
-  }
-
-  catch(handleError) {
-    this.handleError = handleError;
-
-    return this;
-  }
-
-  onResolve(value) {
-    let storedValue = value;
-
-    try {
-      this.promiseChain.forEach((nextFunction) => {
-         storedValue = nextFunction(storedValue);
-      });
-    } catch (error) {
-      this.promiseChain = [];
-
-      this.onReject(error);
-    }
-  }
-
-  onReject(error) {
-    this.handleError(error);
-  }
-}
-```
-
-```js
-// Observer
-
-function Click() {
-    this.handlers = [];  // observers
-}
- 
-Click.prototype = {
- 
-    subscribe: function(fn) {
-        this.handlers.push(fn);
-    },
- 
-    unsubscribe: function(fn) {
-        this.handlers = this.handlers.filter(
-            function(item) {
-                if (item !== fn) {
-                    return item;
-                }
-            }
-        );
-    },
- 
-    fire: function(o, thisObj) {
-        var scope = thisObj || window;
-        this.handlers.forEach(function(item) {
-            item.call(scope, o);
-        });
-    }
-}
- 
-// log helper
- 
-var log = (function() {
-    var log = "";
- 
-    return {
-        add: function(msg) { log += msg + "\n"; },
-        show: function() { alert(log); log = ""; }
-    }
-})();
- 
-function run() {
- 
-    var clickHandler = function(item) { 
-        log.add("fired: " + item); 
-    };
- 
-    var click = new Click();
- 
-    click.subscribe(clickHandler);
-    click.fire('event #1');
-    click.unsubscribe(clickHandler);
-    click.fire('event #2');
-    click.subscribe(clickHandler);
-    click.fire('event #3');
- 
-    log.show();
-}
-```
-
 ### JS Problem Solving
 
+
 ```js
-// Add array and sort 
+
+// Givin n, find how many different ways you can take steps to reach the top
+// E.g.
+// findSteps(4)
+// 1,1,1,1
+// 1,1,2,
+// 2,2
+// 1,3,
+// 4
+
+// this would return 5
+
+function findSteps(n) {
+	let count = 0
+	// think of 'd' as number of digits
+	for (let d = n; d > 0; d--) {
+		count += (n - d - Math.ceil(n/d) + 2)
+	}
+	return count
+}
+```
+
+```js
+
+// We have an array of objects A and an array of indexes B. Reorder objects in array A with given indexes in array B. Do not change array A's length.
+// example:
+// var A = [C, D, E, F, G];
+// var B = [3, 0, 4, 1, 2];
+// sort(A, B);
+// A is now [D, F, G, C, E];
+
+function reorderArray() {
+    return indices.map(function (val, i) {
+        return array[indices.indexOf(i)];
+    });
+}
+
+// ---
+var a = [ "C", "D","E","F","G" ];
+var b = [ 3, 0, 4, 1, 2 ];
+
+function sort( a, b ) {
+  var bl = b.length ;
+  var al = a.length ;
+  var obj = {};
+
+  for( var i = 0 ; i<bl ; i ++ ) {
+    
+    obj[b[i]] = a[i];
+  }
+  console.log( obj )
+}
+
+   
+sort( a, b)
+
+// ---
+
+function swap(list, a, b) {
+  const temp = list[a];
+  list[a] = list[b];
+  list[b] = temp;
+}
+
+function sortIndexes(list, indexes) {
+  let start = 0;
+  while (start < list.length) {
+    if (indexes[start] !== start) {
+      swap(list, start, indexes[start]);
+      swap(indexes, start, indexes[start]);
+    } else {
+      start++;
+    }
+  }
+  return list;
+}
+
+const list = ['C', 'D', 'E', 'F', 'G'];
+const indexes = [ 3, 0, 4, 1, 2 ];
+
+console.log(sortIndexes(list, indexes));
+```
+
+```js
+let closureFunc = b =>  b ? sum(a + b) : a;
+  closureFunc.toString = () => a;
+  return closureFunc;
+}
+alert(sum(10)(2)(3)(4));
+```
+
+```js
+// Add array and sort
 const a = [1,2,3,4,5,5,6,9];
 const b = [2,5,6,12,100];
   
@@ -1851,6 +1110,62 @@ function colorString( colorArray, string) {
 }
 
 colorString(myColors, myStr)
+
+//----
+
+unction displayColorfulText(colors, text){
+const strArray = text.split(' ');
+
+const createSpanElementWithColor = (text, color) => {
+let elm = document.createElement('span');
+// set the innner text and then add color to it
+elm.innerText = text+ ' ';
+elm.style.color = color;
+
+console.log(elm);
+return elm;
+}
+
+// get element by id and then set the inner html to it
+let parent = document.createElement('result');
+strArray
+.map((str, i) => createSpanElementWithColor(str, colors[i]))
+.forEach(el => parent.appendChild(el));
+document.body.appendChild(parent);
+
+}
+
+displayColorfulText(["red", "blue", "green", "yellow"], "Lorem ipsum dolor sit amet");
+
+// ---
+
+const colorPrinter = (str, colorsArray) => {
+	let i = 0;
+	str.split('').forEach((ch, ind) => {
+  	if(ch !== ' '){
+    		i = (i === colorsArray.length) ? 0 : i;
+      	console.log(`Character ${ch} : ${colorsArray[i]}`);
+        i++;
+    }
+  });
+}
+
+colorPrinter('Lorem ipsum in the world', ['red', 'blue', 'green', 'yellow', 'white']);
+
+// ---
+
+const colorPrinter = (str, colorsArray) => {
+let i = 0;
+str.split('').forEach((ch, ind) => {
+if(ch !== ' '){
+i = (i === colorsArray.length) ? 0 : i;
+console.log(`Character ${ch} : ${colorsArray[i]}`);
+i++;
+}
+});
+}
+
+
 ```
 
 ```js
@@ -2353,10 +1668,209 @@ console.log(permutations('abc'));
 //     opacity: 1;
 //   }
 // }
+// React
+// - Question was simply to design a stop watch component in React. Two states, and the following buttons - Start, Pause, Continue, Stop
+// attlasian 
+// - About javascript prototype, this scope.  
+// - Implement the tabs in vanilla JS and css
+// - Stream/Observer API
+// - Design a job scheduling service. 
+// - String manipulation
+// - How would you implement a least frequently used cache? 
+// - Build Amazon's Marketplace system design
+// - Designing a micro-service within the Atlassian architecture. Nothing too difficult. Microservice should be able to calculate time based metrics. 
+// - median of unsorted array in O(nlog n ) time - quick sort
+// - Reverse a int[] array in place  
+// - How to convert numbers from one base to another 
+// - What are the differences between React and Angular? 
+// - When should you use a linked list vs an array?
+// - calculating frequencies of powersets of many sets.
+// - Implement a hash map  
+// - write a hash function
+// - A binary tree traversal problem.
+// - Find the area of the shade a skyline casts
+// - https://leetcode.com/problems/maximum-subarray/
+// - https://leetcode.com/problems/linked-list-cycle-ii/
+// - Roll forward a string by 1 digit and repeat it based on digits given in an array 
+// - https://www.tutorialandexample.com/reactjs-interview-questions/
+```
+
+```js
+// Write a class called DOMStore that stores a Node and a value (reimplement Map). DOMStore contains the following functions:
+// has(node) // returns boolean
+// get(node) // returns node or undefined
+// set(node, value) // "upsert", update or insert
+// Flatten an array with unknown depth (reimplement .flat(Infinity)).
+// a. Write it both recursively and iteratively.
+// https://www.w3schools.com/graphics/game_controllers.asp  
+
+
+class DOMStore {
+  constructor() {
+    this.keys = [];
+    this.values = [];
+  }
+
+  set(node, value) {
+    const index = this.keys.indexOf(node);
+    if (index >= 0) {
+      this.values[index] = value;
+    } else {
+      this.values.push(value);
+      this.keys.push(node);
+    }
+  }
+
+  get(node) {
+    const index = this.keys.indexOf(node);
+    return index >= 0 ? this.values[index] : undefined;
+  }
+
+  has(node) {
+    return !!this.get(node);
+  }
+}
+
+const uuid = () => ...;
+const uidSymbol = Symbol('uidSymbol');
+
+class DOMStore {
+  constructor() {
+    this.map = {};
+  }
+
+  set(node, value) {
+    if (!node[uidSymbol]) {
+      node[uidSymbol] = uuid();
+    }
+
+    this.map[node[uidSymbol]] = value;
+  }
+
+  get(node) {
+    return this.map[node[uidSymbol]];
+  }
+
+  has(node) {
+    return !!this.get(node);
+  }
+}
+```
+
+```js
+// https://www.careercup.com/page?pid=facebook-interview-questions&job=front-end-software-engineer-interview-questions
+// https://www.careercup.com/page?pid=facebook-interview-questions
+```
+
+```js
+// You have a dictionary which is an array of words and array of strings.
+
+// Write two functions
+
+// 1. Prepare the array of strings to be searched in the dictionary
+// 2. Check if the string contains all valid words or not.
+
+
+var query = ['facebook', 'apple', 'google']
+var strings = [
+ 'facebook is a company',
+ 'google is good',
+ 'facebook apple google'
+]
+
+function prepare(strings) {
+  var hash = {}
+  strings.forEach(function(item, i) {
+    var words = item.split(' ')
+    words.forEach(function(word) {
+      hash[word] = hash[word] || []
+      hash[word].push(i)
+    })
+  })
+  return hash
+}
+
+function fullsearch(strings, query) {
+  var hash = prepare(strings)
+  var intersects, indexes
+  for (var i = 0, l = query.length; i < l; i++) {
+    indexes = hash[query[i]]
+    if (!indexes) return null
+    if (!intersects) {
+      intersects = indexes
+      continue
+    }
+    if (intersects.length === 0) {
+      return null
+    }
+    var n = intersects.length, seen, m
+    while (n--) {
+      m = indexes.length
+      seen = false
+      while (m--) {
+        if (indexes[m] === intersects[n]) {
+          seen = true
+          break
+        }
+      }
+      if (!seen) {
+        intersects.splice(n, 1)
+      }
+    }
+  }
+  // return the index of strings that contains all words
+  return intersects
+}
+
+console.log(fullsearch(strings, query));
 ```
 
 
-### Remain 
+```js
+// Given a string Sting="ABCSC" Check whether it contains a Substring="ABC"?
+
+// 1)If no , return "-1".
+// 2)If yes , remove the substring from string and return "SC".
+// with help of RegExp
+function check(str, pattern) {
+  'use strict';
+
+  var reg = new RegExp(pattern, 'g');
+  if (reg.test(str) === false) {
+    return -1;
+  } else {
+    var l = pattern.length;
+    var i = str.indexOf(pattern);
+    return str.slice(0, i) + str.slice(i + l);
+  }
+
+}
+
+// without using RegExp
+function vanillaCheck(str, pattern) {
+  'use strict';
+
+  var i = 0;
+  var l = str.length;
+  var result = -1;
+  while (i <= l - pattern.length) {
+    var s = str.slice(i, i + pattern.length);
+    if (s === pattern) {
+      result = str.slice(0, i) + str.slice(i + s.length);
+      break;
+    }
+    ++i;
+  }
+
+  return result;
+}
+
+var s = 'ABCSC';
+console.log(check(s, 'BC'));
+console.log(vanillaCheck(s, 'BC'));
+```
+
+### Remain
 
 ```js
 <button id="btn-0">Button 1</button>
@@ -2379,4 +1893,408 @@ console.log(permutations('abc'));
 // fix it, change var to let in for loop
 // Answer 1, use let in for loop
 // Answer 2, use immediate invoked function
+```
+
+
+```js
+// Input: 3450272 will return  “3,450,272”
+// Input: 3450272.323 will return  “3,450,272.323”
+
+function convertNumber(num) {
+  // split number
+  let splitNum = num.toString().split(".");
+  
+  // splitNum[0]
+  let newPattern = /(\d)(?=(\d{3})+(?!\d))/g
+  splitNum[0] = splitNum[0].replace(newPattern, '$1,');
+  
+  // splitNum[1]
+  return splitNum.join('.');
+}
+
+```
+
+```js
+// Given a 2D board and a word, find if the word exists in the grid.
+function exist(board, word) {
+  if (board.length === 0) return false;
+
+  const h = board.length;
+  const w = board[0].length;
+
+  function go(i, j, k) {
+    if (i < 0 || j < 0 || i >= h || j >= w) return false;
+    if (board[i][j] !== word[k]) return false;
+    if (k === word.length - 1) return true;
+
+    board[i][j] = '*';      // mark as visited
+
+    if (go(i - 1, j, k + 1)) return true;  // up
+    if (go(i + 1, j, k + 1)) return true;  // down
+    if (go(i, j - 1, k + 1)) return true;  // left
+    if (go(i, j + 1, k + 1)) return true;  // right
+
+    board[i][j] = word[k];  // reset
+    return false;
+  }
+
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < w; j++) {
+      if (go(i, j, 0)) return true;
+    }
+  }
+
+  return false;
+}
+```
+
+```js
+List of intervals: [1,3], [4,10], [20,30]. check if given interval like [5,10] are occupied by the intervals.
+Find any one peak element from an unsorted array.pick element is an element having previous and next items bigger.  
+```
+
+
+```js
+// Vocal
+// Google API
+
+const assert = require('assert');
+
+
+let fullNameCounter = 0;
+
+class GenericModel {
+
+  constructor(value) {
+    this.objValue = value
+    
+    this.get = this.get.bind(this)
+    this.set = this.set.bind(this)
+  }
+  
+  get(key) {
+    if (typeof this.objValue[key] === "function" && this.objValue[key] !== "string") {
+      this.objValue[key] = this.objValue[key].bind(this)()
+      return this.objValue[key]
+    } else {
+      return this.objValue[key]
+    }
+  }
+  
+  set(key, keyValue) {
+    this.objValue[key] = keyValue
+  }
+}
+
+// person gets GenericModal Object
+const person = new GenericModel({
+  firstName: 'Miguel',
+  lastName: "Madero",
+  fullName: function () {
+    fullNameCounter++;
+    return this.get('firstName') + ' ' + this.get('lastName');
+  },
+});
+
+
+// Test
+assert.equal(fullNameCounter, 0);
+// Pass
+
+// fullName fund -> fullNameCounter increase
+assert.equal(person.get('fullName'), 'Miguel Madero');
+assert.equal(fullNameCounter, 1);
+// Pass
+
+// fullName fund -> fullNameCounter increase
+assert.equal(person.get('fullName'), 'Miguel Madero');
+assert.equal(fullNameCounter, 1);
+// Filas fullNameCounter = 2 
+
+console.log("Tests passed");
+```
+
+
+```js
+console.log(['1', '2', '3'].map(parseInt))
+console.log(['1', '2', '3'].map((item) => parseInt(item, 10)))
+
+// ['1', '2', '3']
+// map -> loop
+// item -> '1' -> 1
+
+// map(item,index) -> index missing
+// parseInt(string, radix) -> radix missing
+
+
+// map(parseInt)) // map('1',index) -> parseInt(1, 0)
+// radix -> 0 -> FalseValue -> undefined
+// JS -> default -> 8(octal)/
+// JSOldBrowser -> default -> 8(octal)
+// JSNewBrowser -> default -> 10(decimal)
+// 0X -> Hexadecimal
+
+// map(parseInt)) // map('2',1) -> parseInt('2', 1) -> NaN
+// Ans: 1 element only
+
+// map(parseInt)) // map('3',2) -> parseInt('3', 2) -> NaN
+// Ans: 2 element only
+//  0 1
+```
+
+```js
+// hello from okta hello
+
+// Part 2:
+// "Hello Human" isn't very friendly - let's customize it to take in a human's name
+function bind(arguments, context) {
+  
+  let func = this;
+  /* let funcArgs = [].splice.call() */;
+  
+  // two arguments
+  // one : i splied (3)
+  // second: function splied
+  
+  // splice it 
+  // currentArgs
+  // funcArgs 
+  // [...currentArgs, ...funcArgs]
+  
+  return function() {
+  	let currentArgs = [].splice.call(arguments)
+    let combinedArgs = [...currentArgs]
+  	func.apply(context, currentArgs)
+  }
+  
+}
+ 
+var Robot = function (robotName) {
+  this.robotName = robotName;
+};
+Robot.prototype.sayHello = function (humanName) {
+  console.log('Hello', humanName + ',', 'my name is', this.robotName);
+};
+Robot.prototype.sayHelloDelayed = function (humanName, numSeconds) {
+  setTimeout(bind(this.sayHello, this, humanName), numSeconds * 1000);
+};
+var robby = new Robot('Robby');
+robby.sayHello('Hector'); // "Hello Hector, my name is Robby"
+robby.sayHelloDelayed('Hector', 1); // "Hello Hector, my name is Robby" after 1 second
+```
+
+
+```js
+// Spec
+
+//  - Six 100px by 100px squares with 20px of space between them
+//  - Vote counts should be centered within squares
+//  - Group of squares must always be horizontally centered
+//  - Provided wrapper border should always take up full screen width
+
+//  - Example: https://www.dropbox.com/s/at2khogxrq1nk9c/Colorful%20Tiles%20Candidate%20Spec.pdf?dl=0
+import React, { useState } from "react";
+import "./styles.css";
+
+const Square = props => {
+  const { color, dataIndex, text, onClick } = props;
+
+  return (
+    <button
+      className="square"
+      onClick={onClick}
+      data-index={dataIndex}
+      style={{ background: color }}
+    >
+      {text}
+    </button>
+  );
+};
+
+export default function App() {
+  const [squares, setSquares] = useState(
+    Array(6)
+      .fill()
+      .map(() => {
+        return {
+          count: 0,
+          color: "#" + Math.floor(Math.random() * 16777215).toString(16),
+          id: `_${Math.random()
+            .toString(36)
+            .substr(2, 9)}`
+        };
+      })
+  );
+  const handleClick = event => {
+    const targetIndex = event.target.dataset.index;
+    let updatedSquares = squares
+      .map(square => {
+        if (targetIndex === square.id) {
+          return { ...square, count: square.count + 1 };
+        } else {
+          return square;
+        }
+      })
+      .sort((a, b) => b.count - a.count);
+    setSquares(updatedSquares);
+    console.log(squares);
+  };
+  const squareElements = [
+    squares[0].id &&
+      squares.map(square => {
+        return (
+          <Square
+            color={square.color}
+            dataIndex={square.id}
+            text={square.count}
+            key={square.id}
+            onClick={handleClick}
+          />
+        );
+      })
+  ];
+  return <div className="wrapper">{squareElements}</div>;
+}
+```
+
+```css
+.wrapper {
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 360px;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  background: #cccccc;
+}
+
+```
+
+```js
+// merge two arrays
+
+var mergeTwoArrays = function(l1, l2) {
+  let merged = [];
+  let index1 = 0;
+  let index2 = 0;
+  let current = 0;
+
+  while (current < (l1.length + l2.length)) {
+
+    let isArr1Empty = index1 >= l1.length;
+    let isArr2Empty = index2 >= l2.length;
+
+    if (!isArr1Empty && (isArr2Empty || (l1[index1] < l2[index2]))) {
+      merged[current] = l1[index1];
+      index1++;
+    } else {
+      merged[current] = l2[index2];
+      index2++;
+    }
+
+    current++;
+  }
+
+  return merged;
+}
+
+```
+
+```js
+// Word Break from word dictionary
+/**
+ * @param {string} s
+ * @param {string[]} wordDict
+ * @return {boolean}
+ */
+const wordBreak = (s, wordDict) => {
+  if (wordDict == null || wordDict.length === 0) return false;
+
+  // use set to have unique keys
+  const set = new Set(wordDict);
+  
+  // [f,f,...,f] - length +1
+  const dp = Array(s.length + 1).fill(false);
+  
+  // start with true
+  dp[0] = true;
+
+  for (let end = 1; end <= s.length; end++) {
+    for (let start = 0; start < end; start++) {
+      
+      // travel from 0-1, 0-2, 1-2, 0-3, 1-3, 2-3, ....
+      const w = s.slice(start, end);
+      
+      // Check if work match with set of dictionary
+      if (dp[start] === true && set.has(w)) {
+        dp[end] = true;
+        break;
+      }
+    }
+  }
+  // if end has true and then its true else false
+  return dp[s.length];
+};
+```
+
+```js
+// Sell Stock
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+const maxProfit = (prices) => {
+  let min = Infinity;
+  let max = 0;
+  
+  for (let i = 0; i < prices.length - 1; i++) {
+    min = Math.min(min, prices[i]);
+    max = Math.max(max, prices[i + 1] - min)
+    console.log(`i:${i}, min:${min}, max:${max}`)
+  }
+  return max;
+};
+```
+
+```js
+// Integer to English Words
+// Input: 1234567891
+// Output: "One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One"
+
+const LessThan20 = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+const Tens = ['', 'Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+const Thousands = ['', 'Thousand', 'Million', 'Billion'];
+
+var numberToWords = function(num) {
+  let i = 0;
+  let res = '';
+  
+  if (num === 0) return 'Zero';
+  while(num > 0) {
+    if(num % 1000 > 0) {
+      res = go(num % 1000) + Thousands[i] + ' ' + res;
+    }
+    num = ~~(num / 1000);
+    i++;
+  }
+  return res.trim();
+};
+
+const go = (n) => {
+  if (n === 0) return '';
+  else if (n < 20) return LessThan20[n] + ' ';
+  else if (n < 100) return Tens[~~(n / 10)] + ' ' + go(n % 10);
+  else return LessThan20[~~(n / 100)] + ' Hundred ' + go(n % 100);
+};
+
 ```

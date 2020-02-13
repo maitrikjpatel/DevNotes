@@ -2416,6 +2416,8 @@ fetch('/article/promise-chaining/user.json')
   // triggers after 3 seconds
   .then(githubUser => alert(`Finished showing ${githubUser.name}`));
 
+//------------------------
+
 // split the code into reusable functions
 function loadJson(url) {
   return fetch(url)
