@@ -14,92 +14,7 @@ source: 'Github'
 
 ## JS Questions
 
-### JS Problem Solving
-
-
-```js
-
-// Givin n, find how many different ways you can take steps to reach the top
-// E.g.
-// findSteps(4)
-// 1,1,1,1
-// 1,1,2,
-// 2,2
-// 1,3,
-// 4
-
-// this would return 5
-
-function findSteps(n) {
-	let count = 0
-	// think of 'd' as number of digits
-	for (let d = n; d > 0; d--) {
-		count += (n - d - Math.ceil(n/d) + 2)
-	}
-	return count
-}
-```
-
-```js
-
-// We have an array of objects A and an array of indexes B. Reorder objects in array A with given indexes in array B. Do not change array A's length.
-// example:
-// var A = [C, D, E, F, G];
-// var B = [3, 0, 4, 1, 2];
-// sort(A, B);
-// A is now [D, F, G, C, E];
-
-function reorderArray() {
-    return indices.map(function (val, i) {
-        return array[indices.indexOf(i)];
-    });
-}
-
-// ---
-var a = [ "C", "D","E","F","G" ];
-var b = [ 3, 0, 4, 1, 2 ];
-
-function sort( a, b ) {
-  var bl = b.length ;
-  var al = a.length ;
-  var obj = {};
-
-  for( var i = 0 ; i<bl ; i ++ ) {
-    
-    obj[b[i]] = a[i];
-  }
-  console.log( obj )
-}
-
-   
-sort( a, b)
-
-// ---
-
-function swap(list, a, b) {
-  const temp = list[a];
-  list[a] = list[b];
-  list[b] = temp;
-}
-
-function sortIndexes(list, indexes) {
-  let start = 0;
-  while (start < list.length) {
-    if (indexes[start] !== start) {
-      swap(list, start, indexes[start]);
-      swap(indexes, start, indexes[start]);
-    } else {
-      start++;
-    }
-  }
-  return list;
-}
-
-const list = ['C', 'D', 'E', 'F', 'G'];
-const indexes = [ 3, 0, 4, 1, 2 ];
-
-console.log(sortIndexes(list, indexes));
-```
+### Not IMP
 
 ```js
 let closureFunc = b =>  b ? sum(a + b) : a;
@@ -118,69 +33,7 @@ const c = [ ...a, ...b ].sort((a,b) => a-b)
 console.log(c)
 ```
 
-```js
-// --------COPY SORTED--------
-let copySorted = (array) => array.slice().sort()
-
-let myArray = ["HTML", "JavaScript", "CSS"];
-let sorted = copySorted(myArray);
-
-console.log(sorted);
-```
-
-```js
-// --------UNIQUE IN ARRAY----------
-
-// Remove duplicates from array
-let a = [1, 2, 5, 2, 1, 8] // [1,2,5,8]
-
-let b = []
-let len = a.length
-
-for ( let i = 0; i < len, i++) {
-  if(b.indexOf(a[i]) === -1 ){
-    b.push(a[i]);
-  }
-}
-
-// After sorting
-a.sort()
-let _temp;
-for ( let i = 0; i < len, i++) {
-  if(a[i] !== _temp){
-    b.push(a[i]);
-    _temp = a[i];
-  }
-}
-
-// Object way
-obj = {};
-for(let i of a) {
-  obj[i] = true;
-}
-let b = Object.keys(obj);
-
-//Object
-let b = [...new Set(a)];
-
-// ForString
-function unique(array) {
-  let tempValue = [];
-  for ( let str of array) {
-    // if (!tempValue.includes(str)) {
-    if(tempValue.indexOf(str) == -1){
-      tempValue.push(str);
-    }
-  }
-  return tempValue;
-}
-
-let strings = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare", ":-O"
-];
-
-console.log(`unique:${unique(strings)}`); // Hare, Krishna, :-O
-```
+### JS Problem Solving
 
 ```js
 let myMatrix = [
@@ -436,48 +289,6 @@ let getAverageAge = (array) => {
 console.log( getAverageAge(users) )
 ```
 
-```js
-// Flat array
-let myArray = ["1","2",["3","4",["5",["6"],"7"],"8"],"9"]
-// let myArray = [1,2,3,[1,2,3,4, [2,3,4]]]
-
-function flatIt(array) {
-  
-  // -------FAIL : Solution concat/Apply-------
-  let flatArray = [].concat.apply([], array);
-  
-  // -------FAIL : Solution reduce-------
-  let flatArray = myArray.reduce(function(prev, curr) {
-    return prev.concat(curr);
-  });
-  
-  // -------FAIL : Solution for-------
-  let flatArray = [];
-  for (var i = 0; i < myArray.length; ++i) {
-    for (var j = 0; j < myArray[i].length; ++j)
-      flatArray.push(myArray[i][j]);
-  }
-  
-  // -------FAIL : Concat ES6-------
-  let flatArray = [].concat(...myArray);
-  
-  // -------Solution Recursion45-------
-  let flatArray = [];
-  for(let item of array) {
-    Array.isArray(item) ? flatArray.push(...flatIt(item)) : flatArray.push(item);
-  }
-  return flatArray;
-  
-  // -------Recusion Without ES6-------
-  return array.reduce((acc, item) => Array.isArray(item) ? acc.concat(flatIt(item)) : acc.concat(item), []);
-  
-  // -------ES6 Small Recusion-------
-  return flatArray = Array.isArray(array) ? [].concat(...array.map(flatIt)) : array;
-
-}
-
-console.log(flatIt(myArray));
-```
 
 ```js
 // Given string contains the word `hackerrank`
@@ -1625,7 +1436,140 @@ function permutations(str) {
 console.log(permutations('abc'));
 ```
 
-### Others
+### Leetcode
+
+```js
+// Leetcode: Given a 2D board and a word, find if the word exists in the grid.
+function exist(board, word) {
+  if (board.length === 0) return false;
+
+  const h = board.length;
+  const w = board[0].length;
+
+  function go(i, j, k) {
+    if (i < 0 || j < 0 || i >= h || j >= w) return false;
+    if (board[i][j] !== word[k]) return false;
+    if (k === word.length - 1) return true;
+
+    board[i][j] = '*';      // mark as visited
+
+    if (go(i - 1, j, k + 1)) return true;  // up
+    if (go(i + 1, j, k + 1)) return true;  // down
+    if (go(i, j - 1, k + 1)) return true;  // left
+    if (go(i, j + 1, k + 1)) return true;  // right
+
+    board[i][j] = word[k];  // reset
+    return false;
+  }
+
+  for (let i = 0; i < h; i++) {
+    for (let j = 0; j < w; j++) {
+      if (go(i, j, 0)) return true;
+    }
+  }
+
+  return false;
+}
+```
+
+```js
+// Leetcode: Word Break from word dictionary
+/**
+ * @param {string} s
+ * @param {string[]} wordDict
+ * @return {boolean}
+ */
+const wordBreak = (s, wordDict) => {
+  if (wordDict == null || wordDict.length === 0) return false;
+
+  // use set to have unique keys
+  const set = new Set(wordDict);
+  
+  // [f,f,...,f] - length +1
+  const dp = Array(s.length + 1).fill(false);
+  
+  // start with true
+  dp[0] = true;
+
+  for (let end = 1; end <= s.length; end++) {
+    for (let start = 0; start < end; start++) {
+      
+      // travel from 0-1, 0-2, 1-2, 0-3, 1-3, 2-3, ....
+      const w = s.slice(start, end);
+      
+      // Check if work match with set of dictionary
+      if (dp[start] === true && set.has(w)) {
+        dp[end] = true;
+        break;
+      }
+    }
+  }
+  // if end has true and then its true else false
+  return dp[s.length];
+};
+```
+
+```js
+// Leetcode : ell Stock
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+const maxProfit = (prices) => {
+  let min = Infinity;
+  let max = 0;
+  
+  for (let i = 0; i < prices.length - 1; i++) {
+    min = Math.min(min, prices[i]);
+    max = Math.max(max, prices[i + 1] - min)
+    console.log(`i:${i}, min:${min}, max:${max}`)
+  }
+  return max;
+};
+```
+
+### Others 
+
+```js
+// hello from okta hello
+
+// Part 2:
+// "Hello Human" isn't very friendly - let's customize it to take in a human's name
+function bind(arguments, context) {
+  
+  let func = this;
+  /* let funcArgs = [].splice.call() */;
+  
+  // two arguments
+  // one : i splied (3)
+  // second: function splied
+  
+  // splice it 
+  // currentArgs
+  // funcArgs 
+  // [...currentArgs, ...funcArgs]
+  
+  return function() {
+  	let currentArgs = [].splice.call(arguments)
+    let combinedArgs = [...currentArgs]
+  	func.apply(context, currentArgs)
+  }
+  
+}
+ 
+var Robot = function (robotName) {
+  this.robotName = robotName;
+};
+Robot.prototype.sayHello = function (humanName) {
+  console.log('Hello', humanName + ',', 'my name is', this.robotName);
+};
+Robot.prototype.sayHelloDelayed = function (humanName, numSeconds) {
+  setTimeout(bind(this.sayHello, this, humanName), numSeconds * 1000);
+};
+var robby = new Robot('Robby');
+robby.sayHello('Hector'); // "Hello Hector, my name is Robby"
+robby.sayHelloDelayed('Hector', 1); // "Hello Hector, my name is Robby" after 1 second
+```
 
 ```js
 // Write a parser for Javascript floating point numbers
@@ -1758,121 +1702,6 @@ class DOMStore {
 ```
 
 ```js
-// https://www.careercup.com/page?pid=facebook-interview-questions&job=front-end-software-engineer-interview-questions
-// https://www.careercup.com/page?pid=facebook-interview-questions
-```
-
-```js
-// You have a dictionary which is an array of words and array of strings.
-
-// Write two functions
-
-// 1. Prepare the array of strings to be searched in the dictionary
-// 2. Check if the string contains all valid words or not.
-
-
-var query = ['facebook', 'apple', 'google']
-var strings = [
- 'facebook is a company',
- 'google is good',
- 'facebook apple google'
-]
-
-function prepare(strings) {
-  var hash = {}
-  strings.forEach(function(item, i) {
-    var words = item.split(' ')
-    words.forEach(function(word) {
-      hash[word] = hash[word] || []
-      hash[word].push(i)
-    })
-  })
-  return hash
-}
-
-function fullsearch(strings, query) {
-  var hash = prepare(strings)
-  var intersects, indexes
-  for (var i = 0, l = query.length; i < l; i++) {
-    indexes = hash[query[i]]
-    if (!indexes) return null
-    if (!intersects) {
-      intersects = indexes
-      continue
-    }
-    if (intersects.length === 0) {
-      return null
-    }
-    var n = intersects.length, seen, m
-    while (n--) {
-      m = indexes.length
-      seen = false
-      while (m--) {
-        if (indexes[m] === intersects[n]) {
-          seen = true
-          break
-        }
-      }
-      if (!seen) {
-        intersects.splice(n, 1)
-      }
-    }
-  }
-  // return the index of strings that contains all words
-  return intersects
-}
-
-console.log(fullsearch(strings, query));
-```
-
-
-```js
-// Given a string Sting="ABCSC" Check whether it contains a Substring="ABC"?
-
-// 1)If no , return "-1".
-// 2)If yes , remove the substring from string and return "SC".
-// with help of RegExp
-function check(str, pattern) {
-  'use strict';
-
-  var reg = new RegExp(pattern, 'g');
-  if (reg.test(str) === false) {
-    return -1;
-  } else {
-    var l = pattern.length;
-    var i = str.indexOf(pattern);
-    return str.slice(0, i) + str.slice(i + l);
-  }
-
-}
-
-// without using RegExp
-function vanillaCheck(str, pattern) {
-  'use strict';
-
-  var i = 0;
-  var l = str.length;
-  var result = -1;
-  while (i <= l - pattern.length) {
-    var s = str.slice(i, i + pattern.length);
-    if (s === pattern) {
-      result = str.slice(0, i) + str.slice(i + s.length);
-      break;
-    }
-    ++i;
-  }
-
-  return result;
-}
-
-var s = 'ABCSC';
-console.log(check(s, 'BC'));
-console.log(vanillaCheck(s, 'BC'));
-```
-
-### Remain
-
-```js
 <button id="btn-0">Button 1</button>
 <button id="btn-1">Button 2</button>
 <button id="btn-2">Button 3</button>
@@ -1895,406 +1724,7 @@ console.log(vanillaCheck(s, 'BC'));
 // Answer 2, use immediate invoked function
 ```
 
-
-```js
-// Input: 3450272 will return  “3,450,272”
-// Input: 3450272.323 will return  “3,450,272.323”
-
-function convertNumber(num) {
-  // split number
-  let splitNum = num.toString().split(".");
-  
-  // splitNum[0]
-  let newPattern = /(\d)(?=(\d{3})+(?!\d))/g
-  splitNum[0] = splitNum[0].replace(newPattern, '$1,');
-  
-  // splitNum[1]
-  return splitNum.join('.');
-}
-
-```
-
-```js
-// Given a 2D board and a word, find if the word exists in the grid.
-function exist(board, word) {
-  if (board.length === 0) return false;
-
-  const h = board.length;
-  const w = board[0].length;
-
-  function go(i, j, k) {
-    if (i < 0 || j < 0 || i >= h || j >= w) return false;
-    if (board[i][j] !== word[k]) return false;
-    if (k === word.length - 1) return true;
-
-    board[i][j] = '*';      // mark as visited
-
-    if (go(i - 1, j, k + 1)) return true;  // up
-    if (go(i + 1, j, k + 1)) return true;  // down
-    if (go(i, j - 1, k + 1)) return true;  // left
-    if (go(i, j + 1, k + 1)) return true;  // right
-
-    board[i][j] = word[k];  // reset
-    return false;
-  }
-
-  for (let i = 0; i < h; i++) {
-    for (let j = 0; j < w; j++) {
-      if (go(i, j, 0)) return true;
-    }
-  }
-
-  return false;
-}
-```
-
 ```js
 List of intervals: [1,3], [4,10], [20,30]. check if given interval like [5,10] are occupied by the intervals.
 Find any one peak element from an unsorted array.pick element is an element having previous and next items bigger.  
-```
-
-
-```js
-// Vocal
-// Google API
-
-const assert = require('assert');
-
-
-let fullNameCounter = 0;
-
-class GenericModel {
-
-  constructor(value) {
-    this.objValue = value
-    
-    this.get = this.get.bind(this)
-    this.set = this.set.bind(this)
-  }
-  
-  get(key) {
-    if (typeof this.objValue[key] === "function" && this.objValue[key] !== "string") {
-      this.objValue[key] = this.objValue[key].bind(this)()
-      return this.objValue[key]
-    } else {
-      return this.objValue[key]
-    }
-  }
-  
-  set(key, keyValue) {
-    this.objValue[key] = keyValue
-  }
-}
-
-// person gets GenericModal Object
-const person = new GenericModel({
-  firstName: 'Miguel',
-  lastName: "Madero",
-  fullName: function () {
-    fullNameCounter++;
-    return this.get('firstName') + ' ' + this.get('lastName');
-  },
-});
-
-
-// Test
-assert.equal(fullNameCounter, 0);
-// Pass
-
-// fullName fund -> fullNameCounter increase
-assert.equal(person.get('fullName'), 'Miguel Madero');
-assert.equal(fullNameCounter, 1);
-// Pass
-
-// fullName fund -> fullNameCounter increase
-assert.equal(person.get('fullName'), 'Miguel Madero');
-assert.equal(fullNameCounter, 1);
-// Filas fullNameCounter = 2 
-
-console.log("Tests passed");
-```
-
-
-```js
-console.log(['1', '2', '3'].map(parseInt))
-console.log(['1', '2', '3'].map((item) => parseInt(item, 10)))
-
-// ['1', '2', '3']
-// map -> loop
-// item -> '1' -> 1
-
-// map(item,index) -> index missing
-// parseInt(string, radix) -> radix missing
-
-
-// map(parseInt)) // map('1',index) -> parseInt(1, 0)
-// radix -> 0 -> FalseValue -> undefined
-// JS -> default -> 8(octal)/
-// JSOldBrowser -> default -> 8(octal)
-// JSNewBrowser -> default -> 10(decimal)
-// 0X -> Hexadecimal
-
-// map(parseInt)) // map('2',1) -> parseInt('2', 1) -> NaN
-// Ans: 1 element only
-
-// map(parseInt)) // map('3',2) -> parseInt('3', 2) -> NaN
-// Ans: 2 element only
-//  0 1
-```
-
-```js
-// hello from okta hello
-
-// Part 2:
-// "Hello Human" isn't very friendly - let's customize it to take in a human's name
-function bind(arguments, context) {
-  
-  let func = this;
-  /* let funcArgs = [].splice.call() */;
-  
-  // two arguments
-  // one : i splied (3)
-  // second: function splied
-  
-  // splice it 
-  // currentArgs
-  // funcArgs 
-  // [...currentArgs, ...funcArgs]
-  
-  return function() {
-  	let currentArgs = [].splice.call(arguments)
-    let combinedArgs = [...currentArgs]
-  	func.apply(context, currentArgs)
-  }
-  
-}
- 
-var Robot = function (robotName) {
-  this.robotName = robotName;
-};
-Robot.prototype.sayHello = function (humanName) {
-  console.log('Hello', humanName + ',', 'my name is', this.robotName);
-};
-Robot.prototype.sayHelloDelayed = function (humanName, numSeconds) {
-  setTimeout(bind(this.sayHello, this, humanName), numSeconds * 1000);
-};
-var robby = new Robot('Robby');
-robby.sayHello('Hector'); // "Hello Hector, my name is Robby"
-robby.sayHelloDelayed('Hector', 1); // "Hello Hector, my name is Robby" after 1 second
-```
-
-
-```js
-// Spec
-
-//  - Six 100px by 100px squares with 20px of space between them
-//  - Vote counts should be centered within squares
-//  - Group of squares must always be horizontally centered
-//  - Provided wrapper border should always take up full screen width
-
-//  - Example: https://www.dropbox.com/s/at2khogxrq1nk9c/Colorful%20Tiles%20Candidate%20Spec.pdf?dl=0
-import React, { useState } from "react";
-import "./styles.css";
-
-const Square = props => {
-  const { color, dataIndex, text, onClick } = props;
-
-  return (
-    <button
-      className="square"
-      onClick={onClick}
-      data-index={dataIndex}
-      style={{ background: color }}
-    >
-      {text}
-    </button>
-  );
-};
-
-export default function App() {
-  const [squares, setSquares] = useState(
-    Array(6)
-      .fill()
-      .map(() => {
-        return {
-          count: 0,
-          color: "#" + Math.floor(Math.random() * 16777215).toString(16),
-          id: `_${Math.random()
-            .toString(36)
-            .substr(2, 9)}`
-        };
-      })
-  );
-  const handleClick = event => {
-    const targetIndex = event.target.dataset.index;
-    let updatedSquares = squares
-      .map(square => {
-        if (targetIndex === square.id) {
-          return { ...square, count: square.count + 1 };
-        } else {
-          return square;
-        }
-      })
-      .sort((a, b) => b.count - a.count);
-    setSquares(updatedSquares);
-    console.log(squares);
-  };
-  const squareElements = [
-    squares[0].id &&
-      squares.map(square => {
-        return (
-          <Square
-            color={square.color}
-            dataIndex={square.id}
-            text={square.count}
-            key={square.id}
-            onClick={handleClick}
-          />
-        );
-      })
-  ];
-  return <div className="wrapper">{squareElements}</div>;
-}
-```
-
-```css
-.wrapper {
-  border: 1px solid #000;
-  border-radius: 4px;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 360px;
-}
-
-.square {
-  height: 100px;
-  width: 100px;
-  display: flex;
-  margin: 10px;
-  justify-content: center;
-  align-items: center;
-  background: #cccccc;
-}
-
-```
-
-```js
-// merge two arrays
-
-var mergeTwoArrays = function(l1, l2) {
-  let merged = [];
-  let index1 = 0;
-  let index2 = 0;
-  let current = 0;
-
-  while (current < (l1.length + l2.length)) {
-
-    let isArr1Empty = index1 >= l1.length;
-    let isArr2Empty = index2 >= l2.length;
-
-    if (!isArr1Empty && (isArr2Empty || (l1[index1] < l2[index2]))) {
-      merged[current] = l1[index1];
-      index1++;
-    } else {
-      merged[current] = l2[index2];
-      index2++;
-    }
-
-    current++;
-  }
-
-  return merged;
-}
-
-```
-
-```js
-// Word Break from word dictionary
-/**
- * @param {string} s
- * @param {string[]} wordDict
- * @return {boolean}
- */
-const wordBreak = (s, wordDict) => {
-  if (wordDict == null || wordDict.length === 0) return false;
-
-  // use set to have unique keys
-  const set = new Set(wordDict);
-  
-  // [f,f,...,f] - length +1
-  const dp = Array(s.length + 1).fill(false);
-  
-  // start with true
-  dp[0] = true;
-
-  for (let end = 1; end <= s.length; end++) {
-    for (let start = 0; start < end; start++) {
-      
-      // travel from 0-1, 0-2, 1-2, 0-3, 1-3, 2-3, ....
-      const w = s.slice(start, end);
-      
-      // Check if work match with set of dictionary
-      if (dp[start] === true && set.has(w)) {
-        dp[end] = true;
-        break;
-      }
-    }
-  }
-  // if end has true and then its true else false
-  return dp[s.length];
-};
-```
-
-```js
-// Sell Stock
-/**
- * @param {number[]} prices
- * @return {number}
- */
-const maxProfit = (prices) => {
-  let min = Infinity;
-  let max = 0;
-  
-  for (let i = 0; i < prices.length - 1; i++) {
-    min = Math.min(min, prices[i]);
-    max = Math.max(max, prices[i + 1] - min)
-    console.log(`i:${i}, min:${min}, max:${max}`)
-  }
-  return max;
-};
-```
-
-```js
-// Integer to English Words
-// Input: 1234567891
-// Output: "One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One"
-
-const LessThan20 = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
-const Tens = ['', 'Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
-const Thousands = ['', 'Thousand', 'Million', 'Billion'];
-
-var numberToWords = function(num) {
-  let i = 0;
-  let res = '';
-  
-  if (num === 0) return 'Zero';
-  while(num > 0) {
-    if(num % 1000 > 0) {
-      res = go(num % 1000) + Thousands[i] + ' ' + res;
-    }
-    num = ~~(num / 1000);
-    i++;
-  }
-  return res.trim();
-};
-
-const go = (n) => {
-  if (n === 0) return '';
-  else if (n < 20) return LessThan20[n] + ' ';
-  else if (n < 100) return Tens[~~(n / 10)] + ' ' + go(n % 10);
-  else return LessThan20[~~(n / 100)] + ' Hundred ' + go(n % 100);
-};
-
 ```

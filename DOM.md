@@ -101,6 +101,7 @@ source: 'Github'
 
 #### Browser events
 
+- [Understanding Events in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript)
 - Mouse events:
   click – when the mouse clicks on an element (touchscreen devices generate it on a tap).
   contextmenu – when the mouse right-clicks on an element.

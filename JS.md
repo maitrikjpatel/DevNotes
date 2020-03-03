@@ -35,6 +35,9 @@ source: 'Github'
 - [AngularJS Style Guide](https://github.com/johnpapa/angular-styleguide)
 - [DOM manipulation in vanilla JS](https://medium.freecodecamp.org/dom-manipulation-in-vanilla-js-2036a568dcd9)
 - [Javascript variable definitions scope](https://medium.freecodecamp.org/the-visual-guide-to-javascript-variable-definitions-scope-2717ad9f0169)
+- [Understanding This, Bind, Call, and Apply in JavaScript](https://www.digitalocean.com/community/conceptual_articles/understanding-this-bind-call-and-apply-in-javascript)
+- [Understanding Prototypes and Inheritance in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript)
+
 
 ### Tools
 
