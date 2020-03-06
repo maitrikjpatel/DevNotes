@@ -17,6 +17,79 @@ source: 'Github'
 ### Not IMP
 
 ```js
+// Complex Array to Object
+// var input = [
+//     [
+//         ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
+//     ],
+//     [
+//         ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
+//     ]
+// ];
+// Result should look like this
+// var result = [
+//     {firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk'},
+//     {firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager'}
+// ]
+
+// Two Loop solution
+function transformEmployeeData(employeeData) {
+  var obj = {};
+  var arr = [];
+  
+  for (var i = 0; i < employeeData.length; i ++) {
+      
+    for (var j = 0; j < employeeData[i].length; j ++) {
+        
+      var key = employeeData[i][j][0];
+      var value = employeeData[i][j][1];
+      obj[key] = value;
+      
+    }
+    
+    arr.push(obj);
+  }
+  
+  return arr;
+}
+
+// Array Map/Reduce solution 
+function transformEmployeeData(employeeData) {
+    let result = employeeData.map(item => {
+      return item.reduce((acc, item) => {
+        acc[item[0]] = item[1];
+        return acc;
+      }, {});
+    });
+    
+    return result;
+}
+```
+
+```js
+// Complex Object to Array
+// var input = {
+//   name: 'Holly',
+//   age: 35,
+//   role: 'producer'
+// }
+
+function convertObjectToArray(obj) {
+    let myArray = [];
+    
+    // myArray = Object.entries(obj);
+    myArray = Object.keys(obj).map(v => new Array(v, obj[v]));
+    
+    return myArray
+}
+
+console.log(convertObjectToArray(input))
+
+// Output : [ [ 'name', 'Holly' ], [ 'age', 35 ], [ 'role', 'producer' ] ]
+```
+
+
+```js
 let closureFunc = b =>  b ? sum(a + b) : a;
   closureFunc.toString = () => a;
   return closureFunc;
@@ -34,6 +107,39 @@ console.log(c)
 ```
 
 ### JS Problem Solving
+
+```js
+// Given two sorted arrays, merge them into a new array that is also sorted.
+let a = [1,2,4]
+let b = [1,3,4,5,6,8]
+
+function mergeArray(a,b) {
+  let result = []
+  let indexA = 0;
+  let indexB = 0;
+  let current = 0;
+  
+  while(current < (a.length + b.length)){
+    let unmergedA = a[indexA]
+    let unmergedB = b[indexB]
+    
+    if(unmergedA < unmergedB) {
+      result[current] = unmergedA;
+      indexA++;
+    } else {
+      result[current] = unmergedB;
+      indexB++;
+    }
+    current++;
+  }
+
+  return result
+}
+
+console.log(mergeArray(a,b))
+
+```
+
 
 ```js
 let myMatrix = [
@@ -335,79 +441,6 @@ function sockMerchant(n, ar) {
     }
     return pairs;
 }
-```
-
-```js
-var input = [[1,  2,   3,  4],
-             [5,  6,   7,  8],
-             [9,  10, 11, 12],
-             [13, 14, 15, 16]];
-
-function spiral(array){
-  if (!array || array.length === 0) {
-    return [];
-  }
-  
-  let result = [];
-  let arrLength = array.length;
-  
-  let startRow = 0;
-  let startCol = 0;
-
-  let endCol = arrLength - 1;
-  let endRow = arrLength - 1;
-  
-  while (startRow <= endRow && startCol <= endCol) {
-    for (let i = startCol; i <= endCol; i++) {
-      result.push(array[startRow][i]);
-    }
-
-    startRow++;
-
-    for (let i = startRow; i <= endRow; i++) {
-      result.push(array[i][endCol]);
-    }
-    endCol--;
-
-    if (startRow <= endRow) {
-      for (let i = endCol; i >= startCol; i--) {
-        result.push(array[endRow][i]);
-      }
-      endRow--;
-    }
-
-    if (startCol <= endCol) {
-      for (let i = endRow; i >= startRow; i--) {
-        result.push(array[i][startCol]);
-      }
-      startCol++;
-    }
-  }
-  return result;
-}
-
-function spiralES6(array) {
-    const result = [];
-
-    while (array.length) {
-        result.push(
-            // Shift -> [ 1  2  3  4 ]
-            ...array.shift(),
-            // Pop each -> [ 8  12  16  ]
-            ...array.map(a => a.pop()),
-            // Pop -> [13, 14, 15, 16] => Reverse [16, 15, 14, 13]
-            ...array.pop().reverse(),
-            // Shift each -> [5, 9] => Reverse [9, 5]
-            ...array.map(a => a.shift()).reverse()
-        );
-    }
-  
-    return result;
-}
-
-
-console.log( spiral(input) )
-console.log( spiralES6(input) )
 ```
 
 ```js
@@ -798,78 +831,6 @@ console.log(countAllCharacters('banana'));
 ```
 
 ```js
-// Complex Array to Object
-// var input = [
-//     [
-//         ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
-//     ],
-//     [
-//         ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
-//     ]
-// ];
-// Result should look like this
-// var result = [
-//     {firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk'},
-//     {firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager'}
-// ]
-
-// Two Loop solution
-function transformEmployeeData(employeeData) {
-  var obj = {};
-  var arr = [];
-  
-  for (var i = 0; i < employeeData.length; i ++) {
-      
-    for (var j = 0; j < employeeData[i].length; j ++) {
-        
-      var key = employeeData[i][j][0];
-      var value = employeeData[i][j][1];
-      obj[key] = value;
-      
-    }
-    
-    arr.push(obj);
-  }
-  
-  return arr;
-}
-
-// Array Map/Reduce solution 
-function transformEmployeeData(employeeData) {
-    let result = employeeData.map(item => {
-      return item.reduce((acc, item) => {
-        acc[item[0]] = item[1];
-        return acc;
-      }, {});
-    });
-    
-    return result;
-}
-```
-
-```js
-// Complex Object to Array
-// var input = {
-//   name: 'Holly',
-//   age: 35,
-//   role: 'producer'
-// }
-
-function convertObjectToArray(obj) {
-    let myArray = [];
-    
-    // myArray = Object.entries(obj);
-    myArray = Object.keys(obj).map(v => new Array(v, obj[v]));
-    
-    return myArray
-}
-
-console.log(convertObjectToArray(input))
-
-// Output : [ [ 'name', 'Holly' ], [ 'age', 35 ], [ 'role', 'producer' ] ]
-```
-
-```js
 // https://res.cloudinary.com/css-tricks/image/upload/c_scale,w_850,f_auto,q_auto/v1497692795/stagger_bjqqml.gif
 ```
 
@@ -924,7 +885,7 @@ colorString(myColors, myStr)
 
 //----
 
-unction displayColorfulText(colors, text){
+function displayColorfulText(colors, text){
 const strArray = text.split(' ');
 
 const createSpanElementWithColor = (text, color) => {
@@ -1024,40 +985,6 @@ function flatten(data) {
 
 
 console.log(flatten(d))
-```
-
-```js
-// Given a 2D board and a word, find if the word exists in the grid.
-function exist(board, word) {
-  if (board.length === 0) return false;
-
-  const h = board.length;
-  const w = board[0].length;
-
-  function go(i, j, k) {
-    if (i < 0 || j < 0 || i >= h || j >= w) return false;
-    if (board[i][j] !== word[k]) return false;
-    if (k === word.length - 1) return true;
-
-    board[i][j] = '*';      // mark as visited
-
-    if (go(i - 1, j, k + 1)) return true;  // up
-    if (go(i + 1, j, k + 1)) return true;  // down
-    if (go(i, j - 1, k + 1)) return true;  // left
-    if (go(i, j + 1, k + 1)) return true;  // right
-
-    board[i][j] = word[k];  // reset
-    return false;
-  }
-
-  for (let i = 0; i < h; i++) {
-    for (let j = 0; j < w; j++) {
-      if (go(i, j, 0)) return true;
-    }
-  }
-
-  return false;
-}
 ```
 
 ```js
@@ -1337,7 +1264,6 @@ function reverseInteger(str) {
   return (parseInt(reverseStr.join(''))) * Math.sign(str)
 }
 
-
 console.log(reverseInteger(-123))
 ```
 
@@ -1367,52 +1293,6 @@ rangeSum([1,9])
 ```
 
 ```js
-let d = {
-  'a': 5,
-  'b': 6,
-  'c': {
-    'f': 9,
-    'g': {
-      'm': 17,
-      'n': 3
-    }
-  }
-}
-
-flatten(d) = {
-  'a': 5,
-  'b': 6,
-  'c.f': 9,
-  'c.g.m': 17,
-  'c.g.n': 3,
-}
-
-let tempKey
-let flatData = {};
-
-function flatten(data) {
-  
-  for( let key in data) {
-    if(typeof data[key] === "object") {
-      tempKey = tempKey ? `${tempKey}.${key}` : key
-      flatten(data[key])
-    } else {
-      if(tempKey){ 
-        flatData[`${tempKey}.${key}`] = data[key]
-      } else {
-        flatData[key] = data[key]
-      }
-    }
-  }  
-
-  return flatData;
-}
-
-
-console.log(flatten(d))
-```
-
-```js
 // all permutations of string
 
 function permutations(str) {
@@ -1437,6 +1317,29 @@ console.log(permutations('abc'));
 ```
 
 ### Leetcode
+
+- [X] Isomorphic strings
+- [X] Valid Parentheses
+- [X] Longest Palindromic Substring
+- [X] Best Time to Buy and Sell Stock 1 & 2 - Math
+- [X] Integer to English Words - math and string
+
+- [X] Two Sum - Hash Object
+- [X] Longest Substring Without Repeating Characters - Hash Object  
+- [X] Group Anagrams - Hash Object
+
+- [X] Trapping Rain Water - left and  right pointers
+- [X] Product of Array Except Self - left and  right pointers
+
+- [X] Number of Islands - dfs search
+
+- [X] LRU Cache
+
+- [X] Word Break - dynamic programming
+
+- [X] Merge Two Sorted Lists - linkedin list
+- [X] Merge k Sorted Lists - linkedin list
+- [X] Copy List with Random Pointer - linkedin list
 
 ```js
 // Leetcode: Given a 2D board and a word, find if the word exists in the grid.
@@ -1510,7 +1413,7 @@ const wordBreak = (s, wordDict) => {
 ```
 
 ```js
-// Leetcode : ell Stock
+// Leetcode : Sell Stock
 /**
  * @param {number[]} prices
  * @return {number}
@@ -1528,7 +1431,51 @@ const maxProfit = (prices) => {
 };
 ```
 
-### Others 
+```js
+// justify content 
+var fullJustify = function(words, limit) {
+    let result = []
+    let rowObj = {words:[], letters:0}
+    result.push(rowObj)
+  
+    for(let word of words) {
+      if(rowObj.words.length && rowObj.letters + word.length + (rowObj.words.length - 1) >= limit){
+        rowObj = {words:[], letters:0}
+        result.push(rowObj)
+      }
+      
+      rowObj['words'].push(word)
+      rowObj['letters'] = ('letters' in rowObj ? rowObj.letters : 0) + word.length;
+    }
+    
+    // console.log(result)
+  
+    for(let i = 0; i < result.length; i++){
+      let row = result[i]
+      let line = row.words[0];
+      let totalWordsLength = (row.words.length)
+      
+      if (totalWordsLength === 1 || i === result.length - 1) {
+        row['line'] = row.words.join(' ') + ' '.repeat(limit - row.letters - row.words.length + 1);
+        continue;
+      }
+      
+      let spaces = limit - row.letters;
+      let minSpaces = ' '.repeat(Math.floor(spaces / ( totalWordsLength - 1 )))
+      let addSpaces = spaces % ( totalWordsLength - 1 )
+      
+      for(let w = 1; w < totalWordsLength; w++) {
+        line += minSpaces + (w <= addSpaces ? ' ' : '') + row.words[w]
+      }
+        
+      row['line'] = line
+    }
+  
+    return result.map(item => item.line)
+};
+```
+
+### Others
 
 ```js
 // hello from okta hello
