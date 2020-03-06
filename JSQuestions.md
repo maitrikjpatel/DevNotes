@@ -14,98 +14,6 @@ source: 'Github'
 
 ## JS Questions
 
-### Not IMP
-
-```js
-// Complex Array to Object
-// var input = [
-//     [
-//         ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
-//     ],
-//     [
-//         ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
-//     ]
-// ];
-// Result should look like this
-// var result = [
-//     {firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk'},
-//     {firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager'}
-// ]
-
-// Two Loop solution
-function transformEmployeeData(employeeData) {
-  var obj = {};
-  var arr = [];
-  
-  for (var i = 0; i < employeeData.length; i ++) {
-      
-    for (var j = 0; j < employeeData[i].length; j ++) {
-        
-      var key = employeeData[i][j][0];
-      var value = employeeData[i][j][1];
-      obj[key] = value;
-      
-    }
-    
-    arr.push(obj);
-  }
-  
-  return arr;
-}
-
-// Array Map/Reduce solution 
-function transformEmployeeData(employeeData) {
-    let result = employeeData.map(item => {
-      return item.reduce((acc, item) => {
-        acc[item[0]] = item[1];
-        return acc;
-      }, {});
-    });
-    
-    return result;
-}
-```
-
-```js
-// Complex Object to Array
-// var input = {
-//   name: 'Holly',
-//   age: 35,
-//   role: 'producer'
-// }
-
-function convertObjectToArray(obj) {
-    let myArray = [];
-    
-    // myArray = Object.entries(obj);
-    myArray = Object.keys(obj).map(v => new Array(v, obj[v]));
-    
-    return myArray
-}
-
-console.log(convertObjectToArray(input))
-
-// Output : [ [ 'name', 'Holly' ], [ 'age', 35 ], [ 'role', 'producer' ] ]
-```
-
-
-```js
-let closureFunc = b =>  b ? sum(a + b) : a;
-  closureFunc.toString = () => a;
-  return closureFunc;
-}
-alert(sum(10)(2)(3)(4));
-```
-
-```js
-// Add array and sort
-const a = [1,2,3,4,5,5,6,9];
-const b = [2,5,6,12,100];
-  
-const c = [ ...a, ...b ].sort((a,b) => a-b)
-console.log(c)
-```
-
 ### JS Problem Solving
 
 ```js
@@ -235,131 +143,6 @@ let result = camelize('background-color-best');
 ```
 
 ```js
-// --------FILTER RANGE--------
-let filterRange = (array, a, b) => {
-//  ------My Solution------
-  let filteredArray = [];
-  for(let item of array) {
-    if( item >= a && item <= b ) {
-      filteredArray.push(item);
-    }
-  }
-  return filteredArray;
-  
-  // ------Ideal Solution------
-return array.filter(item => (a <= item && item <= b));
-}
-```
-
-```js
-// --------FILTER RANGE IN SAME ARRAY--------
-let filterRangeInPlace = (array, a, b) => {
-  // ------Ideal Solution------
-  for (let i = 0; i < array.length; i++) {
-    let val = array[i];
-    console.log(`val:${val}`)
-    console.log(`i:${i}`)
-    console.log(`arrayBefor:${array}`)
-    if( val < a || val > b ) {
-      array.splice(i,1);
-      i--;
-    }
-    console.log(`arrayAfter:${array}`)
-    console.log(`------`)
-  }
-}
-
-```
-
-```js
-// --------CALCULATOR--------
-function Calculator() {
-  let methods = {
-    '+': (a,b) => a+b,
-    '-': (a,b) => a-b
-  };
-  
-  this.calculate = (str) => {
-    let splitStr = str.split(' '),
-        valueA = +splitStr[0],
-        valueOp = splitStr[1],
-        valueB = +splitStr[2]
-    return methods[valueOp](valueA,valueB);
-  }
-
-  this.addMethod = (name, func) => {
-    methods[name] = func;
-  };
-}
-
-let calc = new Calculator;
-calc.addMethod("**", (a, b) => a ** b);
-console.log(calc.calculate("4 + 5"));
-console.log(calc.calculate("4 ** 5"));
-```
-
-```js
-// --------MAP NAMES--------
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
-
-let users = [ john, pete, mary ];
-
-let names = users.map(item => item.name);
-
-console.log( names ); // ["John", "Pete", "Mary"]
-```
-
-```js
-// --------MAP OBJECTS--------
-let john = { name: "John", surname: "Smith", id: 1 };
-let pete = { name: "Pete", surname: "Hunt", id: 2 };
-let mary = { name: "Mary", surname: "Key", id: 3 };
-
-let users = [ john, pete, mary ];
-
-let usersMapped = users.map(user => ({
-  fullName: `${user.name} ${user.surname}`,
-  id: user.id
-}))
-
-/*
-usersMapped = [
-  { fullName: "John Smith", id: 1 },
-  { fullName: "Pete Hunt", id: 2 },
-  { fullName: "Mary Key", id: 3 }
-]
-*/
-
-console.log( usersMapped[0].id ) // 1
-console.log( usersMapped[0].fullName ) // John Smith
-```
-
-```js
-// --------SORT BY AGE--------
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
-
-let users = [ pete, john, mary ];
-
-let sortByAge = (array) => {
-  // ----mysolution----
-  array.sort((a,b) => a.age - b.age);
-  // ----idealsolution----
-  array.sort((a,b) => a.age > b.age ? 1 : -1);
-}
-
-sortByAge(users);
-
-// now: [john, mary, pete]
-console.log(users[0].name); // John
-console.log(users[1].name); // Mary
-console.log(users[2].name); // Pete
-```
-
-```js
 // -------SHUFFLE ARRAY--------
 let array = [2,3,4,3,4,11,8,-21,9,1, -10];
 
@@ -379,22 +162,6 @@ let shuffleArray = (array) => {
 shuffleArray(array);
 console.log(array)
 ```
-
-```js
-// -------GET AVARAGE--------
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 29 };
-
-let users = [ john, pete, mary ];
-
-let getAverageAge = (array) => {
-  return array.reduce((prev, arrayItem) => prev + arrayItem.age, 0) / array.length;
-}
-
-console.log( getAverageAge(users) )
-```
-
 
 ```js
 // Given string contains the word `hackerrank`
@@ -504,15 +271,6 @@ function miniMaxSum(arr) {
 // 10 14
 ```
 
-```js
-// number of times highest number in array repeat
-function highestNumberInArray(ar) {
-    let max = Math.max(...ar);
-    return ar.filter(c => c === max).length;
-}
-highestNumberInArray([3,2,1,3])
-// 2
-```
 
 ```js
 // Animate function for JS
@@ -1674,4 +1432,123 @@ class DOMStore {
 ```js
 List of intervals: [1,3], [4,10], [20,30]. check if given interval like [5,10] are occupied by the intervals.
 Find any one peak element from an unsorted array.pick element is an element having previous and next items bigger.  
+```
+
+### Not IMP
+
+```js
+// --------CALCULATOR--------
+function Calculator() {
+  let methods = {
+    '+': (a,b) => a+b,
+    '-': (a,b) => a-b
+  };
+  
+  this.calculate = (str) => {
+    let splitStr = str.split(' '),
+        valueA = +splitStr[0],
+        valueOp = splitStr[1],
+        valueB = +splitStr[2]
+    return methods[valueOp](valueA,valueB);
+  }
+
+  this.addMethod = (name, func) => {
+    methods[name] = func;
+  };
+}
+
+let calc = new Calculator;
+calc.addMethod("**", (a, b) => a ** b);
+console.log(calc.calculate("4 + 5"));
+console.log(calc.calculate("4 ** 5"));
+```
+
+```js
+// Complex Array to Object
+// var input = [
+//     [
+//         ['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']
+//     ],
+//     [
+//         ['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']
+//     ]
+// ];
+// Result should look like this
+// var result = [
+//     {firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk'},
+//     {firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager'}
+// ]
+
+// Two Loop solution
+function transformEmployeeData(employeeData) {
+  var obj = {};
+  var arr = [];
+  
+  for (var i = 0; i < employeeData.length; i ++) {
+      
+    for (var j = 0; j < employeeData[i].length; j ++) {
+        
+      var key = employeeData[i][j][0];
+      var value = employeeData[i][j][1];
+      obj[key] = value;
+      
+    }
+    
+    arr.push(obj);
+  }
+  
+  return arr;
+}
+
+// Array Map/Reduce solution 
+function transformEmployeeData(employeeData) {
+    let result = employeeData.map(item => {
+      return item.reduce((acc, item) => {
+        acc[item[0]] = item[1];
+        return acc;
+      }, {});
+    });
+    
+    return result;
+}
+```
+
+```js
+// Complex Object to Array
+// var input = {
+//   name: 'Holly',
+//   age: 35,
+//   role: 'producer'
+// }
+
+function convertObjectToArray(obj) {
+    let myArray = [];
+    
+    // myArray = Object.entries(obj);
+    myArray = Object.keys(obj).map(v => new Array(v, obj[v]));
+    
+    return myArray
+}
+
+console.log(convertObjectToArray(input))
+
+// Output : [ [ 'name', 'Holly' ], [ 'age', 35 ], [ 'role', 'producer' ] ]
+```
+
+
+```js
+let closureFunc = b =>  b ? sum(a + b) : a;
+  closureFunc.toString = () => a;
+  return closureFunc;
+}
+alert(sum(10)(2)(3)(4));
+```
+
+```js
+// Add array and sort
+const a = [1,2,3,4,5,5,6,9];
+const b = [2,5,6,12,100];
+  
+const c = [ ...a, ...b ].sort((a,b) => a-b)
+console.log(c)
 ```
