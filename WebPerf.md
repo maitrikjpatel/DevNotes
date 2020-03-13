@@ -1,22 +1,132 @@
 ---
 date: '2020-3-12'
-publish: 'false'
+publish: 'true'
 category: 'note'
 author: 'Maitrik Patel'
 
 title: 'Web Performance'
-description: 'Most users rate speed as being at the very top of the UX hierarch'
+description: 'Most users rate webpage/application speed as being at the very top of the UX hierarchy.'
 
 topics: 'tools, development'
 
 source: 'Github'
 ---
 
+## Articles
 
-### Articles
+- [W3C Web Performance Working Group](https://github.com/w3c/web-performance/)
+- [What is a browser engine?](https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/)
+- [Web Performance Made Eas](https://developers.google.com/web/updates/2018/08/web-performance-made-easy)
+- [Why performance matters](https://developers.google.com/web/fundamentals/performance/why-performance-matters)
+
+## Tools
+
+- [PerfMap](https://github.com/zeman/perfmap)
+- [Performance Bookmarklet](https://github.com/nurun/performance-bookmarklet)
+- [How Web Works](https://github.com/vasanthk/how-web-works#googles-g-key-is-pressed)
+- [Guess JS: Predictive Fetching](https://github.com/guess-js/guess)
+
+## Topics
+
+- [ResourceTiming](https://nicj.net/resourcetiming-in-practice/)
+  - ResourceTiming exposes accurate performance metrics for all of the resources fetched on your page.
+  - You can use this data for a variety of scenarios, from investigating the performance of your third-party libraries to taking specific actions when resources aren’t performing according to your performance goals.
+- [Image Optimization Guide](https://images.guide/)
+- [What is Preload, Prefetch, and Preconnect?](https://www.keycdn.com/blog/resource-hints)
 
 
-### Topics and case studies
+## Web Performance Experts
+
+- [Paul Irish](https://twitter.com/paul_irish?lang=en)
+- [Harry Roberts](https://twitter.com/csswizardry)
+- [Addy Osmani](https://twitter.com/addyosmani)
+- [Mathias Bynens](https://twitter.com/mathias)
+- [Steve Souders](https://twitter.com/Souders)
+- [Suhail Doshi](https://twitter.com/suhail)
+
+## Web Performance best practices
+
+- **Minify** :
+  - JS/CSS -> GZip
+
+- **Caching** :
+  - Efficient Caching policy to ensure that we don’t send resources twice if unnecessary.
+  - Ideally you should aim at caching as many resources as securely possible for the longest possible period of time and provide validation tokens for efficient
+
+- **Remove unused code** :
+  - Use chrome code coverage tool to check unused code
+
+- **Avoid enormous network payloads** :
+  - Make an inventory of all assets
+  - Measure value & impact of assets
+  - Audit using `webpack analyzer` & `bundlephobia`
+
+- **Lower JavaScript boot-up time with code splitting**
+  - Why Js boot-up take time ?
+    - Download JS -> parse -> compile -> execute
+  - Code-splitting
+    - split routes
+    - split components
+    - split vendor bundles
+  - Tree shaking
+  - Serve modern, small JS bundles
+
+- **Optimize images**
+  - Image optimization
+    - Tool : imageOptim
+    - npm Package : imagemin
+  - Animation
+    - FFmpeg tool to convert our animation GIF into the mp4 file.
+  - Lazy-load off-screen images
+    - Lazysizes library to only load image as per viewport
+
+- **Help browser deliver critical resources early**
+  - Hey, browser! Here’s a resource you’re going to need later on, so start loading it now.
+  - Use link `preconnect`, or`preload` or `prefetch`
+  - `<link rel="preload" href="late_discovered_thing.js" as="script">`
+  - **preconnect**
+    - Preconnect allows the browser to setup early connections before an HTTP request is actually sent to the server. 
+    - This includes DNS lookups, TLS negotiations, TCP handshakes.
+    - This in turn eliminates roundtrip latency and saves time for users.
+  - **preload**:
+    - Use for fonts, image, js, css
+    - Preload key web fonts requests
+    - The preload keyword is being added to the Link HTTP header and link HTML element.
+    - This keyword provides a declarative fetch primitive that initiates an early fetch and separates fetching from resource execution.
+    - The preload link element provides async-like semantics for non-script elements.
+  - **prefetch**:
+    - fetch resources, store them in cache for future use
+  - **prerender**
+    - Prerendering is very similar to prefetching in that it gathers resources that the user may navigate to next.
+    - The difference is that prerendering actually renders the entire page in the background, all the assets of a document. 
+
+- **Experimental: Priority Hints**
+  - `<img src="/", importance="high">`
+  - `fetch( 'url', {importance: 'low'})`
+
+- **Reduce render-blocking scripts**
+  - `cricical` : NPM module called Critical to inline our critical content in index.html
+  - Inline first paint styles in our HTML, the browser is able to render them straight away without waiting for the external stylesheets to arrive.
+
+- **Use Base64 wisely** : Check bottom for notes
+
+- **On Webpage things to avoid**
+  - Repaint
+    - browser just repaints the element again with the new styles applied
+  - Reflow
+    - changes affect document contents or structure, or element position, a reflow (or relayout) happens
+      - DOM manipulation (element addition, deletion, altering, or changing element order);
+      - Contents changes, including text changes in form fields;
+      - Calculation or altering of CSS properties;
+      - Adding or removing style sheets;
+      - Changing the "class" attribute;
+      - Browser window manipulation (resizing, scrolling);
+      - Pseudo-class activation (:hover).
+  - Animate only absolute/fixed positioned elements if you can.
+  - disable complicated :hover animations while scrolling (e.g. by adding an extra "no-hover" class to <body>)
+
+
+## Case studies' notes
 
 - [Pinterest PWA](https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154)
   - **Route-based JavaScript chunking** : 
