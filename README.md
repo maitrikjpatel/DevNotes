@@ -19,6 +19,7 @@ Following is list of notes which I use in day to day development work.
 - [Front End Development](FrontEndDevelopment.md)
 - [Javascript](JS.md)
 - [Javascript ES6](ES6.md)
+- [Web Performance](WebPerf.md)
 - [React](React.md)
 - [DOM](DOM.md)
 - [CSS](CSS.md)

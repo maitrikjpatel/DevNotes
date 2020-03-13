@@ -23,7 +23,7 @@ source: 'Github'
 - [7 CSS Units You Might Not Know About - Tuts+ Web Design Article](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
 - [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892
 
-### Tools and playground 
+### Tools and playground
 
 - [Css Vocabulary](http://apps.workflower.fi/vocabs/css/en)
 - [CSS Reference Sheet](https://cssreference.io/)

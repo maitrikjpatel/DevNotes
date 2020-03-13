@@ -17,7 +17,7 @@ source: 'Github'
 ### JS Problem Solving
 
 ```js
-// Given two sorted arrays, merge them into a new array that is also sorted.
+// Given Merge two sorted arrays, merge them into a new array that is also sorted.
 let a = [1,2,4]
 let b = [1,3,4,5,6,8]
 
@@ -1100,6 +1100,55 @@ console.log(permutations('abc'));
 - [X] Copy List with Random Pointer - linkedin list
 
 ```js
+// We are given a list schedule of employees, which represents the working time for each employee.
+// Each employee has a list of non-overlapping Intervals, and these intervals are in sorted order.
+// Return the list of finite intervals representing common, positive-length free time for all employees, also in sorted order.
+
+// Input: schedule = [[[1,3],[6,7]],[[2,4]],[[2,5],[9,12]]]
+// Output: [[5,6],[7,9]]
+
+// Input: schedule = [[[1,2],[5,6]],[[1,3]],[[4,10]]]
+// Output: [[3,4]]
+
+let schedule = [[[1,3],[6,7]],[[2,4]],[[2,5],[9,12]]]
+
+let employeeFreeTime = function(schedule) {
+  
+  let flatSchedule = [].concat(...schedule)
+  let sortSchedule = flatSchedule.sort((a,b) => a[0] - b[0])
+  let intervals = [flatSchedule[0]];
+  
+  for(let i = 1; i < sortSchedule.length; i++) {
+
+    let prev = intervals.pop();
+    let current = flatSchedule[i];
+
+    if (prev[1] >= current[0]) {
+        const start = Math.min(prev[0], current[0]);
+        const end = Math.max(prev[1], current[1]);
+        intervals.push([start, end]);
+    } else {
+        intervals.push(prev);
+        intervals.push(current);
+    }
+  }
+  
+  let result = [];
+  for (let i = 1; i < intervals.length; i++) {
+      const prev = intervals[i - 1];
+      const current = intervals[i];
+      // gap
+      result.push([prev[1],current[0]])
+  }
+
+  return result;
+};
+
+console.log(employeeFreeTime(schedule))
+```
+
+```js
+// Word Search
 // Leetcode: Given a 2D board and a word, find if the word exists in the grid.
 function exist(board, word) {
   if (board.length === 0) return false;
