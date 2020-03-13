@@ -31,6 +31,7 @@ source: 'Github'
 - [Performance Bookmarklet](https://github.com/nurun/performance-bookmarklet)
 - [How Web Works](https://github.com/vasanthk/how-web-works#googles-g-key-is-pressed)
 - [GuessJS: Predictive Fetching](https://github.com/guess-js/guess)
+- [React-loadable](https://github.com/jamiebuilds/react-loadable)
 
 ## Topics
 
