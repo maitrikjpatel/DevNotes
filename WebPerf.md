@@ -12,8 +12,13 @@ topics: 'tools, development'
 source: 'Github'
 ---
 
-## Articles
+## Articles and Case Study
 
+- [The Cost Of JavaScript In 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
+- [A Tinder Progressive Web App Performance Case Study](https://medium.com/@addyosmani/a-tinder-progressive-web-app-performance-case-study-78919d98ece0)
+- [A Pinterest Progressive Web App Performance Case Study](https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154)
+- [A Netflix Web Performance Case Study](https://medium.com/dev-channel/a-netflix-web-performance-case-study-c0bcde26a9d9)
+- [Making Instagram.com faster, 4 parts Series](https://instagram-engineering.com/making-instagram-com-faster-part-1-62cc0c327538)
 - [W3C Web Performance Working Group](https://github.com/w3c/web-performance/)
 - [What is a browser engine?](https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/)
 - [Web Performance Made Eas](https://developers.google.com/web/updates/2018/08/web-performance-made-easy)
@@ -21,13 +26,15 @@ source: 'Github'
 
 ## Tools
 
+- [ServiceWorker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 - [PerfMap](https://github.com/zeman/perfmap)
 - [Performance Bookmarklet](https://github.com/nurun/performance-bookmarklet)
 - [How Web Works](https://github.com/vasanthk/how-web-works#googles-g-key-is-pressed)
-- [Guess JS: Predictive Fetching](https://github.com/guess-js/guess)
+- [GuessJS: Predictive Fetching](https://github.com/guess-js/guess)
 
 ## Topics
 
+- [User-centric performance metrics](https://web.dev/metrics/)
 - [ResourceTiming](https://nicj.net/resourcetiming-in-practice/)
   - ResourceTiming exposes accurate performance metrics for all of the resources fetched on your page.
   - You can use this data for a variety of scenarios, from investigating the performance of your third-party libraries to taking specific actions when resources aren’t performing according to your performance goals.
