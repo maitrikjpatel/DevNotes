@@ -123,7 +123,7 @@ source: 'Github'
       - Browser window manipulation (resizing, scrolling);
       - Pseudo-class activation (:hover).
   - Animate only absolute/fixed positioned elements if you can.
-  - disable complicated :hover animations while scrolling (e.g. by adding an extra "no-hover" class to <body>)
+  - disable complicated :hover animations while scrolling (e.g. by adding an extra "no-hover" class to body)
 
 
 ## Case studies' notes
