@@ -63,6 +63,9 @@ source: 'Github'
 
 #### Algorithms and Data Structure
 
+- [Intro to algorithms](https://slides.com/bgando/intro-to-algorithms#/)
+- [Intro to DS](https://slides.com/bgando/intro-to-ds-1#/)
+- [Four semester of Computer Science](https://btholt.github.io/four-semesters-of-cs-part-two/)
 - [HackerRank](https://www.hackerrank.com/domains)
 - [Geeks for Geeks](http://www.geeksforgeeks.org/)
 - [Visual Data Structure](http://visualgo.net/)

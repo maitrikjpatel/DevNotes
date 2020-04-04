@@ -19,9 +19,9 @@ source: 'Github'
 - [Maintainable CSS](https://maintainablecss.com/)
 - [CSS Tools List](https://medium.com/@vilcins/css-tools-that-i-use-67cb8bfa2e2d)
 - [Principles of writing consistent, idiomatic CSS](https://github.com/necolas/idiomatic-css)
-- [CSS code review®](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
-- [7 CSS Units You Might Not Know About - Tuts+ Web Design Article](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
-- [What You May Not Know About the Z-Index Property - Tuts+ Web Design Article](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892
+- [CSS code review](https://css-tricks.com/what-a-css-code-review-might-look-like/?ref=webdesignernews.com)
+- [7 CSS Units You Might Not Know About](https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
+- [What You May Not Know About the Z-Index Property](http://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892)
 
 ### Tools and playground
 
@@ -47,6 +47,7 @@ source: 'Github'
 - [Learn CSS GRID](https://cssgrid.io/)
 - [css grid layout generator](https://www.layoutit.com/grid)
 - [Mozila CSS Grid](https://mozilladevelopers.github.io/playground/css-grid/)
+- [CSS Grid Excercises](https://github.com/sdras/design-for-developers)
 
 #### Flex
 
