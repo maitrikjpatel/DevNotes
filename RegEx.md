@@ -16,6 +16,7 @@ source: 'Github'
 
 - [Undersrtand Regular Expression in hour](https://www.youtube.com/watch?v=ZfQFUJhPqMM)
 - [Regular Expression FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions)
+- [Regex the easy way](https://dev.to/ziishaned/learn-regex-the-easy-way-c4g)
 
 ### Match, Test and Replace
 

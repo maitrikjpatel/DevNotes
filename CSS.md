@@ -48,6 +48,7 @@ source: 'Github'
 - [css grid layout generator](https://www.layoutit.com/grid)
 - [Mozila CSS Grid](https://mozilladevelopers.github.io/playground/css-grid/)
 - [CSS Grid Excercises](https://github.com/sdras/design-for-developers)
+- [4 CSS Grid Properties](https://css-tricks.com/4-css-grid-properties-and-one-value-for-most-of-your-layout-needs/)
 
 #### Flex
 
