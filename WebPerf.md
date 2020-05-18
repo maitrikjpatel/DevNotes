@@ -23,6 +23,7 @@ source: 'Github'
 - [What is a browser engine?](https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/)
 - [Web Performance Made Eas](https://developers.google.com/web/updates/2018/08/web-performance-made-easy)
 - [Why performance matters](https://developers.google.com/web/fundamentals/performance/why-performance-matters)
+- [The Cost of JavaScript Frameworks](https://timkadlec.com/remembers/2020-04-21-the-cost-of-javascript-frameworks/)
 
 ## Tools
 

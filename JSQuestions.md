@@ -1601,3 +1601,197 @@ const b = [2,5,6,12,100];
 const c = [ ...a, ...b ].sort((a,b) => a-b)
 console.log(c)
 ```
+
+```js
+let myArray = ['1','2', '0', 4, 5, 'six', 'seven', null, undefined, NaN]
+
+// 3 array 
+	// number // 4, 5
+	// string -> all string
+	// all numbers -> 1, 2, 0, 4, 5
+
+function splitArrayByTypeof(array) {
+  let onlyNumArray = []
+  let strArray = []
+  let allNumArray = []
+  
+  array.forEach((item) => {
+    if(typeof item === "number" && !isNaN(item)) {
+      onlyNumArray.push(item)
+    } 
+    if(typeof item === "string") {
+      strArray.push(item)
+    } 
+    if(typeof Number(item) === "number" && !isNaN(item) && item !== null) {
+      allNumArray.push(item)
+    }
+  })
+  
+  console.log(onlyNumArray)
+  console.log(strArray)
+  console.log(allNumArray)
+}
+
+splitArrayByTypeof(myArray)
+```
+
+```js
+// Implement a class called LinkedList using the provided Node class  
+class Node {  
+  constructor(value) {  
+    this.value = value;  
+    this.next = null;  
+  }  
+}  
+// push  
+// - accepts a value and places it at the tail of the linked list  
+//  
+// pop  
+// - returns and removes a node from the tail of the linked list  
+//  
+// unshift  
+// - accepts a value and places it at the head of the linked list  
+//  
+// shift  
+// - returns and removes a node from the head of the linked list  
+//  
+// [if you have time]  
+// insertAt  
+// - accepts a value and position and inserts a node at the new position  
+//  
+// [if you have time]  
+// deleteAt  
+// - accepts a position and deletes the node at that position  
+//  
+class LinkedList {  
+  constructor() {  
+    this.head = null;  
+    this.length = 0;  
+  }  
+  
+  push(item) {
+    const nodeToAdd = new Node(item);
+    let nodeToCheck = this.head
+    
+    if(!nodeToCheck) {
+      this.head = nodeToAdd;
+      this.length++
+      return nodeToAdd;
+    }
+    
+    // data: 1
+    // next: {} empty
+    while(nodeToCheck.next) {
+      nodeToCheck = nodeToCheck.next 
+    }
+    
+    // next: {nextToAdd}
+    nodeToCheck.next = nodeToAdd
+    this.length++;
+    return nodeToAdd;
+  
+  } // add to tail 
+  
+  pop() {
+    let nodeToCheck = this.head
+    let counter = 0;
+    let popData;
+    let preNodeToCheck ;
+    
+    // 1->2 
+    while(counter !== this.length-1) {
+      preNodeToCheck = nodeToCheck
+      nodeToCheck = nodeToCheck.next      
+      counter++      
+    }
+    
+    preNodeToCheck.next = null
+    this.length--;
+    return nodeToCheck
+  } // remove from tail  
+  
+
+  unshift(item) {
+    const nodeToAdd = new Node(item);
+    let headNode = this.head
+    
+    nodeToAdd.next = headNode
+    this.head = nodeToAdd
+    this.length++;
+  } // add to head  
+  
+  
+  shift() {} // remove from head  
+  insertAt() {} // adds anywhere based on index  
+  deleteAt() {} // removes anywhere based on index  
+}  
+
+
+let newLL = new LinkedList()
+newLL.push('1')
+newLL.push('apple')
+// console.log(newLL.pop())
+// newLL.unshift('iphone')
+console.log(newLL)
+```
+
+```js
+// Find the sum of all the numbers in the array, expected 550
+const mixedArrayEmpty = []
+
+const mixedArray = ['dog', 10, 15, 'cat', 'giraffe', 500, true, 'elephant', 25, 'snuffleupagus', 'armadillo', 'ant'];
+
+
+function sumNumer(array) {
+  if(!array.length) return 'Empty Array'
+  
+  let result = 0;
+  
+  array.forEach(item => {
+     if(typeof item === "number") {
+        result += item; 
+     }
+  }) 
+  
+  return result
+}
+
+// console.log(sumNumer(mixedArray))
+// Apply a discount of 5% to each item in the cart and return the new discounted cart
+const cart = [
+  {
+    item: 'bananas',
+    price: 2
+  },
+  {
+    item: 'milk',
+    price: 1.50
+  },
+  {
+    item: 'cereal',
+    price: 3
+  }
+];
+
+
+function numDiscount(number, discountInPer) {
+  let ramainPercentage = (100-discountInPer)/100
+  return Number((number * ramainPercentage).toFixed(2))  
+}
+
+
+function discountedCart(cartItems, discountInPer) {
+  if(!cartItems.length) return 'Empty Array'
+  
+  let result = cartItems.map((item) => {
+    return {
+      ...item,
+      price: numDiscount(item.price, discountInPer)
+    }
+  })
+  
+  return result
+}
+
+console.log(discountedCart(cart, 5))
+```

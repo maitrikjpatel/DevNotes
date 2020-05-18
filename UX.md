@@ -60,6 +60,7 @@ source: 'Github'
 
 ### Process/Workflow
 
+- [Design strategy guide](https://designstrategy.guide/)
 - [Law of UX](https://lawsofux.com/)
 - [Design Guideline](http://designguidelines.co/)
 - [Google Sprint](http://www.gv.com/sprint/)
