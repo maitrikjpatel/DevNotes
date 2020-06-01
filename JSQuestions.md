@@ -1795,3 +1795,60 @@ function discountedCart(cartItems, discountInPer) {
 
 console.log(discountedCart(cart, 5))
 ```
+
+```js
+/**
+Create a service provider which provides following set of numerical services:
+A(+1) , B(-1), C(*2), D(/5), E(**2)..... can be extended to complex services
+
+updateServiceGroup(serviceGroupId, serviceId, dependencyArray)
+    updateServiceGroup("W22K2CE4", A, [D, B])
+    updateServiceGroup("W22K2CE4", C, [D, A])
+    updateServiceGroup("W22K2CE4", B, [D])
+    updateServiceGroup("W22K2CE4", D, [])
+
+    callServiceGroup(serviceGroupId, Input, endpoint)
+    For example, callServiceGroup("W22K2CE4", 5, "https://localhost:9000/api/endpoint")
+    output: 2, posted at the given endpoint       
+*/
+
+// A -> D,B
+// C -> [D,A]
+// B -> [D]
+// D
+
+// two pointers
+
+// walking through graph
+function dependencyResolve(node, resolved) {
+  for (let edge in node.edges) {
+    dependencyResolve(edge, resolved);
+  }
+  resolved.push(node);
+}
+
+const serviceGroupMap = {};
+function updateServiceGroup(serviceGroupId, serviceId, dependencyArray) {
+  if (!serviceGroupMap[serviceGroupId]) {
+    serviceGroupMap[serviceGroupId] = {
+      resolvedOrder: [],
+      resolvedServices: [],
+      dependencyServices: {}
+    };
+  }
+  serviceGroupMap[serviceGroupId].dependencyServices[
+    serviceId
+  ] = dependencyArray;
+}
+
+const A = input => input + 1;
+const B = input => input - 1;
+const C = input => input * 2;
+const D = input => input / 5;
+
+updateServiceGroup("W22K2CE4", A, [D, B]);
+updateServiceGroup("W22K2CE4", C, [D, A]);
+updateServiceGroup("W22K2CE4", B, [D]);
+updateServiceGroup("W22K2CE4", D, []);
+updateServiceGroup("W22K2CE4", A, [D, B, E]);
+```

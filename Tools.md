@@ -18,6 +18,7 @@ source: 'Github'
 - [Mac Setup for beginners](https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
 - [Mac Freemium](http://www.producthunt.com/e/free-mac-utilities?utm_source=Product+Hunt&utm_campaign=1a02c1cf13-Free_Mac_utilities6_23_2015&utm_medium=email&utm_term=0_2cd7d34185-1a02c1cf13-121879825)
 - [How to take notes](https://medium.com/design-voices/the-pen-is-mightier-than-the-laptop-2d057d3d5b7d)
+- [These free tools for developers are](https://dev.to/fayazara/this-free-tools-for-developers-are-45p3)
 
 ### Web Development Apps
 
