@@ -64,6 +64,7 @@ source: 'Github'
 - [Sales Email Template](http://insidesaassales.com/)
 - [Brand Development](https://www.process.st/checklist/brand-identity-design/)
 - [PR Kit](https://jonapr.com/)
+- [Growth List](https://www.thegrowthlist.co/growth-tactics)
 
 ### VC Networking
 
