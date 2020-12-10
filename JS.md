@@ -19,6 +19,7 @@ source: 'Github'
 - [You don't know JS](https://github.com/getify/You-Dont-Know-JS)
 - [Resources for Staying on Top of JavaScript](https://code.tutsplus.com/articles/resources-for-staying-on-top-of-javascript--cms-21369)
 - [Eloquent Javascript](http://eloquentjavascript.net/)
+- [Just Javascript](https://github.com/maitrikjpatel/just-javascript)
 
 ### Tuts
 

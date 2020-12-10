@@ -41,6 +41,7 @@ source: 'Github'
 - [Front end interview Bible](http://www.thatjsdude.com/interview)
 - [Front end interview Bible_01](https://github.com/darcyclarke/Front-end-Developer-Interview-Questions)
 - [Most Common FE Interview questions](http://www.frontendjournal.com/most-common-technical-interview-question-for-frontend-developers)
+- [FE projects for practice](https://www.codementor.io/web-development-projects)
 
 #### HTML/CSS
 

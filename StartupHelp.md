@@ -53,6 +53,7 @@ source: 'Github'
 - [Saas product weblist](https://picksaas.com/)
 - [Launch List](https://contentwritingchecklist.com/)
 - [Build without Code](https://zeroqode.com)
+- [Find partner in crime at Founders-club](https://indieworldwide.co/founders-club/)
 
 ### Growth Hacking
 
