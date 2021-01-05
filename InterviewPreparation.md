@@ -81,3 +81,21 @@ source: 'Github'
 - [Hiring without whiteboards](https://github.com/poteto/hiring-without-whiteboards)
 - [Tech interview handbook](https://github.com/yangshun/tech-interview-handbook)
 - [50 data structure and algorithms interview questions](https://hackernoon.com/50-data-structure-and-algorithms-interview-questions-for-programmers-b4b1ac61f5b0)
+
+
+#### System design questions
+
+- **Course**
+- [Web Application & Software Architecture 101](https://www.educative.io/courses/web-application-software-architecture-101)
+- [Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview)
+- [Preparing for the System Design Interviews](https://www.udemy.com/course/preparing-for-system-design-interviews/)
+
+- **YouTube**
+- [System Design by Gaurav Sen](https://www.youtube.com/watch?v=xpDnVSmNFX0&list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX)
+- [System design by Tech Dummies](https://www.youtube.com/c/TechDummiesNarendraL/playlists)
+- [System design by Success in Tech](https://www.youtube.com/watch?v=0163cssUxLA&list=PLA8lYuzFlBqAy6dkZHj5VxUAaqr4vwrka&ab_channel=SuccessinTech)
+
+- **Github**
+- [System Design Preparation](https://github.com/shashank88/system_design)
+- [The System Design Primer](https://github.com/donnemartin/system-design-primer)
+- [System Design Interview Q&A](https://www.freecodecamp.org/news/systems-design-for-interviews/#section-1-networks-and-protocols)
