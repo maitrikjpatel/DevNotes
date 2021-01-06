@@ -20,11 +20,8 @@ source: 'Github'
 - [StandardResume](https://standardresume.co/)
 - [IneedResume](http://ineedaresu.me/#/)
 - [Kickresume](https://www.kickresume.com/)
-- [Qwilr](https://resume-builder.qwilr.com/)
-- [EstherBot](http://www.estherbot.com/)
 - [VisualCV](https://www.visualcv.com/)
 - [Latex Resume](https://latexresu.me/generator/templates)
-- [Resume Coach](https://app.resumecoach.com)
 - [Free Resume templates](http://www.creativebloq.com/career/free-resume-templates-111517854)
 
 ### Practice Platform
