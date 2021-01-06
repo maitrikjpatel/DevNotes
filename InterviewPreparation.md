@@ -61,6 +61,7 @@ source: 'Github'
 - [Javascript interview preparation](https://medium.freecodecamp.org/5-top-sites-for-javascript-interview-preparation-71b48e9a6c8a)
 - [JS Vault](https://jsvault.com/array-listener/)
 - [Javascript Interview Questions](https://www.testdome.com/d/javascript-interview-questions/2)
+- [React Interview Questions & Answers](https://github.com/sudheerj/reactjs-interview-questions)
 
 #### Algorithms and Data Structure
 
