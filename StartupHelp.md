@@ -27,6 +27,7 @@ source: 'Github'
 - [Slide Bean](https://slidebean.com/pitch-deck-template/)
 - [Pitch Decks](http://www.pitchenvy.io/)
 - [Pitch deck hunt](https://www.pitchdeckhunt.com/)
+- [Pitch deck templates](https://www.basetemplates.com/pitch-deck-template)
 
 ### Startup Books
 
