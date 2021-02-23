@@ -23,31 +23,28 @@ source: 'Github'
 ### Web Development Apps
 
 - [VSC](https://code.visualstudio.com/) - Modern, approachable, and hackable text-editor.
-- [CodeKit](https://incident57.com/codekit/) -  Auto detect and compile JS/Coffeescript/Less/Compass/SCSS/Images, etc.
 - [Dash](http://kapeli.com/dash) - An amazing browser and code snippets manager for Mac.
-- [DiffMerge](https://sourcegear.com/diffmerge/) - An application to visually compare and merge files
 - [ImageOptim](http://imageoptim.com/) - Best image optimizer i've seen for any system. No idea how it works so well.
 - [GIT](https://github.com/git/git) Git for Mac
+- [DiffMerge](https://sourcegear.com/diffmerge/) - An application to visually compare and merge files
+- [CodeKit](https://incident57.com/codekit/) -  Auto detect and compile JS/Coffeescript/Less/Compass/SCSS/Images, etc.
 - [CyberDuck](http://cyberduck.io/) is also great alternative.
 - [Mamp](https://www.mamp.info/en/downloads/) local server.
 
 ### Utility Apps
 
-- [Notion](https://www.notion.so/)
-- [Franz](https://meetfranz.com/)
-- [Bartender](http://www.macbartender.com/)
 - [Day One](http://dayoneapp.com/)
-- [Day-O](http://www.shauninman.com/archive/2011/10/20/day_o_mac_menu_bar_clock)
 - [MenuMeters](http://www.ragingmenace.com/software/menumeters/)
 - [Spotify](https://www.spotify.com/us/download/mac/)
 - [Slack](https://itunes.apple.com/us/app/slack/id803453959?mt=12)
-- [Unarchiver](http://wakaba.c3.cx/s/apps/unarchiver.html)
 - [Dropbox](https://www.dropbox.com/en/downloading?os=mac)
 - [Sketch](https://www.sketchapp.com/)
 - [Figma](https://www.figma.com/downloads/)
+- [Unarchiver](http://wakaba.c3.cx/s/apps/unarchiver.html)
 
 ### Productivity Apps
 
+- [Bartender](http://www.macbartender.com/)
 - [Alfred](http://www.alfredapp.com/)
 - [Divvy](http://mizage.com/divvy/)
 - [Jumpcut](http://jumpcut.sourceforge.net/)

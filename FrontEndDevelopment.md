@@ -35,6 +35,10 @@ source: 'Github'
 - [FE Dev bookmarks](https://github.com/dypsilon/frontend-dev-bookmarks)
 - [Project Guideline](https://github.com/wearehive/project-guidelines)
 
+### Tools
+
+- [Free for Developers](free-for.dev)
+
 ### Workflow
 
 - [Creating A JavaScript Project Checklist](http://blog.bitovi.com/creating-a-javascript-project-checklist/)
