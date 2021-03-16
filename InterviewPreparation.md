@@ -41,6 +41,7 @@ source: 'Github'
 - [Interview Prep/Mock : PAID](https://www.pramp.com/)
 - [Interviewing Prep : PAID](https://interviewing.io/)
 - [Algoexpert: PAID](https://www.algoexpert.io)
+- [Technical Interviews: BOOK](https://technicalinterviews.dev/)
 
 ### Social Media
 
