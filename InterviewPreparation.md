@@ -102,6 +102,9 @@ source: 'Github'
 - [Hiring without whiteboards](https://github.com/poteto/hiring-without-whiteboards)
 - [Tech interview handbook](https://github.com/yangshun/tech-interview-handbook)
 - [50 data structure and algorithms interview questions](https://hackernoon.com/50-data-structure-and-algorithms-interview-questions-for-programmers-b4b1ac61f5b0)
+- [BaseCS Season One](https://www.youtube.com/playlist?list=PL8Bb2WLXhUaDaL2PlxP_jpAm2sSKEJ0hS)
+- [BaseCS Season Two](https://www.youtube.com/playlist?list=PL8Bb2WLXhUaChUH8o42PjJA8zCkfcR7nT)
+
 #### System design questions
 
 - **Course**
