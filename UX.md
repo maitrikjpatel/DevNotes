@@ -26,6 +26,7 @@ source: 'Github'
 
 ### Resources
 
+- [UX Challenges](https://uxtools.co/challenges/)
 - [Awesome Design Tools](https://github.com/LisaDziuba/Awesome-Design-Tools)
 - [Product Design tips](https://productdesign.tips)
 - [UX Tools/](https://uxtools.co/)
