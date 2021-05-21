@@ -90,6 +90,7 @@ source: 'Github'
 - [JS Vault](https://jsvault.com/array-listener/)
 - [Javascript Interview Questions](https://www.testdome.com/d/javascript-interview-questions/2)
 - [React Interview Questions & Answers](https://github.com/sudheerj/reactjs-interview-questions)
+- [400+ JavaScript Interview Questions 🎓 With Answers](https://dev.to/worldindev/400-javascript-interview-questions-with-answers-2fcj)
 
 #### Algorithms and Data Structure
 
