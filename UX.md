@@ -47,6 +47,7 @@ source: 'Github'
 - [Illustration](https://www.drawkit.io/)
 - [All in One Bookmark Links for Designer](https://www.evernote.design)
 - [Design Plugins](https://flawlessapp.io/designplugins)
+- [The all–new online learning experience for designing beautiful and functional interfaces](https://shiftnudge.com/#join)
 
 ### Case Study
 
