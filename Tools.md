@@ -27,7 +27,6 @@ source: 'Github'
 - [ImageOptim](http://imageoptim.com/) - Best image optimizer i've seen for any system. No idea how it works so well.
 - [GIT](https://github.com/git/git) Git for Mac
 - [DiffMerge](https://sourcegear.com/diffmerge/) - An application to visually compare and merge files
-- [CodeKit](https://incident57.com/codekit/) -  Auto detect and compile JS/Coffeescript/Less/Compass/SCSS/Images, etc.
 - [CyberDuck](http://cyberduck.io/) is also great alternative.
 - [Mamp](https://www.mamp.info/en/downloads/) local server.
 
@@ -52,7 +51,6 @@ source: 'Github'
 - [Self Control](http://selfcontrolapp.com/)
 - [iTerm](https://www.iterm2.com/)
 - [Easy resolution](http://easyresapp.com/)
-- [Caffeine](http://lightheadsw.com/caffeine/)
 
 ### Chrome Extension
 

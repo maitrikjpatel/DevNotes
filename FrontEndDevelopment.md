@@ -37,7 +37,7 @@ source: 'Github'
 
 ### Tools
 
-- [Free for Developers](free-for.dev)
+- [Free for Developers](https://free-for.dev/#/)
 
 ### Workflow
 

@@ -146,7 +146,6 @@ source: 'Github'
 
 - [SCSS Project for Beginner](http://inspirationalpixels.com/tutorials/sass-projects-for-beginners-1)
 - [SCSS Guide](http://sass-lang.com/guide)
-- [SCSS own grid](https://jsfiddle.net/maitrikjpatel/eaebjts7/)
 
 ```
 //Define Variable

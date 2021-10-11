@@ -43,12 +43,10 @@ source: 'Github'
 
 ### Learning and Tools
 
-- [7 Days of free training for freelancers from The Creative Class](https://creativeclass.io/guide/)
 - [2011/03 Mike Monteiro | F\*ck You. Pay Me. on Vimeo](https://vimeo.com/22053820)
 - [Freelancing Planner](http://cushionapp.com/)
 - [Scheduling](https://calendly.com/)
 - [Automate Freelancing workflow](http://www.plasticpollutioncoalition.org/about)
-- [Cost Estimate](http://www.estimapp.com/)
 - [Buy Me a Coffee](https://www.buymeacoffee.com/)
 - [Remote/freelancing work Tools](https://remote.tools)
 - [Startup Without Code](https://www.makerpad.co/)

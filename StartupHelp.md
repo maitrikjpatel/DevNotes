@@ -49,9 +49,6 @@ source: 'Github'
 - [Startup recourses](http://startupcollections.com/)
 - [Founders Kit](http://founderkit.com/)
 - [Startup Deals](https://startup.deals)
-- [F6S deals](https://www.f6s.com/swperks)
-- [YC world startups](http://world.ycombinator.com/)
-- [25 Days Ideas](http://www.the25daysofideas.com/)
 - [Money Runway Calculator](https://www.startuprunway.io/)
 - [Startup Mate Guide](http://startupmate.flammate.com/)
 - [Saas product weblist](https://picksaas.com/)
@@ -62,8 +59,6 @@ source: 'Github'
 ### Growth Hacking
 
 - [Growth marketing for free](https://thenextweb.com/entrepreneur/2015/10/30/18-best-places-to-promote-your-startup-for-virtually-nothing)
-- [Growth Tools](http://growthtools.io/)
-- [Growth Hacker kit](http://courses.growthhackerkit.com/)
 - [Side project Marketing](https://github.com/karllhughes/side-project-marketing)
 - [Product Launch List](https://github.com/mmccaff/PlacesToPostYourStartup)
 - [Sales Email Template](http://insidesaassales.com/)

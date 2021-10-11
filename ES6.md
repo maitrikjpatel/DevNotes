@@ -17,7 +17,6 @@ source: 'Github'
 - [ES6](http://es6-features.org/)
 - [ES6 vs ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
 - [ES6 Tools](https://github.com/addyosmani/es6-tools)
-- [What is ES6](http://gonodejs.com/es6-interview-questions-answers/#what-is-javscript-es6)
 - Broweer Runtime Traceur but will be slow.
 - Production side : ESnext, Babel, Traceur using grunt/gulp/webpack
 - Polyfill manually of add ES6 Shim file.

@@ -14,8 +14,6 @@ source: 'Github'
 
 ### Resume Help
 
-- [Use Google to Get a New Job](https://applieddigitalskills.withgoogle.com/c/college-and-continuing-education/en/use-google-to-get-a-new-job/overview.html)
-- [JobCV](http://www.jobcv.me/)
 - [NovoResume](https://novoresume.com/)
 - [CakeResume](https://www.cakeresume.com/)
 - [StandardResume](https://standardresume.co/)
@@ -63,7 +61,6 @@ source: 'Github'
 - [Front end interview questions](https://github.com/darcyclarke/Front-end-Developer-Interview-Questions)
 - [Most Common FE Interview questions](http://www.frontendjournal.com/most-common-technical-interview-question-for-frontend-developers)
 - [FE projects for practice](https://www.codementor.io/web-development-projects)
-- [FE interview Handbook](https://github.com/yangshun/front-end-interview-handbook/blob/master/contents/en/javascript-questions.md)
 - [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/)
 
 #### UI challenges
@@ -92,7 +89,6 @@ source: 'Github'
 - [JS Vault](https://jsvault.com/array-listener/)
 - [Javascript Interview Questions](https://www.testdome.com/d/javascript-interview-questions/2)
 - [React Interview Questions & Answers](https://github.com/sudheerj/reactjs-interview-questions)
-- [400+ JavaScript Interview Questions 🎓 With Answers](https://dev.to/worldindev/400-javascript-interview-questions-with-answers-2fcj)
 
 #### Algorithms and Data Structure
 
@@ -146,3 +142,4 @@ source: 'Github'
 - [How To Interview A Front End Developer](http://ilikekillnerds.com/2014/09/how-to-interview-a-front-end-developer-and-how-to-prepare-for-a-front-end-developer-interview/)
 - [Crack the FE interview](https://medium.freecodecamp.com/cracking-the-front-end-interview-9a34cd46237)
 - [Every programer should know](https://github.com/mr-mig/every-programmer-should-know)
+- [Use Google to Get a New Job](https://applieddigitalskills.withgoogle.com/c/college-and-continuing-education/en/use-google-to-get-a-new-job/overview.html)
