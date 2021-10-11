@@ -6,7 +6,7 @@ author: 'Maitrik Patel'
 
 title: 'Interview Preparation'
 description: 'Crack that Interview'
-
+z
 topics: 'tools, development, design'
 
 source: 'Github'
@@ -14,6 +14,7 @@ source: 'Github'
 
 ### Resume Help
 
+- [Use Google to Get a New Job](https://applieddigitalskills.withgoogle.com/c/college-and-continuing-education/en/use-google-to-get-a-new-job/overview.html)
 - [JobCV](http://www.jobcv.me/)
 - [NovoResume](https://novoresume.com/)
 - [CakeResume](https://www.cakeresume.com/)
@@ -29,6 +30,7 @@ source: 'Github'
 - [Leet Code](https://leetcode.com/problemset/algorithms/)
 - [Visual Data Structure](http://visualgo.net/)
 - [Code Signal](https://codesignal.com/)
+- [Algo Monster - Master the Technical Interview](https://algo.monster/)  
 - [HackerRank](https://www.hackerrank.com/domains)
 - [HackerEarth](https://www.hackerearth.com/practice/)
 - [Geeks for Geeks](http://www.geeksforgeeks.org/)
@@ -131,9 +133,16 @@ source: 'Github'
   - [Web Architecture 101](https://engineering.videoblocks.com/web-architecture-101-a3224e126947)
   - [Scalable Web Architecture and Distributed Systems](http://www.aosabook.org/en/distsys.html)
 
+### After Offer
+
+- [Salary negotiation](https://candor.co/guides/salary-negotiation)
+- [The 10 commandments of salary negotiation](https://www.lennysnewsletter.com/p/negotiating-comp)
+- [The Option Pool Shuffle](https://venturehacks.com/option-pool-shuffle)
+- [Equity compensation](https://www.holloway.com/g/equity-compensation/about)
+
 ### Articles
 
 - [7 Lessons Learned From Interviewing 100+ App Developers](https://medium.com/@stevepyoung/7-lessons-learned-from-interviewing-100-app-developers-fee26e0dec97)
 - [How To Interview A Front End Developer](http://ilikekillnerds.com/2014/09/how-to-interview-a-front-end-developer-and-how-to-prepare-for-a-front-end-developer-interview/)
-- [Crack the FE interview ](https://medium.freecodecamp.com/cracking-the-front-end-interview-9a34cd46237)
+- [Crack the FE interview](https://medium.freecodecamp.com/cracking-the-front-end-interview-9a34cd46237)
 - [Every programer should know](https://github.com/mr-mig/every-programmer-should-know)

@@ -19,6 +19,9 @@ source: 'Github'
 - [Design Startup Google](http://designforstartup.net/)
 - [How to Start a Startup](http://startupclass.samaltman.com/)
 - [How to start a side project](https://medium.com/makesideproject/making-a-side-project-808fc040d27a)
+- [Startup Concepts](https://ajuniorvc.com/startup-concepts/)
+- [Codex to start a company](https://pioneer.app/codex)
+- [Startup School for Aspiring Founders](https://www.startupschool.org/aspiring-founders)
 
 ### Slide/PPT helper
 
