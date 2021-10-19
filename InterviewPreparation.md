@@ -6,7 +6,7 @@ author: 'Maitrik Patel'
 
 title: 'Interview Preparation'
 description: 'Crack that Interview'
-z
+
 topics: 'tools, development, design'
 
 source: 'Github'
