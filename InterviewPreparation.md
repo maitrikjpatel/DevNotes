@@ -121,6 +121,7 @@ source: 'Github'
   - [System Design Preparation](https://github.com/shashank88/system_design)
   - [The System Design Primer](https://github.com/donnemartin/system-design-primer)
   - [system-design-interview](https://github.com/checkcheckzz/system-design-interview)
+  - [The System Design Primer](https://github.com/donnemartin/system-design-primer#study-guide)
 
 - **Articles**
   - [System Design Interview Q&A](https://www.freecodecamp.org/news/systems-design-for-interviews/)
