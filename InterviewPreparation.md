@@ -136,6 +136,7 @@ source: 'Github'
 - [The 10 commandments of salary negotiation](https://www.lennysnewsletter.com/p/negotiating-comp)
 - [The Option Pool Shuffle](https://venturehacks.com/option-pool-shuffle)
 - [Equity compensation](https://www.holloway.com/g/equity-compensation/about)
+- [Equity in your tech job offer](https://www.levels.fyi/blog/equity-tech-job-offer.html)
 
 ### Articles
 
