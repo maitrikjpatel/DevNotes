@@ -48,6 +48,11 @@ source: 'Github'
 - [Design Plugins](https://flawlessapp.io/designplugins)
 - [The all–new online learning experience for designing beautiful and functional interfaces](https://shiftnudge.com/#join)
 
+
+### Courses
+
+- [Build your own design system in Figma](https://www.figmaster.co/)
+
 ### Case Study
 
 - [Cas Study Club](https://www.casestudy.club)
